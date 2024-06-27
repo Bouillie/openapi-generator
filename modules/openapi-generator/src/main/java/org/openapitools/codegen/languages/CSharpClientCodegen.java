@@ -1568,6 +1568,13 @@ public class CSharpClientCodegen extends AbstractCSharpCodegen {
                 property.isInherited = true;
             }
         }
+
+        if (!GENERICHOST.equals(getLibrary()) && !property.dataType.endsWith("?") && !property.required && (nullReferenceTypesFlag || this.getNullableTypes().contains(property.dataType))) {
+            property.dataType = property.dataType + "?";
+            if (!property.isEnum) {
+                property.datatypeWithEnum = property.datatypeWithEnum + "?";
+            }
+        }
     }
 
     @Override
