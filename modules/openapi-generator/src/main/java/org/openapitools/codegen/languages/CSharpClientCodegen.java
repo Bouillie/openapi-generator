@@ -402,20 +402,6 @@ public class CSharpClientCodegen extends AbstractCSharpCodegen {
     }
 
     @Override
-    protected void updateCodegenParameterEnum(CodegenParameter parameter, CodegenModel model) {
-        if (GENERICHOST.equals(getLibrary())) {
-            super.updateCodegenParameterEnum(parameter, model);
-            return;
-        }
-
-        super.updateCodegenParameterEnumLegacy(parameter, model);
-
-        if (!parameter.required && parameter.vendorExtensions.get(X_CSHARP_VALUE_TYPE) != null) { //optional
-            parameter.dataType = parameter.dataType + "?";
-        }
-    }
-
-    @Override
     public String apiDocFileFolder() {
         if (GENERICHOST.equals(getLibrary())) {
             return (outputFolder + "/" + apiDocPath + File.separatorChar + "apis").replace('/', File.separatorChar);
@@ -1032,6 +1018,7 @@ public class CSharpClientCodegen extends AbstractCSharpCodegen {
             supportingFiles.add(new SupportingFile("ApiClient.mustache", clientPackageDir, "ApiClient.cs"));
             supportingFiles.add(new SupportingFile("IReadableConfiguration.mustache", clientPackageDir, "IReadableConfiguration.cs"));
             supportingFiles.add(new SupportingFile("Configuration.mustache", clientPackageDir, "Configuration.cs"));
+            supportingFiles.add(new SupportingFile("Option.mustache", clientPackageDir, "Option.cs"));
         }
         supportingFiles.add(new SupportingFile("IApiAccessor.mustache", clientPackageDir, "IApiAccessor.cs"));
         supportingFiles.add(new SupportingFile("ApiException.mustache", clientPackageDir, "ApiException.cs"));
