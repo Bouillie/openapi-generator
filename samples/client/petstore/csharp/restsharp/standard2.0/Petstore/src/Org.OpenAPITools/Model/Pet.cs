@@ -210,10 +210,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Category != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Category.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
+                }
+                if (this.Category.IsSet && this.Category.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Category.Value.GetHashCode();
                 }
                 if (this.Name != null)
                 {
@@ -223,11 +226,14 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.PhotoUrls.GetHashCode();
                 }
-                if (this.Tags != null)
+                if (this.Tags.IsSet && this.Tags.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Tags.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.Status.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Status.Value.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
                 {
                     hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();

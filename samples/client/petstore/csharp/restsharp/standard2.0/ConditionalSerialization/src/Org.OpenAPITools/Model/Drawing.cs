@@ -232,21 +232,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MainShape != null)
+                if (this.MainShape.IsSet && this.MainShape.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MainShape.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MainShape.Value.GetHashCode();
                 }
-                if (this.ShapeOrNull != null)
+                if (this.ShapeOrNull.IsSet && this.ShapeOrNull.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ShapeOrNull.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ShapeOrNull.Value.GetHashCode();
                 }
-                if (this.NullableShape != null)
+                if (this.NullableShape.IsSet && this.NullableShape.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NullableShape.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NullableShape.Value.GetHashCode();
                 }
-                if (this.Shapes != null)
+                if (this.Shapes.IsSet && this.Shapes.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Shapes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Shapes.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

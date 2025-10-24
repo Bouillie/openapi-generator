@@ -126,14 +126,14 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
+                    
+                    this.Uuid.Equals(input.Uuid)
                 ) && 
                 (
                     this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
+                    this.Data.IsSet && this.Data.Value != null &&
+                    input.Data.IsSet && input.Data.Value != null &&
+                    this.Data.Value.SequenceEqual(input.Data.Value)
                 );
         }
 
@@ -146,14 +146,17 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Code.GetHashCode();
-                if (this.Uuid != null)
+                if (this.Code.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Uuid.GetHashCode();
+                hashCode = (hashCode * 59) + this.Code.Value.GetHashCode();
                 }
-                if (this.Data != null)
+                if (this.Uuid.IsSet && this.Uuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Uuid.Value.GetHashCode();
+                }
+                if (this.Data.IsSet && this.Data.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Data.Value.GetHashCode();
                 }
                 return hashCode;
             }

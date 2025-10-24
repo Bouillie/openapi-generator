@@ -148,9 +148,9 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.ArrayEnum == input.ArrayEnum ||
-                    this.ArrayEnum != null &&
-                    input.ArrayEnum != null &&
-                    this.ArrayEnum.SequenceEqual(input.ArrayEnum)
+                    this.ArrayEnum.IsSet && this.ArrayEnum.Value != null &&
+                    input.ArrayEnum.IsSet && input.ArrayEnum.Value != null &&
+                    this.ArrayEnum.Value.SequenceEqual(input.ArrayEnum.Value)
                 );
         }
 
@@ -163,10 +163,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.JustSymbol.GetHashCode();
-                if (this.ArrayEnum != null)
+                if (this.JustSymbol.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayEnum.GetHashCode();
+                hashCode = (hashCode * 59) + this.JustSymbol.Value.GetHashCode();
+                }
+                if (this.ArrayEnum.IsSet && this.ArrayEnum.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.ArrayEnum.Value.GetHashCode();
                 }
                 return hashCode;
             }

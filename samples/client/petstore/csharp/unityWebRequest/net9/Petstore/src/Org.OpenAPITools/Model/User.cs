@@ -235,33 +235,33 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Username == input.Username ||
-                    (this.Username != null &&
-                    this.Username.Equals(input.Username))
+                    
+                    this.Username.Equals(input.Username)
                 ) && 
                 (
                     this.FirstName == input.FirstName ||
-                    (this.FirstName != null &&
-                    this.FirstName.Equals(input.FirstName))
+                    
+                    this.FirstName.Equals(input.FirstName)
                 ) && 
                 (
                     this.LastName == input.LastName ||
-                    (this.LastName != null &&
-                    this.LastName.Equals(input.LastName))
+                    
+                    this.LastName.Equals(input.LastName)
                 ) && 
                 (
                     this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
+                    
+                    this.Email.Equals(input.Email)
                 ) && 
                 (
                     this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
+                    
+                    this.Password.Equals(input.Password)
                 ) && 
                 (
                     this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
+                    
+                    this.Phone.Equals(input.Phone)
                 ) && 
                 (
                     this.UserStatus == input.UserStatus ||
@@ -269,23 +269,23 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.ObjectWithNoDeclaredProps == input.ObjectWithNoDeclaredProps ||
-                    (this.ObjectWithNoDeclaredProps != null &&
-                    this.ObjectWithNoDeclaredProps.Equals(input.ObjectWithNoDeclaredProps))
+                    
+                    this.ObjectWithNoDeclaredProps.Equals(input.ObjectWithNoDeclaredProps)
                 ) && 
                 (
                     this.ObjectWithNoDeclaredPropsNullable == input.ObjectWithNoDeclaredPropsNullable ||
-                    (this.ObjectWithNoDeclaredPropsNullable != null &&
-                    this.ObjectWithNoDeclaredPropsNullable.Equals(input.ObjectWithNoDeclaredPropsNullable))
+                    
+                    this.ObjectWithNoDeclaredPropsNullable.Equals(input.ObjectWithNoDeclaredPropsNullable)
                 ) && 
                 (
                     this.AnyTypeProp == input.AnyTypeProp ||
-                    (this.AnyTypeProp != null &&
-                    this.AnyTypeProp.Equals(input.AnyTypeProp))
+                    
+                    this.AnyTypeProp.Equals(input.AnyTypeProp)
                 ) && 
                 (
                     this.AnyTypePropNullable == input.AnyTypePropNullable ||
-                    (this.AnyTypePropNullable != null &&
-                    this.AnyTypePropNullable.Equals(input.AnyTypePropNullable))
+                    
+                    this.AnyTypePropNullable.Equals(input.AnyTypePropNullable)
                 );
         }
 
@@ -298,47 +298,53 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Username != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Username.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
                 }
-                if (this.FirstName != null)
+                if (this.Username.IsSet && this.Username.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Username.Value.GetHashCode();
                 }
-                if (this.LastName != null)
+                if (this.FirstName.IsSet && this.FirstName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FirstName.Value.GetHashCode();
                 }
-                if (this.Email != null)
+                if (this.LastName.IsSet && this.LastName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LastName.Value.GetHashCode();
                 }
-                if (this.Password != null)
+                if (this.Email.IsSet && this.Email.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Email.Value.GetHashCode();
                 }
-                if (this.Phone != null)
+                if (this.Password.IsSet && this.Password.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Password.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.UserStatus.GetHashCode();
-                if (this.ObjectWithNoDeclaredProps != null)
+                if (this.Phone.IsSet && this.Phone.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredProps.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Phone.Value.GetHashCode();
                 }
-                if (this.ObjectWithNoDeclaredPropsNullable != null)
+                if (this.UserStatus.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredPropsNullable.GetHashCode();
+                hashCode = (hashCode * 59) + this.UserStatus.Value.GetHashCode();
                 }
-                if (this.AnyTypeProp != null)
+                if (this.ObjectWithNoDeclaredProps.IsSet && this.ObjectWithNoDeclaredProps.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.AnyTypeProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredProps.Value.GetHashCode();
                 }
-                if (this.AnyTypePropNullable != null)
+                if (this.ObjectWithNoDeclaredPropsNullable.IsSet && this.ObjectWithNoDeclaredPropsNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.AnyTypePropNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredPropsNullable.Value.GetHashCode();
+                }
+                if (this.AnyTypeProp.IsSet && this.AnyTypeProp.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.AnyTypeProp.Value.GetHashCode();
+                }
+                if (this.AnyTypePropNullable.IsSet && this.AnyTypePropNullable.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.AnyTypePropNullable.Value.GetHashCode();
                 }
                 return hashCode;
             }

@@ -142,13 +142,13 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
+                    
+                    this.Size.Equals(input.Size)
                 ) && 
                 (
                     this.Color == input.Color ||
-                    (this.Color != null &&
-                    this.Color.Equals(input.Color))
+                    
+                    this.Color.Equals(input.Color)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -156,8 +156,8 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    
+                    this.Name.Equals(input.Name)
                 );
         }
 
@@ -170,18 +170,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Size != null)
+                if (this.Size.IsSet && this.Size.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Size.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Size.Value.GetHashCode();
                 }
-                if (this.Color != null)
+                if (this.Color.IsSet && this.Color.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Color.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Color.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Name != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
+                }
+                if (this.Name.IsSet && this.Name.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.Value.GetHashCode();
                 }
                 return hashCode;
             }

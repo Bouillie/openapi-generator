@@ -137,8 +137,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
+                    
+                    this.Uuid.Equals(input.Uuid)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -146,14 +146,14 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.DeprecatedRef == input.DeprecatedRef ||
-                    (this.DeprecatedRef != null &&
-                    this.DeprecatedRef.Equals(input.DeprecatedRef))
+                    
+                    this.DeprecatedRef.Equals(input.DeprecatedRef)
                 ) && 
                 (
                     this.Bars == input.Bars ||
-                    this.Bars != null &&
-                    input.Bars != null &&
-                    this.Bars.SequenceEqual(input.Bars)
+                    this.Bars.IsSet && this.Bars.Value != null &&
+                    input.Bars.IsSet && input.Bars.Value != null &&
+                    this.Bars.Value.SequenceEqual(input.Bars.Value)
                 );
         }
 
@@ -166,18 +166,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Uuid != null)
+                if (this.Uuid.IsSet && this.Uuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Uuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Uuid.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.DeprecatedRef != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.DeprecatedRef.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
                 }
-                if (this.Bars != null)
+                if (this.DeprecatedRef.IsSet && this.DeprecatedRef.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Bars.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DeprecatedRef.Value.GetHashCode();
+                }
+                if (this.Bars.IsSet && this.Bars.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Bars.Value.GetHashCode();
                 }
                 return hashCode;
             }

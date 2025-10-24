@@ -111,13 +111,13 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Prop1 == input.Prop1 ||
-                    (this.Prop1 != null &&
-                    this.Prop1.Equals(input.Prop1))
+                    
+                    this.Prop1.Equals(input.Prop1)
                 ) && 
                 (
                     this.Prop2 == input.Prop2 ||
-                    (this.Prop2 != null &&
-                    this.Prop2.Equals(input.Prop2))
+                    
+                    this.Prop2.Equals(input.Prop2)
                 );
         }
 
@@ -130,13 +130,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Prop1 != null)
+                if (this.Prop1.IsSet && this.Prop1.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Prop1.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Prop1.Value.GetHashCode();
                 }
-                if (this.Prop2 != null)
+                if (this.Prop2.IsSet && this.Prop2.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Prop2.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Prop2.Value.GetHashCode();
                 }
                 return hashCode;
             }

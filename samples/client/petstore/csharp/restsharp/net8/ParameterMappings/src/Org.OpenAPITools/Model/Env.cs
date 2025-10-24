@@ -98,8 +98,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Dummy == input.Dummy ||
-                    (this.Dummy != null &&
-                    this.Dummy.Equals(input.Dummy))
+                    
+                    this.Dummy.Equals(input.Dummy)
                 );
         }
 
@@ -112,9 +112,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Dummy != null)
+                if (this.Dummy.IsSet && this.Dummy.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Dummy.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Dummy.Value.GetHashCode();
                 }
                 return hashCode;
             }

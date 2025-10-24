@@ -142,9 +142,9 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
                 }
-                if (this.Color != null)
+                if (this.Color.IsSet && this.Color.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Color.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Color.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

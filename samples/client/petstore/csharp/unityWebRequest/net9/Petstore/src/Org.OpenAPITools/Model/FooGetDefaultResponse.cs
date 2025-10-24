@@ -97,8 +97,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.String == input.String ||
-                    (this.String != null &&
-                    this.String.Equals(input.String))
+                    
+                    this.String.Equals(input.String)
                 );
         }
 
@@ -111,9 +111,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.String != null)
+                if (this.String.IsSet && this.String.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.String.GetHashCode();
+                    hashCode = (hashCode * 59) + this.String.Value.GetHashCode();
                 }
                 return hashCode;
             }

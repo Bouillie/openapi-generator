@@ -122,13 +122,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.RoleUuid != null)
+                if (this.RoleUuid.IsSet && this.RoleUuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.RoleUuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RoleUuid.Value.GetHashCode();
                 }
-                if (this.Role != null)
+                if (this.Role.IsSet && this.Role.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Role.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Role.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

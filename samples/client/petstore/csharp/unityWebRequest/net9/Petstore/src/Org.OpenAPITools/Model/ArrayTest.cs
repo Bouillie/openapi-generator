@@ -125,21 +125,21 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.ArrayOfString == input.ArrayOfString ||
-                    this.ArrayOfString != null &&
-                    input.ArrayOfString != null &&
-                    this.ArrayOfString.SequenceEqual(input.ArrayOfString)
+                    this.ArrayOfString.IsSet && this.ArrayOfString.Value != null &&
+                    input.ArrayOfString.IsSet && input.ArrayOfString.Value != null &&
+                    this.ArrayOfString.Value.SequenceEqual(input.ArrayOfString.Value)
                 ) && 
                 (
                     this.ArrayArrayOfInteger == input.ArrayArrayOfInteger ||
-                    this.ArrayArrayOfInteger != null &&
-                    input.ArrayArrayOfInteger != null &&
-                    this.ArrayArrayOfInteger.SequenceEqual(input.ArrayArrayOfInteger)
+                    this.ArrayArrayOfInteger.IsSet && this.ArrayArrayOfInteger.Value != null &&
+                    input.ArrayArrayOfInteger.IsSet && input.ArrayArrayOfInteger.Value != null &&
+                    this.ArrayArrayOfInteger.Value.SequenceEqual(input.ArrayArrayOfInteger.Value)
                 ) && 
                 (
                     this.ArrayArrayOfModel == input.ArrayArrayOfModel ||
-                    this.ArrayArrayOfModel != null &&
-                    input.ArrayArrayOfModel != null &&
-                    this.ArrayArrayOfModel.SequenceEqual(input.ArrayArrayOfModel)
+                    this.ArrayArrayOfModel.IsSet && this.ArrayArrayOfModel.Value != null &&
+                    input.ArrayArrayOfModel.IsSet && input.ArrayArrayOfModel.Value != null &&
+                    this.ArrayArrayOfModel.Value.SequenceEqual(input.ArrayArrayOfModel.Value)
                 );
         }
 
@@ -152,17 +152,17 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ArrayOfString != null)
+                if (this.ArrayOfString.IsSet && this.ArrayOfString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayOfString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayOfString.Value.GetHashCode();
                 }
-                if (this.ArrayArrayOfInteger != null)
+                if (this.ArrayArrayOfInteger.IsSet && this.ArrayArrayOfInteger.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayArrayOfInteger.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayArrayOfInteger.Value.GetHashCode();
                 }
-                if (this.ArrayArrayOfModel != null)
+                if (this.ArrayArrayOfModel.IsSet && this.ArrayArrayOfModel.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayArrayOfModel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayArrayOfModel.Value.GetHashCode();
                 }
                 return hashCode;
             }

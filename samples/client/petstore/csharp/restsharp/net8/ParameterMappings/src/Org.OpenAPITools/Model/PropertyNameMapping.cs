@@ -140,23 +140,23 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.HttpDebugOperation == input.HttpDebugOperation ||
-                    (this.HttpDebugOperation != null &&
-                    this.HttpDebugOperation.Equals(input.HttpDebugOperation))
+                    
+                    this.HttpDebugOperation.Equals(input.HttpDebugOperation)
                 ) && 
                 (
                     this.UnderscoreType == input.UnderscoreType ||
-                    (this.UnderscoreType != null &&
-                    this.UnderscoreType.Equals(input.UnderscoreType))
+                    
+                    this.UnderscoreType.Equals(input.UnderscoreType)
                 ) && 
                 (
                     this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    
+                    this.Type.Equals(input.Type)
                 ) && 
                 (
                     this.TypeWithUnderscore == input.TypeWithUnderscore ||
-                    (this.TypeWithUnderscore != null &&
-                    this.TypeWithUnderscore.Equals(input.TypeWithUnderscore))
+                    
+                    this.TypeWithUnderscore.Equals(input.TypeWithUnderscore)
                 );
         }
 
@@ -169,21 +169,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.HttpDebugOperation != null)
+                if (this.HttpDebugOperation.IsSet && this.HttpDebugOperation.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.HttpDebugOperation.GetHashCode();
+                    hashCode = (hashCode * 59) + this.HttpDebugOperation.Value.GetHashCode();
                 }
-                if (this.UnderscoreType != null)
+                if (this.UnderscoreType.IsSet && this.UnderscoreType.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.UnderscoreType.GetHashCode();
+                    hashCode = (hashCode * 59) + this.UnderscoreType.Value.GetHashCode();
                 }
-                if (this.Type != null)
+                if (this.Type.IsSet && this.Type.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Type.Value.GetHashCode();
                 }
-                if (this.TypeWithUnderscore != null)
+                if (this.TypeWithUnderscore.IsSet && this.TypeWithUnderscore.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.TypeWithUnderscore.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TypeWithUnderscore.Value.GetHashCode();
                 }
                 return hashCode;
             }

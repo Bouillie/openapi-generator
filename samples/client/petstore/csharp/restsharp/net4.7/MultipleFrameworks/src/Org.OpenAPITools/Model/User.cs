@@ -193,32 +193,38 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Username != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Username.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
                 }
-                if (this.FirstName != null)
+                if (this.Username.IsSet && this.Username.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Username.Value.GetHashCode();
                 }
-                if (this.LastName != null)
+                if (this.FirstName.IsSet && this.FirstName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FirstName.Value.GetHashCode();
                 }
-                if (this.Email != null)
+                if (this.LastName.IsSet && this.LastName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LastName.Value.GetHashCode();
                 }
-                if (this.Password != null)
+                if (this.Email.IsSet && this.Email.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Email.Value.GetHashCode();
                 }
-                if (this.Phone != null)
+                if (this.Password.IsSet && this.Password.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Password.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.UserStatus.GetHashCode();
+                if (this.Phone.IsSet && this.Phone.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Phone.Value.GetHashCode();
+                }
+                if (this.UserStatus.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.UserStatus.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

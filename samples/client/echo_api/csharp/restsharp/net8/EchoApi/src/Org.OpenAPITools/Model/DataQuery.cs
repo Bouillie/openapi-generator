@@ -131,18 +131,18 @@ namespace Org.OpenAPITools.Model
             return base.Equals(input) && 
                 (
                     this.Suffix == input.Suffix ||
-                    (this.Suffix != null &&
-                    this.Suffix.Equals(input.Suffix))
+                    
+                    this.Suffix.Equals(input.Suffix)
                 ) && base.Equals(input) && 
                 (
                     this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
+                    
+                    this.Text.Equals(input.Text)
                 ) && base.Equals(input) && 
                 (
                     this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    
+                    this.Date.Equals(input.Date)
                 );
         }
 
@@ -155,17 +155,17 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.Suffix != null)
+                if (this.Suffix.IsSet && this.Suffix.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Suffix.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Suffix.Value.GetHashCode();
                 }
-                if (this.Text != null)
+                if (this.Text.IsSet && this.Text.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Text.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Text.Value.GetHashCode();
                 }
-                if (this.Date != null)
+                if (this.Date.IsSet && this.Date.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Date.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Date.Value.GetHashCode();
                 }
                 return hashCode;
             }

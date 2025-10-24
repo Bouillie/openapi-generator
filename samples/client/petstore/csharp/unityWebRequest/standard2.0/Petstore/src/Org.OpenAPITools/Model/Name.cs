@@ -149,8 +149,8 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
+                    
+                    this.Property.Equals(input.Property)
                 ) && 
                 (
                     this.Var123Number == input.Var123Number ||
@@ -168,12 +168,18 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.VarName.GetHashCode();
-                hashCode = (hashCode * 59) + this.SnakeCase.GetHashCode();
-                if (this.Property != null)
+                if (this.SnakeCase.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Property.GetHashCode();
+                hashCode = (hashCode * 59) + this.SnakeCase.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Var123Number.GetHashCode();
+                if (this.Property.IsSet && this.Property.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Property.Value.GetHashCode();
+                }
+                if (this.Var123Number.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Var123Number.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

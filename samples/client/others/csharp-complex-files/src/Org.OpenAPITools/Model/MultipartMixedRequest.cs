@@ -148,17 +148,17 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                if (this.Marker != null)
+                if (this.Marker.IsSet && this.Marker.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Marker.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Marker.Value.GetHashCode();
                 }
                 if (this.File != null)
                 {
                     hashCode = (hashCode * 59) + this.File.GetHashCode();
                 }
-                if (this.StatusArray != null)
+                if (this.StatusArray.IsSet && this.StatusArray.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.StatusArray.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StatusArray.Value.GetHashCode();
                 }
                 return hashCode;
             }

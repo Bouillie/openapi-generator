@@ -124,7 +124,10 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.LengthCm.GetHashCode();
-                hashCode = (hashCode * 59) + this.Sweet.GetHashCode();
+                if (this.Sweet.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Sweet.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

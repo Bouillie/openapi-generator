@@ -98,8 +98,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.SourceURI == input.SourceURI ||
-                    (this.SourceURI != null &&
-                    this.SourceURI.Equals(input.SourceURI))
+                    
+                    this.SourceURI.Equals(input.SourceURI)
                 );
         }
 
@@ -112,9 +112,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SourceURI != null)
+                if (this.SourceURI.IsSet && this.SourceURI.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SourceURI.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SourceURI.Value.GetHashCode();
                 }
                 return hashCode;
             }

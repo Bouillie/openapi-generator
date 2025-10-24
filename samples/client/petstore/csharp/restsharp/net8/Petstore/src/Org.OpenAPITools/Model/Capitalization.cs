@@ -175,29 +175,29 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SmallCamel != null)
+                if (this.SmallCamel.IsSet && this.SmallCamel.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SmallCamel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SmallCamel.Value.GetHashCode();
                 }
-                if (this.CapitalCamel != null)
+                if (this.CapitalCamel.IsSet && this.CapitalCamel.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.CapitalCamel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CapitalCamel.Value.GetHashCode();
                 }
-                if (this.SmallSnake != null)
+                if (this.SmallSnake.IsSet && this.SmallSnake.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SmallSnake.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SmallSnake.Value.GetHashCode();
                 }
-                if (this.CapitalSnake != null)
+                if (this.CapitalSnake.IsSet && this.CapitalSnake.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.CapitalSnake.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CapitalSnake.Value.GetHashCode();
                 }
-                if (this.SCAETHFlowPoints != null)
+                if (this.SCAETHFlowPoints.IsSet && this.SCAETHFlowPoints.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SCAETHFlowPoints.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SCAETHFlowPoints.Value.GetHashCode();
                 }
-                if (this.ATT_NAME != null)
+                if (this.ATT_NAME.IsSet && this.ATT_NAME.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ATT_NAME.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ATT_NAME.Value.GetHashCode();
                 }
                 return hashCode;
             }

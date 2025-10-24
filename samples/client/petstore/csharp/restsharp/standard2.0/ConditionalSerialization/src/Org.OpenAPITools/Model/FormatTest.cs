@@ -1032,69 +1032,111 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Integer.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int32.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int32Range.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int64Positive.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int64Negative.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int64PositiveExclusive.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int64NegativeExclusive.GetHashCode();
-                hashCode = (hashCode * 59) + this.UnsignedInteger.GetHashCode();
-                hashCode = (hashCode * 59) + this.Int64.GetHashCode();
-                hashCode = (hashCode * 59) + this.UnsignedLong.GetHashCode();
-                hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                hashCode = (hashCode * 59) + this.Float.GetHashCode();
-                hashCode = (hashCode * 59) + this.Double.GetHashCode();
-                hashCode = (hashCode * 59) + this.Decimal.GetHashCode();
-                if (this.String != null)
+                if (this.Integer.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.String.GetHashCode();
+                hashCode = (hashCode * 59) + this.Integer.Value.GetHashCode();
+                }
+                if (this.Int32.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int32.Value.GetHashCode();
+                }
+                if (this.Int32Range.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int32Range.Value.GetHashCode();
+                }
+                if (this.Int64Positive.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int64Positive.Value.GetHashCode();
+                }
+                if (this.Int64Negative.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int64Negative.Value.GetHashCode();
+                }
+                if (this.Int64PositiveExclusive.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int64PositiveExclusive.Value.GetHashCode();
+                }
+                if (this.Int64NegativeExclusive.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int64NegativeExclusive.Value.GetHashCode();
+                }
+                if (this.UnsignedInteger.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.UnsignedInteger.Value.GetHashCode();
+                }
+                if (this.Int64.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Int64.Value.GetHashCode();
+                }
+                if (this.UnsignedLong.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.UnsignedLong.Value.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                if (this.Float.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Float.Value.GetHashCode();
+                }
+                if (this.Double.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Double.Value.GetHashCode();
+                }
+                if (this.Decimal.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Decimal.Value.GetHashCode();
+                }
+                if (this.String.IsSet && this.String.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.String.Value.GetHashCode();
                 }
                 if (this.Byte != null)
                 {
                     hashCode = (hashCode * 59) + this.Byte.GetHashCode();
                 }
-                if (this.Binary != null)
+                if (this.Binary.IsSet && this.Binary.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Binary.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Binary.Value.GetHashCode();
                 }
                 if (this.Date != null)
                 {
                     hashCode = (hashCode * 59) + this.Date.GetHashCode();
                 }
-                if (this.DateTime != null)
+                if (this.DateTime.IsSet && this.DateTime.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateTime.Value.GetHashCode();
                 }
-                if (this.Uuid != null)
+                if (this.Uuid.IsSet && this.Uuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Uuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Uuid.Value.GetHashCode();
                 }
                 if (this.Password != null)
                 {
                     hashCode = (hashCode * 59) + this.Password.GetHashCode();
                 }
-                if (this.PatternWithDigits != null)
+                if (this.PatternWithDigits.IsSet && this.PatternWithDigits.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.PatternWithDigits.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PatternWithDigits.Value.GetHashCode();
                 }
-                if (this.PatternWithDigitsAndDelimiter != null)
+                if (this.PatternWithDigitsAndDelimiter.IsSet && this.PatternWithDigitsAndDelimiter.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.PatternWithDigitsAndDelimiter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PatternWithDigitsAndDelimiter.Value.GetHashCode();
                 }
-                if (this.PatternWithBackslash != null)
+                if (this.PatternWithBackslash.IsSet && this.PatternWithBackslash.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.PatternWithBackslash.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PatternWithBackslash.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.StringFormattedAsDecimal.GetHashCode();
+                if (this.StringFormattedAsDecimal.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.StringFormattedAsDecimal.Value.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.StringFormattedAsDecimalRequired.GetHashCode();
-                if (this.DuplicatePropertyName2 != null)
+                if (this.DuplicatePropertyName2.IsSet && this.DuplicatePropertyName2.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DuplicatePropertyName2.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DuplicatePropertyName2.Value.GetHashCode();
                 }
-                if (this.DuplicatePropertyName != null)
+                if (this.DuplicatePropertyName.IsSet && this.DuplicatePropertyName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DuplicatePropertyName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DuplicatePropertyName.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

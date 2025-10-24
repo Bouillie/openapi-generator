@@ -127,13 +127,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Prop1 != null)
+                if (this.Prop1.IsSet && this.Prop1.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Prop1.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Prop1.Value.GetHashCode();
                 }
-                if (this.Prop2 != null)
+                if (this.Prop2.IsSet && this.Prop2.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Prop2.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Prop2.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

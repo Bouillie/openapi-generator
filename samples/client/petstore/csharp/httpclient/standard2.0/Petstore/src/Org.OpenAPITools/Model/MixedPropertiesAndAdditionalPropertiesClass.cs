@@ -140,21 +140,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UuidWithPattern != null)
+                if (this.UuidWithPattern.IsSet && this.UuidWithPattern.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.UuidWithPattern.GetHashCode();
+                    hashCode = (hashCode * 59) + this.UuidWithPattern.Value.GetHashCode();
                 }
-                if (this.Uuid != null)
+                if (this.Uuid.IsSet && this.Uuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Uuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Uuid.Value.GetHashCode();
                 }
-                if (this.DateTime != null)
+                if (this.DateTime.IsSet && this.DateTime.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateTime.Value.GetHashCode();
                 }
-                if (this.Map != null)
+                if (this.Map.IsSet && this.Map.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Map.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Map.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

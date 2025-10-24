@@ -123,7 +123,10 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.Cultivar.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Mealy.GetHashCode();
+                if (this.Mealy.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Mealy.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

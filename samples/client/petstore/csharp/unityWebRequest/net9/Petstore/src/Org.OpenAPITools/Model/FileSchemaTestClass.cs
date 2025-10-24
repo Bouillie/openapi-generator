@@ -111,14 +111,14 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.File == input.File ||
-                    (this.File != null &&
-                    this.File.Equals(input.File))
+                    
+                    this.File.Equals(input.File)
                 ) && 
                 (
                     this.Files == input.Files ||
-                    this.Files != null &&
-                    input.Files != null &&
-                    this.Files.SequenceEqual(input.Files)
+                    this.Files.IsSet && this.Files.Value != null &&
+                    input.Files.IsSet && input.Files.Value != null &&
+                    this.Files.Value.SequenceEqual(input.Files.Value)
                 );
         }
 
@@ -131,13 +131,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.File != null)
+                if (this.File.IsSet && this.File.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.File.GetHashCode();
+                    hashCode = (hashCode * 59) + this.File.Value.GetHashCode();
                 }
-                if (this.Files != null)
+                if (this.Files.IsSet && this.Files.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Files.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Files.Value.GetHashCode();
                 }
                 return hashCode;
             }

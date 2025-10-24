@@ -191,47 +191,47 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.MapProperty == input.MapProperty ||
-                    this.MapProperty != null &&
-                    input.MapProperty != null &&
-                    this.MapProperty.SequenceEqual(input.MapProperty)
+                    this.MapProperty.IsSet && this.MapProperty.Value != null &&
+                    input.MapProperty.IsSet && input.MapProperty.Value != null &&
+                    this.MapProperty.Value.SequenceEqual(input.MapProperty.Value)
                 ) && 
                 (
                     this.MapOfMapProperty == input.MapOfMapProperty ||
-                    this.MapOfMapProperty != null &&
-                    input.MapOfMapProperty != null &&
-                    this.MapOfMapProperty.SequenceEqual(input.MapOfMapProperty)
+                    this.MapOfMapProperty.IsSet && this.MapOfMapProperty.Value != null &&
+                    input.MapOfMapProperty.IsSet && input.MapOfMapProperty.Value != null &&
+                    this.MapOfMapProperty.Value.SequenceEqual(input.MapOfMapProperty.Value)
                 ) && 
                 (
                     this.Anytype1 == input.Anytype1 ||
-                    (this.Anytype1 != null &&
-                    this.Anytype1.Equals(input.Anytype1))
+                    
+                    this.Anytype1.Equals(input.Anytype1)
                 ) && 
                 (
                     this.MapWithUndeclaredPropertiesAnytype1 == input.MapWithUndeclaredPropertiesAnytype1 ||
-                    (this.MapWithUndeclaredPropertiesAnytype1 != null &&
-                    this.MapWithUndeclaredPropertiesAnytype1.Equals(input.MapWithUndeclaredPropertiesAnytype1))
+                    
+                    this.MapWithUndeclaredPropertiesAnytype1.Equals(input.MapWithUndeclaredPropertiesAnytype1)
                 ) && 
                 (
                     this.MapWithUndeclaredPropertiesAnytype2 == input.MapWithUndeclaredPropertiesAnytype2 ||
-                    (this.MapWithUndeclaredPropertiesAnytype2 != null &&
-                    this.MapWithUndeclaredPropertiesAnytype2.Equals(input.MapWithUndeclaredPropertiesAnytype2))
+                    
+                    this.MapWithUndeclaredPropertiesAnytype2.Equals(input.MapWithUndeclaredPropertiesAnytype2)
                 ) && 
                 (
                     this.MapWithUndeclaredPropertiesAnytype3 == input.MapWithUndeclaredPropertiesAnytype3 ||
-                    this.MapWithUndeclaredPropertiesAnytype3 != null &&
-                    input.MapWithUndeclaredPropertiesAnytype3 != null &&
-                    this.MapWithUndeclaredPropertiesAnytype3.SequenceEqual(input.MapWithUndeclaredPropertiesAnytype3)
+                    this.MapWithUndeclaredPropertiesAnytype3.IsSet && this.MapWithUndeclaredPropertiesAnytype3.Value != null &&
+                    input.MapWithUndeclaredPropertiesAnytype3.IsSet && input.MapWithUndeclaredPropertiesAnytype3.Value != null &&
+                    this.MapWithUndeclaredPropertiesAnytype3.Value.SequenceEqual(input.MapWithUndeclaredPropertiesAnytype3.Value)
                 ) && 
                 (
                     this.EmptyMap == input.EmptyMap ||
-                    (this.EmptyMap != null &&
-                    this.EmptyMap.Equals(input.EmptyMap))
+                    
+                    this.EmptyMap.Equals(input.EmptyMap)
                 ) && 
                 (
                     this.MapWithUndeclaredPropertiesString == input.MapWithUndeclaredPropertiesString ||
-                    this.MapWithUndeclaredPropertiesString != null &&
-                    input.MapWithUndeclaredPropertiesString != null &&
-                    this.MapWithUndeclaredPropertiesString.SequenceEqual(input.MapWithUndeclaredPropertiesString)
+                    this.MapWithUndeclaredPropertiesString.IsSet && this.MapWithUndeclaredPropertiesString.Value != null &&
+                    input.MapWithUndeclaredPropertiesString.IsSet && input.MapWithUndeclaredPropertiesString.Value != null &&
+                    this.MapWithUndeclaredPropertiesString.Value.SequenceEqual(input.MapWithUndeclaredPropertiesString.Value)
                 );
         }
 
@@ -244,37 +244,37 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MapProperty != null)
+                if (this.MapProperty.IsSet && this.MapProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapProperty.Value.GetHashCode();
                 }
-                if (this.MapOfMapProperty != null)
+                if (this.MapOfMapProperty.IsSet && this.MapOfMapProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapOfMapProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapOfMapProperty.Value.GetHashCode();
                 }
-                if (this.Anytype1 != null)
+                if (this.Anytype1.IsSet && this.Anytype1.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Anytype1.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Anytype1.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesAnytype1 != null)
+                if (this.MapWithUndeclaredPropertiesAnytype1.IsSet && this.MapWithUndeclaredPropertiesAnytype1.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype1.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype1.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesAnytype2 != null)
+                if (this.MapWithUndeclaredPropertiesAnytype2.IsSet && this.MapWithUndeclaredPropertiesAnytype2.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype2.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype2.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesAnytype3 != null)
+                if (this.MapWithUndeclaredPropertiesAnytype3.IsSet && this.MapWithUndeclaredPropertiesAnytype3.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype3.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype3.Value.GetHashCode();
                 }
-                if (this.EmptyMap != null)
+                if (this.EmptyMap.IsSet && this.EmptyMap.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.EmptyMap.GetHashCode();
+                    hashCode = (hashCode * 59) + this.EmptyMap.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesString != null)
+                if (this.MapWithUndeclaredPropertiesString.IsSet && this.MapWithUndeclaredPropertiesString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesString.Value.GetHashCode();
                 }
                 return hashCode;
             }

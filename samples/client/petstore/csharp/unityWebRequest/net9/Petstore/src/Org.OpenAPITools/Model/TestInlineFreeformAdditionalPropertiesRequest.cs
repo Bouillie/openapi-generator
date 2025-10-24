@@ -105,8 +105,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.SomeProperty == input.SomeProperty ||
-                    (this.SomeProperty != null &&
-                    this.SomeProperty.Equals(input.SomeProperty))
+                    
+                    this.SomeProperty.Equals(input.SomeProperty)
                 )
                 && (this.AdditionalProperties.Count == input.AdditionalProperties.Count && !this.AdditionalProperties.Except(input.AdditionalProperties).Any());
         }
@@ -120,9 +120,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SomeProperty != null)
+                if (this.SomeProperty.IsSet && this.SomeProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SomeProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SomeProperty.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

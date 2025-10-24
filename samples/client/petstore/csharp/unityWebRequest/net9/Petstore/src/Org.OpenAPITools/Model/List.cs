@@ -97,8 +97,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Var123List == input.Var123List ||
-                    (this.Var123List != null &&
-                    this.Var123List.Equals(input.Var123List))
+                    
+                    this.Var123List.Equals(input.Var123List)
                 );
         }
 
@@ -111,9 +111,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Var123List != null)
+                if (this.Var123List.IsSet && this.Var123List.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Var123List.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Var123List.Value.GetHashCode();
                 }
                 return hashCode;
             }

@@ -112,9 +112,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateOnlyProperty != null)
+                if (this.DateOnlyProperty.IsSet && this.DateOnlyProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DateOnlyProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateOnlyProperty.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

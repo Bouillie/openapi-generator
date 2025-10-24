@@ -125,8 +125,8 @@ namespace Org.OpenAPITools.Model
             return base.Equals(input) && 
                 (
                     this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    
+                    this.Name.Equals(input.Name)
                 ) && base.Equals(input) && 
                 (
                     this.PetType == input.PetType ||
@@ -143,9 +143,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.Name != null)
+                if (this.Name.IsSet && this.Name.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.Value.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.PetType.GetHashCode();
                 return hashCode;

@@ -121,10 +121,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.SpecialPropertyName.GetHashCode();
-                if (this.VarSpecialModelName != null)
+                if (this.SpecialPropertyName.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.VarSpecialModelName.GetHashCode();
+                hashCode = (hashCode * 59) + this.SpecialPropertyName.Value.GetHashCode();
+                }
+                if (this.VarSpecialModelName.IsSet && this.VarSpecialModelName.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.VarSpecialModelName.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

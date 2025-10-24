@@ -890,11 +890,14 @@ namespace Org.OpenAPITools.Model
                     hashCode = (hashCode * 59) + this.RequiredNullableIntegerProp.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.RequiredNotnullableintegerProp.GetHashCode();
-                if (this.NotRequiredNullableIntegerProp != null)
+                if (this.NotRequiredNullableIntegerProp.IsSet && this.NotRequiredNullableIntegerProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotRequiredNullableIntegerProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotRequiredNullableIntegerProp.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.NotRequiredNotnullableintegerProp.GetHashCode();
+                if (this.NotRequiredNotnullableintegerProp.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotRequiredNotnullableintegerProp.Value.GetHashCode();
+                }
                 if (this.RequiredNullableStringProp != null)
                 {
                     hashCode = (hashCode * 59) + this.RequiredNullableStringProp.GetHashCode();
@@ -903,24 +906,27 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.RequiredNotnullableStringProp.GetHashCode();
                 }
-                if (this.NotrequiredNullableStringProp != null)
+                if (this.NotrequiredNullableStringProp.IsSet && this.NotrequiredNullableStringProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNullableStringProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNullableStringProp.Value.GetHashCode();
                 }
-                if (this.NotrequiredNotnullableStringProp != null)
+                if (this.NotrequiredNotnullableStringProp.IsSet && this.NotrequiredNotnullableStringProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableStringProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableStringProp.Value.GetHashCode();
                 }
                 if (this.RequiredNullableBooleanProp != null)
                 {
                     hashCode = (hashCode * 59) + this.RequiredNullableBooleanProp.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.RequiredNotnullableBooleanProp.GetHashCode();
-                if (this.NotrequiredNullableBooleanProp != null)
+                if (this.NotrequiredNullableBooleanProp.IsSet && this.NotrequiredNullableBooleanProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNullableBooleanProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNullableBooleanProp.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.NotrequiredNotnullableBooleanProp.GetHashCode();
+                if (this.NotrequiredNotnullableBooleanProp.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNotnullableBooleanProp.Value.GetHashCode();
+                }
                 if (this.RequiredNullableDateProp != null)
                 {
                     hashCode = (hashCode * 59) + this.RequiredNullableDateProp.GetHashCode();
@@ -929,13 +935,13 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.RequiredNotNullableDateProp.GetHashCode();
                 }
-                if (this.NotRequiredNullableDateProp != null)
+                if (this.NotRequiredNullableDateProp.IsSet && this.NotRequiredNullableDateProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotRequiredNullableDateProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotRequiredNullableDateProp.Value.GetHashCode();
                 }
-                if (this.NotRequiredNotnullableDateProp != null)
+                if (this.NotRequiredNotnullableDateProp.IsSet && this.NotRequiredNotnullableDateProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotRequiredNotnullableDateProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotRequiredNotnullableDateProp.Value.GetHashCode();
                 }
                 if (this.RequiredNotnullableDatetimeProp != null)
                 {
@@ -945,30 +951,54 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.RequiredNullableDatetimeProp.GetHashCode();
                 }
-                if (this.NotrequiredNullableDatetimeProp != null)
+                if (this.NotrequiredNullableDatetimeProp.IsSet && this.NotrequiredNullableDatetimeProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNullableDatetimeProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNullableDatetimeProp.Value.GetHashCode();
                 }
-                if (this.NotrequiredNotnullableDatetimeProp != null)
+                if (this.NotrequiredNotnullableDatetimeProp.IsSet && this.NotrequiredNotnullableDatetimeProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableDatetimeProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableDatetimeProp.Value.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.RequiredNullableEnumInteger.GetHashCode();
                 hashCode = (hashCode * 59) + this.RequiredNotnullableEnumInteger.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNullableEnumInteger.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNotnullableEnumInteger.GetHashCode();
+                if (this.NotrequiredNullableEnumInteger.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNullableEnumInteger.Value.GetHashCode();
+                }
+                if (this.NotrequiredNotnullableEnumInteger.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNotnullableEnumInteger.Value.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.RequiredNullableEnumIntegerOnly.GetHashCode();
                 hashCode = (hashCode * 59) + this.RequiredNotnullableEnumIntegerOnly.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNullableEnumIntegerOnly.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNotnullableEnumIntegerOnly.GetHashCode();
+                if (this.NotrequiredNullableEnumIntegerOnly.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNullableEnumIntegerOnly.Value.GetHashCode();
+                }
+                if (this.NotrequiredNotnullableEnumIntegerOnly.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNotnullableEnumIntegerOnly.Value.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.RequiredNotnullableEnumString.GetHashCode();
                 hashCode = (hashCode * 59) + this.RequiredNullableEnumString.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNullableEnumString.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNotnullableEnumString.GetHashCode();
+                if (this.NotrequiredNullableEnumString.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNullableEnumString.Value.GetHashCode();
+                }
+                if (this.NotrequiredNotnullableEnumString.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNotnullableEnumString.Value.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.RequiredNullableOuterEnumDefaultValue.GetHashCode();
                 hashCode = (hashCode * 59) + this.RequiredNotnullableOuterEnumDefaultValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNullableOuterEnumDefaultValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.NotrequiredNotnullableOuterEnumDefaultValue.GetHashCode();
+                if (this.NotrequiredNullableOuterEnumDefaultValue.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNullableOuterEnumDefaultValue.Value.GetHashCode();
+                }
+                if (this.NotrequiredNotnullableOuterEnumDefaultValue.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.NotrequiredNotnullableOuterEnumDefaultValue.Value.GetHashCode();
+                }
                 if (this.RequiredNullableUuid != null)
                 {
                     hashCode = (hashCode * 59) + this.RequiredNullableUuid.GetHashCode();
@@ -977,13 +1007,13 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.RequiredNotnullableUuid.GetHashCode();
                 }
-                if (this.NotrequiredNullableUuid != null)
+                if (this.NotrequiredNullableUuid.IsSet && this.NotrequiredNullableUuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNullableUuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNullableUuid.Value.GetHashCode();
                 }
-                if (this.NotrequiredNotnullableUuid != null)
+                if (this.NotrequiredNotnullableUuid.IsSet && this.NotrequiredNotnullableUuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableUuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableUuid.Value.GetHashCode();
                 }
                 if (this.RequiredNullableArrayOfString != null)
                 {
@@ -993,13 +1023,13 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.RequiredNotnullableArrayOfString.GetHashCode();
                 }
-                if (this.NotrequiredNullableArrayOfString != null)
+                if (this.NotrequiredNullableArrayOfString.IsSet && this.NotrequiredNullableArrayOfString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNullableArrayOfString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNullableArrayOfString.Value.GetHashCode();
                 }
-                if (this.NotrequiredNotnullableArrayOfString != null)
+                if (this.NotrequiredNotnullableArrayOfString.IsSet && this.NotrequiredNotnullableArrayOfString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableArrayOfString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NotrequiredNotnullableArrayOfString.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

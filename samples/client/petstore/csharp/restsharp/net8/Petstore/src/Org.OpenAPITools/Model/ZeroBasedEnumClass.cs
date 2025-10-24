@@ -118,7 +118,10 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.ZeroBasedEnum.GetHashCode();
+                if (this.ZeroBasedEnum.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.ZeroBasedEnum.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

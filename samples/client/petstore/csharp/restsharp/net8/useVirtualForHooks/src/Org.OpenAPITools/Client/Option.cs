@@ -89,6 +89,7 @@ namespace Org.OpenAPITools.Client
             Value = value;
         }
 
+
         /// <summary>
         /// Implicitly converts this option to the contained type
         /// </summary>

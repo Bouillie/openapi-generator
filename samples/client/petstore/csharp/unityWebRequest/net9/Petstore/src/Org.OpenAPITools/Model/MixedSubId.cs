@@ -97,8 +97,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    
+                    this.Id.Equals(input.Id)
                 );
         }
 
@@ -111,9 +111,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.Id.IsSet && this.Id.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
                 }
                 return hashCode;
             }

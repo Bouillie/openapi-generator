@@ -207,50 +207,50 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.ArrayStringEnumRefDefault == input.ArrayStringEnumRefDefault ||
-                    this.ArrayStringEnumRefDefault != null &&
-                    input.ArrayStringEnumRefDefault != null &&
-                    this.ArrayStringEnumRefDefault.SequenceEqual(input.ArrayStringEnumRefDefault)
+                    this.ArrayStringEnumRefDefault.IsSet && this.ArrayStringEnumRefDefault.Value != null &&
+                    input.ArrayStringEnumRefDefault.IsSet && input.ArrayStringEnumRefDefault.Value != null &&
+                    this.ArrayStringEnumRefDefault.Value.SequenceEqual(input.ArrayStringEnumRefDefault.Value)
                 ) && 
                 (
                     this.ArrayStringEnumDefault == input.ArrayStringEnumDefault ||
-                    this.ArrayStringEnumDefault != null &&
-                    input.ArrayStringEnumDefault != null &&
-                    this.ArrayStringEnumDefault.SequenceEqual(input.ArrayStringEnumDefault)
+                    this.ArrayStringEnumDefault.IsSet && this.ArrayStringEnumDefault.Value != null &&
+                    input.ArrayStringEnumDefault.IsSet && input.ArrayStringEnumDefault.Value != null &&
+                    this.ArrayStringEnumDefault.Value.SequenceEqual(input.ArrayStringEnumDefault.Value)
                 ) && 
                 (
                     this.ArrayStringDefault == input.ArrayStringDefault ||
-                    this.ArrayStringDefault != null &&
-                    input.ArrayStringDefault != null &&
-                    this.ArrayStringDefault.SequenceEqual(input.ArrayStringDefault)
+                    this.ArrayStringDefault.IsSet && this.ArrayStringDefault.Value != null &&
+                    input.ArrayStringDefault.IsSet && input.ArrayStringDefault.Value != null &&
+                    this.ArrayStringDefault.Value.SequenceEqual(input.ArrayStringDefault.Value)
                 ) && 
                 (
                     this.ArrayIntegerDefault == input.ArrayIntegerDefault ||
-                    this.ArrayIntegerDefault != null &&
-                    input.ArrayIntegerDefault != null &&
-                    this.ArrayIntegerDefault.SequenceEqual(input.ArrayIntegerDefault)
+                    this.ArrayIntegerDefault.IsSet && this.ArrayIntegerDefault.Value != null &&
+                    input.ArrayIntegerDefault.IsSet && input.ArrayIntegerDefault.Value != null &&
+                    this.ArrayIntegerDefault.Value.SequenceEqual(input.ArrayIntegerDefault.Value)
                 ) && 
                 (
                     this.ArrayString == input.ArrayString ||
-                    this.ArrayString != null &&
-                    input.ArrayString != null &&
-                    this.ArrayString.SequenceEqual(input.ArrayString)
+                    this.ArrayString.IsSet && this.ArrayString.Value != null &&
+                    input.ArrayString.IsSet && input.ArrayString.Value != null &&
+                    this.ArrayString.Value.SequenceEqual(input.ArrayString.Value)
                 ) && 
                 (
                     this.ArrayStringNullable == input.ArrayStringNullable ||
-                    this.ArrayStringNullable != null &&
-                    input.ArrayStringNullable != null &&
-                    this.ArrayStringNullable.SequenceEqual(input.ArrayStringNullable)
+                    this.ArrayStringNullable.IsSet && this.ArrayStringNullable.Value != null &&
+                    input.ArrayStringNullable.IsSet && input.ArrayStringNullable.Value != null &&
+                    this.ArrayStringNullable.Value.SequenceEqual(input.ArrayStringNullable.Value)
                 ) && 
                 (
                     this.ArrayStringExtensionNullable == input.ArrayStringExtensionNullable ||
-                    this.ArrayStringExtensionNullable != null &&
-                    input.ArrayStringExtensionNullable != null &&
-                    this.ArrayStringExtensionNullable.SequenceEqual(input.ArrayStringExtensionNullable)
+                    this.ArrayStringExtensionNullable.IsSet && this.ArrayStringExtensionNullable.Value != null &&
+                    input.ArrayStringExtensionNullable.IsSet && input.ArrayStringExtensionNullable.Value != null &&
+                    this.ArrayStringExtensionNullable.Value.SequenceEqual(input.ArrayStringExtensionNullable.Value)
                 ) && 
                 (
                     this.StringNullable == input.StringNullable ||
-                    (this.StringNullable != null &&
-                    this.StringNullable.Equals(input.StringNullable))
+                    
+                    this.StringNullable.Equals(input.StringNullable)
                 );
         }
 
@@ -263,37 +263,37 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ArrayStringEnumRefDefault != null)
+                if (this.ArrayStringEnumRefDefault.IsSet && this.ArrayStringEnumRefDefault.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayStringEnumRefDefault.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayStringEnumRefDefault.Value.GetHashCode();
                 }
-                if (this.ArrayStringEnumDefault != null)
+                if (this.ArrayStringEnumDefault.IsSet && this.ArrayStringEnumDefault.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayStringEnumDefault.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayStringEnumDefault.Value.GetHashCode();
                 }
-                if (this.ArrayStringDefault != null)
+                if (this.ArrayStringDefault.IsSet && this.ArrayStringDefault.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayStringDefault.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayStringDefault.Value.GetHashCode();
                 }
-                if (this.ArrayIntegerDefault != null)
+                if (this.ArrayIntegerDefault.IsSet && this.ArrayIntegerDefault.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayIntegerDefault.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayIntegerDefault.Value.GetHashCode();
                 }
-                if (this.ArrayString != null)
+                if (this.ArrayString.IsSet && this.ArrayString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayString.Value.GetHashCode();
                 }
-                if (this.ArrayStringNullable != null)
+                if (this.ArrayStringNullable.IsSet && this.ArrayStringNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayStringNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayStringNullable.Value.GetHashCode();
                 }
-                if (this.ArrayStringExtensionNullable != null)
+                if (this.ArrayStringExtensionNullable.IsSet && this.ArrayStringExtensionNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayStringExtensionNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayStringExtensionNullable.Value.GetHashCode();
                 }
-                if (this.StringNullable != null)
+                if (this.StringNullable.IsSet && this.StringNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.StringNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StringNullable.Value.GetHashCode();
                 }
                 return hashCode;
             }

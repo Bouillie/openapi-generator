@@ -247,47 +247,53 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Username != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Username.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
                 }
-                if (this.FirstName != null)
+                if (this.Username.IsSet && this.Username.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Username.Value.GetHashCode();
                 }
-                if (this.LastName != null)
+                if (this.FirstName.IsSet && this.FirstName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FirstName.Value.GetHashCode();
                 }
-                if (this.Email != null)
+                if (this.LastName.IsSet && this.LastName.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LastName.Value.GetHashCode();
                 }
-                if (this.Password != null)
+                if (this.Email.IsSet && this.Email.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Email.Value.GetHashCode();
                 }
-                if (this.Phone != null)
+                if (this.Password.IsSet && this.Password.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Password.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.UserStatus.GetHashCode();
-                if (this.ObjectWithNoDeclaredProps != null)
+                if (this.Phone.IsSet && this.Phone.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredProps.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Phone.Value.GetHashCode();
                 }
-                if (this.ObjectWithNoDeclaredPropsNullable != null)
+                if (this.UserStatus.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredPropsNullable.GetHashCode();
+                hashCode = (hashCode * 59) + this.UserStatus.Value.GetHashCode();
                 }
-                if (this.AnyTypeProp != null)
+                if (this.ObjectWithNoDeclaredProps.IsSet && this.ObjectWithNoDeclaredProps.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.AnyTypeProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredProps.Value.GetHashCode();
                 }
-                if (this.AnyTypePropNullable != null)
+                if (this.ObjectWithNoDeclaredPropsNullable.IsSet && this.ObjectWithNoDeclaredPropsNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.AnyTypePropNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredPropsNullable.Value.GetHashCode();
+                }
+                if (this.AnyTypeProp.IsSet && this.AnyTypeProp.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.AnyTypeProp.Value.GetHashCode();
+                }
+                if (this.AnyTypePropNullable.IsSet && this.AnyTypePropNullable.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.AnyTypePropNullable.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

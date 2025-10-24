@@ -240,7 +240,10 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.VarReturn.GetHashCode();
+                if (this.VarReturn.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.VarReturn.Value.GetHashCode();
+                }
                 if (this.Lock != null)
                 {
                     hashCode = (hashCode * 59) + this.Lock.GetHashCode();
@@ -249,9 +252,9 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.Abstract.GetHashCode();
                 }
-                if (this.Unsafe != null)
+                if (this.Unsafe.IsSet && this.Unsafe.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Unsafe.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Unsafe.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

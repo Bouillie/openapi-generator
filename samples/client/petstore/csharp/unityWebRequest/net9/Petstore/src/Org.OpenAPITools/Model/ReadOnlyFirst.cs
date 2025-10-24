@@ -112,13 +112,13 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.Bar == input.Bar ||
-                    (this.Bar != null &&
-                    this.Bar.Equals(input.Bar))
+                    
+                    this.Bar.Equals(input.Bar)
                 ) && 
                 (
                     this.Baz == input.Baz ||
-                    (this.Baz != null &&
-                    this.Baz.Equals(input.Baz))
+                    
+                    this.Baz.Equals(input.Baz)
                 );
         }
 
@@ -131,13 +131,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Bar != null)
+                if (this.Bar.IsSet && this.Bar.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Bar.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Bar.Value.GetHashCode();
                 }
-                if (this.Baz != null)
+                if (this.Baz.IsSet && this.Baz.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Baz.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Baz.Value.GetHashCode();
                 }
                 return hashCode;
             }

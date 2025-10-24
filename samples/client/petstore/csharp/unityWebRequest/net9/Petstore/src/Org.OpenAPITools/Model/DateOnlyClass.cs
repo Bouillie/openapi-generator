@@ -95,8 +95,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.DateOnlyProperty == input.DateOnlyProperty ||
-                    (this.DateOnlyProperty != null &&
-                    this.DateOnlyProperty.Equals(input.DateOnlyProperty))
+                    
+                    this.DateOnlyProperty.Equals(input.DateOnlyProperty)
                 );
         }
 
@@ -109,9 +109,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateOnlyProperty != null)
+                if (this.DateOnlyProperty.IsSet && this.DateOnlyProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DateOnlyProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateOnlyProperty.Value.GetHashCode();
                 }
                 return hashCode;
             }

@@ -106,13 +106,13 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.RoleUuid == input.RoleUuid ||
-                    (this.RoleUuid != null &&
-                    this.RoleUuid.Equals(input.RoleUuid))
+                    
+                    this.RoleUuid.Equals(input.RoleUuid)
                 ) && 
                 (
                     this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
+                    
+                    this.Role.Equals(input.Role)
                 );
         }
 
@@ -125,13 +125,13 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.RoleUuid != null)
+                if (this.RoleUuid.IsSet && this.RoleUuid.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.RoleUuid.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RoleUuid.Value.GetHashCode();
                 }
-                if (this.Role != null)
+                if (this.Role.IsSet && this.Role.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Role.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Role.Value.GetHashCode();
                 }
                 return hashCode;
             }

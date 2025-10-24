@@ -217,53 +217,53 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.IntegerProp != null)
+                if (this.IntegerProp.IsSet && this.IntegerProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.IntegerProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IntegerProp.Value.GetHashCode();
                 }
-                if (this.NumberProp != null)
+                if (this.NumberProp.IsSet && this.NumberProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NumberProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NumberProp.Value.GetHashCode();
                 }
-                if (this.BooleanProp != null)
+                if (this.BooleanProp.IsSet && this.BooleanProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.BooleanProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.BooleanProp.Value.GetHashCode();
                 }
-                if (this.StringProp != null)
+                if (this.StringProp.IsSet && this.StringProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.StringProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StringProp.Value.GetHashCode();
                 }
-                if (this.DateProp != null)
+                if (this.DateProp.IsSet && this.DateProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DateProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateProp.Value.GetHashCode();
                 }
-                if (this.DatetimeProp != null)
+                if (this.DatetimeProp.IsSet && this.DatetimeProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DatetimeProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DatetimeProp.Value.GetHashCode();
                 }
-                if (this.ArrayNullableProp != null)
+                if (this.ArrayNullableProp.IsSet && this.ArrayNullableProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayNullableProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayNullableProp.Value.GetHashCode();
                 }
-                if (this.ArrayAndItemsNullableProp != null)
+                if (this.ArrayAndItemsNullableProp.IsSet && this.ArrayAndItemsNullableProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayAndItemsNullableProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayAndItemsNullableProp.Value.GetHashCode();
                 }
-                if (this.ArrayItemsNullable != null)
+                if (this.ArrayItemsNullable.IsSet && this.ArrayItemsNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayItemsNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayItemsNullable.Value.GetHashCode();
                 }
-                if (this.ObjectNullableProp != null)
+                if (this.ObjectNullableProp.IsSet && this.ObjectNullableProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectNullableProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectNullableProp.Value.GetHashCode();
                 }
-                if (this.ObjectAndItemsNullableProp != null)
+                if (this.ObjectAndItemsNullableProp.IsSet && this.ObjectAndItemsNullableProp.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectAndItemsNullableProp.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectAndItemsNullableProp.Value.GetHashCode();
                 }
-                if (this.ObjectItemsNullable != null)
+                if (this.ObjectItemsNullable.IsSet && this.ObjectItemsNullable.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ObjectItemsNullable.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ObjectItemsNullable.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

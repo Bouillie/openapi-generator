@@ -89,6 +89,17 @@ namespace Org.OpenAPITools.Client
             Value = value;
         }
 
+        public bool Equals(Option<TType> other)
+        {
+        if (IsSet != other.IsSet) {
+            return false;
+        }
+        if (!IsSet) {
+            return true;
+        }
+            return object.Equals(Value, other.Value);
+        }
+
         /// <summary>
         /// Implicitly converts this option to the contained type
         /// </summary>

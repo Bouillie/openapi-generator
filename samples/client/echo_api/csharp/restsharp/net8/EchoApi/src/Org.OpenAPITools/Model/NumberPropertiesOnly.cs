@@ -133,9 +133,18 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Number.GetHashCode();
-                hashCode = (hashCode * 59) + this.Float.GetHashCode();
-                hashCode = (hashCode * 59) + this.Double.GetHashCode();
+                if (this.Number.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Number.Value.GetHashCode();
+                }
+                if (this.Float.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Float.Value.GetHashCode();
+                }
+                if (this.Double.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Double.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

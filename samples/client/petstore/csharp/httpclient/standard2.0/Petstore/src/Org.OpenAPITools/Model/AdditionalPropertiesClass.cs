@@ -207,37 +207,37 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MapProperty != null)
+                if (this.MapProperty.IsSet && this.MapProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapProperty.Value.GetHashCode();
                 }
-                if (this.MapOfMapProperty != null)
+                if (this.MapOfMapProperty.IsSet && this.MapOfMapProperty.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapOfMapProperty.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapOfMapProperty.Value.GetHashCode();
                 }
-                if (this.Anytype1 != null)
+                if (this.Anytype1.IsSet && this.Anytype1.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Anytype1.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Anytype1.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesAnytype1 != null)
+                if (this.MapWithUndeclaredPropertiesAnytype1.IsSet && this.MapWithUndeclaredPropertiesAnytype1.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype1.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype1.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesAnytype2 != null)
+                if (this.MapWithUndeclaredPropertiesAnytype2.IsSet && this.MapWithUndeclaredPropertiesAnytype2.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype2.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype2.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesAnytype3 != null)
+                if (this.MapWithUndeclaredPropertiesAnytype3.IsSet && this.MapWithUndeclaredPropertiesAnytype3.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype3.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesAnytype3.Value.GetHashCode();
                 }
-                if (this.EmptyMap != null)
+                if (this.EmptyMap.IsSet && this.EmptyMap.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.EmptyMap.GetHashCode();
+                    hashCode = (hashCode * 59) + this.EmptyMap.Value.GetHashCode();
                 }
-                if (this.MapWithUndeclaredPropertiesString != null)
+                if (this.MapWithUndeclaredPropertiesString.IsSet && this.MapWithUndeclaredPropertiesString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapWithUndeclaredPropertiesString.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

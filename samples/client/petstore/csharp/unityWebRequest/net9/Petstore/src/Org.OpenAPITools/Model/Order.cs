@@ -179,8 +179,8 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.ShipDate == input.ShipDate ||
-                    (this.ShipDate != null &&
-                    this.ShipDate.Equals(input.ShipDate))
+                    
+                    this.ShipDate.Equals(input.ShipDate)
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -201,15 +201,30 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                hashCode = (hashCode * 59) + this.PetId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
-                if (this.ShipDate != null)
+                if (this.Id.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.ShipDate.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                hashCode = (hashCode * 59) + this.Complete.GetHashCode();
+                if (this.PetId.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.PetId.Value.GetHashCode();
+                }
+                if (this.Quantity.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Quantity.Value.GetHashCode();
+                }
+                if (this.ShipDate.IsSet && this.ShipDate.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.ShipDate.Value.GetHashCode();
+                }
+                if (this.Status.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Status.Value.GetHashCode();
+                }
+                if (this.Complete.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Complete.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }

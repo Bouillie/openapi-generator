@@ -97,9 +97,9 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.ArrayArrayNumber == input.ArrayArrayNumber ||
-                    this.ArrayArrayNumber != null &&
-                    input.ArrayArrayNumber != null &&
-                    this.ArrayArrayNumber.SequenceEqual(input.ArrayArrayNumber)
+                    this.ArrayArrayNumber.IsSet && this.ArrayArrayNumber.Value != null &&
+                    input.ArrayArrayNumber.IsSet && input.ArrayArrayNumber.Value != null &&
+                    this.ArrayArrayNumber.Value.SequenceEqual(input.ArrayArrayNumber.Value)
                 );
         }
 
@@ -112,9 +112,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ArrayArrayNumber != null)
+                if (this.ArrayArrayNumber.IsSet && this.ArrayArrayNumber.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ArrayArrayNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ArrayArrayNumber.Value.GetHashCode();
                 }
                 return hashCode;
             }

@@ -121,8 +121,8 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Color == input.Color ||
-                    (this.Color != null &&
-                    this.Color.Equals(input.Color))
+                    
+                    this.Color.Equals(input.Color)
                 );
         }
 
@@ -139,9 +139,9 @@ namespace Org.OpenAPITools.Model
                 {
                     hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
                 }
-                if (this.Color != null)
+                if (this.Color.IsSet && this.Color.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Color.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Color.Value.GetHashCode();
                 }
                 return hashCode;
             }

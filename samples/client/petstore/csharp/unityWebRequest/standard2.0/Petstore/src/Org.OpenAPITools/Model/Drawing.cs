@@ -137,24 +137,24 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.MainShape == input.MainShape ||
-                    (this.MainShape != null &&
-                    this.MainShape.Equals(input.MainShape))
+                    
+                    this.MainShape.Equals(input.MainShape)
                 ) && 
                 (
                     this.ShapeOrNull == input.ShapeOrNull ||
-                    (this.ShapeOrNull != null &&
-                    this.ShapeOrNull.Equals(input.ShapeOrNull))
+                    
+                    this.ShapeOrNull.Equals(input.ShapeOrNull)
                 ) && 
                 (
                     this.NullableShape == input.NullableShape ||
-                    (this.NullableShape != null &&
-                    this.NullableShape.Equals(input.NullableShape))
+                    
+                    this.NullableShape.Equals(input.NullableShape)
                 ) && 
                 (
                     this.Shapes == input.Shapes ||
-                    this.Shapes != null &&
-                    input.Shapes != null &&
-                    this.Shapes.SequenceEqual(input.Shapes)
+                    this.Shapes.IsSet && this.Shapes.Value != null &&
+                    input.Shapes.IsSet && input.Shapes.Value != null &&
+                    this.Shapes.Value.SequenceEqual(input.Shapes.Value)
                 )
                 && (this.AdditionalProperties.Count == input.AdditionalProperties.Count && !this.AdditionalProperties.Except(input.AdditionalProperties).Any());
         }
@@ -168,21 +168,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MainShape != null)
+                if (this.MainShape.IsSet && this.MainShape.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MainShape.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MainShape.Value.GetHashCode();
                 }
-                if (this.ShapeOrNull != null)
+                if (this.ShapeOrNull.IsSet && this.ShapeOrNull.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ShapeOrNull.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ShapeOrNull.Value.GetHashCode();
                 }
-                if (this.NullableShape != null)
+                if (this.NullableShape.IsSet && this.NullableShape.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NullableShape.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NullableShape.Value.GetHashCode();
                 }
-                if (this.Shapes != null)
+                if (this.Shapes.IsSet && this.Shapes.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Shapes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Shapes.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

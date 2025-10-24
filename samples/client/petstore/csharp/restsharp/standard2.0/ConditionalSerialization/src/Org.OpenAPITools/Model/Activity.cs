@@ -134,9 +134,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ActivityOutputs != null)
+                if (this.ActivityOutputs.IsSet && this.ActivityOutputs.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ActivityOutputs.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ActivityOutputs.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

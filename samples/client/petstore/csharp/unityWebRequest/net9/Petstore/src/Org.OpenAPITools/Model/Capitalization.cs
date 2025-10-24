@@ -168,33 +168,33 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.SmallCamel == input.SmallCamel ||
-                    (this.SmallCamel != null &&
-                    this.SmallCamel.Equals(input.SmallCamel))
+                    
+                    this.SmallCamel.Equals(input.SmallCamel)
                 ) && 
                 (
                     this.CapitalCamel == input.CapitalCamel ||
-                    (this.CapitalCamel != null &&
-                    this.CapitalCamel.Equals(input.CapitalCamel))
+                    
+                    this.CapitalCamel.Equals(input.CapitalCamel)
                 ) && 
                 (
                     this.SmallSnake == input.SmallSnake ||
-                    (this.SmallSnake != null &&
-                    this.SmallSnake.Equals(input.SmallSnake))
+                    
+                    this.SmallSnake.Equals(input.SmallSnake)
                 ) && 
                 (
                     this.CapitalSnake == input.CapitalSnake ||
-                    (this.CapitalSnake != null &&
-                    this.CapitalSnake.Equals(input.CapitalSnake))
+                    
+                    this.CapitalSnake.Equals(input.CapitalSnake)
                 ) && 
                 (
                     this.SCAETHFlowPoints == input.SCAETHFlowPoints ||
-                    (this.SCAETHFlowPoints != null &&
-                    this.SCAETHFlowPoints.Equals(input.SCAETHFlowPoints))
+                    
+                    this.SCAETHFlowPoints.Equals(input.SCAETHFlowPoints)
                 ) && 
                 (
                     this.ATT_NAME == input.ATT_NAME ||
-                    (this.ATT_NAME != null &&
-                    this.ATT_NAME.Equals(input.ATT_NAME))
+                    
+                    this.ATT_NAME.Equals(input.ATT_NAME)
                 );
         }
 
@@ -207,29 +207,29 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SmallCamel != null)
+                if (this.SmallCamel.IsSet && this.SmallCamel.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SmallCamel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SmallCamel.Value.GetHashCode();
                 }
-                if (this.CapitalCamel != null)
+                if (this.CapitalCamel.IsSet && this.CapitalCamel.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.CapitalCamel.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CapitalCamel.Value.GetHashCode();
                 }
-                if (this.SmallSnake != null)
+                if (this.SmallSnake.IsSet && this.SmallSnake.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SmallSnake.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SmallSnake.Value.GetHashCode();
                 }
-                if (this.CapitalSnake != null)
+                if (this.CapitalSnake.IsSet && this.CapitalSnake.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.CapitalSnake.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CapitalSnake.Value.GetHashCode();
                 }
-                if (this.SCAETHFlowPoints != null)
+                if (this.SCAETHFlowPoints.IsSet && this.SCAETHFlowPoints.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.SCAETHFlowPoints.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SCAETHFlowPoints.Value.GetHashCode();
                 }
-                if (this.ATT_NAME != null)
+                if (this.ATT_NAME.IsSet && this.ATT_NAME.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.ATT_NAME.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ATT_NAME.Value.GetHashCode();
                 }
                 return hashCode;
             }

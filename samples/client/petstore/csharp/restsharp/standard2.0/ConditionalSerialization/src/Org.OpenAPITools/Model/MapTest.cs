@@ -261,21 +261,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MapMapOfString != null)
+                if (this.MapMapOfString.IsSet && this.MapMapOfString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapMapOfString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapMapOfString.Value.GetHashCode();
                 }
-                if (this.MapOfEnumString != null)
+                if (this.MapOfEnumString.IsSet && this.MapOfEnumString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapOfEnumString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapOfEnumString.Value.GetHashCode();
                 }
-                if (this.DirectMap != null)
+                if (this.DirectMap.IsSet && this.DirectMap.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DirectMap.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DirectMap.Value.GetHashCode();
                 }
-                if (this.IndirectMap != null)
+                if (this.IndirectMap.IsSet && this.IndirectMap.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.IndirectMap.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IndirectMap.Value.GetHashCode();
                 }
                 if (this.AdditionalProperties != null)
                 {

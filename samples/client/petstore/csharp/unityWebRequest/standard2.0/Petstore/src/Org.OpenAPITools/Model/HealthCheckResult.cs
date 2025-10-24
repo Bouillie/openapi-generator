@@ -92,8 +92,8 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.NullableMessage == input.NullableMessage ||
-                    (this.NullableMessage != null &&
-                    this.NullableMessage.Equals(input.NullableMessage))
+                    
+                    this.NullableMessage.Equals(input.NullableMessage)
                 );
         }
 
@@ -106,9 +106,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NullableMessage != null)
+                if (this.NullableMessage.IsSet && this.NullableMessage.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.NullableMessage.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NullableMessage.Value.GetHashCode();
                 }
                 return hashCode;
             }

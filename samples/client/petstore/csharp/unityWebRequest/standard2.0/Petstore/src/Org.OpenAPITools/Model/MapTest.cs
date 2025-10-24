@@ -158,27 +158,27 @@ namespace Org.OpenAPITools.Model
             return 
                 (
                     this.MapMapOfString == input.MapMapOfString ||
-                    this.MapMapOfString != null &&
-                    input.MapMapOfString != null &&
-                    this.MapMapOfString.SequenceEqual(input.MapMapOfString)
+                    this.MapMapOfString.IsSet && this.MapMapOfString.Value != null &&
+                    input.MapMapOfString.IsSet && input.MapMapOfString.Value != null &&
+                    this.MapMapOfString.Value.SequenceEqual(input.MapMapOfString.Value)
                 ) && 
                 (
                     this.MapOfEnumString == input.MapOfEnumString ||
-                    this.MapOfEnumString != null &&
-                    input.MapOfEnumString != null &&
-                    this.MapOfEnumString.SequenceEqual(input.MapOfEnumString)
+                    this.MapOfEnumString.IsSet && this.MapOfEnumString.Value != null &&
+                    input.MapOfEnumString.IsSet && input.MapOfEnumString.Value != null &&
+                    this.MapOfEnumString.Value.SequenceEqual(input.MapOfEnumString.Value)
                 ) && 
                 (
                     this.DirectMap == input.DirectMap ||
-                    this.DirectMap != null &&
-                    input.DirectMap != null &&
-                    this.DirectMap.SequenceEqual(input.DirectMap)
+                    this.DirectMap.IsSet && this.DirectMap.Value != null &&
+                    input.DirectMap.IsSet && input.DirectMap.Value != null &&
+                    this.DirectMap.Value.SequenceEqual(input.DirectMap.Value)
                 ) && 
                 (
                     this.IndirectMap == input.IndirectMap ||
-                    this.IndirectMap != null &&
-                    input.IndirectMap != null &&
-                    this.IndirectMap.SequenceEqual(input.IndirectMap)
+                    this.IndirectMap.IsSet && this.IndirectMap.Value != null &&
+                    input.IndirectMap.IsSet && input.IndirectMap.Value != null &&
+                    this.IndirectMap.Value.SequenceEqual(input.IndirectMap.Value)
                 );
         }
 
@@ -191,21 +191,21 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MapMapOfString != null)
+                if (this.MapMapOfString.IsSet && this.MapMapOfString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapMapOfString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapMapOfString.Value.GetHashCode();
                 }
-                if (this.MapOfEnumString != null)
+                if (this.MapOfEnumString.IsSet && this.MapOfEnumString.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.MapOfEnumString.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MapOfEnumString.Value.GetHashCode();
                 }
-                if (this.DirectMap != null)
+                if (this.DirectMap.IsSet && this.DirectMap.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.DirectMap.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DirectMap.Value.GetHashCode();
                 }
-                if (this.IndirectMap != null)
+                if (this.IndirectMap.IsSet && this.IndirectMap.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.IndirectMap.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IndirectMap.Value.GetHashCode();
                 }
                 return hashCode;
             }

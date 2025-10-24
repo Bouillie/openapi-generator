@@ -161,12 +161,18 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.VarName.GetHashCode();
-                hashCode = (hashCode * 59) + this.SnakeCase.GetHashCode();
-                if (this.Property != null)
+                if (this.SnakeCase.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.Property.GetHashCode();
+                hashCode = (hashCode * 59) + this.SnakeCase.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Var123Number.GetHashCode();
+                if (this.Property.IsSet && this.Property.Value != null)
+                {
+                    hashCode = (hashCode * 59) + this.Property.Value.GetHashCode();
+                }
+                if (this.Var123Number.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Var123Number.Value.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
                 {
                     hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();

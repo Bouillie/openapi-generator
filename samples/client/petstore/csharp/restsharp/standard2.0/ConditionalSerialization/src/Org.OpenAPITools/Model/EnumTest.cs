@@ -564,15 +564,39 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.EnumString.GetHashCode();
+                if (this.EnumString.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.EnumString.Value.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.EnumStringRequired.GetHashCode();
-                hashCode = (hashCode * 59) + this.EnumInteger.GetHashCode();
-                hashCode = (hashCode * 59) + this.EnumIntegerOnly.GetHashCode();
-                hashCode = (hashCode * 59) + this.EnumNumber.GetHashCode();
-                hashCode = (hashCode * 59) + this.OuterEnum.GetHashCode();
-                hashCode = (hashCode * 59) + this.OuterEnumInteger.GetHashCode();
-                hashCode = (hashCode * 59) + this.OuterEnumDefaultValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.OuterEnumIntegerDefaultValue.GetHashCode();
+                if (this.EnumInteger.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.EnumInteger.Value.GetHashCode();
+                }
+                if (this.EnumIntegerOnly.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.EnumIntegerOnly.Value.GetHashCode();
+                }
+                if (this.EnumNumber.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.EnumNumber.Value.GetHashCode();
+                }
+                if (this.OuterEnum.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.OuterEnum.Value.GetHashCode();
+                }
+                if (this.OuterEnumInteger.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.OuterEnumInteger.Value.GetHashCode();
+                }
+                if (this.OuterEnumDefaultValue.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.OuterEnumDefaultValue.Value.GetHashCode();
+                }
+                if (this.OuterEnumIntegerDefaultValue.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.OuterEnumIntegerDefaultValue.Value.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
                 {
                     hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();

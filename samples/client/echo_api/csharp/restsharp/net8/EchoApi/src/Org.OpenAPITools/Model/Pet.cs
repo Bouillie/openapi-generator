@@ -206,8 +206,8 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
+                    
+                    this.Category.Equals(input.Category)
                 ) && 
                 (
                     this.PhotoUrls == input.PhotoUrls ||
@@ -217,9 +217,9 @@ namespace Org.OpenAPITools.Model
                 ) && 
                 (
                     this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
+                    this.Tags.IsSet && this.Tags.Value != null &&
+                    input.Tags.IsSet && input.Tags.Value != null &&
+                    this.Tags.Value.SequenceEqual(input.Tags.Value)
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -236,24 +236,30 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                if (this.Id.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Id.Value.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Category != null)
+                if (this.Category.IsSet && this.Category.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Category.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Category.Value.GetHashCode();
                 }
                 if (this.PhotoUrls != null)
                 {
                     hashCode = (hashCode * 59) + this.PhotoUrls.GetHashCode();
                 }
-                if (this.Tags != null)
+                if (this.Tags.IsSet && this.Tags.Value != null)
                 {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Tags.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.Status.IsSet)
+                {
+                hashCode = (hashCode * 59) + this.Status.Value.GetHashCode();
+                }
                 return hashCode;
             }
         }
