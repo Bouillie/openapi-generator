@@ -58,25 +58,45 @@ namespace Org.OpenAPITools.Model
         /// <param name="mapOfEnumString">mapOfEnumString.</param>
         /// <param name="directMap">directMap.</param>
         /// <param name="indirectMap">indirectMap.</param>
-        public MapTest(Dictionary<string, Dictionary<string, string>> mapMapOfString = default, Dictionary<string, InnerEnum> mapOfEnumString = default, Dictionary<string, bool> directMap = default, Dictionary<string, bool> indirectMap = default)
+        public MapTest(Option<Dictionary<string, Dictionary<string, string>>> mapMapOfString = default, Option<Dictionary<string, InnerEnum>> mapOfEnumString = default, Option<Dictionary<string, bool>> directMap = default, Option<Dictionary<string, bool>> indirectMap = default)
         {
+            // to ensure "mapMapOfString" (not nullable) is not null
+            if (mapMapOfString.IsSet && mapMapOfString.Value == null)
+            {
+                throw new ArgumentNullException("mapMapOfString isn't a nullable property for MapTest and cannot be null");
+            }
+            // to ensure "mapOfEnumString" (not nullable) is not null
+            if (mapOfEnumString.IsSet && mapOfEnumString.Value == null)
+            {
+                throw new ArgumentNullException("mapOfEnumString isn't a nullable property for MapTest and cannot be null");
+            }
+            // to ensure "directMap" (not nullable) is not null
+            if (directMap.IsSet && directMap.Value == null)
+            {
+                throw new ArgumentNullException("directMap isn't a nullable property for MapTest and cannot be null");
+            }
+            // to ensure "indirectMap" (not nullable) is not null
+            if (indirectMap.IsSet && indirectMap.Value == null)
+            {
+                throw new ArgumentNullException("indirectMap isn't a nullable property for MapTest and cannot be null");
+            }
             this._MapMapOfString = mapMapOfString;
-            if (this.MapMapOfString != null)
+            if (this.MapMapOfString.IsSet)
             {
                 this._flagMapMapOfString = true;
             }
             this._MapOfEnumString = mapOfEnumString;
-            if (this.MapOfEnumString != null)
+            if (this.MapOfEnumString.IsSet)
             {
                 this._flagMapOfEnumString = true;
             }
             this._DirectMap = directMap;
-            if (this.DirectMap != null)
+            if (this.DirectMap.IsSet)
             {
                 this._flagDirectMap = true;
             }
             this._IndirectMap = indirectMap;
-            if (this.IndirectMap != null)
+            if (this.IndirectMap.IsSet)
             {
                 this._flagIndirectMap = true;
             }
@@ -87,7 +107,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MapMapOfString
         /// </summary>
         [DataMember(Name = "map_map_of_string", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, string>> MapMapOfString
+        public Option<Dictionary<string, Dictionary<string, string>>> MapMapOfString
         {
             get{ return _MapMapOfString;}
             set
@@ -96,7 +116,7 @@ namespace Org.OpenAPITools.Model
                 _flagMapMapOfString = true;
             }
         }
-        private Dictionary<string, Dictionary<string, string>> _MapMapOfString;
+        private Option<Dictionary<string, Dictionary<string, string>>> _MapMapOfString;
         private bool _flagMapMapOfString;
 
         /// <summary>
@@ -111,7 +131,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MapOfEnumString
         /// </summary>
         [DataMember(Name = "map_of_enum_string", EmitDefaultValue = false)]
-        public Dictionary<string, MapTest.InnerEnum> MapOfEnumString
+        public Option<Dictionary<string, MapTest.InnerEnum>> MapOfEnumString
         {
             get{ return _MapOfEnumString;}
             set
@@ -120,7 +140,7 @@ namespace Org.OpenAPITools.Model
                 _flagMapOfEnumString = true;
             }
         }
-        private Dictionary<string, MapTest.InnerEnum> _MapOfEnumString;
+        private Option<Dictionary<string, MapTest.InnerEnum>> _MapOfEnumString;
         private bool _flagMapOfEnumString;
 
         /// <summary>
@@ -135,7 +155,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DirectMap
         /// </summary>
         [DataMember(Name = "direct_map", EmitDefaultValue = false)]
-        public Dictionary<string, bool> DirectMap
+        public Option<Dictionary<string, bool>> DirectMap
         {
             get{ return _DirectMap;}
             set
@@ -144,7 +164,7 @@ namespace Org.OpenAPITools.Model
                 _flagDirectMap = true;
             }
         }
-        private Dictionary<string, bool> _DirectMap;
+        private Option<Dictionary<string, bool>> _DirectMap;
         private bool _flagDirectMap;
 
         /// <summary>
@@ -159,7 +179,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets IndirectMap
         /// </summary>
         [DataMember(Name = "indirect_map", EmitDefaultValue = false)]
-        public Dictionary<string, bool> IndirectMap
+        public Option<Dictionary<string, bool>> IndirectMap
         {
             get{ return _IndirectMap;}
             set
@@ -168,7 +188,7 @@ namespace Org.OpenAPITools.Model
                 _flagIndirectMap = true;
             }
         }
-        private Dictionary<string, bool> _IndirectMap;
+        private Option<Dictionary<string, bool>> _IndirectMap;
         private bool _flagIndirectMap;
 
         /// <summary>

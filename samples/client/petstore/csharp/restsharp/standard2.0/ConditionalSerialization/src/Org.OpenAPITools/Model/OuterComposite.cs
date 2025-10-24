@@ -38,20 +38,25 @@ namespace Org.OpenAPITools.Model
         /// <param name="myNumber">myNumber.</param>
         /// <param name="myString">myString.</param>
         /// <param name="myBoolean">myBoolean.</param>
-        public OuterComposite(decimal myNumber = default, string myString = default, bool myBoolean = default)
+        public OuterComposite(Option<decimal> myNumber = default, Option<string> myString = default, Option<bool> myBoolean = default)
         {
+            // to ensure "myString" (not nullable) is not null
+            if (myString.IsSet && myString.Value == null)
+            {
+                throw new ArgumentNullException("myString isn't a nullable property for OuterComposite and cannot be null");
+            }
             this._MyNumber = myNumber;
-            if (this.MyNumber != null)
+            if (this.MyNumber.IsSet)
             {
                 this._flagMyNumber = true;
             }
             this._MyString = myString;
-            if (this.MyString != null)
+            if (this.MyString.IsSet)
             {
                 this._flagMyString = true;
             }
             this._MyBoolean = myBoolean;
-            if (this.MyBoolean != null)
+            if (this.MyBoolean.IsSet)
             {
                 this._flagMyBoolean = true;
             }
@@ -62,7 +67,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MyNumber
         /// </summary>
         [DataMember(Name = "my_number", EmitDefaultValue = false)]
-        public decimal MyNumber
+        public Option<decimal> MyNumber
         {
             get{ return _MyNumber;}
             set
@@ -71,7 +76,7 @@ namespace Org.OpenAPITools.Model
                 _flagMyNumber = true;
             }
         }
-        private decimal _MyNumber;
+        private Option<decimal> _MyNumber;
         private bool _flagMyNumber;
 
         /// <summary>
@@ -86,7 +91,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MyString
         /// </summary>
         [DataMember(Name = "my_string", EmitDefaultValue = false)]
-        public string MyString
+        public Option<string> MyString
         {
             get{ return _MyString;}
             set
@@ -95,7 +100,7 @@ namespace Org.OpenAPITools.Model
                 _flagMyString = true;
             }
         }
-        private string _MyString;
+        private Option<string> _MyString;
         private bool _flagMyString;
 
         /// <summary>
@@ -110,7 +115,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MyBoolean
         /// </summary>
         [DataMember(Name = "my_boolean", EmitDefaultValue = true)]
-        public bool MyBoolean
+        public Option<bool> MyBoolean
         {
             get{ return _MyBoolean;}
             set
@@ -119,7 +124,7 @@ namespace Org.OpenAPITools.Model
                 _flagMyBoolean = true;
             }
         }
-        private bool _MyBoolean;
+        private Option<bool> _MyBoolean;
         private bool _flagMyBoolean;
 
         /// <summary>

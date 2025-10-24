@@ -63,7 +63,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TypeEnum? Type
+        public Option<TypeEnum> Type
         {
             get{ return _Type;}
             set
@@ -72,7 +72,7 @@ namespace Org.OpenAPITools.Model
                 _flagType = true;
             }
         }
-        private TypeEnum? _Type;
+        private Option<TypeEnum> _Type;
         private bool _flagType;
 
         /// <summary>
@@ -96,18 +96,22 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="className">className (required).</param>
-        public Zebra(TypeEnum? type = default, string className = default)
+        public Zebra(Option<TypeEnum> type = default, string className = default)
         {
-            // to ensure "className" is required (not null)
+            // to ensure "className" (not nullable) is not null
             if (className == null)
             {
-                throw new ArgumentNullException("className is a required property for Zebra and cannot be null");
+                throw new ArgumentNullException("className isn't a nullable property for Zebra and cannot be null");
             }
-            this._ClassName = className;
             this._Type = type;
-            if (this.Type != null)
+            if (this.Type.IsSet)
             {
                 this._flagType = true;
+            }
+            this._ClassName = className;
+            if (this.ClassName.IsSet)
+            {
+                this._flagClassName = true;
             }
             this.AdditionalProperties = new Dictionary<string, object>();
         }

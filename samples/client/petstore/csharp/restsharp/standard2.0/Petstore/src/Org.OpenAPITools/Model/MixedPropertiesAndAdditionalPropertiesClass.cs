@@ -39,8 +39,13 @@ namespace Org.OpenAPITools.Model
         /// <param name="uuid">uuid.</param>
         /// <param name="dateTime">dateTime.</param>
         /// <param name="map">map.</param>
-        public MixedPropertiesAndAdditionalPropertiesClass(Guid uuidWithPattern = default, Guid uuid = default, DateTime dateTime = default, Dictionary<string, Animal> map = default)
+        public MixedPropertiesAndAdditionalPropertiesClass(Option<Guid> uuidWithPattern = default, Option<Guid> uuid = default, Option<DateTime> dateTime = default, Option<Dictionary<string, Animal>> map = default)
         {
+            // to ensure "map" (not nullable) is not null
+            if (map.IsSet && map.Value == null)
+            {
+                throw new ArgumentNullException("map isn't a nullable property for MixedPropertiesAndAdditionalPropertiesClass and cannot be null");
+            }
             this.UuidWithPattern = uuidWithPattern;
             this.Uuid = uuid;
             this.DateTime = dateTime;
@@ -52,25 +57,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets UuidWithPattern
         /// </summary>
         [DataMember(Name = "uuid_with_pattern", EmitDefaultValue = false)]
-        public Guid UuidWithPattern { get; set; }
+        public Option<Guid> UuidWithPattern { get; set; }
 
         /// <summary>
         /// Gets or Sets Uuid
         /// </summary>
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public Guid Uuid { get; set; }
+        public Option<Guid> Uuid { get; set; }
 
         /// <summary>
         /// Gets or Sets DateTime
         /// </summary>
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
-        public DateTime DateTime { get; set; }
+        public Option<DateTime> DateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Map
         /// </summary>
         [DataMember(Name = "map", EmitDefaultValue = false)]
-        public Dictionary<string, Animal> Map { get; set; }
+        public Option<Dictionary<string, Animal>> Map { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

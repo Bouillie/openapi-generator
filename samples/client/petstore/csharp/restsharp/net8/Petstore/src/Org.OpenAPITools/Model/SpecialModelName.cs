@@ -37,8 +37,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="specialPropertyName">specialPropertyName.</param>
         /// <param name="varSpecialModelName">varSpecialModelName.</param>
-        public SpecialModelName(long specialPropertyName = default, string varSpecialModelName = default)
+        public SpecialModelName(Option<long> specialPropertyName = default, Option<string> varSpecialModelName = default)
         {
+            // to ensure "varSpecialModelName" (not nullable) is not null
+            if (varSpecialModelName.IsSet && varSpecialModelName.Value == null)
+            {
+                throw new ArgumentNullException("varSpecialModelName isn't a nullable property for SpecialModelName and cannot be null");
+            }
             this.SpecialPropertyName = specialPropertyName;
             this.VarSpecialModelName = varSpecialModelName;
         }
@@ -47,13 +52,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets SpecialPropertyName
         /// </summary>
         [DataMember(Name = "$special[property.name]", EmitDefaultValue = false)]
-        public long SpecialPropertyName { get; set; }
+        public Option<long> SpecialPropertyName { get; set; }
 
         /// <summary>
         /// Gets or Sets VarSpecialModelName
         /// </summary>
         [DataMember(Name = "_special_model.name_", EmitDefaultValue = false)]
-        public string VarSpecialModelName { get; set; }
+        public Option<string> VarSpecialModelName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

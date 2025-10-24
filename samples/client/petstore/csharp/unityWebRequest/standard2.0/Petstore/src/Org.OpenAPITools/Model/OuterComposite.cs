@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -36,8 +37,13 @@ namespace Org.OpenAPITools.Model
         /// <param name="myNumber">myNumber.</param>
         /// <param name="myString">myString.</param>
         /// <param name="myBoolean">myBoolean.</param>
-        public OuterComposite(decimal myNumber = default, string myString = default, bool myBoolean = default)
+        public OuterComposite(Option<decimal> myNumber = default, Option<string> myString = default, Option<bool> myBoolean = default)
         {
+            // to ensure "myString" (not nullable) is not null
+            if (myString.IsSet && myString.Value == null)
+            {
+                throw new ArgumentNullException("myString isn't a nullable property for OuterComposite and cannot be null");
+            }
             this.MyNumber = myNumber;
             this.MyString = myString;
             this.MyBoolean = myBoolean;
@@ -47,19 +53,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MyNumber
         /// </summary>
         [DataMember(Name = "my_number", EmitDefaultValue = false)]
-        public decimal MyNumber { get; set; }
+        public Option<decimal> MyNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets MyString
         /// </summary>
         [DataMember(Name = "my_string", EmitDefaultValue = false)]
-        public string MyString { get; set; }
+        public Option<string> MyString { get; set; }
 
         /// <summary>
         /// Gets or Sets MyBoolean
         /// </summary>
         [DataMember(Name = "my_boolean", EmitDefaultValue = true)]
-        public bool MyBoolean { get; set; }
+        public Option<bool> MyBoolean { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -35,8 +36,18 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="file">file.</param>
         /// <param name="files">files.</param>
-        public FileSchemaTestClass(File file = default, List<File> files = default)
+        public FileSchemaTestClass(Option<File> file = default, Option<List<File>> files = default)
         {
+            // to ensure "file" (not nullable) is not null
+            if (file.IsSet && file.Value == null)
+            {
+                throw new ArgumentNullException("file isn't a nullable property for FileSchemaTestClass and cannot be null");
+            }
+            // to ensure "files" (not nullable) is not null
+            if (files.IsSet && files.Value == null)
+            {
+                throw new ArgumentNullException("files isn't a nullable property for FileSchemaTestClass and cannot be null");
+            }
             this.File = file;
             this.Files = files;
         }
@@ -45,13 +56,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets File
         /// </summary>
         [DataMember(Name = "file", EmitDefaultValue = false)]
-        public File File { get; set; }
+        public Option<File> File { get; set; }
 
         /// <summary>
         /// Gets or Sets Files
         /// </summary>
         [DataMember(Name = "files", EmitDefaultValue = false)]
-        public List<File> Files { get; set; }
+        public Option<List<File>> Files { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -43,8 +43,38 @@ namespace Org.OpenAPITools.Model
         /// <param name="password">password.</param>
         /// <param name="phone">phone.</param>
         /// <param name="userStatus">User Status.</param>
-        public User(long id = default, string username = default, string firstName = default, string lastName = default, string email = default, string password = default, string phone = default, int userStatus = default)
+        public User(Option<long> id = default, Option<string> username = default, Option<string> firstName = default, Option<string> lastName = default, Option<string> email = default, Option<string> password = default, Option<string> phone = default, Option<int> userStatus = default)
         {
+            // to ensure "username" (not nullable) is not null
+            if (username.IsSet && username.Value == null)
+            {
+                throw new ArgumentNullException("username isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "firstName" (not nullable) is not null
+            if (firstName.IsSet && firstName.Value == null)
+            {
+                throw new ArgumentNullException("firstName isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "lastName" (not nullable) is not null
+            if (lastName.IsSet && lastName.Value == null)
+            {
+                throw new ArgumentNullException("lastName isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "email" (not nullable) is not null
+            if (email.IsSet && email.Value == null)
+            {
+                throw new ArgumentNullException("email isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "password" (not nullable) is not null
+            if (password.IsSet && password.Value == null)
+            {
+                throw new ArgumentNullException("password isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "phone" (not nullable) is not null
+            if (phone.IsSet && phone.Value == null)
+            {
+                throw new ArgumentNullException("phone isn't a nullable property for User and cannot be null");
+            }
             this.Id = id;
             this.Username = username;
             this.FirstName = firstName;
@@ -59,50 +89,50 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
+        public Option<long> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
         [DataMember(Name = "username", EmitDefaultValue = false)]
-        public string Username { get; set; }
+        public Option<string> Username { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
-        public string FirstName { get; set; }
+        public Option<string> FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
-        public string LastName { get; set; }
+        public Option<string> LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = false)]
-        public string Email { get; set; }
+        public Option<string> Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
         [DataMember(Name = "password", EmitDefaultValue = false)]
-        public string Password { get; set; }
+        public Option<string> Password { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
-        public string Phone { get; set; }
+        public Option<string> Phone { get; set; }
 
         /// <summary>
         /// User Status
         /// </summary>
         /// <value>User Status</value>
         [DataMember(Name = "userStatus", EmitDefaultValue = false)]
-        public int UserStatus { get; set; }
+        public Option<int> UserStatus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

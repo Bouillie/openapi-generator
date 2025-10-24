@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="File" /> class.
         /// </summary>
         /// <param name="sourceURI">Test capitalization.</param>
-        public File(string sourceURI = default)
+        public File(Option<string> sourceURI = default)
         {
+            // to ensure "sourceURI" (not nullable) is not null
+            if (sourceURI.IsSet && sourceURI.Value == null)
+            {
+                throw new ArgumentNullException("sourceURI isn't a nullable property for File and cannot be null");
+            }
             this._SourceURI = sourceURI;
-            if (this.SourceURI != null)
+            if (this.SourceURI.IsSet)
             {
                 this._flagSourceURI = true;
             }
@@ -51,7 +56,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Test capitalization</value>
         [DataMember(Name = "sourceURI", EmitDefaultValue = false)]
-        public string SourceURI
+        public Option<string> SourceURI
         {
             get{ return _SourceURI;}
             set
@@ -60,7 +65,7 @@ namespace Org.OpenAPITools.Model
                 _flagSourceURI = true;
             }
         }
-        private string _SourceURI;
+        private Option<string> _SourceURI;
         private bool _flagSourceURI;
 
         /// <summary>

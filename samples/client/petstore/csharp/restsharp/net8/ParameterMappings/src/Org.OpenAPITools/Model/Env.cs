@@ -35,8 +35,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="Env" /> class.
         /// </summary>
         /// <param name="dummy">dummy.</param>
-        public Env(string dummy = default)
+        public Env(Option<string> dummy = default)
         {
+            // to ensure "dummy" (not nullable) is not null
+            if (dummy.IsSet && dummy.Value == null)
+            {
+                throw new ArgumentNullException("dummy isn't a nullable property for Env and cannot be null");
+            }
             this.Dummy = dummy;
         }
 
@@ -44,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Dummy
         /// </summary>
         [DataMember(Name = "dummy", EmitDefaultValue = false)]
-        public string Dummy { get; set; }
+        public Option<string> Dummy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

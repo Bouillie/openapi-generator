@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -67,10 +68,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectType">objectType (required).</param>
         public TestDescendants(string alternativeName = default, ObjectTypeEnum objectType = default)
         {
-            // to ensure "alternativeName" is required (not null)
+            // to ensure "alternativeName" (not nullable) is not null
             if (alternativeName == null)
             {
-                throw new ArgumentNullException("alternativeName is a required property for TestDescendants and cannot be null");
+                throw new ArgumentNullException("alternativeName isn't a nullable property for TestDescendants and cannot be null");
             }
             this.AlternativeName = alternativeName;
             this.ObjectType = objectType;

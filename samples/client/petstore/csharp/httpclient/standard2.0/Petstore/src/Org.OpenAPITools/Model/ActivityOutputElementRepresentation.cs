@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -38,8 +39,18 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="prop1">prop1.</param>
         /// <param name="prop2">prop2.</param>
-        public ActivityOutputElementRepresentation(string prop1 = default, Object prop2 = default)
+        public ActivityOutputElementRepresentation(Option<string> prop1 = default, Option<Object> prop2 = default)
         {
+            // to ensure "prop1" (not nullable) is not null
+            if (prop1.IsSet && prop1.Value == null)
+            {
+                throw new ArgumentNullException("prop1 isn't a nullable property for ActivityOutputElementRepresentation and cannot be null");
+            }
+            // to ensure "prop2" (not nullable) is not null
+            if (prop2.IsSet && prop2.Value == null)
+            {
+                throw new ArgumentNullException("prop2 isn't a nullable property for ActivityOutputElementRepresentation and cannot be null");
+            }
             this.Prop1 = prop1;
             this.Prop2 = prop2;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -49,13 +60,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Prop1
         /// </summary>
         [DataMember(Name = "prop1", EmitDefaultValue = false)]
-        public string Prop1 { get; set; }
+        public Option<string> Prop1 { get; set; }
 
         /// <summary>
         /// Gets or Sets Prop2
         /// </summary>
         [DataMember(Name = "prop2", EmitDefaultValue = false)]
-        public Object Prop2 { get; set; }
+        public Option<Object> Prop2 { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

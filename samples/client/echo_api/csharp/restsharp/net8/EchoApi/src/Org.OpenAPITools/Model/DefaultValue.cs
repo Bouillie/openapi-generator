@@ -68,8 +68,33 @@ namespace Org.OpenAPITools.Model
         /// <param name="arrayStringNullable">arrayStringNullable.</param>
         /// <param name="arrayStringExtensionNullable">arrayStringExtensionNullable.</param>
         /// <param name="stringNullable">stringNullable.</param>
-        public DefaultValue(List<StringEnumRef> arrayStringEnumRefDefault = default, List<ArrayStringEnumDefaultEnum> arrayStringEnumDefault = default, List<string> arrayStringDefault = default, List<int> arrayIntegerDefault = default, List<string> arrayString = default, List<string> arrayStringNullable = default, List<string> arrayStringExtensionNullable = default, string stringNullable = default)
+        public DefaultValue(Option<List<StringEnumRef>> arrayStringEnumRefDefault = default, Option<List<ArrayStringEnumDefaultEnum>> arrayStringEnumDefault = default, Option<List<string>> arrayStringDefault = default, Option<List<int>> arrayIntegerDefault = default, Option<List<string>> arrayString = default, Option<List<string>> arrayStringNullable = default, Option<List<string>> arrayStringExtensionNullable = default, Option<string> stringNullable = default)
         {
+            // to ensure "arrayStringEnumRefDefault" (not nullable) is not null
+            if (arrayStringEnumRefDefault.IsSet && arrayStringEnumRefDefault.Value == null)
+            {
+                throw new ArgumentNullException("arrayStringEnumRefDefault isn't a nullable property for DefaultValue and cannot be null");
+            }
+            // to ensure "arrayStringEnumDefault" (not nullable) is not null
+            if (arrayStringEnumDefault.IsSet && arrayStringEnumDefault.Value == null)
+            {
+                throw new ArgumentNullException("arrayStringEnumDefault isn't a nullable property for DefaultValue and cannot be null");
+            }
+            // to ensure "arrayStringDefault" (not nullable) is not null
+            if (arrayStringDefault.IsSet && arrayStringDefault.Value == null)
+            {
+                throw new ArgumentNullException("arrayStringDefault isn't a nullable property for DefaultValue and cannot be null");
+            }
+            // to ensure "arrayIntegerDefault" (not nullable) is not null
+            if (arrayIntegerDefault.IsSet && arrayIntegerDefault.Value == null)
+            {
+                throw new ArgumentNullException("arrayIntegerDefault isn't a nullable property for DefaultValue and cannot be null");
+            }
+            // to ensure "arrayString" (not nullable) is not null
+            if (arrayString.IsSet && arrayString.Value == null)
+            {
+                throw new ArgumentNullException("arrayString isn't a nullable property for DefaultValue and cannot be null");
+            }
             this.ArrayStringEnumRefDefault = arrayStringEnumRefDefault;
             this.ArrayStringEnumDefault = arrayStringEnumDefault;
             this.ArrayStringDefault = arrayStringDefault;
@@ -84,49 +109,49 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayStringEnumRefDefault
         /// </summary>
         [DataMember(Name = "array_string_enum_ref_default", EmitDefaultValue = false)]
-        public List<StringEnumRef> ArrayStringEnumRefDefault { get; set; }
+        public Option<List<StringEnumRef>> ArrayStringEnumRefDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayStringEnumDefault
         /// </summary>
         [DataMember(Name = "array_string_enum_default", EmitDefaultValue = false)]
-        public List<DefaultValue.ArrayStringEnumDefaultEnum> ArrayStringEnumDefault { get; set; }
+        public Option<List<DefaultValue.ArrayStringEnumDefaultEnum>> ArrayStringEnumDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayStringDefault
         /// </summary>
         [DataMember(Name = "array_string_default", EmitDefaultValue = false)]
-        public List<string> ArrayStringDefault { get; set; }
+        public Option<List<string>> ArrayStringDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayIntegerDefault
         /// </summary>
         [DataMember(Name = "array_integer_default", EmitDefaultValue = false)]
-        public List<int> ArrayIntegerDefault { get; set; }
+        public Option<List<int>> ArrayIntegerDefault { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayString
         /// </summary>
         [DataMember(Name = "array_string", EmitDefaultValue = false)]
-        public List<string> ArrayString { get; set; }
+        public Option<List<string>> ArrayString { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayStringNullable
         /// </summary>
         [DataMember(Name = "array_string_nullable", EmitDefaultValue = true)]
-        public List<string> ArrayStringNullable { get; set; }
+        public Option<List<string>?> ArrayStringNullable { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayStringExtensionNullable
         /// </summary>
         [DataMember(Name = "array_string_extension_nullable", EmitDefaultValue = true)]
-        public List<string> ArrayStringExtensionNullable { get; set; }
+        public Option<List<string>?> ArrayStringExtensionNullable { get; set; }
 
         /// <summary>
         /// Gets or Sets StringNullable
         /// </summary>
         [DataMember(Name = "string_nullable", EmitDefaultValue = true)]
-        public string StringNullable { get; set; }
+        public Option<string?> StringNullable { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

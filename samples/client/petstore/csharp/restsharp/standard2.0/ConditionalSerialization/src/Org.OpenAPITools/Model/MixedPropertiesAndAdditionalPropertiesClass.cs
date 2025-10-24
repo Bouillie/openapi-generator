@@ -39,25 +39,30 @@ namespace Org.OpenAPITools.Model
         /// <param name="uuid">uuid.</param>
         /// <param name="dateTime">dateTime.</param>
         /// <param name="map">map.</param>
-        public MixedPropertiesAndAdditionalPropertiesClass(Guid uuidWithPattern = default, Guid uuid = default, DateTime dateTime = default, Dictionary<string, Animal> map = default)
+        public MixedPropertiesAndAdditionalPropertiesClass(Option<Guid> uuidWithPattern = default, Option<Guid> uuid = default, Option<DateTime> dateTime = default, Option<Dictionary<string, Animal>> map = default)
         {
+            // to ensure "map" (not nullable) is not null
+            if (map.IsSet && map.Value == null)
+            {
+                throw new ArgumentNullException("map isn't a nullable property for MixedPropertiesAndAdditionalPropertiesClass and cannot be null");
+            }
             this._UuidWithPattern = uuidWithPattern;
-            if (this.UuidWithPattern != null)
+            if (this.UuidWithPattern.IsSet)
             {
                 this._flagUuidWithPattern = true;
             }
             this._Uuid = uuid;
-            if (this.Uuid != null)
+            if (this.Uuid.IsSet)
             {
                 this._flagUuid = true;
             }
             this._DateTime = dateTime;
-            if (this.DateTime != null)
+            if (this.DateTime.IsSet)
             {
                 this._flagDateTime = true;
             }
             this._Map = map;
-            if (this.Map != null)
+            if (this.Map.IsSet)
             {
                 this._flagMap = true;
             }
@@ -68,7 +73,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets UuidWithPattern
         /// </summary>
         [DataMember(Name = "uuid_with_pattern", EmitDefaultValue = false)]
-        public Guid UuidWithPattern
+        public Option<Guid> UuidWithPattern
         {
             get{ return _UuidWithPattern;}
             set
@@ -77,7 +82,7 @@ namespace Org.OpenAPITools.Model
                 _flagUuidWithPattern = true;
             }
         }
-        private Guid _UuidWithPattern;
+        private Option<Guid> _UuidWithPattern;
         private bool _flagUuidWithPattern;
 
         /// <summary>
@@ -92,7 +97,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Uuid
         /// </summary>
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public Guid Uuid
+        public Option<Guid> Uuid
         {
             get{ return _Uuid;}
             set
@@ -101,7 +106,7 @@ namespace Org.OpenAPITools.Model
                 _flagUuid = true;
             }
         }
-        private Guid _Uuid;
+        private Option<Guid> _Uuid;
         private bool _flagUuid;
 
         /// <summary>
@@ -116,7 +121,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DateTime
         /// </summary>
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
-        public DateTime DateTime
+        public Option<DateTime> DateTime
         {
             get{ return _DateTime;}
             set
@@ -125,7 +130,7 @@ namespace Org.OpenAPITools.Model
                 _flagDateTime = true;
             }
         }
-        private DateTime _DateTime;
+        private Option<DateTime> _DateTime;
         private bool _flagDateTime;
 
         /// <summary>
@@ -140,7 +145,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Map
         /// </summary>
         [DataMember(Name = "map", EmitDefaultValue = false)]
-        public Dictionary<string, Animal> Map
+        public Option<Dictionary<string, Animal>> Map
         {
             get{ return _Map;}
             set
@@ -149,7 +154,7 @@ namespace Org.OpenAPITools.Model
                 _flagMap = true;
             }
         }
-        private Dictionary<string, Animal> _Map;
+        private Option<Dictionary<string, Animal>> _Map;
         private bool _flagMap;
 
         /// <summary>

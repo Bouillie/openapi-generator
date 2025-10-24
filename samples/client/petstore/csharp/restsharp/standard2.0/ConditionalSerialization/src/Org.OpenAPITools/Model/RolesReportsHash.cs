@@ -37,15 +37,20 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="roleUuid">roleUuid.</param>
         /// <param name="role">role.</param>
-        public RolesReportsHash(Guid roleUuid = default, RolesReportsHashRole role = default)
+        public RolesReportsHash(Option<Guid> roleUuid = default, Option<RolesReportsHashRole> role = default)
         {
+            // to ensure "role" (not nullable) is not null
+            if (role.IsSet && role.Value == null)
+            {
+                throw new ArgumentNullException("role isn't a nullable property for RolesReportsHash and cannot be null");
+            }
             this._RoleUuid = roleUuid;
-            if (this.RoleUuid != null)
+            if (this.RoleUuid.IsSet)
             {
                 this._flagRoleUuid = true;
             }
             this._Role = role;
-            if (this.Role != null)
+            if (this.Role.IsSet)
             {
                 this._flagRole = true;
             }
@@ -56,7 +61,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RoleUuid
         /// </summary>
         [DataMember(Name = "role_uuid", EmitDefaultValue = false)]
-        public Guid RoleUuid
+        public Option<Guid> RoleUuid
         {
             get{ return _RoleUuid;}
             set
@@ -65,7 +70,7 @@ namespace Org.OpenAPITools.Model
                 _flagRoleUuid = true;
             }
         }
-        private Guid _RoleUuid;
+        private Option<Guid> _RoleUuid;
         private bool _flagRoleUuid;
 
         /// <summary>
@@ -80,7 +85,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Role
         /// </summary>
         [DataMember(Name = "role", EmitDefaultValue = false)]
-        public RolesReportsHashRole Role
+        public Option<RolesReportsHashRole> Role
         {
             get{ return _Role;}
             set
@@ -89,7 +94,7 @@ namespace Org.OpenAPITools.Model
                 _flagRole = true;
             }
         }
-        private RolesReportsHashRole _Role;
+        private Option<RolesReportsHashRole> _Role;
         private bool _flagRole;
 
         /// <summary>

@@ -38,8 +38,28 @@ namespace Org.OpenAPITools.Model
         /// <param name="underscoreType">underscoreType.</param>
         /// <param name="type">type.</param>
         /// <param name="typeWithUnderscore">typeWithUnderscore.</param>
-        public PropertyNameMapping(string httpDebugOperation = default, string underscoreType = default, string type = default, string typeWithUnderscore = default)
+        public PropertyNameMapping(Option<string> httpDebugOperation = default, Option<string> underscoreType = default, Option<string> type = default, Option<string> typeWithUnderscore = default)
         {
+            // to ensure "httpDebugOperation" (not nullable) is not null
+            if (httpDebugOperation.IsSet && httpDebugOperation.Value == null)
+            {
+                throw new ArgumentNullException("httpDebugOperation isn't a nullable property for PropertyNameMapping and cannot be null");
+            }
+            // to ensure "underscoreType" (not nullable) is not null
+            if (underscoreType.IsSet && underscoreType.Value == null)
+            {
+                throw new ArgumentNullException("underscoreType isn't a nullable property for PropertyNameMapping and cannot be null");
+            }
+            // to ensure "type" (not nullable) is not null
+            if (type.IsSet && type.Value == null)
+            {
+                throw new ArgumentNullException("type isn't a nullable property for PropertyNameMapping and cannot be null");
+            }
+            // to ensure "typeWithUnderscore" (not nullable) is not null
+            if (typeWithUnderscore.IsSet && typeWithUnderscore.Value == null)
+            {
+                throw new ArgumentNullException("typeWithUnderscore isn't a nullable property for PropertyNameMapping and cannot be null");
+            }
             this.HttpDebugOperation = httpDebugOperation;
             this.UnderscoreType = underscoreType;
             this.Type = type;
@@ -50,25 +70,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets HttpDebugOperation
         /// </summary>
         [DataMember(Name = "http_debug_operation", EmitDefaultValue = false)]
-        public string HttpDebugOperation { get; set; }
+        public Option<string> HttpDebugOperation { get; set; }
 
         /// <summary>
         /// Gets or Sets UnderscoreType
         /// </summary>
         [DataMember(Name = "_type", EmitDefaultValue = false)]
-        public string UnderscoreType { get; set; }
+        public Option<string> UnderscoreType { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        public Option<string> Type { get; set; }
 
         /// <summary>
         /// Gets or Sets TypeWithUnderscore
         /// </summary>
         [DataMember(Name = "type_", EmitDefaultValue = false)]
-        public string TypeWithUnderscore { get; set; }
+        public Option<string> TypeWithUnderscore { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

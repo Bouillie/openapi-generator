@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -37,8 +38,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="MixedSubId" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        public MixedSubId(string id = default)
+        public MixedSubId(Option<string> id = default)
         {
+            // to ensure "id" (not nullable) is not null
+            if (id.IsSet && id.Value == null)
+            {
+                throw new ArgumentNullException("id isn't a nullable property for MixedSubId and cannot be null");
+            }
             this.Id = id;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -47,7 +53,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        public Option<string> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

@@ -37,8 +37,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="varClass">varClass.</param>
-        public Model200Response(int name = default, string varClass = default)
+        public Model200Response(Option<int> name = default, Option<string> varClass = default)
         {
+            // to ensure "varClass" (not nullable) is not null
+            if (varClass.IsSet && varClass.Value == null)
+            {
+                throw new ArgumentNullException("varClass isn't a nullable property for Model200Response and cannot be null");
+            }
             this.Name = name;
             this.Class = varClass;
         }
@@ -47,13 +52,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public int Name { get; set; }
+        public Option<int> Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Class
         /// </summary>
         [DataMember(Name = "class", EmitDefaultValue = false)]
-        public string Class { get; set; }
+        public Option<string> Class { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

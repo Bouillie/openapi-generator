@@ -39,25 +39,35 @@ namespace Org.OpenAPITools.Model
         /// <param name="shapeOrNull">shapeOrNull.</param>
         /// <param name="nullableShape">nullableShape.</param>
         /// <param name="shapes">shapes.</param>
-        public Drawing(Shape mainShape = default, ShapeOrNull shapeOrNull = default, NullableShape nullableShape = default, List<Shape> shapes = default)
+        public Drawing(Option<Shape> mainShape = default, Option<ShapeOrNull> shapeOrNull = default, Option<NullableShape> nullableShape = default, Option<List<Shape>> shapes = default)
         {
+            // to ensure "mainShape" (not nullable) is not null
+            if (mainShape.IsSet && mainShape.Value == null)
+            {
+                throw new ArgumentNullException("mainShape isn't a nullable property for Drawing and cannot be null");
+            }
+            // to ensure "shapes" (not nullable) is not null
+            if (shapes.IsSet && shapes.Value == null)
+            {
+                throw new ArgumentNullException("shapes isn't a nullable property for Drawing and cannot be null");
+            }
             this._MainShape = mainShape;
-            if (this.MainShape != null)
+            if (this.MainShape.IsSet)
             {
                 this._flagMainShape = true;
             }
             this._ShapeOrNull = shapeOrNull;
-            if (this.ShapeOrNull != null)
+            if (this.ShapeOrNull.IsSet)
             {
                 this._flagShapeOrNull = true;
             }
             this._NullableShape = nullableShape;
-            if (this.NullableShape != null)
+            if (this.NullableShape.IsSet)
             {
                 this._flagNullableShape = true;
             }
             this._Shapes = shapes;
-            if (this.Shapes != null)
+            if (this.Shapes.IsSet)
             {
                 this._flagShapes = true;
             }
@@ -68,7 +78,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MainShape
         /// </summary>
         [DataMember(Name = "mainShape", EmitDefaultValue = false)]
-        public Shape MainShape
+        public Option<Shape> MainShape
         {
             get{ return _MainShape;}
             set
@@ -77,7 +87,7 @@ namespace Org.OpenAPITools.Model
                 _flagMainShape = true;
             }
         }
-        private Shape _MainShape;
+        private Option<Shape> _MainShape;
         private bool _flagMainShape;
 
         /// <summary>
@@ -92,7 +102,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ShapeOrNull
         /// </summary>
         [DataMember(Name = "shapeOrNull", EmitDefaultValue = true)]
-        public ShapeOrNull ShapeOrNull
+        public Option<ShapeOrNull> ShapeOrNull
         {
             get{ return _ShapeOrNull;}
             set
@@ -101,7 +111,7 @@ namespace Org.OpenAPITools.Model
                 _flagShapeOrNull = true;
             }
         }
-        private ShapeOrNull _ShapeOrNull;
+        private Option<ShapeOrNull> _ShapeOrNull;
         private bool _flagShapeOrNull;
 
         /// <summary>
@@ -116,7 +126,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NullableShape
         /// </summary>
         [DataMember(Name = "nullableShape", EmitDefaultValue = true)]
-        public NullableShape NullableShape
+        public Option<NullableShape> NullableShape
         {
             get{ return _NullableShape;}
             set
@@ -125,7 +135,7 @@ namespace Org.OpenAPITools.Model
                 _flagNullableShape = true;
             }
         }
-        private NullableShape _NullableShape;
+        private Option<NullableShape> _NullableShape;
         private bool _flagNullableShape;
 
         /// <summary>
@@ -140,7 +150,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Shapes
         /// </summary>
         [DataMember(Name = "shapes", EmitDefaultValue = false)]
-        public List<Shape> Shapes
+        public Option<List<Shape>> Shapes
         {
             get{ return _Shapes;}
             set
@@ -149,7 +159,7 @@ namespace Org.OpenAPITools.Model
                 _flagShapes = true;
             }
         }
-        private List<Shape> _Shapes;
+        private Option<List<Shape>> _Shapes;
         private bool _flagShapes;
 
         /// <summary>

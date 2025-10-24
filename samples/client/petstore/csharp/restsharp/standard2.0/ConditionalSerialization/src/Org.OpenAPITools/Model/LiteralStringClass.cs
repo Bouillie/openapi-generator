@@ -37,8 +37,20 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="escapedLiteralString">escapedLiteralString (default to &quot;C:\\Users\\username&quot;).</param>
         /// <param name="unescapedLiteralString">unescapedLiteralString (default to &quot;C:\Users\username&quot;).</param>
-        public LiteralStringClass(string escapedLiteralString = @"C:\\Users\\username", string unescapedLiteralString = @"C:\Users\username")
+        public LiteralStringClass(Option<string> escapedLiteralString = default, Option<string> unescapedLiteralString = default)
         {
+            // to ensure "escapedLiteralString" (not nullable) is not null
+            if (escapedLiteralString.IsSet && escapedLiteralString.Value == null)
+            {
+                throw new ArgumentNullException("escapedLiteralString isn't a nullable property for LiteralStringClass and cannot be null");
+            }
+            // to ensure "unescapedLiteralString" (not nullable) is not null
+            if (unescapedLiteralString.IsSet && unescapedLiteralString.Value == null)
+            {
+                throw new ArgumentNullException("unescapedLiteralString isn't a nullable property for LiteralStringClass and cannot be null");
+            }
+            this._EscapedLiteralString = escapedLiteralString.IsSet ? escapedLiteralString.Value : new Option(@"C:\\Users\\username");
+            this._UnescapedLiteralString = unescapedLiteralString.IsSet ? unescapedLiteralString.Value : new Option(@"C:\Users\username");
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,7 +58,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets EscapedLiteralString
         /// </summary>
         [DataMember(Name = "escapedLiteralString", EmitDefaultValue = false)]
-        public string EscapedLiteralString
+        public Option<string> EscapedLiteralString
         {
             get{ return _EscapedLiteralString;}
             set
@@ -55,7 +67,7 @@ namespace Org.OpenAPITools.Model
                 _flagEscapedLiteralString = true;
             }
         }
-        private string _EscapedLiteralString;
+        private Option<string> _EscapedLiteralString;
         private bool _flagEscapedLiteralString;
 
         /// <summary>
@@ -70,7 +82,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets UnescapedLiteralString
         /// </summary>
         [DataMember(Name = "unescapedLiteralString", EmitDefaultValue = false)]
-        public string UnescapedLiteralString
+        public Option<string> UnescapedLiteralString
         {
             get{ return _UnescapedLiteralString;}
             set
@@ -79,7 +91,7 @@ namespace Org.OpenAPITools.Model
                 _flagUnescapedLiteralString = true;
             }
         }
-        private string _UnescapedLiteralString;
+        private Option<string> _UnescapedLiteralString;
         private bool _flagUnescapedLiteralString;
 
         /// <summary>

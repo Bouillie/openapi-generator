@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -39,8 +40,18 @@ namespace Org.OpenAPITools.Model
         /// <param name="code">code.</param>
         /// <param name="type">type.</param>
         /// <param name="message">message.</param>
-        public ApiResponse(int code = default, string type = default, string message = default)
+        public ApiResponse(Option<int> code = default, Option<string> type = default, Option<string> message = default)
         {
+            // to ensure "type" (not nullable) is not null
+            if (type.IsSet && type.Value == null)
+            {
+                throw new ArgumentNullException("type isn't a nullable property for ApiResponse and cannot be null");
+            }
+            // to ensure "message" (not nullable) is not null
+            if (message.IsSet && message.Value == null)
+            {
+                throw new ArgumentNullException("message isn't a nullable property for ApiResponse and cannot be null");
+            }
             this.Code = code;
             this.Type = type;
             this.Message = message;
@@ -51,19 +62,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name = "code", EmitDefaultValue = false)]
-        public int Code { get; set; }
+        public Option<int> Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        public Option<string> Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name = "message", EmitDefaultValue = false)]
-        public string Message { get; set; }
+        public Option<string> Message { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

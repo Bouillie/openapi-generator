@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="RolesReportsHashRole" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        public RolesReportsHashRole(string name = default)
+        public RolesReportsHashRole(Option<string> name = default)
         {
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for RolesReportsHashRole and cannot be null");
+            }
             this._Name = name;
-            if (this.Name != null)
+            if (this.Name.IsSet)
             {
                 this._flagName = true;
             }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name
+        public Option<string> Name
         {
             get{ return _Name;}
             set
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
                 _flagName = true;
             }
         }
-        private string _Name;
+        private Option<string> _Name;
         private bool _flagName;
 
         /// <summary>

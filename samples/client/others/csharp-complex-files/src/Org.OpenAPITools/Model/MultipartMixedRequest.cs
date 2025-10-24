@@ -50,16 +50,26 @@ namespace Org.OpenAPITools.Model
         /// <param name="marker">marker.</param>
         /// <param name="file">a file (required).</param>
         /// <param name="statusArray">statusArray.</param>
-        public MultipartMixedRequest(MultipartMixedStatus status = default, MultipartMixedRequestMarker marker = default, System.IO.Stream file = default, List<MultipartMixedStatus> statusArray = default)
+        public MultipartMixedRequest(MultipartMixedStatus status = default, Option<MultipartMixedRequestMarker> marker = default, System.IO.Stream file = default, Option<List<MultipartMixedStatus>> statusArray = default)
         {
-            this.Status = status;
-            // to ensure "file" is required (not null)
+            // to ensure "marker" (not nullable) is not null
+            if (marker.IsSet && marker.Value == null)
+            {
+                throw new ArgumentNullException("marker isn't a nullable property for MultipartMixedRequest and cannot be null");
+            }
+            // to ensure "file" (not nullable) is not null
             if (file == null)
             {
-                throw new ArgumentNullException("file is a required property for MultipartMixedRequest and cannot be null");
+                throw new ArgumentNullException("file isn't a nullable property for MultipartMixedRequest and cannot be null");
             }
-            this.File = file;
+            // to ensure "statusArray" (not nullable) is not null
+            if (statusArray.IsSet && statusArray.Value == null)
+            {
+                throw new ArgumentNullException("statusArray isn't a nullable property for MultipartMixedRequest and cannot be null");
+            }
+            this.Status = status;
             this.Marker = marker;
+            this.File = file;
             this.StatusArray = statusArray;
         }
 
@@ -67,7 +77,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Marker
         /// </summary>
         [DataMember(Name = "marker", EmitDefaultValue = false)]
-        public MultipartMixedRequestMarker Marker { get; set; }
+        public Option<MultipartMixedRequestMarker> Marker { get; set; }
 
         /// <summary>
         /// a file
@@ -80,7 +90,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets StatusArray
         /// </summary>
         [DataMember(Name = "statusArray", EmitDefaultValue = false)]
-        public List<MultipartMixedStatus> StatusArray { get; set; }
+        public Option<List<MultipartMixedStatus>> StatusArray { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

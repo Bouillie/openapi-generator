@@ -56,7 +56,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets JustSymbol
         /// </summary>
         [DataMember(Name = "just_symbol", EmitDefaultValue = false)]
-        public JustSymbolEnum? JustSymbol { get; set; }
+        public Option<JustSymbolEnum> JustSymbol { get; set; }
         /// <summary>
         /// Defines ArrayEnum
         /// </summary>
@@ -81,8 +81,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="justSymbol">justSymbol.</param>
         /// <param name="arrayEnum">arrayEnum.</param>
-        public EnumArrays(JustSymbolEnum? justSymbol = default, List<ArrayEnumEnum> arrayEnum = default)
+        public EnumArrays(Option<JustSymbolEnum> justSymbol = default, Option<List<ArrayEnumEnum>> arrayEnum = default)
         {
+            // to ensure "arrayEnum" (not nullable) is not null
+            if (arrayEnum.IsSet && arrayEnum.Value == null)
+            {
+                throw new ArgumentNullException("arrayEnum isn't a nullable property for EnumArrays and cannot be null");
+            }
             this.JustSymbol = justSymbol;
             this.ArrayEnum = arrayEnum;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -92,7 +97,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayEnum
         /// </summary>
         [DataMember(Name = "array_enum", EmitDefaultValue = false)]
-        public List<EnumArrays.ArrayEnumEnum> ArrayEnum { get; set; }
+        public Option<List<EnumArrays.ArrayEnumEnum>> ArrayEnum { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

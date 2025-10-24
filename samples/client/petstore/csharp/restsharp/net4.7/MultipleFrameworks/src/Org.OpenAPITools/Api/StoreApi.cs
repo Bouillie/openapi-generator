@@ -641,6 +641,12 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Order</returns>
         public Org.OpenAPITools.Client.ApiResponse<Order> GetOrderByIdWithHttpInfo(long orderId, int operationIndex = 0)
         {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'orderId' when calling StoreApi->GetOrderById");
+            }
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -709,6 +715,12 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse (Order)</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Order>> GetOrderByIdWithHttpInfoAsync(long orderId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'orderId' when calling StoreApi->GetOrderById");
+            }
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 

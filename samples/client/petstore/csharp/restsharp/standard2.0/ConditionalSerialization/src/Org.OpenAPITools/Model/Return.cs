@@ -47,27 +47,35 @@ namespace Org.OpenAPITools.Model
         /// <param name="varLock">varLock (required).</param>
         /// <param name="varAbstract">varAbstract (required).</param>
         /// <param name="varUnsafe">varUnsafe.</param>
-        public Return(int varReturn = default, string varLock = default, string varAbstract = default, string varUnsafe = default)
+        public Return(Option<int> varReturn = default, string varLock = default, string varAbstract = default, Option<string> varUnsafe = default)
         {
-            // to ensure "varLock" is required (not null)
+            // to ensure "varLock" (not nullable) is not null
             if (varLock == null)
             {
-                throw new ArgumentNullException("varLock is a required property for Return and cannot be null");
+                throw new ArgumentNullException("varLock isn't a nullable property for Return and cannot be null");
             }
-            this._Lock = varLock;
-            // to ensure "varAbstract" is required (not null)
-            if (varAbstract == null)
+            // to ensure "varUnsafe" (not nullable) is not null
+            if (varUnsafe.IsSet && varUnsafe.Value == null)
             {
-                throw new ArgumentNullException("varAbstract is a required property for Return and cannot be null");
+                throw new ArgumentNullException("varUnsafe isn't a nullable property for Return and cannot be null");
             }
-            this._Abstract = varAbstract;
             this._VarReturn = varReturn;
-            if (this.VarReturn != null)
+            if (this.VarReturn.IsSet)
             {
                 this._flagVarReturn = true;
             }
+            this._Lock = varLock;
+            if (this.Lock.IsSet)
+            {
+                this._flagLock = true;
+            }
+            this._Abstract = varAbstract;
+            if (this.Abstract.IsSet)
+            {
+                this._flagAbstract = true;
+            }
             this._Unsafe = varUnsafe;
-            if (this.Unsafe != null)
+            if (this.Unsafe.IsSet)
             {
                 this._flagUnsafe = true;
             }
@@ -78,7 +86,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets VarReturn
         /// </summary>
         [DataMember(Name = "return", EmitDefaultValue = false)]
-        public int VarReturn
+        public Option<int> VarReturn
         {
             get{ return _VarReturn;}
             set
@@ -87,7 +95,7 @@ namespace Org.OpenAPITools.Model
                 _flagVarReturn = true;
             }
         }
-        private int _VarReturn;
+        private Option<int> _VarReturn;
         private bool _flagVarReturn;
 
         /// <summary>
@@ -150,7 +158,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Unsafe
         /// </summary>
         [DataMember(Name = "unsafe", EmitDefaultValue = false)]
-        public string Unsafe
+        public Option<string> Unsafe
         {
             get{ return _Unsafe;}
             set
@@ -159,7 +167,7 @@ namespace Org.OpenAPITools.Model
                 _flagUnsafe = true;
             }
         }
-        private string _Unsafe;
+        private Option<string> _Unsafe;
         private bool _flagUnsafe;
 
         /// <summary>

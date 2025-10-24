@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -50,10 +51,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectType">objectType (required) (default to ObjectTypeEnum.Descendant2).</param>
         public Descendant2(string confidentiality = default, string alternativeName = default, ObjectTypeEnum objectType = ObjectTypeEnum.Descendant2) : base(alternativeName, objectType)
         {
-            // to ensure "confidentiality" is required (not null)
+            // to ensure "confidentiality" (not nullable) is not null
             if (confidentiality == null)
             {
-                throw new ArgumentNullException("confidentiality is a required property for Descendant2 and cannot be null");
+                throw new ArgumentNullException("confidentiality isn't a nullable property for Descendant2 and cannot be null");
             }
             this.Confidentiality = confidentiality;
             this.AdditionalProperties = new Dictionary<string, object>();

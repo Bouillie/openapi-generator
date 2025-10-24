@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -40,8 +41,18 @@ namespace Org.OpenAPITools.Model
         /// <param name="shapeOrNull">shapeOrNull.</param>
         /// <param name="nullableShape">nullableShape.</param>
         /// <param name="shapes">shapes.</param>
-        public Drawing(Shape mainShape = default, ShapeOrNull shapeOrNull = default, NullableShape nullableShape = default, List<Shape> shapes = default)
+        public Drawing(Option<Shape> mainShape = default, Option<ShapeOrNull> shapeOrNull = default, Option<NullableShape> nullableShape = default, Option<List<Shape>> shapes = default)
         {
+            // to ensure "mainShape" (not nullable) is not null
+            if (mainShape.IsSet && mainShape.Value == null)
+            {
+                throw new ArgumentNullException("mainShape isn't a nullable property for Drawing and cannot be null");
+            }
+            // to ensure "shapes" (not nullable) is not null
+            if (shapes.IsSet && shapes.Value == null)
+            {
+                throw new ArgumentNullException("shapes isn't a nullable property for Drawing and cannot be null");
+            }
             this.MainShape = mainShape;
             this.ShapeOrNull = shapeOrNull;
             this.NullableShape = nullableShape;
@@ -53,25 +64,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MainShape
         /// </summary>
         [DataMember(Name = "mainShape", EmitDefaultValue = false)]
-        public Shape MainShape { get; set; }
+        public Option<Shape> MainShape { get; set; }
 
         /// <summary>
         /// Gets or Sets ShapeOrNull
         /// </summary>
         [DataMember(Name = "shapeOrNull", EmitDefaultValue = true)]
-        public ShapeOrNull ShapeOrNull { get; set; }
+        public Option<ShapeOrNull?> ShapeOrNull { get; set; }
 
         /// <summary>
         /// Gets or Sets NullableShape
         /// </summary>
         [DataMember(Name = "nullableShape", EmitDefaultValue = true)]
-        public NullableShape NullableShape { get; set; }
+        public Option<NullableShape?> NullableShape { get; set; }
 
         /// <summary>
         /// Gets or Sets Shapes
         /// </summary>
         [DataMember(Name = "shapes", EmitDefaultValue = false)]
-        public List<Shape> Shapes { get; set; }
+        public Option<List<Shape>> Shapes { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

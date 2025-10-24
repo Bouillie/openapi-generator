@@ -18,6 +18,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -37,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="NumberOnly" /> class.
         /// </summary>
         /// <param name="justNumber">justNumber.</param>
-        public NumberOnly(decimal justNumber = default)
+        public NumberOnly(Option<decimal> justNumber = default)
         {
             this.JustNumber = justNumber;
         }
@@ -46,7 +47,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets JustNumber
         /// </summary>
         [DataMember(Name = "JustNumber", EmitDefaultValue = false)]
-        public decimal JustNumber { get; set; }
+        public Option<decimal> JustNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

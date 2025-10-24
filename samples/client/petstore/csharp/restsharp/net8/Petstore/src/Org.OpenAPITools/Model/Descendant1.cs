@@ -46,10 +46,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectType">objectType (required) (default to ObjectTypeEnum.Descendant1).</param>
         public Descendant1(string descendantName = default, string alternativeName = default, ObjectTypeEnum objectType = ObjectTypeEnum.Descendant1) : base(alternativeName, objectType)
         {
-            // to ensure "descendantName" is required (not null)
+            // to ensure "descendantName" (not nullable) is not null
             if (descendantName == null)
             {
-                throw new ArgumentNullException("descendantName is a required property for Descendant1 and cannot be null");
+                throw new ArgumentNullException("descendantName isn't a nullable property for Descendant1 and cannot be null");
             }
             this.DescendantName = descendantName;
         }

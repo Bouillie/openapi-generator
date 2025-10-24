@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="MultipartSingleRequest" /> class.
         /// </summary>
         /// <param name="file">One file.</param>
-        public MultipartSingleRequest(System.IO.Stream file = default)
+        public MultipartSingleRequest(Option<System.IO.Stream> file = default)
         {
+            // to ensure "file" (not nullable) is not null
+            if (file.IsSet && file.Value == null)
+            {
+                throw new ArgumentNullException("file isn't a nullable property for MultipartSingleRequest and cannot be null");
+            }
             this.File = file;
         }
 
@@ -46,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>One file</value>
         [DataMember(Name = "file", EmitDefaultValue = false)]
-        public System.IO.Stream File { get; set; }
+        public Option<System.IO.Stream> File { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

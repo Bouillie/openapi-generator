@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter" /> class.
         /// </summary>
         /// <param name="values">values.</param>
-        public TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter(List<string> values = default)
+        public TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter(Option<List<string>> values = default)
         {
+            // to ensure "values" (not nullable) is not null
+            if (values.IsSet && values.Value == null)
+            {
+                throw new ArgumentNullException("values isn't a nullable property for TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter and cannot be null");
+            }
             this.Values = values;
         }
 
@@ -45,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Values
         /// </summary>
         [DataMember(Name = "values", EmitDefaultValue = false)]
-        public List<string> Values { get; set; }
+        public Option<List<string>> Values { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

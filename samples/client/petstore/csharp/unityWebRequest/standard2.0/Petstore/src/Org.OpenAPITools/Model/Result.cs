@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -36,8 +37,23 @@ namespace Org.OpenAPITools.Model
         /// <param name="code">Result code.</param>
         /// <param name="uuid">Result unique identifier.</param>
         /// <param name="data">list of named parameters for current message.</param>
-        public Result(string code = default, string uuid = default, Dictionary<string, string> data = default)
+        public Result(Option<string> code = default, Option<string> uuid = default, Option<Dictionary<string, string>> data = default)
         {
+            // to ensure "code" (not nullable) is not null
+            if (code.IsSet && code.Value == null)
+            {
+                throw new ArgumentNullException("code isn't a nullable property for Result and cannot be null");
+            }
+            // to ensure "uuid" (not nullable) is not null
+            if (uuid.IsSet && uuid.Value == null)
+            {
+                throw new ArgumentNullException("uuid isn't a nullable property for Result and cannot be null");
+            }
+            // to ensure "data" (not nullable) is not null
+            if (data.IsSet && data.Value == null)
+            {
+                throw new ArgumentNullException("data isn't a nullable property for Result and cannot be null");
+            }
             this.Code = code;
             this.Uuid = uuid;
             this.Data = data;
@@ -48,21 +64,21 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Result code</value>
         [DataMember(Name = "code", EmitDefaultValue = false)]
-        public string Code { get; set; }
+        public Option<string> Code { get; set; }
 
         /// <summary>
         /// Result unique identifier
         /// </summary>
         /// <value>Result unique identifier</value>
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public string Uuid { get; set; }
+        public Option<string> Uuid { get; set; }
 
         /// <summary>
         /// list of named parameters for current message
         /// </summary>
         /// <value>list of named parameters for current message</value>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public Dictionary<string, string> Data { get; set; }
+        public Option<Dictionary<string, string>> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

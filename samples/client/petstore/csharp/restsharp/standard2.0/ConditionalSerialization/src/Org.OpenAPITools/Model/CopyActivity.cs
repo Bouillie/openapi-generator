@@ -87,13 +87,21 @@ namespace Org.OpenAPITools.Model
         /// <param name="copyActivitytt">copyActivitytt (required).</param>
         public CopyActivity(SchemaEnum schema = SchemaEnum.ScopeActivity, string copyActivitytt = default) : base()
         {
-            this._Schema = schema;
-            // to ensure "copyActivitytt" is required (not null)
+            // to ensure "copyActivitytt" (not nullable) is not null
             if (copyActivitytt == null)
             {
-                throw new ArgumentNullException("copyActivitytt is a required property for CopyActivity and cannot be null");
+                throw new ArgumentNullException("copyActivitytt isn't a nullable property for CopyActivity and cannot be null");
+            }
+            this._Schema = schema;
+            if (this.Schema.IsSet)
+            {
+                this._flagSchema = true;
             }
             this._CopyActivitytt = copyActivitytt;
+            if (this.CopyActivitytt.IsSet)
+            {
+                this._flagCopyActivitytt = true;
+            }
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

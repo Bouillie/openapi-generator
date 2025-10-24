@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,8 +35,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="RolesReportsHashRole" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        public RolesReportsHashRole(string name = default)
+        public RolesReportsHashRole(Option<string> name = default)
         {
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for RolesReportsHashRole and cannot be null");
+            }
             this.Name = name;
         }
 
@@ -43,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public Option<string> Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

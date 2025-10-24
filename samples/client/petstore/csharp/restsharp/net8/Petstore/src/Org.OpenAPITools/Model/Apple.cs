@@ -38,8 +38,23 @@ namespace Org.OpenAPITools.Model
         /// <param name="cultivar">cultivar.</param>
         /// <param name="origin">origin.</param>
         /// <param name="colorCode">colorCode.</param>
-        public Apple(string cultivar = default, string origin = default, string colorCode = default)
+        public Apple(Option<string> cultivar = default, Option<string> origin = default, Option<string> colorCode = default)
         {
+            // to ensure "cultivar" (not nullable) is not null
+            if (cultivar.IsSet && cultivar.Value == null)
+            {
+                throw new ArgumentNullException("cultivar isn't a nullable property for Apple and cannot be null");
+            }
+            // to ensure "origin" (not nullable) is not null
+            if (origin.IsSet && origin.Value == null)
+            {
+                throw new ArgumentNullException("origin isn't a nullable property for Apple and cannot be null");
+            }
+            // to ensure "colorCode" (not nullable) is not null
+            if (colorCode.IsSet && colorCode.Value == null)
+            {
+                throw new ArgumentNullException("colorCode isn't a nullable property for Apple and cannot be null");
+            }
             this.Cultivar = cultivar;
             this.Origin = origin;
             this.ColorCode = colorCode;
@@ -49,19 +64,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Cultivar
         /// </summary>
         [DataMember(Name = "cultivar", EmitDefaultValue = false)]
-        public string Cultivar { get; set; }
+        public Option<string> Cultivar { get; set; }
 
         /// <summary>
         /// Gets or Sets Origin
         /// </summary>
         [DataMember(Name = "origin", EmitDefaultValue = false)]
-        public string Origin { get; set; }
+        public Option<string> Origin { get; set; }
 
         /// <summary>
         /// Gets or Sets ColorCode
         /// </summary>
         [DataMember(Name = "color_code", EmitDefaultValue = false)]
-        public string ColorCode { get; set; }
+        public Option<string> ColorCode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

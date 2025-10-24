@@ -93,7 +93,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "enum_string", EmitDefaultValue = false)]
-        public EnumStringEnum? EnumString
+        public Option<EnumStringEnum> EnumString
         {
             get{ return _EnumString;}
             set
@@ -102,7 +102,7 @@ namespace Org.OpenAPITools.Model
                 _flagEnumString = true;
             }
         }
-        private EnumStringEnum? _EnumString;
+        private Option<EnumStringEnum> _EnumString;
         private bool _flagEnumString;
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "enum_integer", EmitDefaultValue = false)]
-        public EnumIntegerEnum? EnumInteger
+        public Option<EnumIntegerEnum> EnumInteger
         {
             get{ return _EnumInteger;}
             set
@@ -225,7 +225,7 @@ namespace Org.OpenAPITools.Model
                 _flagEnumInteger = true;
             }
         }
-        private EnumIntegerEnum? _EnumInteger;
+        private Option<EnumIntegerEnum> _EnumInteger;
         private bool _flagEnumInteger;
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "enum_integer_only", EmitDefaultValue = false)]
-        public EnumIntegerOnlyEnum? EnumIntegerOnly
+        public Option<EnumIntegerOnlyEnum> EnumIntegerOnly
         {
             get{ return _EnumIntegerOnly;}
             set
@@ -267,7 +267,7 @@ namespace Org.OpenAPITools.Model
                 _flagEnumIntegerOnly = true;
             }
         }
-        private EnumIntegerOnlyEnum? _EnumIntegerOnly;
+        private Option<EnumIntegerOnlyEnum> _EnumIntegerOnly;
         private bool _flagEnumIntegerOnly;
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "enum_number", EmitDefaultValue = false)]
-        public EnumNumberEnum? EnumNumber
+        public Option<EnumNumberEnum> EnumNumber
         {
             get{ return _EnumNumber;}
             set
@@ -312,7 +312,7 @@ namespace Org.OpenAPITools.Model
                 _flagEnumNumber = true;
             }
         }
-        private EnumNumberEnum? _EnumNumber;
+        private Option<EnumNumberEnum> _EnumNumber;
         private bool _flagEnumNumber;
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "outerEnum", EmitDefaultValue = true)]
-        public OuterEnum? OuterEnum
+        public Option<OuterEnum?> OuterEnum
         {
             get{ return _OuterEnum;}
             set
@@ -338,7 +338,7 @@ namespace Org.OpenAPITools.Model
                 _flagOuterEnum = true;
             }
         }
-        private OuterEnum? _OuterEnum;
+        private Option<OuterEnum?> _OuterEnum;
         private bool _flagOuterEnum;
 
         /// <summary>
@@ -355,7 +355,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "outerEnumInteger", EmitDefaultValue = false)]
-        public OuterEnumInteger? OuterEnumInteger
+        public Option<OuterEnumInteger> OuterEnumInteger
         {
             get{ return _OuterEnumInteger;}
             set
@@ -364,7 +364,7 @@ namespace Org.OpenAPITools.Model
                 _flagOuterEnumInteger = true;
             }
         }
-        private OuterEnumInteger? _OuterEnumInteger;
+        private Option<OuterEnumInteger> _OuterEnumInteger;
         private bool _flagOuterEnumInteger;
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "outerEnumDefaultValue", EmitDefaultValue = false)]
-        public OuterEnumDefaultValue? OuterEnumDefaultValue
+        public Option<OuterEnumDefaultValue> OuterEnumDefaultValue
         {
             get{ return _OuterEnumDefaultValue;}
             set
@@ -390,7 +390,7 @@ namespace Org.OpenAPITools.Model
                 _flagOuterEnumDefaultValue = true;
             }
         }
-        private OuterEnumDefaultValue? _OuterEnumDefaultValue;
+        private Option<OuterEnumDefaultValue> _OuterEnumDefaultValue;
         private bool _flagOuterEnumDefaultValue;
 
         /// <summary>
@@ -407,7 +407,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "outerEnumIntegerDefaultValue", EmitDefaultValue = false)]
-        public OuterEnumIntegerDefaultValue? OuterEnumIntegerDefaultValue
+        public Option<OuterEnumIntegerDefaultValue> OuterEnumIntegerDefaultValue
         {
             get{ return _OuterEnumIntegerDefaultValue;}
             set
@@ -416,7 +416,7 @@ namespace Org.OpenAPITools.Model
                 _flagOuterEnumIntegerDefaultValue = true;
             }
         }
-        private OuterEnumIntegerDefaultValue? _OuterEnumIntegerDefaultValue;
+        private Option<OuterEnumIntegerDefaultValue> _OuterEnumIntegerDefaultValue;
         private bool _flagOuterEnumIntegerDefaultValue;
 
         /// <summary>
@@ -447,46 +447,50 @@ namespace Org.OpenAPITools.Model
         /// <param name="outerEnumInteger">outerEnumInteger.</param>
         /// <param name="outerEnumDefaultValue">outerEnumDefaultValue.</param>
         /// <param name="outerEnumIntegerDefaultValue">outerEnumIntegerDefaultValue.</param>
-        public EnumTest(EnumStringEnum? enumString = default, EnumStringRequiredEnum enumStringRequired = default, EnumIntegerEnum? enumInteger = default, EnumIntegerOnlyEnum? enumIntegerOnly = default, EnumNumberEnum? enumNumber = default, OuterEnum? outerEnum = default, OuterEnumInteger? outerEnumInteger = default, OuterEnumDefaultValue? outerEnumDefaultValue = default, OuterEnumIntegerDefaultValue? outerEnumIntegerDefaultValue = default)
+        public EnumTest(Option<EnumStringEnum> enumString = default, EnumStringRequiredEnum enumStringRequired = default, Option<EnumIntegerEnum> enumInteger = default, Option<EnumIntegerOnlyEnum> enumIntegerOnly = default, Option<EnumNumberEnum> enumNumber = default, Option<OuterEnum> outerEnum = default, Option<OuterEnumInteger> outerEnumInteger = default, Option<OuterEnumDefaultValue> outerEnumDefaultValue = default, Option<OuterEnumIntegerDefaultValue> outerEnumIntegerDefaultValue = default)
         {
-            this._EnumStringRequired = enumStringRequired;
             this._EnumString = enumString;
-            if (this.EnumString != null)
+            if (this.EnumString.IsSet)
             {
                 this._flagEnumString = true;
             }
+            this._EnumStringRequired = enumStringRequired;
+            if (this.EnumStringRequired.IsSet)
+            {
+                this._flagEnumStringRequired = true;
+            }
             this._EnumInteger = enumInteger;
-            if (this.EnumInteger != null)
+            if (this.EnumInteger.IsSet)
             {
                 this._flagEnumInteger = true;
             }
             this._EnumIntegerOnly = enumIntegerOnly;
-            if (this.EnumIntegerOnly != null)
+            if (this.EnumIntegerOnly.IsSet)
             {
                 this._flagEnumIntegerOnly = true;
             }
             this._EnumNumber = enumNumber;
-            if (this.EnumNumber != null)
+            if (this.EnumNumber.IsSet)
             {
                 this._flagEnumNumber = true;
             }
             this._OuterEnum = outerEnum;
-            if (this.OuterEnum != null)
+            if (this.OuterEnum.IsSet)
             {
                 this._flagOuterEnum = true;
             }
             this._OuterEnumInteger = outerEnumInteger;
-            if (this.OuterEnumInteger != null)
+            if (this.OuterEnumInteger.IsSet)
             {
                 this._flagOuterEnumInteger = true;
             }
             this._OuterEnumDefaultValue = outerEnumDefaultValue;
-            if (this.OuterEnumDefaultValue != null)
+            if (this.OuterEnumDefaultValue.IsSet)
             {
                 this._flagOuterEnumDefaultValue = true;
             }
             this._OuterEnumIntegerDefaultValue = outerEnumIntegerDefaultValue;
-            if (this.OuterEnumIntegerDefaultValue != null)
+            if (this.OuterEnumIntegerDefaultValue.IsSet)
             {
                 this._flagOuterEnumIntegerDefaultValue = true;
             }

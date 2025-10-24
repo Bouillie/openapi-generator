@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -41,10 +42,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="schema">schema (required).</param>
         public EntityBase(string schema = default)
         {
-            // to ensure "schema" is required (not null)
+            // to ensure "schema" (not nullable) is not null
             if (schema == null)
             {
-                throw new ArgumentNullException("schema is a required property for EntityBase and cannot be null");
+                throw new ArgumentNullException("schema isn't a nullable property for EntityBase and cannot be null");
             }
             this.Schema = schema;
         }

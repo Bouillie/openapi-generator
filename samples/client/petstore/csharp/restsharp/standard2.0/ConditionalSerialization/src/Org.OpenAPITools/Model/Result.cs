@@ -38,20 +38,35 @@ namespace Org.OpenAPITools.Model
         /// <param name="code">Result code.</param>
         /// <param name="uuid">Result unique identifier.</param>
         /// <param name="data">list of named parameters for current message.</param>
-        public Result(string code = default, string uuid = default, Dictionary<string, string> data = default)
+        public Result(Option<string> code = default, Option<string> uuid = default, Option<Dictionary<string, string>> data = default)
         {
+            // to ensure "code" (not nullable) is not null
+            if (code.IsSet && code.Value == null)
+            {
+                throw new ArgumentNullException("code isn't a nullable property for Result and cannot be null");
+            }
+            // to ensure "uuid" (not nullable) is not null
+            if (uuid.IsSet && uuid.Value == null)
+            {
+                throw new ArgumentNullException("uuid isn't a nullable property for Result and cannot be null");
+            }
+            // to ensure "data" (not nullable) is not null
+            if (data.IsSet && data.Value == null)
+            {
+                throw new ArgumentNullException("data isn't a nullable property for Result and cannot be null");
+            }
             this._Code = code;
-            if (this.Code != null)
+            if (this.Code.IsSet)
             {
                 this._flagCode = true;
             }
             this._Uuid = uuid;
-            if (this.Uuid != null)
+            if (this.Uuid.IsSet)
             {
                 this._flagUuid = true;
             }
             this._Data = data;
-            if (this.Data != null)
+            if (this.Data.IsSet)
             {
                 this._flagData = true;
             }
@@ -63,7 +78,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Result code</value>
         [DataMember(Name = "code", EmitDefaultValue = false)]
-        public string Code
+        public Option<string> Code
         {
             get{ return _Code;}
             set
@@ -72,7 +87,7 @@ namespace Org.OpenAPITools.Model
                 _flagCode = true;
             }
         }
-        private string _Code;
+        private Option<string> _Code;
         private bool _flagCode;
 
         /// <summary>
@@ -88,7 +103,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Result unique identifier</value>
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public string Uuid
+        public Option<string> Uuid
         {
             get{ return _Uuid;}
             set
@@ -97,7 +112,7 @@ namespace Org.OpenAPITools.Model
                 _flagUuid = true;
             }
         }
-        private string _Uuid;
+        private Option<string> _Uuid;
         private bool _flagUuid;
 
         /// <summary>
@@ -113,7 +128,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>list of named parameters for current message</value>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public Dictionary<string, string> Data
+        public Option<Dictionary<string, string>> Data
         {
             get{ return _Data;}
             set
@@ -122,7 +137,7 @@ namespace Org.OpenAPITools.Model
                 _flagData = true;
             }
         }
-        private Dictionary<string, string> _Data;
+        private Option<Dictionary<string, string>> _Data;
         private bool _flagData;
 
         /// <summary>

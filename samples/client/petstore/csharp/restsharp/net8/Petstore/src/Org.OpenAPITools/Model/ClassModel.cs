@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ClassModel" /> class.
         /// </summary>
         /// <param name="varClass">varClass.</param>
-        public ClassModel(string varClass = default)
+        public ClassModel(Option<string> varClass = default)
         {
+            // to ensure "varClass" (not nullable) is not null
+            if (varClass.IsSet && varClass.Value == null)
+            {
+                throw new ArgumentNullException("varClass isn't a nullable property for ClassModel and cannot be null");
+            }
             this.Class = varClass;
         }
 
@@ -45,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Class
         /// </summary>
         [DataMember(Name = "_class", EmitDefaultValue = false)]
-        public string Class { get; set; }
+        public Option<string> Class { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

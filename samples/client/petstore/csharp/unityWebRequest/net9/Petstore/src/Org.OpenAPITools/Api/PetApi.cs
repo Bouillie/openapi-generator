@@ -780,6 +780,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public Org.OpenAPITools.Client.ApiResponse<Object> DeletePetWithHttpInfo(long petId, string? apiKey = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->DeletePet");
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -848,6 +852,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> DeletePetWithHttpInfoAsync(long petId, string? apiKey = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->DeletePet");
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -1265,6 +1273,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Pet</returns>
         public Org.OpenAPITools.Client.ApiResponse<Pet> GetPetByIdWithHttpInfo(long petId)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->GetPetById");
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1334,6 +1346,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse (Pet)</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Pet>> GetPetByIdWithHttpInfoAsync(long petId, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->GetPetById");
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -1578,6 +1594,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public Org.OpenAPITools.Client.ApiResponse<Object> UpdatePetWithFormWithHttpInfo(long petId, string? name = default, string? status = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->UpdatePetWithForm");
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1653,6 +1673,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> UpdatePetWithFormWithHttpInfoAsync(long petId, string? name = default, string? status = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->UpdatePetWithForm");
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -1731,6 +1755,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of ApiResponse</returns>
         public Org.OpenAPITools.Client.ApiResponse<ApiResponse> UploadFileWithHttpInfo(long petId, string? additionalMetadata = default, System.IO.Stream? file = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->UploadFile");
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1807,6 +1835,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse (ApiResponse)</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<ApiResponse>> UploadFileWithHttpInfoAsync(long petId, string? additionalMetadata = default, System.IO.Stream? file = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->UploadFile");
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -1885,6 +1917,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of ApiResponse</returns>
         public Org.OpenAPITools.Client.ApiResponse<ApiResponse> UploadFileWithRequiredFileWithHttpInfo(long petId, System.IO.Stream requiredFile, string? additionalMetadata = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->UploadFileWithRequiredFile");
+
             // verify the required parameter 'requiredFile' is set
             if (requiredFile == null)
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredFile' when calling PetApi->UploadFileWithRequiredFile");
@@ -1963,6 +1999,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse (ApiResponse)</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<ApiResponse>> UploadFileWithRequiredFileWithHttpInfoAsync(long petId, System.IO.Stream requiredFile, string? additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'petId' is set
+            if (petId == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'petId' when calling PetApi->UploadFileWithRequiredFile");
+
             // verify the required parameter 'requiredFile' is set
             if (requiredFile == null)
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredFile' when calling PetApi->UploadFileWithRequiredFile");

@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Model
         /// <value>Order Status</value>
 
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status
+        public Option<StatusEnum> Status
         {
             get{ return _Status;}
             set
@@ -74,7 +74,7 @@ namespace Org.OpenAPITools.Model
                 _flagStatus = true;
             }
         }
-        private StatusEnum? _Status;
+        private Option<StatusEnum> _Status;
         private bool _flagStatus;
 
         /// <summary>
@@ -94,33 +94,34 @@ namespace Org.OpenAPITools.Model
         /// <param name="shipDate">shipDate.</param>
         /// <param name="status">Order Status.</param>
         /// <param name="complete">complete (default to false).</param>
-        public Order(long id = default, long petId = default, int quantity = default, DateTime shipDate = default, StatusEnum? status = default, bool complete = false)
+        public Order(Option<long> id = default, Option<long> petId = default, Option<int> quantity = default, Option<DateTime> shipDate = default, Option<StatusEnum> status = default, Option<bool> complete = default)
         {
             this._Id = id;
-            if (this.Id != null)
+            if (this.Id.IsSet)
             {
                 this._flagId = true;
             }
             this._PetId = petId;
-            if (this.PetId != null)
+            if (this.PetId.IsSet)
             {
                 this._flagPetId = true;
             }
             this._Quantity = quantity;
-            if (this.Quantity != null)
+            if (this.Quantity.IsSet)
             {
                 this._flagQuantity = true;
             }
             this._ShipDate = shipDate;
-            if (this.ShipDate != null)
+            if (this.ShipDate.IsSet)
             {
                 this._flagShipDate = true;
             }
             this._Status = status;
-            if (this.Status != null)
+            if (this.Status.IsSet)
             {
                 this._flagStatus = true;
             }
+            this._Complete = complete.IsSet ? complete.Value : new Option(false);
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -128,7 +129,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id
+        public Option<long> Id
         {
             get{ return _Id;}
             set
@@ -137,7 +138,7 @@ namespace Org.OpenAPITools.Model
                 _flagId = true;
             }
         }
-        private long _Id;
+        private Option<long> _Id;
         private bool _flagId;
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets PetId
         /// </summary>
         [DataMember(Name = "petId", EmitDefaultValue = false)]
-        public long PetId
+        public Option<long> PetId
         {
             get{ return _PetId;}
             set
@@ -161,7 +162,7 @@ namespace Org.OpenAPITools.Model
                 _flagPetId = true;
             }
         }
-        private long _PetId;
+        private Option<long> _PetId;
         private bool _flagPetId;
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity
+        public Option<int> Quantity
         {
             get{ return _Quantity;}
             set
@@ -185,7 +186,7 @@ namespace Org.OpenAPITools.Model
                 _flagQuantity = true;
             }
         }
-        private int _Quantity;
+        private Option<int> _Quantity;
         private bool _flagQuantity;
 
         /// <summary>
@@ -203,7 +204,7 @@ namespace Org.OpenAPITools.Model
         <example>2020-02-02T20:20:20.000222Z</example>
         */
         [DataMember(Name = "shipDate", EmitDefaultValue = false)]
-        public DateTime ShipDate
+        public Option<DateTime> ShipDate
         {
             get{ return _ShipDate;}
             set
@@ -212,7 +213,7 @@ namespace Org.OpenAPITools.Model
                 _flagShipDate = true;
             }
         }
-        private DateTime _ShipDate;
+        private Option<DateTime> _ShipDate;
         private bool _flagShipDate;
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Complete
         /// </summary>
         [DataMember(Name = "complete", EmitDefaultValue = true)]
-        public bool Complete
+        public Option<bool> Complete
         {
             get{ return _Complete;}
             set
@@ -236,7 +237,7 @@ namespace Org.OpenAPITools.Model
                 _flagComplete = true;
             }
         }
-        private bool _Complete;
+        private Option<bool> _Complete;
         private bool _flagComplete;
 
         /// <summary>

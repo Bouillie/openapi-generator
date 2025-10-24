@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ArrayOfArrayOfNumberOnly" /> class.
         /// </summary>
         /// <param name="arrayArrayNumber">arrayArrayNumber.</param>
-        public ArrayOfArrayOfNumberOnly(List<List<decimal>> arrayArrayNumber = default)
+        public ArrayOfArrayOfNumberOnly(Option<List<List<decimal>>> arrayArrayNumber = default)
         {
+            // to ensure "arrayArrayNumber" (not nullable) is not null
+            if (arrayArrayNumber.IsSet && arrayArrayNumber.Value == null)
+            {
+                throw new ArgumentNullException("arrayArrayNumber isn't a nullable property for ArrayOfArrayOfNumberOnly and cannot be null");
+            }
             this._ArrayArrayNumber = arrayArrayNumber;
-            if (this.ArrayArrayNumber != null)
+            if (this.ArrayArrayNumber.IsSet)
             {
                 this._flagArrayArrayNumber = true;
             }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayArrayNumber
         /// </summary>
         [DataMember(Name = "ArrayArrayNumber", EmitDefaultValue = false)]
-        public List<List<decimal>> ArrayArrayNumber
+        public Option<List<List<decimal>>> ArrayArrayNumber
         {
             get{ return _ArrayArrayNumber;}
             set
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
                 _flagArrayArrayNumber = true;
             }
         }
-        private List<List<decimal>> _ArrayArrayNumber;
+        private Option<List<List<decimal>>> _ArrayArrayNumber;
         private bool _flagArrayArrayNumber;
 
         /// <summary>

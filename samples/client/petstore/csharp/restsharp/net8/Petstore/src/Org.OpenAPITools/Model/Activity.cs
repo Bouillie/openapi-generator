@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="Activity" /> class.
         /// </summary>
         /// <param name="activityOutputs">activityOutputs.</param>
-        public Activity(Dictionary<string, List<ActivityOutputElementRepresentation>> activityOutputs = default)
+        public Activity(Option<Dictionary<string, List<ActivityOutputElementRepresentation>>> activityOutputs = default)
         {
+            // to ensure "activityOutputs" (not nullable) is not null
+            if (activityOutputs.IsSet && activityOutputs.Value == null)
+            {
+                throw new ArgumentNullException("activityOutputs isn't a nullable property for Activity and cannot be null");
+            }
             this.ActivityOutputs = activityOutputs;
         }
 
@@ -45,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ActivityOutputs
         /// </summary>
         [DataMember(Name = "activity_outputs", EmitDefaultValue = false)]
-        public Dictionary<string, List<ActivityOutputElementRepresentation>> ActivityOutputs { get; set; }
+        public Option<Dictionary<string, List<ActivityOutputElementRepresentation>>> ActivityOutputs { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

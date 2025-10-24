@@ -40,8 +40,18 @@ namespace Org.OpenAPITools.Model
         /// <param name="date">A date.</param>
         /// <param name="id">Query.</param>
         /// <param name="outcomes">outcomes.</param>
-        public DataQuery(string suffix = default, string text = default, DateTime date = default, long id = default, List<OutcomesEnum> outcomes = default) : base(id, outcomes)
+        public DataQuery(Option<string> suffix = default, Option<string> text = default, Option<DateTime> date = default, Option<long> id = default, Option<List<OutcomesEnum>> outcomes = default) : base(id, outcomes)
         {
+            // to ensure "suffix" (not nullable) is not null
+            if (suffix.IsSet && suffix.Value == null)
+            {
+                throw new ArgumentNullException("suffix isn't a nullable property for DataQuery and cannot be null");
+            }
+            // to ensure "text" (not nullable) is not null
+            if (text.IsSet && text.Value == null)
+            {
+                throw new ArgumentNullException("text isn't a nullable property for DataQuery and cannot be null");
+            }
             this.Suffix = suffix;
             this.Text = text;
             this.Date = date;
@@ -52,7 +62,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>test suffix</value>
         [DataMember(Name = "suffix", EmitDefaultValue = false)]
-        public string Suffix { get; set; }
+        public Option<string> Suffix { get; set; }
 
         /// <summary>
         /// Some text containing white spaces
@@ -62,14 +72,14 @@ namespace Org.OpenAPITools.Model
         <example>Some text</example>
         */
         [DataMember(Name = "text", EmitDefaultValue = false)]
-        public string Text { get; set; }
+        public Option<string> Text { get; set; }
 
         /// <summary>
         /// A date
         /// </summary>
         /// <value>A date</value>
         [DataMember(Name = "date", EmitDefaultValue = false)]
-        public DateTime Date { get; set; }
+        public Option<DateTime> Date { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

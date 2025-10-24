@@ -62,17 +62,22 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="petType">petType (required) (default to PetTypeEnum.ChildCat).</param>
-        public ChildCat(string name = default, PetTypeEnum petType = PetTypeEnum.ChildCat) : base()
+        public ChildCat(Option<string> name = default, PetTypeEnum petType = PetTypeEnum.ChildCat) : base()
         {
-            this.PetType = petType;
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for ChildCat and cannot be null");
+            }
             this.Name = name;
+            this.PetType = petType;
         }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public Option<string> Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

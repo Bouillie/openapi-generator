@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -41,29 +42,29 @@ namespace Org.OpenAPITools.Model
         /// <param name="hasBaleen">hasBaleen.</param>
         /// <param name="hasTeeth">hasTeeth.</param>
         /// <param name="className">className (required).</param>
-        public Whale(bool hasBaleen = default, bool hasTeeth = default, string className = default)
+        public Whale(Option<bool> hasBaleen = default, Option<bool> hasTeeth = default, string className = default)
         {
-            // to ensure "className" is required (not null)
+            // to ensure "className" (not nullable) is not null
             if (className == null)
             {
-                throw new ArgumentNullException("className is a required property for Whale and cannot be null");
+                throw new ArgumentNullException("className isn't a nullable property for Whale and cannot be null");
             }
-            this.ClassName = className;
             this.HasBaleen = hasBaleen;
             this.HasTeeth = hasTeeth;
+            this.ClassName = className;
         }
 
         /// <summary>
         /// Gets or Sets HasBaleen
         /// </summary>
         [DataMember(Name = "hasBaleen", EmitDefaultValue = true)]
-        public bool HasBaleen { get; set; }
+        public Option<bool> HasBaleen { get; set; }
 
         /// <summary>
         /// Gets or Sets HasTeeth
         /// </summary>
         [DataMember(Name = "hasTeeth", EmitDefaultValue = true)]
-        public bool HasTeeth { get; set; }
+        public Option<bool> HasTeeth { get; set; }
 
         /// <summary>
         /// Gets or Sets ClassName

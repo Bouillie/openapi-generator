@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -42,8 +43,38 @@ namespace Org.OpenAPITools.Model
         /// <param name="capitalSnake">capitalSnake.</param>
         /// <param name="sCAETHFlowPoints">sCAETHFlowPoints.</param>
         /// <param name="aTTNAME">Name of the pet .</param>
-        public Capitalization(string smallCamel = default, string capitalCamel = default, string smallSnake = default, string capitalSnake = default, string sCAETHFlowPoints = default, string aTTNAME = default)
+        public Capitalization(Option<string> smallCamel = default, Option<string> capitalCamel = default, Option<string> smallSnake = default, Option<string> capitalSnake = default, Option<string> sCAETHFlowPoints = default, Option<string> aTTNAME = default)
         {
+            // to ensure "smallCamel" (not nullable) is not null
+            if (smallCamel.IsSet && smallCamel.Value == null)
+            {
+                throw new ArgumentNullException("smallCamel isn't a nullable property for Capitalization and cannot be null");
+            }
+            // to ensure "capitalCamel" (not nullable) is not null
+            if (capitalCamel.IsSet && capitalCamel.Value == null)
+            {
+                throw new ArgumentNullException("capitalCamel isn't a nullable property for Capitalization and cannot be null");
+            }
+            // to ensure "smallSnake" (not nullable) is not null
+            if (smallSnake.IsSet && smallSnake.Value == null)
+            {
+                throw new ArgumentNullException("smallSnake isn't a nullable property for Capitalization and cannot be null");
+            }
+            // to ensure "capitalSnake" (not nullable) is not null
+            if (capitalSnake.IsSet && capitalSnake.Value == null)
+            {
+                throw new ArgumentNullException("capitalSnake isn't a nullable property for Capitalization and cannot be null");
+            }
+            // to ensure "sCAETHFlowPoints" (not nullable) is not null
+            if (sCAETHFlowPoints.IsSet && sCAETHFlowPoints.Value == null)
+            {
+                throw new ArgumentNullException("sCAETHFlowPoints isn't a nullable property for Capitalization and cannot be null");
+            }
+            // to ensure "aTTNAME" (not nullable) is not null
+            if (aTTNAME.IsSet && aTTNAME.Value == null)
+            {
+                throw new ArgumentNullException("aTTNAME isn't a nullable property for Capitalization and cannot be null");
+            }
             this.SmallCamel = smallCamel;
             this.CapitalCamel = capitalCamel;
             this.SmallSnake = smallSnake;
@@ -57,38 +88,38 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets SmallCamel
         /// </summary>
         [DataMember(Name = "smallCamel", EmitDefaultValue = false)]
-        public string SmallCamel { get; set; }
+        public Option<string> SmallCamel { get; set; }
 
         /// <summary>
         /// Gets or Sets CapitalCamel
         /// </summary>
         [DataMember(Name = "CapitalCamel", EmitDefaultValue = false)]
-        public string CapitalCamel { get; set; }
+        public Option<string> CapitalCamel { get; set; }
 
         /// <summary>
         /// Gets or Sets SmallSnake
         /// </summary>
         [DataMember(Name = "small_Snake", EmitDefaultValue = false)]
-        public string SmallSnake { get; set; }
+        public Option<string> SmallSnake { get; set; }
 
         /// <summary>
         /// Gets or Sets CapitalSnake
         /// </summary>
         [DataMember(Name = "Capital_Snake", EmitDefaultValue = false)]
-        public string CapitalSnake { get; set; }
+        public Option<string> CapitalSnake { get; set; }
 
         /// <summary>
         /// Gets or Sets SCAETHFlowPoints
         /// </summary>
         [DataMember(Name = "SCA_ETH_Flow_Points", EmitDefaultValue = false)]
-        public string SCAETHFlowPoints { get; set; }
+        public Option<string> SCAETHFlowPoints { get; set; }
 
         /// <summary>
         /// Name of the pet 
         /// </summary>
         /// <value>Name of the pet </value>
         [DataMember(Name = "ATT_NAME", EmitDefaultValue = false)]
-        public string ATT_NAME { get; set; }
+        public Option<string> ATT_NAME { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

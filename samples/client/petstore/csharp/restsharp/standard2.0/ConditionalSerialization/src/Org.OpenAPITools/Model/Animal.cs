@@ -49,14 +49,24 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="className">className (required).</param>
         /// <param name="color">color (default to &quot;red&quot;).</param>
-        public Animal(string className = default, string color = @"red")
+        public Animal(string className = default, Option<string> color = default)
         {
-            // to ensure "className" is required (not null)
+            // to ensure "className" (not nullable) is not null
             if (className == null)
             {
-                throw new ArgumentNullException("className is a required property for Animal and cannot be null");
+                throw new ArgumentNullException("className isn't a nullable property for Animal and cannot be null");
+            }
+            // to ensure "color" (not nullable) is not null
+            if (color.IsSet && color.Value == null)
+            {
+                throw new ArgumentNullException("color isn't a nullable property for Animal and cannot be null");
             }
             this._ClassName = className;
+            if (this.ClassName.IsSet)
+            {
+                this._flagClassName = true;
+            }
+            this._Color = color.IsSet ? color.Value : new Option(@"red");
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -88,7 +98,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Color
         /// </summary>
         [DataMember(Name = "color", EmitDefaultValue = false)]
-        public string Color
+        public Option<string> Color
         {
             get{ return _Color;}
             set
@@ -97,7 +107,7 @@ namespace Org.OpenAPITools.Model
                 _flagColor = true;
             }
         }
-        private string _Color;
+        private Option<string> _Color;
         private bool _flagColor;
 
         /// <summary>

@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,8 +35,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="TestCollectionEndingWithWordList" /> class.
         /// </summary>
         /// <param name="value">value.</param>
-        public TestCollectionEndingWithWordList(string value = default)
+        public TestCollectionEndingWithWordList(Option<string> value = default)
         {
+            // to ensure "value" (not nullable) is not null
+            if (value.IsSet && value.Value == null)
+            {
+                throw new ArgumentNullException("value isn't a nullable property for TestCollectionEndingWithWordList and cannot be null");
+            }
             this.Value = value;
         }
 
@@ -43,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = false)]
-        public string Value { get; set; }
+        public Option<string> Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

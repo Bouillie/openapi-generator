@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ArrayOfNumberOnly" /> class.
         /// </summary>
         /// <param name="arrayNumber">arrayNumber.</param>
-        public ArrayOfNumberOnly(List<decimal> arrayNumber = default)
+        public ArrayOfNumberOnly(Option<List<decimal>> arrayNumber = default)
         {
+            // to ensure "arrayNumber" (not nullable) is not null
+            if (arrayNumber.IsSet && arrayNumber.Value == null)
+            {
+                throw new ArgumentNullException("arrayNumber isn't a nullable property for ArrayOfNumberOnly and cannot be null");
+            }
             this.ArrayNumber = arrayNumber;
         }
 
@@ -45,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayNumber
         /// </summary>
         [DataMember(Name = "ArrayNumber", EmitDefaultValue = false)]
-        public List<decimal> ArrayNumber { get; set; }
+        public Option<List<decimal>> ArrayNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

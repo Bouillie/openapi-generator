@@ -37,8 +37,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="roleUuid">roleUuid.</param>
         /// <param name="role">role.</param>
-        public RolesReportsHash(Guid roleUuid = default, RolesReportsHashRole role = default)
+        public RolesReportsHash(Option<Guid> roleUuid = default, Option<RolesReportsHashRole> role = default)
         {
+            // to ensure "role" (not nullable) is not null
+            if (role.IsSet && role.Value == null)
+            {
+                throw new ArgumentNullException("role isn't a nullable property for RolesReportsHash and cannot be null");
+            }
             this.RoleUuid = roleUuid;
             this.Role = role;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -48,13 +53,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RoleUuid
         /// </summary>
         [DataMember(Name = "role_uuid", EmitDefaultValue = false)]
-        public Guid RoleUuid { get; set; }
+        public Option<Guid> RoleUuid { get; set; }
 
         /// <summary>
         /// Gets or Sets Role
         /// </summary>
         [DataMember(Name = "role", EmitDefaultValue = false)]
-        public RolesReportsHashRole Role { get; set; }
+        public Option<RolesReportsHashRole> Role { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

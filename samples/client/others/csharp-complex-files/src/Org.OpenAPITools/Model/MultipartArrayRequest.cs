@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="MultipartArrayRequest" /> class.
         /// </summary>
         /// <param name="files">Many files.</param>
-        public MultipartArrayRequest(List<System.IO.Stream> files = default)
+        public MultipartArrayRequest(Option<List<System.IO.Stream>> files = default)
         {
+            // to ensure "files" (not nullable) is not null
+            if (files.IsSet && files.Value == null)
+            {
+                throw new ArgumentNullException("files isn't a nullable property for MultipartArrayRequest and cannot be null");
+            }
             this.Files = files;
         }
 
@@ -46,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Many files</value>
         [DataMember(Name = "files", EmitDefaultValue = false)]
-        public List<System.IO.Stream> Files { get; set; }
+        public Option<List<System.IO.Stream>> Files { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

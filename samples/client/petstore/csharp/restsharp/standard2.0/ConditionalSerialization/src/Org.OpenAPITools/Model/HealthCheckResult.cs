@@ -36,10 +36,10 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="HealthCheckResult" /> class.
         /// </summary>
         /// <param name="nullableMessage">nullableMessage.</param>
-        public HealthCheckResult(string nullableMessage = default)
+        public HealthCheckResult(Option<string> nullableMessage = default)
         {
             this._NullableMessage = nullableMessage;
-            if (this.NullableMessage != null)
+            if (this.NullableMessage.IsSet)
             {
                 this._flagNullableMessage = true;
             }
@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NullableMessage
         /// </summary>
         [DataMember(Name = "NullableMessage", EmitDefaultValue = true)]
-        public string NullableMessage
+        public Option<string> NullableMessage
         {
             get{ return _NullableMessage;}
             set
@@ -59,7 +59,7 @@ namespace Org.OpenAPITools.Model
                 _flagNullableMessage = true;
             }
         }
-        private string _NullableMessage;
+        private Option<string> _NullableMessage;
         private bool _flagNullableMessage;
 
         /// <summary>

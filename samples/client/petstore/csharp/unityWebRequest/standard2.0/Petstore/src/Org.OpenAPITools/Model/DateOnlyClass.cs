@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,7 +35,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="DateOnlyClass" /> class.
         /// </summary>
         /// <param name="dateOnlyProperty">dateOnlyProperty.</param>
-        public DateOnlyClass(DateTime dateOnlyProperty = default)
+        public DateOnlyClass(Option<DateTime> dateOnlyProperty = default)
         {
             this.DateOnlyProperty = dateOnlyProperty;
         }
@@ -47,7 +48,7 @@ namespace Org.OpenAPITools.Model
         */
         [DataMember(Name = "dateOnlyProperty", EmitDefaultValue = false)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime DateOnlyProperty { get; set; }
+        public Option<DateTime> DateOnlyProperty { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -37,8 +37,18 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="size">size.</param>
         /// <param name="color">color.</param>
-        public Bird(string size = default, string color = default)
+        public Bird(Option<string> size = default, Option<string> color = default)
         {
+            // to ensure "size" (not nullable) is not null
+            if (size.IsSet && size.Value == null)
+            {
+                throw new ArgumentNullException("size isn't a nullable property for Bird and cannot be null");
+            }
+            // to ensure "color" (not nullable) is not null
+            if (color.IsSet && color.Value == null)
+            {
+                throw new ArgumentNullException("color isn't a nullable property for Bird and cannot be null");
+            }
             this.Size = size;
             this.Color = color;
         }
@@ -47,13 +57,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Size
         /// </summary>
         [DataMember(Name = "size", EmitDefaultValue = false)]
-        public string Size { get; set; }
+        public Option<string> Size { get; set; }
 
         /// <summary>
         /// Gets or Sets Color
         /// </summary>
         [DataMember(Name = "color", EmitDefaultValue = false)]
-        public string Color { get; set; }
+        public Option<string> Color { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -37,8 +37,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
-        public Category(long id = default, string name = default)
+        public Category(Option<long> id = default, Option<string> name = default)
         {
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for Category and cannot be null");
+            }
             this.Id = id;
             this.Name = name;
         }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         <example>1</example>
         */
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
+        public Option<long> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
         <example>Dogs</example>
         */
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public Option<string> Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

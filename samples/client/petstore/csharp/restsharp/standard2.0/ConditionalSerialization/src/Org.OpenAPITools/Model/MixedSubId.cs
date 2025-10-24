@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="MixedSubId" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        public MixedSubId(string id = default)
+        public MixedSubId(Option<string> id = default)
         {
+            // to ensure "id" (not nullable) is not null
+            if (id.IsSet && id.Value == null)
+            {
+                throw new ArgumentNullException("id isn't a nullable property for MixedSubId and cannot be null");
+            }
             this._Id = id;
-            if (this.Id != null)
+            if (this.Id.IsSet)
             {
                 this._flagId = true;
             }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id
+        public Option<string> Id
         {
             get{ return _Id;}
             set
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
                 _flagId = true;
             }
         }
-        private string _Id;
+        private Option<string> _Id;
         private bool _flagId;
 
         /// <summary>

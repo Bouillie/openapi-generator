@@ -47,10 +47,15 @@ namespace Org.OpenAPITools.Model
         /// <param name="breed">breed.</param>
         /// <param name="className">className (required) (default to &quot;Dog&quot;).</param>
         /// <param name="color">color (default to &quot;red&quot;).</param>
-        public Dog(string breed = default, string className = @"Dog", string color = @"red") : base(className, color)
+        public Dog(Option<string> breed = default, string className = @"Dog", Option<string> color = default) : base(className, color)
         {
+            // to ensure "breed" (not nullable) is not null
+            if (breed.IsSet && breed.Value == null)
+            {
+                throw new ArgumentNullException("breed isn't a nullable property for Dog and cannot be null");
+            }
             this._Breed = breed;
-            if (this.Breed != null)
+            if (this.Breed.IsSet)
             {
                 this._flagBreed = true;
             }
@@ -61,7 +66,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Breed
         /// </summary>
         [DataMember(Name = "breed", EmitDefaultValue = false)]
-        public string Breed
+        public Option<string> Breed
         {
             get{ return _Breed;}
             set
@@ -70,7 +75,7 @@ namespace Org.OpenAPITools.Model
                 _flagBreed = true;
             }
         }
-        private string _Breed;
+        private Option<string> _Breed;
         private bool _flagBreed;
 
         /// <summary>

@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,8 +35,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="MixedAnyOf" /> class.
         /// </summary>
         /// <param name="content">content.</param>
-        public MixedAnyOf(MixedAnyOfContent content = default)
+        public MixedAnyOf(Option<MixedAnyOfContent> content = default)
         {
+            // to ensure "content" (not nullable) is not null
+            if (content.IsSet && content.Value == null)
+            {
+                throw new ArgumentNullException("content isn't a nullable property for MixedAnyOf and cannot be null");
+            }
             this.Content = content;
         }
 
@@ -43,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Content
         /// </summary>
         [DataMember(Name = "content", EmitDefaultValue = false)]
-        public MixedAnyOfContent Content { get; set; }
+        public Option<MixedAnyOfContent> Content { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

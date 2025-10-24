@@ -47,18 +47,26 @@ namespace Org.OpenAPITools.Model
         /// <param name="quadrilateralType">quadrilateralType (required).</param>
         public SimpleQuadrilateral(string shapeType = default, string quadrilateralType = default)
         {
-            // to ensure "shapeType" is required (not null)
+            // to ensure "shapeType" (not nullable) is not null
             if (shapeType == null)
             {
-                throw new ArgumentNullException("shapeType is a required property for SimpleQuadrilateral and cannot be null");
+                throw new ArgumentNullException("shapeType isn't a nullable property for SimpleQuadrilateral and cannot be null");
             }
-            this._ShapeType = shapeType;
-            // to ensure "quadrilateralType" is required (not null)
+            // to ensure "quadrilateralType" (not nullable) is not null
             if (quadrilateralType == null)
             {
-                throw new ArgumentNullException("quadrilateralType is a required property for SimpleQuadrilateral and cannot be null");
+                throw new ArgumentNullException("quadrilateralType isn't a nullable property for SimpleQuadrilateral and cannot be null");
+            }
+            this._ShapeType = shapeType;
+            if (this.ShapeType.IsSet)
+            {
+                this._flagShapeType = true;
             }
             this._QuadrilateralType = quadrilateralType;
+            if (this.QuadrilateralType.IsSet)
+            {
+                this._flagQuadrilateralType = true;
+            }
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

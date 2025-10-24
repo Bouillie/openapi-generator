@@ -46,23 +46,27 @@ namespace Org.OpenAPITools.Model
         /// <param name="hasBaleen">hasBaleen.</param>
         /// <param name="hasTeeth">hasTeeth.</param>
         /// <param name="className">className (required).</param>
-        public Whale(bool hasBaleen = default, bool hasTeeth = default, string className = default)
+        public Whale(Option<bool> hasBaleen = default, Option<bool> hasTeeth = default, string className = default)
         {
-            // to ensure "className" is required (not null)
+            // to ensure "className" (not nullable) is not null
             if (className == null)
             {
-                throw new ArgumentNullException("className is a required property for Whale and cannot be null");
+                throw new ArgumentNullException("className isn't a nullable property for Whale and cannot be null");
             }
-            this._ClassName = className;
             this._HasBaleen = hasBaleen;
-            if (this.HasBaleen != null)
+            if (this.HasBaleen.IsSet)
             {
                 this._flagHasBaleen = true;
             }
             this._HasTeeth = hasTeeth;
-            if (this.HasTeeth != null)
+            if (this.HasTeeth.IsSet)
             {
                 this._flagHasTeeth = true;
+            }
+            this._ClassName = className;
+            if (this.ClassName.IsSet)
+            {
+                this._flagClassName = true;
             }
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -71,7 +75,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets HasBaleen
         /// </summary>
         [DataMember(Name = "hasBaleen", EmitDefaultValue = true)]
-        public bool HasBaleen
+        public Option<bool> HasBaleen
         {
             get{ return _HasBaleen;}
             set
@@ -80,7 +84,7 @@ namespace Org.OpenAPITools.Model
                 _flagHasBaleen = true;
             }
         }
-        private bool _HasBaleen;
+        private Option<bool> _HasBaleen;
         private bool _flagHasBaleen;
 
         /// <summary>
@@ -95,7 +99,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets HasTeeth
         /// </summary>
         [DataMember(Name = "hasTeeth", EmitDefaultValue = true)]
-        public bool HasTeeth
+        public Option<bool> HasTeeth
         {
             get{ return _HasTeeth;}
             set
@@ -104,7 +108,7 @@ namespace Org.OpenAPITools.Model
                 _flagHasTeeth = true;
             }
         }
-        private bool _HasTeeth;
+        private Option<bool> _HasTeeth;
         private bool _flagHasTeeth;
 
         /// <summary>

@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="FooGetDefaultResponse" /> class.
         /// </summary>
         /// <param name="varString">varString.</param>
-        public FooGetDefaultResponse(Foo varString = default)
+        public FooGetDefaultResponse(Option<Foo> varString = default)
         {
+            // to ensure "varString" (not nullable) is not null
+            if (varString.IsSet && varString.Value == null)
+            {
+                throw new ArgumentNullException("varString isn't a nullable property for FooGetDefaultResponse and cannot be null");
+            }
             this._String = varString;
-            if (this.String != null)
+            if (this.String.IsSet)
             {
                 this._flagString = true;
             }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets String
         /// </summary>
         [DataMember(Name = "string", EmitDefaultValue = false)]
-        public Foo String
+        public Option<Foo> String
         {
             get{ return _String;}
             set
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
                 _flagString = true;
             }
         }
-        private Foo _String;
+        private Option<Foo> _String;
         private bool _flagString;
 
         /// <summary>

@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="TestInlineFreeformAdditionalPropertiesRequest" /> class.
         /// </summary>
         /// <param name="someProperty">someProperty.</param>
-        public TestInlineFreeformAdditionalPropertiesRequest(string someProperty = default)
+        public TestInlineFreeformAdditionalPropertiesRequest(Option<string> someProperty = default)
         {
+            // to ensure "someProperty" (not nullable) is not null
+            if (someProperty.IsSet && someProperty.Value == null)
+            {
+                throw new ArgumentNullException("someProperty isn't a nullable property for TestInlineFreeformAdditionalPropertiesRequest and cannot be null");
+            }
             this.SomeProperty = someProperty;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -46,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets SomeProperty
         /// </summary>
         [DataMember(Name = "someProperty", EmitDefaultValue = false)]
-        public string SomeProperty { get; set; }
+        public Option<string> SomeProperty { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

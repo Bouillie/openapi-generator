@@ -62,34 +62,59 @@ namespace Org.OpenAPITools.Model
         /// <param name="patternWithDigits">A string that is a 10 digit number. Can have leading zeros..</param>
         /// <param name="patternWithDigitsAndDelimiter">A string starting with &#39;image_&#39; (case insensitive) and one to three digits following i.e. Image_01..</param>
         /// <param name="patternWithBackslash">None.</param>
-        public FormatTest(int integer = default, int int32 = default, uint unsignedInteger = default, long int64 = default, ulong unsignedLong = default, decimal number = default, float varFloat = default, double varDouble = default, decimal varDecimal = default, string varString = default, byte[] varByte = default, System.IO.Stream binary = default, DateOnly date = default, DateTime dateTime = default, Guid uuid = default, string password = default, string patternWithDigits = default, string patternWithDigitsAndDelimiter = default, string patternWithBackslash = default)
+        public FormatTest(Option<int> integer = default, Option<int> int32 = default, Option<uint> unsignedInteger = default, Option<long> int64 = default, Option<ulong> unsignedLong = default, decimal number = default, Option<float> varFloat = default, Option<double> varDouble = default, Option<decimal> varDecimal = default, Option<string> varString = default, byte[] varByte = default, Option<System.IO.Stream> binary = default, DateOnly date = default, Option<DateTime> dateTime = default, Option<Guid> uuid = default, string password = default, Option<string> patternWithDigits = default, Option<string> patternWithDigitsAndDelimiter = default, Option<string> patternWithBackslash = default)
         {
-            this.Number = number;
-            // to ensure "varByte" is required (not null)
+            // to ensure "varString" (not nullable) is not null
+            if (varString.IsSet && varString.Value == null)
+            {
+                throw new ArgumentNullException("varString isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "varByte" (not nullable) is not null
             if (varByte == null)
             {
-                throw new ArgumentNullException("varByte is a required property for FormatTest and cannot be null");
+                throw new ArgumentNullException("varByte isn't a nullable property for FormatTest and cannot be null");
             }
-            this.Byte = varByte;
-            this.Date = date;
-            // to ensure "password" is required (not null)
+            // to ensure "binary" (not nullable) is not null
+            if (binary.IsSet && binary.Value == null)
+            {
+                throw new ArgumentNullException("binary isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "password" (not nullable) is not null
             if (password == null)
             {
-                throw new ArgumentNullException("password is a required property for FormatTest and cannot be null");
+                throw new ArgumentNullException("password isn't a nullable property for FormatTest and cannot be null");
             }
-            this.Password = password;
+            // to ensure "patternWithDigits" (not nullable) is not null
+            if (patternWithDigits.IsSet && patternWithDigits.Value == null)
+            {
+                throw new ArgumentNullException("patternWithDigits isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "patternWithDigitsAndDelimiter" (not nullable) is not null
+            if (patternWithDigitsAndDelimiter.IsSet && patternWithDigitsAndDelimiter.Value == null)
+            {
+                throw new ArgumentNullException("patternWithDigitsAndDelimiter isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "patternWithBackslash" (not nullable) is not null
+            if (patternWithBackslash.IsSet && patternWithBackslash.Value == null)
+            {
+                throw new ArgumentNullException("patternWithBackslash isn't a nullable property for FormatTest and cannot be null");
+            }
             this.Integer = integer;
             this.Int32 = int32;
             this.UnsignedInteger = unsignedInteger;
             this.Int64 = int64;
             this.UnsignedLong = unsignedLong;
+            this.Number = number;
             this.Float = varFloat;
             this.Double = varDouble;
             this.Decimal = varDecimal;
             this.String = varString;
+            this.Byte = varByte;
             this.Binary = binary;
+            this.Date = date;
             this.DateTime = dateTime;
             this.Uuid = uuid;
+            this.Password = password;
             this.PatternWithDigits = patternWithDigits;
             this.PatternWithDigitsAndDelimiter = patternWithDigitsAndDelimiter;
             this.PatternWithBackslash = patternWithBackslash;
@@ -100,31 +125,31 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Integer
         /// </summary>
         [DataMember(Name = "integer", EmitDefaultValue = false)]
-        public int Integer { get; set; }
+        public Option<int> Integer { get; set; }
 
         /// <summary>
         /// Gets or Sets Int32
         /// </summary>
         [DataMember(Name = "int32", EmitDefaultValue = false)]
-        public int Int32 { get; set; }
+        public Option<int> Int32 { get; set; }
 
         /// <summary>
         /// Gets or Sets UnsignedInteger
         /// </summary>
         [DataMember(Name = "unsigned_integer", EmitDefaultValue = false)]
-        public uint UnsignedInteger { get; set; }
+        public Option<uint> UnsignedInteger { get; set; }
 
         /// <summary>
         /// Gets or Sets Int64
         /// </summary>
         [DataMember(Name = "int64", EmitDefaultValue = false)]
-        public long Int64 { get; set; }
+        public Option<long> Int64 { get; set; }
 
         /// <summary>
         /// Gets or Sets UnsignedLong
         /// </summary>
         [DataMember(Name = "unsigned_long", EmitDefaultValue = false)]
-        public ulong UnsignedLong { get; set; }
+        public Option<ulong> UnsignedLong { get; set; }
 
         /// <summary>
         /// Gets or Sets Number
@@ -136,25 +161,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Float
         /// </summary>
         [DataMember(Name = "float", EmitDefaultValue = false)]
-        public float Float { get; set; }
+        public Option<float> Float { get; set; }
 
         /// <summary>
         /// Gets or Sets Double
         /// </summary>
         [DataMember(Name = "double", EmitDefaultValue = false)]
-        public double Double { get; set; }
+        public Option<double> Double { get; set; }
 
         /// <summary>
         /// Gets or Sets Decimal
         /// </summary>
         [DataMember(Name = "decimal", EmitDefaultValue = false)]
-        public decimal Decimal { get; set; }
+        public Option<decimal> Decimal { get; set; }
 
         /// <summary>
         /// Gets or Sets String
         /// </summary>
         [DataMember(Name = "string", EmitDefaultValue = false)]
-        public string String { get; set; }
+        public Option<string> String { get; set; }
 
         /// <summary>
         /// Gets or Sets Byte
@@ -166,7 +191,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Binary
         /// </summary>
         [DataMember(Name = "binary", EmitDefaultValue = false)]
-        public System.IO.Stream Binary { get; set; }
+        public Option<System.IO.Stream> Binary { get; set; }
 
         /// <summary>
         /// Gets or Sets Date
@@ -184,7 +209,7 @@ namespace Org.OpenAPITools.Model
         <example>2007-12-03T10:15:30+01:00</example>
         */
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
-        public DateTime DateTime { get; set; }
+        public Option<DateTime> DateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Uuid
@@ -193,7 +218,7 @@ namespace Org.OpenAPITools.Model
         <example>72f98069-206d-4f12-9f12-3d1e525a8e84</example>
         */
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public Guid Uuid { get; set; }
+        public Option<Guid> Uuid { get; set; }
 
         /// <summary>
         /// Gets or Sets Password
@@ -206,21 +231,21 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>A string that is a 10 digit number. Can have leading zeros.</value>
         [DataMember(Name = "pattern_with_digits", EmitDefaultValue = false)]
-        public string PatternWithDigits { get; set; }
+        public Option<string> PatternWithDigits { get; set; }
 
         /// <summary>
         /// A string starting with &#39;image_&#39; (case insensitive) and one to three digits following i.e. Image_01.
         /// </summary>
         /// <value>A string starting with &#39;image_&#39; (case insensitive) and one to three digits following i.e. Image_01.</value>
         [DataMember(Name = "pattern_with_digits_and_delimiter", EmitDefaultValue = false)]
-        public string PatternWithDigitsAndDelimiter { get; set; }
+        public Option<string> PatternWithDigitsAndDelimiter { get; set; }
 
         /// <summary>
         /// None
         /// </summary>
         /// <value>None</value>
         [DataMember(Name = "pattern_with_backslash", EmitDefaultValue = false)]
-        public string PatternWithBackslash { get; set; }
+        public Option<string> PatternWithBackslash { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

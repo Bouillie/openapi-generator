@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -46,7 +47,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Bar
         /// </summary>
         [DataMember(Name = "bar", EmitDefaultValue = false)]
-        public string Bar { get; private set; }
+        public Option<string> Bar { get; private set; }
 
         /// <summary>
         /// Returns false as Bar should not be serialized given that it's read-only.
@@ -60,7 +61,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Foo
         /// </summary>
         [DataMember(Name = "foo", EmitDefaultValue = false)]
-        public string Foo { get; private set; }
+        public Option<string> Foo { get; private set; }
 
         /// <summary>
         /// Returns false as Foo should not be serialized given that it's read-only.

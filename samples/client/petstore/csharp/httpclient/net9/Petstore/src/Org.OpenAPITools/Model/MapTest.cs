@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -59,8 +60,28 @@ namespace Org.OpenAPITools.Model
         /// <param name="mapOfEnumString">mapOfEnumString.</param>
         /// <param name="directMap">directMap.</param>
         /// <param name="indirectMap">indirectMap.</param>
-        public MapTest(Dictionary<string, Dictionary<string, string>> mapMapOfString = default, Dictionary<string, InnerEnum> mapOfEnumString = default, Dictionary<string, bool> directMap = default, Dictionary<string, bool> indirectMap = default)
+        public MapTest(Option<Dictionary<string, Dictionary<string, string>>> mapMapOfString = default, Option<Dictionary<string, InnerEnum>> mapOfEnumString = default, Option<Dictionary<string, bool>> directMap = default, Option<Dictionary<string, bool>> indirectMap = default)
         {
+            // to ensure "mapMapOfString" (not nullable) is not null
+            if (mapMapOfString.IsSet && mapMapOfString.Value == null)
+            {
+                throw new ArgumentNullException("mapMapOfString isn't a nullable property for MapTest and cannot be null");
+            }
+            // to ensure "mapOfEnumString" (not nullable) is not null
+            if (mapOfEnumString.IsSet && mapOfEnumString.Value == null)
+            {
+                throw new ArgumentNullException("mapOfEnumString isn't a nullable property for MapTest and cannot be null");
+            }
+            // to ensure "directMap" (not nullable) is not null
+            if (directMap.IsSet && directMap.Value == null)
+            {
+                throw new ArgumentNullException("directMap isn't a nullable property for MapTest and cannot be null");
+            }
+            // to ensure "indirectMap" (not nullable) is not null
+            if (indirectMap.IsSet && indirectMap.Value == null)
+            {
+                throw new ArgumentNullException("indirectMap isn't a nullable property for MapTest and cannot be null");
+            }
             this.MapMapOfString = mapMapOfString;
             this.MapOfEnumString = mapOfEnumString;
             this.DirectMap = directMap;
@@ -72,25 +93,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MapMapOfString
         /// </summary>
         [DataMember(Name = "map_map_of_string", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, string>> MapMapOfString { get; set; }
+        public Option<Dictionary<string, Dictionary<string, string>>> MapMapOfString { get; set; }
 
         /// <summary>
         /// Gets or Sets MapOfEnumString
         /// </summary>
         [DataMember(Name = "map_of_enum_string", EmitDefaultValue = false)]
-        public Dictionary<string, MapTest.InnerEnum> MapOfEnumString { get; set; }
+        public Option<Dictionary<string, MapTest.InnerEnum>> MapOfEnumString { get; set; }
 
         /// <summary>
         /// Gets or Sets DirectMap
         /// </summary>
         [DataMember(Name = "direct_map", EmitDefaultValue = false)]
-        public Dictionary<string, bool> DirectMap { get; set; }
+        public Option<Dictionary<string, bool>> DirectMap { get; set; }
 
         /// <summary>
         /// Gets or Sets IndirectMap
         /// </summary>
         [DataMember(Name = "indirect_map", EmitDefaultValue = false)]
-        public Dictionary<string, bool> IndirectMap { get; set; }
+        public Option<Dictionary<string, bool>> IndirectMap { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

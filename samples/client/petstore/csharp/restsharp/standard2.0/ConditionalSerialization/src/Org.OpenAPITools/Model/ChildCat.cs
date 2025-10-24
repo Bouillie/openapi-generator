@@ -85,13 +85,22 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="petType">petType (required) (default to PetTypeEnum.ChildCat).</param>
-        public ChildCat(string name = default, PetTypeEnum petType = PetTypeEnum.ChildCat) : base()
+        public ChildCat(Option<string> name = default, PetTypeEnum petType = PetTypeEnum.ChildCat) : base()
         {
-            this._PetType = petType;
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for ChildCat and cannot be null");
+            }
             this._Name = name;
-            if (this.Name != null)
+            if (this.Name.IsSet)
             {
                 this._flagName = true;
+            }
+            this._PetType = petType;
+            if (this.PetType.IsSet)
+            {
+                this._flagPetType = true;
             }
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -100,7 +109,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name
+        public Option<string> Name
         {
             get{ return _Name;}
             set
@@ -109,7 +118,7 @@ namespace Org.OpenAPITools.Model
                 _flagName = true;
             }
         }
-        private string _Name;
+        private Option<string> _Name;
         private bool _flagName;
 
         /// <summary>

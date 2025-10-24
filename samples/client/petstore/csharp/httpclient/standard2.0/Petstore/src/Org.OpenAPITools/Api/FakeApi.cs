@@ -1677,6 +1677,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of string</returns>
         public Org.OpenAPITools.Client.ApiResponse<string> FakeOuterStringSerializeWithHttpInfo(Guid requiredStringUuid, string body = default)
         {
+            // verify the required parameter 'requiredStringUuid' is set
+            if (requiredStringUuid == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredStringUuid' when calling FakeApi->FakeOuterStringSerialize");
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1734,6 +1738,10 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse (string)</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<string>> FakeOuterStringSerializeWithHttpInfoAsync(Guid requiredStringUuid, string body = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'requiredStringUuid' is set
+            if (requiredStringUuid == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredStringUuid' when calling FakeApi->FakeOuterStringSerialize");
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -2588,6 +2596,14 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public Org.OpenAPITools.Client.ApiResponse<Object> TestEndpointParametersWithHttpInfo(decimal number, double varDouble, string patternWithoutDelimiter, byte[] varByte, int? integer = default, int? int32 = default, long? int64 = default, float? varFloat = default, string varString = default, FileParameter binary = default, DateTime? date = default, DateTime? dateTime = default, string password = default, string callback = default)
         {
+            // verify the required parameter 'number' is set
+            if (number == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'number' when calling FakeApi->TestEndpointParameters");
+
+            // verify the required parameter 'varDouble' is set
+            if (varDouble == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'varDouble' when calling FakeApi->TestEndpointParameters");
+
             // verify the required parameter 'patternWithoutDelimiter' is set
             if (patternWithoutDelimiter == null)
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'patternWithoutDelimiter' when calling FakeApi->TestEndpointParameters");
@@ -2723,6 +2739,14 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> TestEndpointParametersWithHttpInfoAsync(decimal number, double varDouble, string patternWithoutDelimiter, byte[] varByte, int? integer = default, int? int32 = default, long? int64 = default, float? varFloat = default, string varString = default, FileParameter binary = default, DateTime? date = default, DateTime? dateTime = default, string password = default, string callback = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'number' is set
+            if (number == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'number' when calling FakeApi->TestEndpointParameters");
+
+            // verify the required parameter 'varDouble' is set
+            if (varDouble == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'varDouble' when calling FakeApi->TestEndpointParameters");
+
             // verify the required parameter 'patternWithoutDelimiter' is set
             if (patternWithoutDelimiter == null)
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'patternWithoutDelimiter' when calling FakeApi->TestEndpointParameters");
@@ -3038,6 +3062,18 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public Org.OpenAPITools.Client.ApiResponse<Object> TestGroupParametersWithHttpInfo(int requiredStringGroup, bool requiredBooleanGroup, long requiredInt64Group, int? stringGroup = default, bool? booleanGroup = default, long? int64Group = default)
         {
+            // verify the required parameter 'requiredStringGroup' is set
+            if (requiredStringGroup == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredStringGroup' when calling FakeApi->TestGroupParameters");
+
+            // verify the required parameter 'requiredBooleanGroup' is set
+            if (requiredBooleanGroup == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredBooleanGroup' when calling FakeApi->TestGroupParameters");
+
+            // verify the required parameter 'requiredInt64Group' is set
+            if (requiredInt64Group == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredInt64Group' when calling FakeApi->TestGroupParameters");
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3119,6 +3155,18 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> TestGroupParametersWithHttpInfoAsync(int requiredStringGroup, bool requiredBooleanGroup, long requiredInt64Group, int? stringGroup = default, bool? booleanGroup = default, long? int64Group = default, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'requiredStringGroup' is set
+            if (requiredStringGroup == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredStringGroup' when calling FakeApi->TestGroupParameters");
+
+            // verify the required parameter 'requiredBooleanGroup' is set
+            if (requiredBooleanGroup == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredBooleanGroup' when calling FakeApi->TestGroupParameters");
+
+            // verify the required parameter 'requiredInt64Group' is set
+            if (requiredInt64Group == null)
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'requiredInt64Group' when calling FakeApi->TestGroupParameters");
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 

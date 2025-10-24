@@ -43,8 +43,43 @@ namespace Org.OpenAPITools.Model
         /// <param name="mapWithUndeclaredPropertiesAnytype3">mapWithUndeclaredPropertiesAnytype3.</param>
         /// <param name="emptyMap">an object with no declared properties and no undeclared properties, hence it&#39;s an empty map..</param>
         /// <param name="mapWithUndeclaredPropertiesString">mapWithUndeclaredPropertiesString.</param>
-        public AdditionalPropertiesClass(Dictionary<string, string> mapProperty = default, Dictionary<string, Dictionary<string, string>> mapOfMapProperty = default, Object anytype1 = default, Object mapWithUndeclaredPropertiesAnytype1 = default, Object mapWithUndeclaredPropertiesAnytype2 = default, Dictionary<string, Object> mapWithUndeclaredPropertiesAnytype3 = default, Object emptyMap = default, Dictionary<string, string> mapWithUndeclaredPropertiesString = default)
+        public AdditionalPropertiesClass(Option<Dictionary<string, string>> mapProperty = default, Option<Dictionary<string, Dictionary<string, string>>> mapOfMapProperty = default, Option<Object> anytype1 = default, Option<Object> mapWithUndeclaredPropertiesAnytype1 = default, Option<Object> mapWithUndeclaredPropertiesAnytype2 = default, Option<Dictionary<string, Object>> mapWithUndeclaredPropertiesAnytype3 = default, Option<Object> emptyMap = default, Option<Dictionary<string, string>> mapWithUndeclaredPropertiesString = default)
         {
+            // to ensure "mapProperty" (not nullable) is not null
+            if (mapProperty.IsSet && mapProperty.Value == null)
+            {
+                throw new ArgumentNullException("mapProperty isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
+            // to ensure "mapOfMapProperty" (not nullable) is not null
+            if (mapOfMapProperty.IsSet && mapOfMapProperty.Value == null)
+            {
+                throw new ArgumentNullException("mapOfMapProperty isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
+            // to ensure "mapWithUndeclaredPropertiesAnytype1" (not nullable) is not null
+            if (mapWithUndeclaredPropertiesAnytype1.IsSet && mapWithUndeclaredPropertiesAnytype1.Value == null)
+            {
+                throw new ArgumentNullException("mapWithUndeclaredPropertiesAnytype1 isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
+            // to ensure "mapWithUndeclaredPropertiesAnytype2" (not nullable) is not null
+            if (mapWithUndeclaredPropertiesAnytype2.IsSet && mapWithUndeclaredPropertiesAnytype2.Value == null)
+            {
+                throw new ArgumentNullException("mapWithUndeclaredPropertiesAnytype2 isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
+            // to ensure "mapWithUndeclaredPropertiesAnytype3" (not nullable) is not null
+            if (mapWithUndeclaredPropertiesAnytype3.IsSet && mapWithUndeclaredPropertiesAnytype3.Value == null)
+            {
+                throw new ArgumentNullException("mapWithUndeclaredPropertiesAnytype3 isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
+            // to ensure "emptyMap" (not nullable) is not null
+            if (emptyMap.IsSet && emptyMap.Value == null)
+            {
+                throw new ArgumentNullException("emptyMap isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
+            // to ensure "mapWithUndeclaredPropertiesString" (not nullable) is not null
+            if (mapWithUndeclaredPropertiesString.IsSet && mapWithUndeclaredPropertiesString.Value == null)
+            {
+                throw new ArgumentNullException("mapWithUndeclaredPropertiesString isn't a nullable property for AdditionalPropertiesClass and cannot be null");
+            }
             this.MapProperty = mapProperty;
             this.MapOfMapProperty = mapOfMapProperty;
             this.Anytype1 = anytype1;
@@ -60,50 +95,50 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MapProperty
         /// </summary>
         [DataMember(Name = "map_property", EmitDefaultValue = false)]
-        public Dictionary<string, string> MapProperty { get; set; }
+        public Option<Dictionary<string, string>> MapProperty { get; set; }
 
         /// <summary>
         /// Gets or Sets MapOfMapProperty
         /// </summary>
         [DataMember(Name = "map_of_map_property", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, string>> MapOfMapProperty { get; set; }
+        public Option<Dictionary<string, Dictionary<string, string>>> MapOfMapProperty { get; set; }
 
         /// <summary>
         /// Gets or Sets Anytype1
         /// </summary>
         [DataMember(Name = "anytype_1", EmitDefaultValue = true)]
-        public Object Anytype1 { get; set; }
+        public Option<Object> Anytype1 { get; set; }
 
         /// <summary>
         /// Gets or Sets MapWithUndeclaredPropertiesAnytype1
         /// </summary>
         [DataMember(Name = "map_with_undeclared_properties_anytype_1", EmitDefaultValue = false)]
-        public Object MapWithUndeclaredPropertiesAnytype1 { get; set; }
+        public Option<Object> MapWithUndeclaredPropertiesAnytype1 { get; set; }
 
         /// <summary>
         /// Gets or Sets MapWithUndeclaredPropertiesAnytype2
         /// </summary>
         [DataMember(Name = "map_with_undeclared_properties_anytype_2", EmitDefaultValue = false)]
-        public Object MapWithUndeclaredPropertiesAnytype2 { get; set; }
+        public Option<Object> MapWithUndeclaredPropertiesAnytype2 { get; set; }
 
         /// <summary>
         /// Gets or Sets MapWithUndeclaredPropertiesAnytype3
         /// </summary>
         [DataMember(Name = "map_with_undeclared_properties_anytype_3", EmitDefaultValue = false)]
-        public Dictionary<string, Object> MapWithUndeclaredPropertiesAnytype3 { get; set; }
+        public Option<Dictionary<string, Object>> MapWithUndeclaredPropertiesAnytype3 { get; set; }
 
         /// <summary>
         /// an object with no declared properties and no undeclared properties, hence it&#39;s an empty map.
         /// </summary>
         /// <value>an object with no declared properties and no undeclared properties, hence it&#39;s an empty map.</value>
         [DataMember(Name = "empty_map", EmitDefaultValue = false)]
-        public Object EmptyMap { get; set; }
+        public Option<Object> EmptyMap { get; set; }
 
         /// <summary>
         /// Gets or Sets MapWithUndeclaredPropertiesString
         /// </summary>
         [DataMember(Name = "map_with_undeclared_properties_string", EmitDefaultValue = false)]
-        public Dictionary<string, string> MapWithUndeclaredPropertiesString { get; set; }
+        public Option<Dictionary<string, string>> MapWithUndeclaredPropertiesString { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

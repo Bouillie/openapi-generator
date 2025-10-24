@@ -240,6 +240,12 @@ namespace Org.OpenAPITools.Api
         /// <returns>ApiResponse of Env</returns>
         public Org.OpenAPITools.Client.ApiResponse<Env> GetParameterNameMappingWithHttpInfo(long UnderscoreType, string type, string TypeWithUnderscore, string httpDebugOption, int operationIndex = 0)
         {
+            // verify the required parameter 'UnderscoreType' is set
+            if (UnderscoreType == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'UnderscoreType' when calling FakeApi->GetParameterNameMapping");
+            }
+
             // verify the required parameter 'type' is set
             if (type == null)
             {
@@ -334,6 +340,12 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of ApiResponse (Env)</returns>
         public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Env>> GetParameterNameMappingWithHttpInfoAsync(long UnderscoreType, string type, string TypeWithUnderscore, string httpDebugOption, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'UnderscoreType' is set
+            if (UnderscoreType == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'UnderscoreType' when calling FakeApi->GetParameterNameMapping");
+            }
+
             // verify the required parameter 'type' is set
             if (type == null)
             {

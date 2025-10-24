@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="TestCollectionEndingWithWordList" /> class.
         /// </summary>
         /// <param name="value">value.</param>
-        public TestCollectionEndingWithWordList(string value = default)
+        public TestCollectionEndingWithWordList(Option<string> value = default)
         {
+            // to ensure "value" (not nullable) is not null
+            if (value.IsSet && value.Value == null)
+            {
+                throw new ArgumentNullException("value isn't a nullable property for TestCollectionEndingWithWordList and cannot be null");
+            }
             this.Value = value;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -46,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = false)]
-        public string Value { get; set; }
+        public Option<string> Value { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

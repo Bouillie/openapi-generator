@@ -36,10 +36,10 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="Banana" /> class.
         /// </summary>
         /// <param name="lengthCm">lengthCm.</param>
-        public Banana(decimal lengthCm = default)
+        public Banana(Option<decimal> lengthCm = default)
         {
             this._LengthCm = lengthCm;
-            if (this.LengthCm != null)
+            if (this.LengthCm.IsSet)
             {
                 this._flagLengthCm = true;
             }
@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets LengthCm
         /// </summary>
         [DataMember(Name = "lengthCm", EmitDefaultValue = false)]
-        public decimal LengthCm
+        public Option<decimal> LengthCm
         {
             get{ return _LengthCm;}
             set
@@ -59,7 +59,7 @@ namespace Org.OpenAPITools.Model
                 _flagLengthCm = true;
             }
         }
-        private decimal _LengthCm;
+        private Option<decimal> _LengthCm;
         private bool _flagLengthCm;
 
         /// <summary>

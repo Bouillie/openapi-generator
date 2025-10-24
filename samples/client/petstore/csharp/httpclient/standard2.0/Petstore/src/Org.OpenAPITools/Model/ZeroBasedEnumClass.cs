@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -57,12 +58,12 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ZeroBasedEnum
         /// </summary>
         [DataMember(Name = "ZeroBasedEnum", EmitDefaultValue = false)]
-        public ZeroBasedEnumEnum? ZeroBasedEnum { get; set; }
+        public Option<ZeroBasedEnumEnum> ZeroBasedEnum { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ZeroBasedEnumClass" /> class.
         /// </summary>
         /// <param name="zeroBasedEnum">zeroBasedEnum.</param>
-        public ZeroBasedEnumClass(ZeroBasedEnumEnum? zeroBasedEnum = default)
+        public ZeroBasedEnumClass(Option<ZeroBasedEnumEnum> zeroBasedEnum = default)
         {
             this.ZeroBasedEnum = zeroBasedEnum;
             this.AdditionalProperties = new Dictionary<string, object>();

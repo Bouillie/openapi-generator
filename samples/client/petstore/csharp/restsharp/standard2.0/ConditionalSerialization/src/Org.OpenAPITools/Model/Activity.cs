@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="Activity" /> class.
         /// </summary>
         /// <param name="activityOutputs">activityOutputs.</param>
-        public Activity(Dictionary<string, List<ActivityOutputElementRepresentation>> activityOutputs = default)
+        public Activity(Option<Dictionary<string, List<ActivityOutputElementRepresentation>>> activityOutputs = default)
         {
+            // to ensure "activityOutputs" (not nullable) is not null
+            if (activityOutputs.IsSet && activityOutputs.Value == null)
+            {
+                throw new ArgumentNullException("activityOutputs isn't a nullable property for Activity and cannot be null");
+            }
             this._ActivityOutputs = activityOutputs;
-            if (this.ActivityOutputs != null)
+            if (this.ActivityOutputs.IsSet)
             {
                 this._flagActivityOutputs = true;
             }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ActivityOutputs
         /// </summary>
         [DataMember(Name = "activity_outputs", EmitDefaultValue = false)]
-        public Dictionary<string, List<ActivityOutputElementRepresentation>> ActivityOutputs
+        public Option<Dictionary<string, List<ActivityOutputElementRepresentation>>> ActivityOutputs
         {
             get{ return _ActivityOutputs;}
             set
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
                 _flagActivityOutputs = true;
             }
         }
-        private Dictionary<string, List<ActivityOutputElementRepresentation>> _ActivityOutputs;
+        private Option<Dictionary<string, List<ActivityOutputElementRepresentation>>> _ActivityOutputs;
         private bool _flagActivityOutputs;
 
         /// <summary>

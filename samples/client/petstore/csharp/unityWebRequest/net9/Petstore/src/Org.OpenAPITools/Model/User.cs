@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -45,8 +46,43 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectWithNoDeclaredPropsNullable">test code generation for nullable objects. Value must be a map of strings to values or the &#39;null&#39; value..</param>
         /// <param name="anyTypeProp">test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. See https://github.com/OAI/OpenAPI-Specification/issues/1389.</param>
         /// <param name="anyTypePropNullable">test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. The &#39;nullable&#39; attribute does not change the allowed values..</param>
-        public User(long id = default, string username = default, string firstName = default, string lastName = default, string email = default, string password = default, string phone = default, int userStatus = default, Object objectWithNoDeclaredProps = default, Object objectWithNoDeclaredPropsNullable = default, Object anyTypeProp = default, Object anyTypePropNullable = default)
+        public User(Option<long> id = default, Option<string> username = default, Option<string> firstName = default, Option<string> lastName = default, Option<string> email = default, Option<string> password = default, Option<string> phone = default, Option<int> userStatus = default, Option<Object> objectWithNoDeclaredProps = default, Option<Object> objectWithNoDeclaredPropsNullable = default, Option<Object> anyTypeProp = default, Option<Object> anyTypePropNullable = default)
         {
+            // to ensure "username" (not nullable) is not null
+            if (username.IsSet && username.Value == null)
+            {
+                throw new ArgumentNullException("username isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "firstName" (not nullable) is not null
+            if (firstName.IsSet && firstName.Value == null)
+            {
+                throw new ArgumentNullException("firstName isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "lastName" (not nullable) is not null
+            if (lastName.IsSet && lastName.Value == null)
+            {
+                throw new ArgumentNullException("lastName isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "email" (not nullable) is not null
+            if (email.IsSet && email.Value == null)
+            {
+                throw new ArgumentNullException("email isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "password" (not nullable) is not null
+            if (password.IsSet && password.Value == null)
+            {
+                throw new ArgumentNullException("password isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "phone" (not nullable) is not null
+            if (phone.IsSet && phone.Value == null)
+            {
+                throw new ArgumentNullException("phone isn't a nullable property for User and cannot be null");
+            }
+            // to ensure "objectWithNoDeclaredProps" (not nullable) is not null
+            if (objectWithNoDeclaredProps.IsSet && objectWithNoDeclaredProps.Value == null)
+            {
+                throw new ArgumentNullException("objectWithNoDeclaredProps isn't a nullable property for User and cannot be null");
+            }
             this.Id = id;
             this.Username = username;
             this.FirstName = firstName;
@@ -65,78 +101,78 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
+        public Option<long> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
         [DataMember(Name = "username", EmitDefaultValue = false)]
-        public string Username { get; set; }
+        public Option<string> Username { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
-        public string FirstName { get; set; }
+        public Option<string> FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
-        public string LastName { get; set; }
+        public Option<string> LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = false)]
-        public string Email { get; set; }
+        public Option<string> Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
         [DataMember(Name = "password", EmitDefaultValue = false)]
-        public string Password { get; set; }
+        public Option<string> Password { get; set; }
 
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
-        public string Phone { get; set; }
+        public Option<string> Phone { get; set; }
 
         /// <summary>
         /// User Status
         /// </summary>
         /// <value>User Status</value>
         [DataMember(Name = "userStatus", EmitDefaultValue = false)]
-        public int UserStatus { get; set; }
+        public Option<int> UserStatus { get; set; }
 
         /// <summary>
         /// test code generation for objects Value must be a map of strings to values. It cannot be the &#39;null&#39; value.
         /// </summary>
         /// <value>test code generation for objects Value must be a map of strings to values. It cannot be the &#39;null&#39; value.</value>
         [DataMember(Name = "objectWithNoDeclaredProps", EmitDefaultValue = false)]
-        public Object ObjectWithNoDeclaredProps { get; set; }
+        public Option<Object> ObjectWithNoDeclaredProps { get; set; }
 
         /// <summary>
         /// test code generation for nullable objects. Value must be a map of strings to values or the &#39;null&#39; value.
         /// </summary>
         /// <value>test code generation for nullable objects. Value must be a map of strings to values or the &#39;null&#39; value.</value>
         [DataMember(Name = "objectWithNoDeclaredPropsNullable", EmitDefaultValue = true)]
-        public Object ObjectWithNoDeclaredPropsNullable { get; set; }
+        public Option<Object?> ObjectWithNoDeclaredPropsNullable { get; set; }
 
         /// <summary>
         /// test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. See https://github.com/OAI/OpenAPI-Specification/issues/1389
         /// </summary>
         /// <value>test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. See https://github.com/OAI/OpenAPI-Specification/issues/1389</value>
         [DataMember(Name = "anyTypeProp", EmitDefaultValue = true)]
-        public Object AnyTypeProp { get; set; }
+        public Option<Object?> AnyTypeProp { get; set; }
 
         /// <summary>
         /// test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. The &#39;nullable&#39; attribute does not change the allowed values.
         /// </summary>
         /// <value>test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. The &#39;nullable&#39; attribute does not change the allowed values.</value>
         [DataMember(Name = "anyTypePropNullable", EmitDefaultValue = true)]
-        public Object AnyTypePropNullable { get; set; }
+        public Option<Object?> AnyTypePropNullable { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

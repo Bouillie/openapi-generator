@@ -36,7 +36,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="Banana" /> class.
         /// </summary>
         /// <param name="lengthCm">lengthCm.</param>
-        public Banana(decimal lengthCm = default)
+        public Banana(Option<decimal> lengthCm = default)
         {
             this.LengthCm = lengthCm;
         }
@@ -45,7 +45,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets LengthCm
         /// </summary>
         [DataMember(Name = "lengthCm", EmitDefaultValue = false)]
-        public decimal LengthCm { get; set; }
+        public Option<decimal> LengthCm { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -37,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="Banana" /> class.
         /// </summary>
         /// <param name="lengthCm">lengthCm.</param>
-        public Banana(decimal lengthCm = default)
+        public Banana(Option<decimal> lengthCm = default)
         {
             this.LengthCm = lengthCm;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -47,7 +48,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets LengthCm
         /// </summary>
         [DataMember(Name = "lengthCm", EmitDefaultValue = false)]
-        public decimal LengthCm { get; set; }
+        public Option<decimal> LengthCm { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

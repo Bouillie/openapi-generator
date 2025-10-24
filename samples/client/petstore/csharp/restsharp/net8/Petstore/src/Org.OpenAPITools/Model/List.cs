@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="List" /> class.
         /// </summary>
         /// <param name="var123List">var123List.</param>
-        public List(string var123List = default)
+        public List(Option<string> var123List = default)
         {
+            // to ensure "var123List" (not nullable) is not null
+            if (var123List.IsSet && var123List.Value == null)
+            {
+                throw new ArgumentNullException("var123List isn't a nullable property for List and cannot be null");
+            }
             this.Var123List = var123List;
         }
 
@@ -45,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Var123List
         /// </summary>
         [DataMember(Name = "123-list", EmitDefaultValue = false)]
-        public string Var123List { get; set; }
+        public Option<string> Var123List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,8 +35,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ModelClient" /> class.
         /// </summary>
         /// <param name="varClient">varClient.</param>
-        public ModelClient(string varClient = default)
+        public ModelClient(Option<string> varClient = default)
         {
+            // to ensure "varClient" (not nullable) is not null
+            if (varClient.IsSet && varClient.Value == null)
+            {
+                throw new ArgumentNullException("varClient isn't a nullable property for ModelClient and cannot be null");
+            }
             this.VarClient = varClient;
         }
 
@@ -43,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets VarClient
         /// </summary>
         [DataMember(Name = "client", EmitDefaultValue = false)]
-        public string VarClient { get; set; }
+        public Option<string> VarClient { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,8 +35,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ArrayOfArrayOfNumberOnly" /> class.
         /// </summary>
         /// <param name="arrayArrayNumber">arrayArrayNumber.</param>
-        public ArrayOfArrayOfNumberOnly(List<List<decimal>> arrayArrayNumber = default)
+        public ArrayOfArrayOfNumberOnly(Option<List<List<decimal>>> arrayArrayNumber = default)
         {
+            // to ensure "arrayArrayNumber" (not nullable) is not null
+            if (arrayArrayNumber.IsSet && arrayArrayNumber.Value == null)
+            {
+                throw new ArgumentNullException("arrayArrayNumber isn't a nullable property for ArrayOfArrayOfNumberOnly and cannot be null");
+            }
             this.ArrayArrayNumber = arrayArrayNumber;
         }
 
@@ -43,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayArrayNumber
         /// </summary>
         [DataMember(Name = "ArrayArrayNumber", EmitDefaultValue = false)]
-        public List<List<decimal>> ArrayArrayNumber { get; set; }
+        public Option<List<List<decimal>>> ArrayArrayNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

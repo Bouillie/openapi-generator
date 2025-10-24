@@ -38,8 +38,23 @@ namespace Org.OpenAPITools.Model
         /// <param name="arrayOfString">arrayOfString.</param>
         /// <param name="arrayArrayOfInteger">arrayArrayOfInteger.</param>
         /// <param name="arrayArrayOfModel">arrayArrayOfModel.</param>
-        public ArrayTest(List<string> arrayOfString = default, List<List<long>> arrayArrayOfInteger = default, List<List<ReadOnlyFirst>> arrayArrayOfModel = default)
+        public ArrayTest(Option<List<string>> arrayOfString = default, Option<List<List<long>>> arrayArrayOfInteger = default, Option<List<List<ReadOnlyFirst>>> arrayArrayOfModel = default)
         {
+            // to ensure "arrayOfString" (not nullable) is not null
+            if (arrayOfString.IsSet && arrayOfString.Value == null)
+            {
+                throw new ArgumentNullException("arrayOfString isn't a nullable property for ArrayTest and cannot be null");
+            }
+            // to ensure "arrayArrayOfInteger" (not nullable) is not null
+            if (arrayArrayOfInteger.IsSet && arrayArrayOfInteger.Value == null)
+            {
+                throw new ArgumentNullException("arrayArrayOfInteger isn't a nullable property for ArrayTest and cannot be null");
+            }
+            // to ensure "arrayArrayOfModel" (not nullable) is not null
+            if (arrayArrayOfModel.IsSet && arrayArrayOfModel.Value == null)
+            {
+                throw new ArgumentNullException("arrayArrayOfModel isn't a nullable property for ArrayTest and cannot be null");
+            }
             this.ArrayOfString = arrayOfString;
             this.ArrayArrayOfInteger = arrayArrayOfInteger;
             this.ArrayArrayOfModel = arrayArrayOfModel;
@@ -49,19 +64,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayOfString
         /// </summary>
         [DataMember(Name = "array_of_string", EmitDefaultValue = false)]
-        public List<string> ArrayOfString { get; set; }
+        public Option<List<string>> ArrayOfString { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayArrayOfInteger
         /// </summary>
         [DataMember(Name = "array_array_of_integer", EmitDefaultValue = false)]
-        public List<List<long>> ArrayArrayOfInteger { get; set; }
+        public Option<List<List<long>>> ArrayArrayOfInteger { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayArrayOfModel
         /// </summary>
         [DataMember(Name = "array_array_of_model", EmitDefaultValue = false)]
-        public List<List<ReadOnlyFirst>> ArrayArrayOfModel { get; set; }
+        public Option<List<List<ReadOnlyFirst>>> ArrayArrayOfModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

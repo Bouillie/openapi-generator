@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -34,7 +35,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="NullableGuidClass" /> class.
         /// </summary>
         /// <param name="uuid">uuid.</param>
-        public NullableGuidClass(Guid? uuid = default)
+        public NullableGuidClass(Option<Guid?> uuid = default)
         {
             this.Uuid = uuid;
         }
@@ -46,7 +47,7 @@ namespace Org.OpenAPITools.Model
         <example>72f98069-206d-4f12-9f12-3d1e525a8e84</example>
         */
         [DataMember(Name = "uuid", EmitDefaultValue = true)]
-        public Guid? Uuid { get; set; }
+        public Option<Guid?> Uuid { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

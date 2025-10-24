@@ -45,11 +45,20 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="varName">varName (required).</param>
         /// <param name="property">property.</param>
-        public Name(int varName = default, string property = default)
+        public Name(int varName = default, Option<string> property = default)
         {
+            // to ensure "property" (not nullable) is not null
+            if (property.IsSet && property.Value == null)
+            {
+                throw new ArgumentNullException("property isn't a nullable property for Name and cannot be null");
+            }
             this._VarName = varName;
+            if (this.VarName.IsSet)
+            {
+                this._flagVarName = true;
+            }
             this._Property = property;
-            if (this.Property != null)
+            if (this.Property.IsSet)
             {
                 this._flagProperty = true;
             }
@@ -84,7 +93,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets SnakeCase
         /// </summary>
         [DataMember(Name = "snake_case", EmitDefaultValue = false)]
-        public int SnakeCase { get; private set; }
+        public Option<int> SnakeCase { get; private set; }
 
         /// <summary>
         /// Returns false as SnakeCase should not be serialized given that it's read-only.
@@ -98,7 +107,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Property
         /// </summary>
         [DataMember(Name = "property", EmitDefaultValue = false)]
-        public string Property
+        public Option<string> Property
         {
             get{ return _Property;}
             set
@@ -107,7 +116,7 @@ namespace Org.OpenAPITools.Model
                 _flagProperty = true;
             }
         }
-        private string _Property;
+        private Option<string> _Property;
         private bool _flagProperty;
 
         /// <summary>
@@ -122,7 +131,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Var123Number
         /// </summary>
         [DataMember(Name = "123Number", EmitDefaultValue = false)]
-        public int Var123Number { get; private set; }
+        public Option<int> Var123Number { get; private set; }
 
         /// <summary>
         /// Returns false as Var123Number should not be serialized given that it's read-only.

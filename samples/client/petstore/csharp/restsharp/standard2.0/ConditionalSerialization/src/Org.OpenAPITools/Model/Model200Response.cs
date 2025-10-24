@@ -37,15 +37,20 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="varClass">varClass.</param>
-        public Model200Response(int name = default, string varClass = default)
+        public Model200Response(Option<int> name = default, Option<string> varClass = default)
         {
+            // to ensure "varClass" (not nullable) is not null
+            if (varClass.IsSet && varClass.Value == null)
+            {
+                throw new ArgumentNullException("varClass isn't a nullable property for Model200Response and cannot be null");
+            }
             this._Name = name;
-            if (this.Name != null)
+            if (this.Name.IsSet)
             {
                 this._flagName = true;
             }
             this._Class = varClass;
-            if (this.Class != null)
+            if (this.Class.IsSet)
             {
                 this._flagClass = true;
             }
@@ -56,7 +61,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public int Name
+        public Option<int> Name
         {
             get{ return _Name;}
             set
@@ -65,7 +70,7 @@ namespace Org.OpenAPITools.Model
                 _flagName = true;
             }
         }
-        private int _Name;
+        private Option<int> _Name;
         private bool _flagName;
 
         /// <summary>
@@ -80,7 +85,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Class
         /// </summary>
         [DataMember(Name = "class", EmitDefaultValue = false)]
-        public string Class
+        public Option<string> Class
         {
             get{ return _Class;}
             set
@@ -89,7 +94,7 @@ namespace Org.OpenAPITools.Model
                 _flagClass = true;
             }
         }
-        private string _Class;
+        private Option<string> _Class;
         private bool _flagClass;
 
         /// <summary>

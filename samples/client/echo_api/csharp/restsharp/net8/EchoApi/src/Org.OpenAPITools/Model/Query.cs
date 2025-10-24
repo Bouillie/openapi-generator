@@ -62,8 +62,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="id">Query.</param>
         /// <param name="outcomes">outcomes.</param>
-        public Query(long id = default, List<OutcomesEnum> outcomes = default)
+        public Query(Option<long> id = default, Option<List<OutcomesEnum>> outcomes = default)
         {
+            // to ensure "outcomes" (not nullable) is not null
+            if (outcomes.IsSet && outcomes.Value == null)
+            {
+                throw new ArgumentNullException("outcomes isn't a nullable property for Query and cannot be null");
+            }
             this.Id = id;
             this.Outcomes = outcomes;
         }
@@ -73,13 +78,13 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Query</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
+        public Option<long> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Outcomes
         /// </summary>
         [DataMember(Name = "outcomes", EmitDefaultValue = false)]
-        public List<Query.OutcomesEnum> Outcomes { get; set; }
+        public Option<List<Query.OutcomesEnum>> Outcomes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

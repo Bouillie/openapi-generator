@@ -49,12 +49,16 @@ namespace Org.OpenAPITools.Model
         /// <param name="schema">schema (required).</param>
         public EntityBase(string schema = default)
         {
-            // to ensure "schema" is required (not null)
+            // to ensure "schema" (not nullable) is not null
             if (schema == null)
             {
-                throw new ArgumentNullException("schema is a required property for EntityBase and cannot be null");
+                throw new ArgumentNullException("schema isn't a nullable property for EntityBase and cannot be null");
             }
             this._Schema = schema;
+            if (this.Schema.IsSet)
+            {
+                this._flagSchema = true;
+            }
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

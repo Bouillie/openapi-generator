@@ -39,8 +39,23 @@ namespace Org.OpenAPITools.Model
         /// <param name="color">color.</param>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
-        public TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter(string size = default, string color = default, long id = default, string name = default)
+        public TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter(Option<string> size = default, Option<string> color = default, Option<long> id = default, Option<string> name = default)
         {
+            // to ensure "size" (not nullable) is not null
+            if (size.IsSet && size.Value == null)
+            {
+                throw new ArgumentNullException("size isn't a nullable property for TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter and cannot be null");
+            }
+            // to ensure "color" (not nullable) is not null
+            if (color.IsSet && color.Value == null)
+            {
+                throw new ArgumentNullException("color isn't a nullable property for TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter and cannot be null");
+            }
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter and cannot be null");
+            }
             this.Size = size;
             this.Color = color;
             this.Id = id;
@@ -51,13 +66,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Size
         /// </summary>
         [DataMember(Name = "size", EmitDefaultValue = false)]
-        public string Size { get; set; }
+        public Option<string> Size { get; set; }
 
         /// <summary>
         /// Gets or Sets Color
         /// </summary>
         [DataMember(Name = "color", EmitDefaultValue = false)]
-        public string Color { get; set; }
+        public Option<string> Color { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -66,7 +81,7 @@ namespace Org.OpenAPITools.Model
         <example>1</example>
         */
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
+        public Option<long> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -75,7 +90,7 @@ namespace Org.OpenAPITools.Model
         <example>Dogs</example>
         */
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public Option<string> Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

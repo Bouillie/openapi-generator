@@ -37,15 +37,25 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="prop1">prop1.</param>
         /// <param name="prop2">prop2.</param>
-        public ActivityOutputElementRepresentation(string prop1 = default, Object prop2 = default)
+        public ActivityOutputElementRepresentation(Option<string> prop1 = default, Option<Object> prop2 = default)
         {
+            // to ensure "prop1" (not nullable) is not null
+            if (prop1.IsSet && prop1.Value == null)
+            {
+                throw new ArgumentNullException("prop1 isn't a nullable property for ActivityOutputElementRepresentation and cannot be null");
+            }
+            // to ensure "prop2" (not nullable) is not null
+            if (prop2.IsSet && prop2.Value == null)
+            {
+                throw new ArgumentNullException("prop2 isn't a nullable property for ActivityOutputElementRepresentation and cannot be null");
+            }
             this._Prop1 = prop1;
-            if (this.Prop1 != null)
+            if (this.Prop1.IsSet)
             {
                 this._flagProp1 = true;
             }
             this._Prop2 = prop2;
-            if (this.Prop2 != null)
+            if (this.Prop2.IsSet)
             {
                 this._flagProp2 = true;
             }
@@ -56,7 +66,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Prop1
         /// </summary>
         [DataMember(Name = "prop1", EmitDefaultValue = false)]
-        public string Prop1
+        public Option<string> Prop1
         {
             get{ return _Prop1;}
             set
@@ -65,7 +75,7 @@ namespace Org.OpenAPITools.Model
                 _flagProp1 = true;
             }
         }
-        private string _Prop1;
+        private Option<string> _Prop1;
         private bool _flagProp1;
 
         /// <summary>
@@ -80,7 +90,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Prop2
         /// </summary>
         [DataMember(Name = "prop2", EmitDefaultValue = false)]
-        public Object Prop2
+        public Option<Object> Prop2
         {
             get{ return _Prop2;}
             set
@@ -89,7 +99,7 @@ namespace Org.OpenAPITools.Model
                 _flagProp2 = true;
             }
         }
-        private Object _Prop2;
+        private Option<Object> _Prop2;
         private bool _flagProp2;
 
         /// <summary>

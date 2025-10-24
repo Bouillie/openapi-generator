@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -48,21 +49,21 @@ namespace Org.OpenAPITools.Model
         /// <param name="varLock">varLock (required).</param>
         /// <param name="varAbstract">varAbstract (required).</param>
         /// <param name="varUnsafe">varUnsafe.</param>
-        public Return(int varReturn = default, string varLock = default, string varAbstract = default, string varUnsafe = default)
+        public Return(Option<int> varReturn = default, string varLock = default, string varAbstract = default, Option<string> varUnsafe = default)
         {
-            // to ensure "varLock" is required (not null)
+            // to ensure "varLock" (not nullable) is not null
             if (varLock == null)
             {
-                throw new ArgumentNullException("varLock is a required property for Return and cannot be null");
+                throw new ArgumentNullException("varLock isn't a nullable property for Return and cannot be null");
             }
-            this.Lock = varLock;
-            // to ensure "varAbstract" is required (not null)
-            if (varAbstract == null)
+            // to ensure "varUnsafe" (not nullable) is not null
+            if (varUnsafe.IsSet && varUnsafe.Value == null)
             {
-                throw new ArgumentNullException("varAbstract is a required property for Return and cannot be null");
+                throw new ArgumentNullException("varUnsafe isn't a nullable property for Return and cannot be null");
             }
-            this.Abstract = varAbstract;
             this.VarReturn = varReturn;
+            this.Lock = varLock;
+            this.Abstract = varAbstract;
             this.Unsafe = varUnsafe;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -71,7 +72,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets VarReturn
         /// </summary>
         [DataMember(Name = "return", EmitDefaultValue = false)]
-        public int VarReturn { get; set; }
+        public Option<int> VarReturn { get; set; }
 
         /// <summary>
         /// Gets or Sets Lock
@@ -89,7 +90,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Unsafe
         /// </summary>
         [DataMember(Name = "unsafe", EmitDefaultValue = false)]
-        public string Unsafe { get; set; }
+        public Option<string> Unsafe { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

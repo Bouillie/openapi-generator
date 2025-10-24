@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -38,12 +39,20 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="escapedLiteralString">escapedLiteralString (default to &quot;C:\\Users\\username&quot;).</param>
         /// <param name="unescapedLiteralString">unescapedLiteralString (default to &quot;C:\Users\username&quot;).</param>
-        public LiteralStringClass(string escapedLiteralString = @"C:\\Users\\username", string unescapedLiteralString = @"C:\Users\username")
+        public LiteralStringClass(Option<string> escapedLiteralString = default, Option<string> unescapedLiteralString = default)
         {
-            // use default value if no "escapedLiteralString" provided
-            this.EscapedLiteralString = escapedLiteralString ?? @"C:\\Users\\username";
-            // use default value if no "unescapedLiteralString" provided
-            this.UnescapedLiteralString = unescapedLiteralString ?? @"C:\Users\username";
+            // to ensure "escapedLiteralString" (not nullable) is not null
+            if (escapedLiteralString.IsSet && escapedLiteralString.Value == null)
+            {
+                throw new ArgumentNullException("escapedLiteralString isn't a nullable property for LiteralStringClass and cannot be null");
+            }
+            // to ensure "unescapedLiteralString" (not nullable) is not null
+            if (unescapedLiteralString.IsSet && unescapedLiteralString.Value == null)
+            {
+                throw new ArgumentNullException("unescapedLiteralString isn't a nullable property for LiteralStringClass and cannot be null");
+            }
+            this.EscapedLiteralString = escapedLiteralString.IsSet ? escapedLiteralString.Value : new Option(@"C:\\Users\\username");
+            this.UnescapedLiteralString = unescapedLiteralString.IsSet ? unescapedLiteralString.Value : new Option(@"C:\Users\username");
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -51,13 +60,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets EscapedLiteralString
         /// </summary>
         [DataMember(Name = "escapedLiteralString", EmitDefaultValue = false)]
-        public string EscapedLiteralString { get; set; }
+        public Option<string> EscapedLiteralString { get; set; }
 
         /// <summary>
         /// Gets or Sets UnescapedLiteralString
         /// </summary>
         [DataMember(Name = "unescapedLiteralString", EmitDefaultValue = false)]
-        public string UnescapedLiteralString { get; set; }
+        public Option<string> UnescapedLiteralString { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

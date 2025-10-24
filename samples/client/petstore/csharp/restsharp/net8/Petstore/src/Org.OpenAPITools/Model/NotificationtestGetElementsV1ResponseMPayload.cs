@@ -44,12 +44,12 @@ namespace Org.OpenAPITools.Model
         /// <param name="aObjVariableobject">aObjVariableobject (required).</param>
         public NotificationtestGetElementsV1ResponseMPayload(int pkiNotificationtestID = default, List<Dictionary<string, Object>> aObjVariableobject = default)
         {
-            this.PkiNotificationtestID = pkiNotificationtestID;
-            // to ensure "aObjVariableobject" is required (not null)
+            // to ensure "aObjVariableobject" (not nullable) is not null
             if (aObjVariableobject == null)
             {
-                throw new ArgumentNullException("aObjVariableobject is a required property for NotificationtestGetElementsV1ResponseMPayload and cannot be null");
+                throw new ArgumentNullException("aObjVariableobject isn't a nullable property for NotificationtestGetElementsV1ResponseMPayload and cannot be null");
             }
+            this.PkiNotificationtestID = pkiNotificationtestID;
             this.AObjVariableobject = aObjVariableobject;
         }
 

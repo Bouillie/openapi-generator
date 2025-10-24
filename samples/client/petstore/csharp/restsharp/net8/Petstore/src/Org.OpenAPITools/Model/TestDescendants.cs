@@ -73,10 +73,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectType">objectType (required).</param>
         public TestDescendants(string alternativeName = default, ObjectTypeEnum objectType = default)
         {
-            // to ensure "alternativeName" is required (not null)
+            // to ensure "alternativeName" (not nullable) is not null
             if (alternativeName == null)
             {
-                throw new ArgumentNullException("alternativeName is a required property for TestDescendants and cannot be null");
+                throw new ArgumentNullException("alternativeName isn't a nullable property for TestDescendants and cannot be null");
             }
             this.AlternativeName = alternativeName;
             this.ObjectType = objectType;

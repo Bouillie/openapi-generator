@@ -45,18 +45,22 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name (required) (default to &quot;default-name&quot;).</param>
-        public Category(long id = default, string name = @"default-name")
+        public Category(Option<long> id = default, string name = @"default-name")
         {
-            // to ensure "name" is required (not null)
+            // to ensure "name" (not nullable) is not null
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for Category and cannot be null");
+                throw new ArgumentNullException("name isn't a nullable property for Category and cannot be null");
             }
-            this._Name = name;
             this._Id = id;
-            if (this.Id != null)
+            if (this.Id.IsSet)
             {
                 this._flagId = true;
+            }
+            this._Name = name;
+            if (this.Name.IsSet)
+            {
+                this._flagName = true;
             }
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -65,7 +69,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id
+        public Option<long> Id
         {
             get{ return _Id;}
             set
@@ -74,7 +78,7 @@ namespace Org.OpenAPITools.Model
                 _flagId = true;
             }
         }
-        private long _Id;
+        private Option<long> _Id;
         private bool _flagId;
 
         /// <summary>

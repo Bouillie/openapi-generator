@@ -57,7 +57,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "just_symbol", EmitDefaultValue = false)]
-        public JustSymbolEnum? JustSymbol
+        public Option<JustSymbolEnum> JustSymbol
         {
             get{ return _JustSymbol;}
             set
@@ -66,7 +66,7 @@ namespace Org.OpenAPITools.Model
                 _flagJustSymbol = true;
             }
         }
-        private JustSymbolEnum? _JustSymbol;
+        private Option<JustSymbolEnum> _JustSymbol;
         private bool _flagJustSymbol;
 
         /// <summary>
@@ -101,15 +101,20 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="justSymbol">justSymbol.</param>
         /// <param name="arrayEnum">arrayEnum.</param>
-        public EnumArrays(JustSymbolEnum? justSymbol = default, List<ArrayEnumEnum> arrayEnum = default)
+        public EnumArrays(Option<JustSymbolEnum> justSymbol = default, Option<List<ArrayEnumEnum>> arrayEnum = default)
         {
+            // to ensure "arrayEnum" (not nullable) is not null
+            if (arrayEnum.IsSet && arrayEnum.Value == null)
+            {
+                throw new ArgumentNullException("arrayEnum isn't a nullable property for EnumArrays and cannot be null");
+            }
             this._JustSymbol = justSymbol;
-            if (this.JustSymbol != null)
+            if (this.JustSymbol.IsSet)
             {
                 this._flagJustSymbol = true;
             }
             this._ArrayEnum = arrayEnum;
-            if (this.ArrayEnum != null)
+            if (this.ArrayEnum.IsSet)
             {
                 this._flagArrayEnum = true;
             }
@@ -120,7 +125,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayEnum
         /// </summary>
         [DataMember(Name = "array_enum", EmitDefaultValue = false)]
-        public List<EnumArrays.ArrayEnumEnum> ArrayEnum
+        public Option<List<EnumArrays.ArrayEnumEnum>> ArrayEnum
         {
             get{ return _ArrayEnum;}
             set
@@ -129,7 +134,7 @@ namespace Org.OpenAPITools.Model
                 _flagArrayEnum = true;
             }
         }
-        private List<EnumArrays.ArrayEnumEnum> _ArrayEnum;
+        private Option<List<EnumArrays.ArrayEnumEnum>> _ArrayEnum;
         private bool _flagArrayEnum;
 
         /// <summary>

@@ -71,135 +71,190 @@ namespace Org.OpenAPITools.Model
         /// <param name="stringFormattedAsDecimalRequired">stringFormattedAsDecimalRequired (required).</param>
         /// <param name="duplicatePropertyName2">duplicatePropertyName2.</param>
         /// <param name="duplicatePropertyName">duplicatePropertyName.</param>
-        public FormatTest(int integer = default, int int32 = default, int int32Range = default, int int64Positive = default, int int64Negative = default, int int64PositiveExclusive = default, int int64NegativeExclusive = default, uint unsignedInteger = default, long int64 = default, ulong unsignedLong = default, decimal number = default, float varFloat = default, double varDouble = default, decimal varDecimal = default, string varString = default, byte[] varByte = default, System.IO.Stream binary = default, DateTime date = default, DateTime dateTime = default, Guid uuid = default, string password = default, string patternWithDigits = default, string patternWithDigitsAndDelimiter = default, string patternWithBackslash = default, decimal stringFormattedAsDecimal = default, decimal stringFormattedAsDecimalRequired = default, string duplicatePropertyName2 = default, string duplicatePropertyName = default)
+        public FormatTest(Option<int> integer = default, Option<int> int32 = default, Option<int> int32Range = default, Option<int> int64Positive = default, Option<int> int64Negative = default, Option<int> int64PositiveExclusive = default, Option<int> int64NegativeExclusive = default, Option<uint> unsignedInteger = default, Option<long> int64 = default, Option<ulong> unsignedLong = default, decimal number = default, Option<float> varFloat = default, Option<double> varDouble = default, Option<decimal> varDecimal = default, Option<string> varString = default, byte[] varByte = default, Option<System.IO.Stream> binary = default, DateTime date = default, Option<DateTime> dateTime = default, Option<Guid> uuid = default, string password = default, Option<string> patternWithDigits = default, Option<string> patternWithDigitsAndDelimiter = default, Option<string> patternWithBackslash = default, Option<decimal> stringFormattedAsDecimal = default, decimal stringFormattedAsDecimalRequired = default, Option<string> duplicatePropertyName2 = default, Option<string> duplicatePropertyName = default)
         {
-            this._Number = number;
-            // to ensure "varByte" is required (not null)
+            // to ensure "varString" (not nullable) is not null
+            if (varString.IsSet && varString.Value == null)
+            {
+                throw new ArgumentNullException("varString isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "varByte" (not nullable) is not null
             if (varByte == null)
             {
-                throw new ArgumentNullException("varByte is a required property for FormatTest and cannot be null");
+                throw new ArgumentNullException("varByte isn't a nullable property for FormatTest and cannot be null");
             }
-            this._Byte = varByte;
-            this._Date = date;
-            // to ensure "password" is required (not null)
+            // to ensure "binary" (not nullable) is not null
+            if (binary.IsSet && binary.Value == null)
+            {
+                throw new ArgumentNullException("binary isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "password" (not nullable) is not null
             if (password == null)
             {
-                throw new ArgumentNullException("password is a required property for FormatTest and cannot be null");
+                throw new ArgumentNullException("password isn't a nullable property for FormatTest and cannot be null");
             }
-            this._Password = password;
-            this._StringFormattedAsDecimalRequired = stringFormattedAsDecimalRequired;
+            // to ensure "patternWithDigits" (not nullable) is not null
+            if (patternWithDigits.IsSet && patternWithDigits.Value == null)
+            {
+                throw new ArgumentNullException("patternWithDigits isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "patternWithDigitsAndDelimiter" (not nullable) is not null
+            if (patternWithDigitsAndDelimiter.IsSet && patternWithDigitsAndDelimiter.Value == null)
+            {
+                throw new ArgumentNullException("patternWithDigitsAndDelimiter isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "patternWithBackslash" (not nullable) is not null
+            if (patternWithBackslash.IsSet && patternWithBackslash.Value == null)
+            {
+                throw new ArgumentNullException("patternWithBackslash isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "duplicatePropertyName2" (not nullable) is not null
+            if (duplicatePropertyName2.IsSet && duplicatePropertyName2.Value == null)
+            {
+                throw new ArgumentNullException("duplicatePropertyName2 isn't a nullable property for FormatTest and cannot be null");
+            }
+            // to ensure "duplicatePropertyName" (not nullable) is not null
+            if (duplicatePropertyName.IsSet && duplicatePropertyName.Value == null)
+            {
+                throw new ArgumentNullException("duplicatePropertyName isn't a nullable property for FormatTest and cannot be null");
+            }
             this._Integer = integer;
-            if (this.Integer != null)
+            if (this.Integer.IsSet)
             {
                 this._flagInteger = true;
             }
             this._Int32 = int32;
-            if (this.Int32 != null)
+            if (this.Int32.IsSet)
             {
                 this._flagInt32 = true;
             }
             this._Int32Range = int32Range;
-            if (this.Int32Range != null)
+            if (this.Int32Range.IsSet)
             {
                 this._flagInt32Range = true;
             }
             this._Int64Positive = int64Positive;
-            if (this.Int64Positive != null)
+            if (this.Int64Positive.IsSet)
             {
                 this._flagInt64Positive = true;
             }
             this._Int64Negative = int64Negative;
-            if (this.Int64Negative != null)
+            if (this.Int64Negative.IsSet)
             {
                 this._flagInt64Negative = true;
             }
             this._Int64PositiveExclusive = int64PositiveExclusive;
-            if (this.Int64PositiveExclusive != null)
+            if (this.Int64PositiveExclusive.IsSet)
             {
                 this._flagInt64PositiveExclusive = true;
             }
             this._Int64NegativeExclusive = int64NegativeExclusive;
-            if (this.Int64NegativeExclusive != null)
+            if (this.Int64NegativeExclusive.IsSet)
             {
                 this._flagInt64NegativeExclusive = true;
             }
             this._UnsignedInteger = unsignedInteger;
-            if (this.UnsignedInteger != null)
+            if (this.UnsignedInteger.IsSet)
             {
                 this._flagUnsignedInteger = true;
             }
             this._Int64 = int64;
-            if (this.Int64 != null)
+            if (this.Int64.IsSet)
             {
                 this._flagInt64 = true;
             }
             this._UnsignedLong = unsignedLong;
-            if (this.UnsignedLong != null)
+            if (this.UnsignedLong.IsSet)
             {
                 this._flagUnsignedLong = true;
             }
+            this._Number = number;
+            if (this.Number.IsSet)
+            {
+                this._flagNumber = true;
+            }
             this._Float = varFloat;
-            if (this.Float != null)
+            if (this.Float.IsSet)
             {
                 this._flagFloat = true;
             }
             this._Double = varDouble;
-            if (this.Double != null)
+            if (this.Double.IsSet)
             {
                 this._flagDouble = true;
             }
             this._Decimal = varDecimal;
-            if (this.Decimal != null)
+            if (this.Decimal.IsSet)
             {
                 this._flagDecimal = true;
             }
             this._String = varString;
-            if (this.String != null)
+            if (this.String.IsSet)
             {
                 this._flagString = true;
             }
+            this._Byte = varByte;
+            if (this.Byte.IsSet)
+            {
+                this._flagByte = true;
+            }
             this._Binary = binary;
-            if (this.Binary != null)
+            if (this.Binary.IsSet)
             {
                 this._flagBinary = true;
             }
+            this._Date = date;
+            if (this.Date.IsSet)
+            {
+                this._flagDate = true;
+            }
             this._DateTime = dateTime;
-            if (this.DateTime != null)
+            if (this.DateTime.IsSet)
             {
                 this._flagDateTime = true;
             }
             this._Uuid = uuid;
-            if (this.Uuid != null)
+            if (this.Uuid.IsSet)
             {
                 this._flagUuid = true;
             }
+            this._Password = password;
+            if (this.Password.IsSet)
+            {
+                this._flagPassword = true;
+            }
             this._PatternWithDigits = patternWithDigits;
-            if (this.PatternWithDigits != null)
+            if (this.PatternWithDigits.IsSet)
             {
                 this._flagPatternWithDigits = true;
             }
             this._PatternWithDigitsAndDelimiter = patternWithDigitsAndDelimiter;
-            if (this.PatternWithDigitsAndDelimiter != null)
+            if (this.PatternWithDigitsAndDelimiter.IsSet)
             {
                 this._flagPatternWithDigitsAndDelimiter = true;
             }
             this._PatternWithBackslash = patternWithBackslash;
-            if (this.PatternWithBackslash != null)
+            if (this.PatternWithBackslash.IsSet)
             {
                 this._flagPatternWithBackslash = true;
             }
             this._StringFormattedAsDecimal = stringFormattedAsDecimal;
-            if (this.StringFormattedAsDecimal != null)
+            if (this.StringFormattedAsDecimal.IsSet)
             {
                 this._flagStringFormattedAsDecimal = true;
             }
+            this._StringFormattedAsDecimalRequired = stringFormattedAsDecimalRequired;
+            if (this.StringFormattedAsDecimalRequired.IsSet)
+            {
+                this._flagStringFormattedAsDecimalRequired = true;
+            }
             this._DuplicatePropertyName2 = duplicatePropertyName2;
-            if (this.DuplicatePropertyName2 != null)
+            if (this.DuplicatePropertyName2.IsSet)
             {
                 this._flagDuplicatePropertyName2 = true;
             }
             this._DuplicatePropertyName = duplicatePropertyName;
-            if (this.DuplicatePropertyName != null)
+            if (this.DuplicatePropertyName.IsSet)
             {
                 this._flagDuplicatePropertyName = true;
             }
@@ -210,7 +265,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Integer
         /// </summary>
         [DataMember(Name = "integer", EmitDefaultValue = false)]
-        public int Integer
+        public Option<int> Integer
         {
             get{ return _Integer;}
             set
@@ -219,7 +274,7 @@ namespace Org.OpenAPITools.Model
                 _flagInteger = true;
             }
         }
-        private int _Integer;
+        private Option<int> _Integer;
         private bool _flagInteger;
 
         /// <summary>
@@ -234,7 +289,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int32
         /// </summary>
         [DataMember(Name = "int32", EmitDefaultValue = false)]
-        public int Int32
+        public Option<int> Int32
         {
             get{ return _Int32;}
             set
@@ -243,7 +298,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt32 = true;
             }
         }
-        private int _Int32;
+        private Option<int> _Int32;
         private bool _flagInt32;
 
         /// <summary>
@@ -258,7 +313,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int32Range
         /// </summary>
         [DataMember(Name = "int32Range", EmitDefaultValue = false)]
-        public int Int32Range
+        public Option<int> Int32Range
         {
             get{ return _Int32Range;}
             set
@@ -267,7 +322,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt32Range = true;
             }
         }
-        private int _Int32Range;
+        private Option<int> _Int32Range;
         private bool _flagInt32Range;
 
         /// <summary>
@@ -282,7 +337,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int64Positive
         /// </summary>
         [DataMember(Name = "int64Positive", EmitDefaultValue = false)]
-        public long Int64Positive
+        public Option<long> Int64Positive
         {
             get{ return _Int64Positive;}
             set
@@ -291,7 +346,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt64Positive = true;
             }
         }
-        private long _Int64Positive;
+        private Option<long> _Int64Positive;
         private bool _flagInt64Positive;
 
         /// <summary>
@@ -306,7 +361,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int64Negative
         /// </summary>
         [DataMember(Name = "int64Negative", EmitDefaultValue = false)]
-        public long Int64Negative
+        public Option<long> Int64Negative
         {
             get{ return _Int64Negative;}
             set
@@ -315,7 +370,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt64Negative = true;
             }
         }
-        private long _Int64Negative;
+        private Option<long> _Int64Negative;
         private bool _flagInt64Negative;
 
         /// <summary>
@@ -330,7 +385,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int64PositiveExclusive
         /// </summary>
         [DataMember(Name = "int64PositiveExclusive", EmitDefaultValue = false)]
-        public long Int64PositiveExclusive
+        public Option<long> Int64PositiveExclusive
         {
             get{ return _Int64PositiveExclusive;}
             set
@@ -339,7 +394,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt64PositiveExclusive = true;
             }
         }
-        private long _Int64PositiveExclusive;
+        private Option<long> _Int64PositiveExclusive;
         private bool _flagInt64PositiveExclusive;
 
         /// <summary>
@@ -354,7 +409,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int64NegativeExclusive
         /// </summary>
         [DataMember(Name = "int64NegativeExclusive", EmitDefaultValue = false)]
-        public long Int64NegativeExclusive
+        public Option<long> Int64NegativeExclusive
         {
             get{ return _Int64NegativeExclusive;}
             set
@@ -363,7 +418,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt64NegativeExclusive = true;
             }
         }
-        private long _Int64NegativeExclusive;
+        private Option<long> _Int64NegativeExclusive;
         private bool _flagInt64NegativeExclusive;
 
         /// <summary>
@@ -378,7 +433,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets UnsignedInteger
         /// </summary>
         [DataMember(Name = "unsigned_integer", EmitDefaultValue = false)]
-        public uint UnsignedInteger
+        public Option<uint> UnsignedInteger
         {
             get{ return _UnsignedInteger;}
             set
@@ -387,7 +442,7 @@ namespace Org.OpenAPITools.Model
                 _flagUnsignedInteger = true;
             }
         }
-        private uint _UnsignedInteger;
+        private Option<uint> _UnsignedInteger;
         private bool _flagUnsignedInteger;
 
         /// <summary>
@@ -402,7 +457,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Int64
         /// </summary>
         [DataMember(Name = "int64", EmitDefaultValue = false)]
-        public long Int64
+        public Option<long> Int64
         {
             get{ return _Int64;}
             set
@@ -411,7 +466,7 @@ namespace Org.OpenAPITools.Model
                 _flagInt64 = true;
             }
         }
-        private long _Int64;
+        private Option<long> _Int64;
         private bool _flagInt64;
 
         /// <summary>
@@ -426,7 +481,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets UnsignedLong
         /// </summary>
         [DataMember(Name = "unsigned_long", EmitDefaultValue = false)]
-        public ulong UnsignedLong
+        public Option<ulong> UnsignedLong
         {
             get{ return _UnsignedLong;}
             set
@@ -435,7 +490,7 @@ namespace Org.OpenAPITools.Model
                 _flagUnsignedLong = true;
             }
         }
-        private ulong _UnsignedLong;
+        private Option<ulong> _UnsignedLong;
         private bool _flagUnsignedLong;
 
         /// <summary>
@@ -474,7 +529,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Float
         /// </summary>
         [DataMember(Name = "float", EmitDefaultValue = false)]
-        public float Float
+        public Option<float> Float
         {
             get{ return _Float;}
             set
@@ -483,7 +538,7 @@ namespace Org.OpenAPITools.Model
                 _flagFloat = true;
             }
         }
-        private float _Float;
+        private Option<float> _Float;
         private bool _flagFloat;
 
         /// <summary>
@@ -498,7 +553,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Double
         /// </summary>
         [DataMember(Name = "double", EmitDefaultValue = false)]
-        public double Double
+        public Option<double> Double
         {
             get{ return _Double;}
             set
@@ -507,7 +562,7 @@ namespace Org.OpenAPITools.Model
                 _flagDouble = true;
             }
         }
-        private double _Double;
+        private Option<double> _Double;
         private bool _flagDouble;
 
         /// <summary>
@@ -522,7 +577,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Decimal
         /// </summary>
         [DataMember(Name = "decimal", EmitDefaultValue = false)]
-        public decimal Decimal
+        public Option<decimal> Decimal
         {
             get{ return _Decimal;}
             set
@@ -531,7 +586,7 @@ namespace Org.OpenAPITools.Model
                 _flagDecimal = true;
             }
         }
-        private decimal _Decimal;
+        private Option<decimal> _Decimal;
         private bool _flagDecimal;
 
         /// <summary>
@@ -546,7 +601,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets String
         /// </summary>
         [DataMember(Name = "string", EmitDefaultValue = false)]
-        public string String
+        public Option<string> String
         {
             get{ return _String;}
             set
@@ -555,7 +610,7 @@ namespace Org.OpenAPITools.Model
                 _flagString = true;
             }
         }
-        private string _String;
+        private Option<string> _String;
         private bool _flagString;
 
         /// <summary>
@@ -594,7 +649,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Binary
         /// </summary>
         [DataMember(Name = "binary", EmitDefaultValue = false)]
-        public System.IO.Stream Binary
+        public Option<System.IO.Stream> Binary
         {
             get{ return _Binary;}
             set
@@ -603,7 +658,7 @@ namespace Org.OpenAPITools.Model
                 _flagBinary = true;
             }
         }
-        private System.IO.Stream _Binary;
+        private Option<System.IO.Stream> _Binary;
         private bool _flagBinary;
 
         /// <summary>
@@ -649,7 +704,7 @@ namespace Org.OpenAPITools.Model
         <example>2007-12-03T10:15:30+01:00</example>
         */
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
-        public DateTime DateTime
+        public Option<DateTime> DateTime
         {
             get{ return _DateTime;}
             set
@@ -658,7 +713,7 @@ namespace Org.OpenAPITools.Model
                 _flagDateTime = true;
             }
         }
-        private DateTime _DateTime;
+        private Option<DateTime> _DateTime;
         private bool _flagDateTime;
 
         /// <summary>
@@ -676,7 +731,7 @@ namespace Org.OpenAPITools.Model
         <example>72f98069-206d-4f12-9f12-3d1e525a8e84</example>
         */
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public Guid Uuid
+        public Option<Guid> Uuid
         {
             get{ return _Uuid;}
             set
@@ -685,7 +740,7 @@ namespace Org.OpenAPITools.Model
                 _flagUuid = true;
             }
         }
-        private Guid _Uuid;
+        private Option<Guid> _Uuid;
         private bool _flagUuid;
 
         /// <summary>
@@ -725,7 +780,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>A string that is a 10 digit number. Can have leading zeros.</value>
         [DataMember(Name = "pattern_with_digits", EmitDefaultValue = false)]
-        public string PatternWithDigits
+        public Option<string> PatternWithDigits
         {
             get{ return _PatternWithDigits;}
             set
@@ -734,7 +789,7 @@ namespace Org.OpenAPITools.Model
                 _flagPatternWithDigits = true;
             }
         }
-        private string _PatternWithDigits;
+        private Option<string> _PatternWithDigits;
         private bool _flagPatternWithDigits;
 
         /// <summary>
@@ -750,7 +805,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>A string starting with &#39;image_&#39; (case insensitive) and one to three digits following i.e. Image_01.</value>
         [DataMember(Name = "pattern_with_digits_and_delimiter", EmitDefaultValue = false)]
-        public string PatternWithDigitsAndDelimiter
+        public Option<string> PatternWithDigitsAndDelimiter
         {
             get{ return _PatternWithDigitsAndDelimiter;}
             set
@@ -759,7 +814,7 @@ namespace Org.OpenAPITools.Model
                 _flagPatternWithDigitsAndDelimiter = true;
             }
         }
-        private string _PatternWithDigitsAndDelimiter;
+        private Option<string> _PatternWithDigitsAndDelimiter;
         private bool _flagPatternWithDigitsAndDelimiter;
 
         /// <summary>
@@ -775,7 +830,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>None</value>
         [DataMember(Name = "pattern_with_backslash", EmitDefaultValue = false)]
-        public string PatternWithBackslash
+        public Option<string> PatternWithBackslash
         {
             get{ return _PatternWithBackslash;}
             set
@@ -784,7 +839,7 @@ namespace Org.OpenAPITools.Model
                 _flagPatternWithBackslash = true;
             }
         }
-        private string _PatternWithBackslash;
+        private Option<string> _PatternWithBackslash;
         private bool _flagPatternWithBackslash;
 
         /// <summary>
@@ -799,7 +854,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets StringFormattedAsDecimal
         /// </summary>
         [DataMember(Name = "string_formatted_as_decimal", EmitDefaultValue = false)]
-        public decimal StringFormattedAsDecimal
+        public Option<decimal> StringFormattedAsDecimal
         {
             get{ return _StringFormattedAsDecimal;}
             set
@@ -808,7 +863,7 @@ namespace Org.OpenAPITools.Model
                 _flagStringFormattedAsDecimal = true;
             }
         }
-        private decimal _StringFormattedAsDecimal;
+        private Option<decimal> _StringFormattedAsDecimal;
         private bool _flagStringFormattedAsDecimal;
 
         /// <summary>
@@ -847,7 +902,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DuplicatePropertyName2
         /// </summary>
         [DataMember(Name = "duplicate_property_name", EmitDefaultValue = false)]
-        public string DuplicatePropertyName2
+        public Option<string> DuplicatePropertyName2
         {
             get{ return _DuplicatePropertyName2;}
             set
@@ -856,7 +911,7 @@ namespace Org.OpenAPITools.Model
                 _flagDuplicatePropertyName2 = true;
             }
         }
-        private string _DuplicatePropertyName2;
+        private Option<string> _DuplicatePropertyName2;
         private bool _flagDuplicatePropertyName2;
 
         /// <summary>
@@ -871,7 +926,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DuplicatePropertyName
         /// </summary>
         [DataMember(Name = "@duplicate_property_name", EmitDefaultValue = false)]
-        public string DuplicatePropertyName
+        public Option<string> DuplicatePropertyName
         {
             get{ return _DuplicatePropertyName;}
             set
@@ -880,7 +935,7 @@ namespace Org.OpenAPITools.Model
                 _flagDuplicatePropertyName = true;
             }
         }
-        private string _DuplicatePropertyName;
+        private Option<string> _DuplicatePropertyName;
         private bool _flagDuplicatePropertyName;
 
         /// <summary>

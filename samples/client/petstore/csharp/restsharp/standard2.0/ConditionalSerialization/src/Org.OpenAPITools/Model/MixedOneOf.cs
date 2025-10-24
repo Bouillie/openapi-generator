@@ -36,10 +36,15 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="MixedOneOf" /> class.
         /// </summary>
         /// <param name="content">content.</param>
-        public MixedOneOf(MixedOneOfContent content = default)
+        public MixedOneOf(Option<MixedOneOfContent> content = default)
         {
+            // to ensure "content" (not nullable) is not null
+            if (content.IsSet && content.Value == null)
+            {
+                throw new ArgumentNullException("content isn't a nullable property for MixedOneOf and cannot be null");
+            }
             this._Content = content;
-            if (this.Content != null)
+            if (this.Content.IsSet)
             {
                 this._flagContent = true;
             }
@@ -50,7 +55,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Content
         /// </summary>
         [DataMember(Name = "content", EmitDefaultValue = false)]
-        public MixedOneOfContent Content
+        public Option<MixedOneOfContent> Content
         {
             get{ return _Content;}
             set
@@ -59,7 +64,7 @@ namespace Org.OpenAPITools.Model
                 _flagContent = true;
             }
         }
-        private MixedOneOfContent _Content;
+        private Option<MixedOneOfContent> _Content;
         private bool _flagContent;
 
         /// <summary>

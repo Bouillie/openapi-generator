@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -48,8 +49,13 @@ namespace Org.OpenAPITools.Model
         /// <param name="breed">breed.</param>
         /// <param name="className">className (required) (default to &quot;Dog&quot;).</param>
         /// <param name="color">color (default to &quot;red&quot;).</param>
-        public Dog(string breed = default, string className = @"Dog", string color = @"red") : base(className, color)
+        public Dog(Option<string> breed = default, string className = @"Dog", Option<string> color = default) : base(className, color)
         {
+            // to ensure "breed" (not nullable) is not null
+            if (breed.IsSet && breed.Value == null)
+            {
+                throw new ArgumentNullException("breed isn't a nullable property for Dog and cannot be null");
+            }
             this.Breed = breed;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -58,7 +64,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Breed
         /// </summary>
         [DataMember(Name = "breed", EmitDefaultValue = false)]
-        public string Breed { get; set; }
+        public Option<string> Breed { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

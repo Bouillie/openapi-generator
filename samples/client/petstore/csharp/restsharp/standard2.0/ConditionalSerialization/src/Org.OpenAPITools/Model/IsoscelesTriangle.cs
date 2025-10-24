@@ -44,18 +44,26 @@ namespace Org.OpenAPITools.Model
         /// <param name="triangleType">triangleType (required).</param>
         public IsoscelesTriangle(string shapeType = default, string triangleType = default)
         {
-            // to ensure "shapeType" is required (not null)
+            // to ensure "shapeType" (not nullable) is not null
             if (shapeType == null)
             {
-                throw new ArgumentNullException("shapeType is a required property for IsoscelesTriangle and cannot be null");
+                throw new ArgumentNullException("shapeType isn't a nullable property for IsoscelesTriangle and cannot be null");
             }
-            this._ShapeType = shapeType;
-            // to ensure "triangleType" is required (not null)
+            // to ensure "triangleType" (not nullable) is not null
             if (triangleType == null)
             {
-                throw new ArgumentNullException("triangleType is a required property for IsoscelesTriangle and cannot be null");
+                throw new ArgumentNullException("triangleType isn't a nullable property for IsoscelesTriangle and cannot be null");
+            }
+            this._ShapeType = shapeType;
+            if (this.ShapeType.IsSet)
+            {
+                this._flagShapeType = true;
             }
             this._TriangleType = triangleType;
+            if (this.TriangleType.IsSet)
+            {
+                this._flagTriangleType = true;
+            }
         }
 
         /// <summary>

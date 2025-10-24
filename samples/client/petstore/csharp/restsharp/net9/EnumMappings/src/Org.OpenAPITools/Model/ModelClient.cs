@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ModelClient" /> class.
         /// </summary>
         /// <param name="varClient">varClient.</param>
-        public ModelClient(string varClient = default)
+        public ModelClient(Option<string> varClient = default)
         {
+            // to ensure "varClient" (not nullable) is not null
+            if (varClient.IsSet && varClient.Value == null)
+            {
+                throw new ArgumentNullException("varClient isn't a nullable property for ModelClient and cannot be null");
+            }
             this.VarClient = varClient;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -46,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets VarClient
         /// </summary>
         [DataMember(Name = "client", EmitDefaultValue = false)]
-        public string VarClient { get; set; }
+        public Option<string> VarClient { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

@@ -36,8 +36,13 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="DeprecatedObject" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        public DeprecatedObject(string name = default)
+        public DeprecatedObject(Option<string> name = default)
         {
+            // to ensure "name" (not nullable) is not null
+            if (name.IsSet && name.Value == null)
+            {
+                throw new ArgumentNullException("name isn't a nullable property for DeprecatedObject and cannot be null");
+            }
             this.Name = name;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -46,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public Option<string> Name { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

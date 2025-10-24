@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Model
         /// <value>pet status in the store</value>
 
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status
+        public Option<StatusEnum> Status
         {
             get{ return _Status;}
             set
@@ -74,7 +74,7 @@ namespace Org.OpenAPITools.Model
                 _flagStatus = true;
             }
         }
-        private StatusEnum? _Status;
+        private Option<StatusEnum> _Status;
         private bool _flagStatus;
 
         /// <summary>
@@ -102,37 +102,55 @@ namespace Org.OpenAPITools.Model
         /// <param name="photoUrls">photoUrls (required).</param>
         /// <param name="tags">tags.</param>
         /// <param name="status">pet status in the store.</param>
-        public Pet(long id = default, Category category = default, string name = default, List<string> photoUrls = default, List<Tag> tags = default, StatusEnum? status = default)
+        public Pet(Option<long> id = default, Option<Category> category = default, string name = default, List<string> photoUrls = default, Option<List<Tag>> tags = default, Option<StatusEnum> status = default)
         {
-            // to ensure "name" is required (not null)
+            // to ensure "category" (not nullable) is not null
+            if (category.IsSet && category.Value == null)
+            {
+                throw new ArgumentNullException("category isn't a nullable property for Pet and cannot be null");
+            }
+            // to ensure "name" (not nullable) is not null
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for Pet and cannot be null");
+                throw new ArgumentNullException("name isn't a nullable property for Pet and cannot be null");
             }
-            this._Name = name;
-            // to ensure "photoUrls" is required (not null)
+            // to ensure "photoUrls" (not nullable) is not null
             if (photoUrls == null)
             {
-                throw new ArgumentNullException("photoUrls is a required property for Pet and cannot be null");
+                throw new ArgumentNullException("photoUrls isn't a nullable property for Pet and cannot be null");
             }
-            this._PhotoUrls = photoUrls;
+            // to ensure "tags" (not nullable) is not null
+            if (tags.IsSet && tags.Value == null)
+            {
+                throw new ArgumentNullException("tags isn't a nullable property for Pet and cannot be null");
+            }
             this._Id = id;
-            if (this.Id != null)
+            if (this.Id.IsSet)
             {
                 this._flagId = true;
             }
             this._Category = category;
-            if (this.Category != null)
+            if (this.Category.IsSet)
             {
                 this._flagCategory = true;
             }
+            this._Name = name;
+            if (this.Name.IsSet)
+            {
+                this._flagName = true;
+            }
+            this._PhotoUrls = photoUrls;
+            if (this.PhotoUrls.IsSet)
+            {
+                this._flagPhotoUrls = true;
+            }
             this._Tags = tags;
-            if (this.Tags != null)
+            if (this.Tags.IsSet)
             {
                 this._flagTags = true;
             }
             this._Status = status;
-            if (this.Status != null)
+            if (this.Status.IsSet)
             {
                 this._flagStatus = true;
             }
@@ -143,7 +161,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id
+        public Option<long> Id
         {
             get{ return _Id;}
             set
@@ -152,7 +170,7 @@ namespace Org.OpenAPITools.Model
                 _flagId = true;
             }
         }
-        private long _Id;
+        private Option<long> _Id;
         private bool _flagId;
 
         /// <summary>
@@ -167,7 +185,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Category
         /// </summary>
         [DataMember(Name = "category", EmitDefaultValue = false)]
-        public Category Category
+        public Option<Category> Category
         {
             get{ return _Category;}
             set
@@ -176,7 +194,7 @@ namespace Org.OpenAPITools.Model
                 _flagCategory = true;
             }
         }
-        private Category _Category;
+        private Option<Category> _Category;
         private bool _flagCategory;
 
         /// <summary>
@@ -242,7 +260,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Tags
         /// </summary>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
-        public List<Tag> Tags
+        public Option<List<Tag>> Tags
         {
             get{ return _Tags;}
             set
@@ -251,7 +269,7 @@ namespace Org.OpenAPITools.Model
                 _flagTags = true;
             }
         }
-        private List<Tag> _Tags;
+        private Option<List<Tag>> _Tags;
         private bool _flagTags;
 
         /// <summary>

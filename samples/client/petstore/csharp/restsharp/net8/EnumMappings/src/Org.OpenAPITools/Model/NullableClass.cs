@@ -47,8 +47,18 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectNullableProp">objectNullableProp.</param>
         /// <param name="objectAndItemsNullableProp">objectAndItemsNullableProp.</param>
         /// <param name="objectItemsNullable">objectItemsNullable.</param>
-        public NullableClass(int? integerProp = default, decimal? numberProp = default, bool? booleanProp = default, string stringProp = default, DateOnly? dateProp = default, DateTime? datetimeProp = default, List<Object> arrayNullableProp = default, List<Object> arrayAndItemsNullableProp = default, List<Object> arrayItemsNullable = default, Dictionary<string, Object> objectNullableProp = default, Dictionary<string, Object> objectAndItemsNullableProp = default, Dictionary<string, Object> objectItemsNullable = default)
+        public NullableClass(Option<int?> integerProp = default, Option<decimal?> numberProp = default, Option<bool?> booleanProp = default, Option<string> stringProp = default, Option<DateOnly?> dateProp = default, Option<DateTime?> datetimeProp = default, Option<List<Object>> arrayNullableProp = default, Option<List<Object>> arrayAndItemsNullableProp = default, Option<List<Object>> arrayItemsNullable = default, Option<Dictionary<string, Object>> objectNullableProp = default, Option<Dictionary<string, Object>> objectAndItemsNullableProp = default, Option<Dictionary<string, Object>> objectItemsNullable = default)
         {
+            // to ensure "arrayItemsNullable" (not nullable) is not null
+            if (arrayItemsNullable.IsSet && arrayItemsNullable.Value == null)
+            {
+                throw new ArgumentNullException("arrayItemsNullable isn't a nullable property for NullableClass and cannot be null");
+            }
+            // to ensure "objectItemsNullable" (not nullable) is not null
+            if (objectItemsNullable.IsSet && objectItemsNullable.Value == null)
+            {
+                throw new ArgumentNullException("objectItemsNullable isn't a nullable property for NullableClass and cannot be null");
+            }
             this.IntegerProp = integerProp;
             this.NumberProp = numberProp;
             this.BooleanProp = booleanProp;
@@ -68,73 +78,73 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets IntegerProp
         /// </summary>
         [DataMember(Name = "integer_prop", EmitDefaultValue = true)]
-        public int? IntegerProp { get; set; }
+        public Option<int??> IntegerProp { get; set; }
 
         /// <summary>
         /// Gets or Sets NumberProp
         /// </summary>
         [DataMember(Name = "number_prop", EmitDefaultValue = true)]
-        public decimal? NumberProp { get; set; }
+        public Option<decimal??> NumberProp { get; set; }
 
         /// <summary>
         /// Gets or Sets BooleanProp
         /// </summary>
         [DataMember(Name = "boolean_prop", EmitDefaultValue = true)]
-        public bool? BooleanProp { get; set; }
+        public Option<bool??> BooleanProp { get; set; }
 
         /// <summary>
         /// Gets or Sets StringProp
         /// </summary>
         [DataMember(Name = "string_prop", EmitDefaultValue = true)]
-        public string StringProp { get; set; }
+        public Option<string?> StringProp { get; set; }
 
         /// <summary>
         /// Gets or Sets DateProp
         /// </summary>
         [DataMember(Name = "date_prop", EmitDefaultValue = true)]
-        public DateOnly? DateProp { get; set; }
+        public Option<DateOnly??> DateProp { get; set; }
 
         /// <summary>
         /// Gets or Sets DatetimeProp
         /// </summary>
         [DataMember(Name = "datetime_prop", EmitDefaultValue = true)]
-        public DateTime? DatetimeProp { get; set; }
+        public Option<DateTime??> DatetimeProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayNullableProp
         /// </summary>
         [DataMember(Name = "array_nullable_prop", EmitDefaultValue = true)]
-        public List<Object> ArrayNullableProp { get; set; }
+        public Option<List<Object>?> ArrayNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayAndItemsNullableProp
         /// </summary>
         [DataMember(Name = "array_and_items_nullable_prop", EmitDefaultValue = true)]
-        public List<Object> ArrayAndItemsNullableProp { get; set; }
+        public Option<List<Object>?> ArrayAndItemsNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayItemsNullable
         /// </summary>
         [DataMember(Name = "array_items_nullable", EmitDefaultValue = false)]
-        public List<Object> ArrayItemsNullable { get; set; }
+        public Option<List<Object>> ArrayItemsNullable { get; set; }
 
         /// <summary>
         /// Gets or Sets ObjectNullableProp
         /// </summary>
         [DataMember(Name = "object_nullable_prop", EmitDefaultValue = true)]
-        public Dictionary<string, Object> ObjectNullableProp { get; set; }
+        public Option<Dictionary<string, Object>?> ObjectNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ObjectAndItemsNullableProp
         /// </summary>
         [DataMember(Name = "object_and_items_nullable_prop", EmitDefaultValue = true)]
-        public Dictionary<string, Object> ObjectAndItemsNullableProp { get; set; }
+        public Option<Dictionary<string, Object>?> ObjectAndItemsNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ObjectItemsNullable
         /// </summary>
         [DataMember(Name = "object_items_nullable", EmitDefaultValue = false)]
-        public Dictionary<string, Object> ObjectItemsNullable { get; set; }
+        public Option<Dictionary<string, Object>> ObjectItemsNullable { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

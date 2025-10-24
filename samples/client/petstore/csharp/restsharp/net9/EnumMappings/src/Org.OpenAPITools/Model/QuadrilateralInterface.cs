@@ -46,10 +46,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="quadrilateralType">quadrilateralType (required).</param>
         public QuadrilateralInterface(string quadrilateralType = default)
         {
-            // to ensure "quadrilateralType" is required (not null)
+            // to ensure "quadrilateralType" (not nullable) is not null
             if (quadrilateralType == null)
             {
-                throw new ArgumentNullException("quadrilateralType is a required property for QuadrilateralInterface and cannot be null");
+                throw new ArgumentNullException("quadrilateralType isn't a nullable property for QuadrilateralInterface and cannot be null");
             }
             this.QuadrilateralType = quadrilateralType;
             this.AdditionalProperties = new Dictionary<string, object>();

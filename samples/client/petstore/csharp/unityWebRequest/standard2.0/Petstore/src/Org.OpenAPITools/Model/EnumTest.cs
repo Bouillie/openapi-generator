@@ -17,6 +17,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Org.OpenAPITools.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
@@ -90,7 +91,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets EnumString
         /// </summary>
         [DataMember(Name = "enum_string", EmitDefaultValue = false)]
-        public EnumStringEnum? EnumString { get; set; }
+        public Option<EnumStringEnum> EnumString { get; set; }
         /// <summary>
         /// Defines EnumStringRequired
         /// </summary>
@@ -173,7 +174,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets EnumInteger
         /// </summary>
         [DataMember(Name = "enum_integer", EmitDefaultValue = false)]
-        public EnumIntegerEnum? EnumInteger { get; set; }
+        public Option<EnumIntegerEnum> EnumInteger { get; set; }
         /// <summary>
         /// Defines EnumIntegerOnly
         /// </summary>
@@ -195,7 +196,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets EnumIntegerOnly
         /// </summary>
         [DataMember(Name = "enum_integer_only", EmitDefaultValue = false)]
-        public EnumIntegerOnlyEnum? EnumIntegerOnly { get; set; }
+        public Option<EnumIntegerOnlyEnum> EnumIntegerOnly { get; set; }
         /// <summary>
         /// Defines EnumNumber
         /// </summary>
@@ -220,31 +221,31 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets EnumNumber
         /// </summary>
         [DataMember(Name = "enum_number", EmitDefaultValue = false)]
-        public EnumNumberEnum? EnumNumber { get; set; }
+        public Option<EnumNumberEnum> EnumNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnum
         /// </summary>
         [DataMember(Name = "outerEnum", EmitDefaultValue = true)]
-        public OuterEnum? OuterEnum { get; set; }
+        public Option<OuterEnum?> OuterEnum { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumInteger
         /// </summary>
         [DataMember(Name = "outerEnumInteger", EmitDefaultValue = false)]
-        public OuterEnumInteger? OuterEnumInteger { get; set; }
+        public Option<OuterEnumInteger> OuterEnumInteger { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumDefaultValue
         /// </summary>
         [DataMember(Name = "outerEnumDefaultValue", EmitDefaultValue = false)]
-        public OuterEnumDefaultValue? OuterEnumDefaultValue { get; set; }
+        public Option<OuterEnumDefaultValue> OuterEnumDefaultValue { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumIntegerDefaultValue
         /// </summary>
         [DataMember(Name = "outerEnumIntegerDefaultValue", EmitDefaultValue = false)]
-        public OuterEnumIntegerDefaultValue? OuterEnumIntegerDefaultValue { get; set; }
+        public Option<OuterEnumIntegerDefaultValue> OuterEnumIntegerDefaultValue { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EnumTest" /> class.
         /// </summary>
@@ -262,10 +263,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="outerEnumInteger">outerEnumInteger.</param>
         /// <param name="outerEnumDefaultValue">outerEnumDefaultValue.</param>
         /// <param name="outerEnumIntegerDefaultValue">outerEnumIntegerDefaultValue.</param>
-        public EnumTest(EnumStringEnum? enumString = default, EnumStringRequiredEnum enumStringRequired = default, EnumIntegerEnum? enumInteger = default, EnumIntegerOnlyEnum? enumIntegerOnly = default, EnumNumberEnum? enumNumber = default, OuterEnum? outerEnum = default, OuterEnumInteger? outerEnumInteger = default, OuterEnumDefaultValue? outerEnumDefaultValue = default, OuterEnumIntegerDefaultValue? outerEnumIntegerDefaultValue = default)
+        public EnumTest(Option<EnumStringEnum> enumString = default, EnumStringRequiredEnum enumStringRequired = default, Option<EnumIntegerEnum> enumInteger = default, Option<EnumIntegerOnlyEnum> enumIntegerOnly = default, Option<EnumNumberEnum> enumNumber = default, Option<OuterEnum> outerEnum = default, Option<OuterEnumInteger> outerEnumInteger = default, Option<OuterEnumDefaultValue> outerEnumDefaultValue = default, Option<OuterEnumIntegerDefaultValue> outerEnumIntegerDefaultValue = default)
         {
-            this.EnumStringRequired = enumStringRequired;
             this.EnumString = enumString;
+            this.EnumStringRequired = enumStringRequired;
             this.EnumInteger = enumInteger;
             this.EnumIntegerOnly = enumIntegerOnly;
             this.EnumNumber = enumNumber;

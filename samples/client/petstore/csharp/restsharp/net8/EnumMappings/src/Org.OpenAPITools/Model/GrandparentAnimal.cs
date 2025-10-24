@@ -50,10 +50,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="petType">petType (required).</param>
         public GrandparentAnimal(string petType = default)
         {
-            // to ensure "petType" is required (not null)
+            // to ensure "petType" (not nullable) is not null
             if (petType == null)
             {
-                throw new ArgumentNullException("petType is a required property for GrandparentAnimal and cannot be null");
+                throw new ArgumentNullException("petType isn't a nullable property for GrandparentAnimal and cannot be null");
             }
             this.PetType = petType;
             this.AdditionalProperties = new Dictionary<string, object>();

@@ -64,7 +64,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Order Status</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status { get; set; }
+        public Option<StatusEnum> Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
@@ -74,33 +74,33 @@ namespace Org.OpenAPITools.Model
         /// <param name="shipDate">shipDate.</param>
         /// <param name="status">Order Status.</param>
         /// <param name="complete">complete (default to false).</param>
-        public Order(long id = default, long petId = default, int quantity = default, DateTime shipDate = default, StatusEnum? status = default, bool complete = false)
+        public Order(Option<long> id = default, Option<long> petId = default, Option<int> quantity = default, Option<DateTime> shipDate = default, Option<StatusEnum> status = default, Option<bool> complete = default)
         {
             this.Id = id;
             this.PetId = petId;
             this.Quantity = quantity;
             this.ShipDate = shipDate;
             this.Status = status;
-            this.Complete = complete;
+            this.Complete = complete.IsSet ? complete.Value : new Option(false);
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
+        public Option<long> Id { get; set; }
 
         /// <summary>
         /// Gets or Sets PetId
         /// </summary>
         [DataMember(Name = "petId", EmitDefaultValue = false)]
-        public long PetId { get; set; }
+        public Option<long> PetId { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity { get; set; }
+        public Option<int> Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets ShipDate
@@ -109,13 +109,13 @@ namespace Org.OpenAPITools.Model
         <example>2020-02-02T20:20:20.000222Z</example>
         */
         [DataMember(Name = "shipDate", EmitDefaultValue = false)]
-        public DateTime ShipDate { get; set; }
+        public Option<DateTime> ShipDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Complete
         /// </summary>
         [DataMember(Name = "complete", EmitDefaultValue = true)]
-        public bool Complete { get; set; }
+        public Option<bool> Complete { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
