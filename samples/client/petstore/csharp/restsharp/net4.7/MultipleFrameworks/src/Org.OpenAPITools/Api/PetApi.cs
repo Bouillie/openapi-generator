@@ -55,7 +55,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="apiKey"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeletePet(long petId, string apiKey = default, int operationIndex = 0);
+        void DeletePet(long petId, Option<string> apiKey = default, int operationIndex = 0);
 
         /// <summary>
         /// Deletes a pet
@@ -68,7 +68,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="apiKey"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeletePetWithHttpInfo(long petId, string apiKey = default, int operationIndex = 0);
+        ApiResponse<Object> DeletePetWithHttpInfo(long petId, Option<string> apiKey = default, int operationIndex = 0);
         /// <summary>
         /// Finds Pets by status
         /// </summary>
@@ -169,7 +169,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void UpdatePetWithForm(long petId, string name = default, string status = default, int operationIndex = 0);
+        void UpdatePetWithForm(long petId, Option<string> name = default, Option<string> status = default, int operationIndex = 0);
 
         /// <summary>
         /// Updates a pet in the store with form data
@@ -183,7 +183,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdatePetWithFormWithHttpInfo(long petId, string name = default, string status = default, int operationIndex = 0);
+        ApiResponse<Object> UpdatePetWithFormWithHttpInfo(long petId, Option<string> name = default, Option<string> status = default, int operationIndex = 0);
         /// <summary>
         /// uploads an image
         /// </summary>
@@ -193,7 +193,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="file">file to upload (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse</returns>
-        ApiResponse UploadFile(long petId, string additionalMetadata = default, System.IO.Stream file = default, int operationIndex = 0);
+        ApiResponse UploadFile(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, int operationIndex = 0);
 
         /// <summary>
         /// uploads an image
@@ -207,7 +207,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="file">file to upload (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApiResponse</returns>
-        ApiResponse<ApiResponse> UploadFileWithHttpInfo(long petId, string additionalMetadata = default, System.IO.Stream file = default, int operationIndex = 0);
+        ApiResponse<ApiResponse> UploadFileWithHttpInfo(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -254,7 +254,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeletePetAsync(long petId, string apiKey = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task DeletePetAsync(long petId, Option<string> apiKey = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes a pet
@@ -268,7 +268,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeletePetWithHttpInfoAsync(long petId, string apiKey = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeletePetWithHttpInfoAsync(long petId, Option<string> apiKey = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Finds Pets by status
         /// </summary>
@@ -384,7 +384,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, string name = default, string status = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, Option<string> name = default, Option<string> status = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates a pet in the store with form data
@@ -399,7 +399,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePetWithFormWithHttpInfoAsync(long petId, string name = default, string status = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePetWithFormWithHttpInfoAsync(long petId, Option<string> name = default, Option<string> status = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// uploads an image
         /// </summary>
@@ -413,7 +413,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, string additionalMetadata = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// uploads an image
@@ -428,7 +428,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiResponse>> UploadFileWithHttpInfoAsync(long petId, string additionalMetadata = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ApiResponse>> UploadFileWithHttpInfoAsync(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -736,7 +736,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="apiKey"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeletePet(long petId, string apiKey = default, int operationIndex = 0)
+        public void DeletePet(long petId, Option<string> apiKey = default, int operationIndex = 0)
         {
             DeletePetWithHttpInfo(petId, apiKey);
         }
@@ -830,7 +830,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeletePetAsync(long petId, string apiKey = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task DeletePetAsync(long petId, Option<string> apiKey = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await DeletePetWithHttpInfoAsync(petId, apiKey, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1612,7 +1612,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void UpdatePetWithForm(long petId, string name = default, string status = default, int operationIndex = 0)
+        public void UpdatePetWithForm(long petId, Option<string> name = default, Option<string> status = default, int operationIndex = 0)
         {
             UpdatePetWithFormWithHttpInfo(petId, name, status);
         }
@@ -1717,7 +1717,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, string name = default, string status = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, Option<string> name = default, Option<string> status = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await UpdatePetWithFormWithHttpInfoAsync(petId, name, status, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1823,7 +1823,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="file">file to upload (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse</returns>
-        public ApiResponse UploadFile(long petId, string additionalMetadata = default, System.IO.Stream file = default, int operationIndex = 0)
+        public ApiResponse UploadFile(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<ApiResponse> localVarResponse = UploadFileWithHttpInfo(petId, additionalMetadata, file);
             return localVarResponse.Data;
@@ -1930,7 +1930,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, string additionalMetadata = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Org.OpenAPITools.Client.ApiResponse<ApiResponse> localVarResponse = await UploadFileWithHttpInfoAsync(petId, additionalMetadata, file, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;

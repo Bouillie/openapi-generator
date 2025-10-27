@@ -51,7 +51,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="petId">Pet id to delete</param>
         /// <param name="apiKey"> (optional)</param>
         /// <returns></returns>
-        void DeletePet(long petId, string apiKey = default);
+        void DeletePet(long petId, Option<string> apiKey = default);
 
         /// <summary>
         /// Deletes a pet
@@ -63,7 +63,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="petId">Pet id to delete</param>
         /// <param name="apiKey"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeletePetWithHttpInfo(long petId, string apiKey = default);
+        ApiResponse<Object> DeletePetWithHttpInfo(long petId, Option<string> apiKey = default);
         /// <summary>
         /// Finds Pets by status
         /// </summary>
@@ -155,7 +155,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="name">Updated name of the pet (optional)</param>
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <returns></returns>
-        void UpdatePetWithForm(long petId, string name = default, string status = default);
+        void UpdatePetWithForm(long petId, Option<string> name = default, Option<string> status = default);
 
         /// <summary>
         /// Updates a pet in the store with form data
@@ -168,7 +168,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="name">Updated name of the pet (optional)</param>
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdatePetWithFormWithHttpInfo(long petId, string name = default, string status = default);
+        ApiResponse<Object> UpdatePetWithFormWithHttpInfo(long petId, Option<string> name = default, Option<string> status = default);
         /// <summary>
         /// uploads an image
         /// </summary>
@@ -177,7 +177,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <param name="file">file to upload (optional)</param>
         /// <returns>ApiResponse</returns>
-        ApiResponse UploadFile(long petId, string additionalMetadata = default, System.IO.Stream file = default);
+        ApiResponse UploadFile(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default);
 
         /// <summary>
         /// uploads an image
@@ -190,7 +190,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <param name="file">file to upload (optional)</param>
         /// <returns>ApiResponse of ApiResponse</returns>
-        ApiResponse<ApiResponse> UploadFileWithHttpInfo(long petId, string additionalMetadata = default, System.IO.Stream file = default);
+        ApiResponse<ApiResponse> UploadFileWithHttpInfo(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default);
         /// <summary>
         /// uploads an image (required)
         /// </summary>
@@ -199,7 +199,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="requiredFile">file to upload</param>
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <returns>ApiResponse</returns>
-        ApiResponse UploadFileWithRequiredFile(long petId, System.IO.Stream requiredFile, string additionalMetadata = default);
+        ApiResponse UploadFileWithRequiredFile(long petId, System.IO.Stream requiredFile, Option<string> additionalMetadata = default);
 
         /// <summary>
         /// uploads an image (required)
@@ -212,7 +212,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="requiredFile">file to upload</param>
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <returns>ApiResponse of ApiResponse</returns>
-        ApiResponse<ApiResponse> UploadFileWithRequiredFileWithHttpInfo(long petId, System.IO.Stream requiredFile, string additionalMetadata = default);
+        ApiResponse<ApiResponse> UploadFileWithRequiredFileWithHttpInfo(long petId, System.IO.Stream requiredFile, Option<string> additionalMetadata = default);
         #endregion Synchronous Operations
     }
 
@@ -256,7 +256,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="apiKey"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeletePetAsync(long petId, string apiKey = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task DeletePetAsync(long petId, Option<string> apiKey = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes a pet
@@ -269,7 +269,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="apiKey"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeletePetWithHttpInfoAsync(long petId, string apiKey = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeletePetWithHttpInfoAsync(long petId, Option<string> apiKey = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Finds Pets by status
         /// </summary>
@@ -376,7 +376,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, string name = default, string status = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, Option<string> name = default, Option<string> status = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates a pet in the store with form data
@@ -390,7 +390,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePetWithFormWithHttpInfoAsync(long petId, string name = default, string status = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePetWithFormWithHttpInfoAsync(long petId, Option<string> name = default, Option<string> status = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// uploads an image
         /// </summary>
@@ -403,7 +403,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="file">file to upload (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, string additionalMetadata = default, System.IO.Stream file = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// uploads an image
@@ -417,7 +417,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="file">file to upload (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiResponse>> UploadFileWithHttpInfoAsync(long petId, string additionalMetadata = default, System.IO.Stream file = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ApiResponse>> UploadFileWithHttpInfoAsync(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// uploads an image (required)
         /// </summary>
@@ -430,7 +430,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse> UploadFileWithRequiredFileAsync(long petId, System.IO.Stream requiredFile, string additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse> UploadFileWithRequiredFileAsync(long petId, System.IO.Stream requiredFile, Option<string> additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// uploads an image (required)
@@ -444,7 +444,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApiResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiResponse>> UploadFileWithRequiredFileWithHttpInfoAsync(long petId, System.IO.Stream requiredFile, string additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ApiResponse>> UploadFileWithRequiredFileWithHttpInfoAsync(long petId, System.IO.Stream requiredFile, Option<string> additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -766,7 +766,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="petId">Pet id to delete</param>
         /// <param name="apiKey"> (optional)</param>
         /// <returns></returns>
-        public void DeletePet(long petId, string apiKey = default)
+        public void DeletePet(long petId, Option<string> apiKey = default)
         {
             DeletePetWithHttpInfo(petId, apiKey);
         }
@@ -836,7 +836,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="apiKey"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeletePetAsync(long petId, string apiKey = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task DeletePetAsync(long petId, Option<string> apiKey = default, System.Threading.CancellationToken cancellationToken = default)
         {
             var task = DeletePetWithHttpInfoAsync(petId, apiKey, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
@@ -1587,7 +1587,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="name">Updated name of the pet (optional)</param>
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <returns></returns>
-        public void UpdatePetWithForm(long petId, string name = default, string status = default)
+        public void UpdatePetWithForm(long petId, Option<string> name = default, Option<string> status = default)
         {
             UpdatePetWithFormWithHttpInfo(petId, name, status);
         }
@@ -1668,7 +1668,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="status">Updated status of the pet (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, string name = default, string status = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task UpdatePetWithFormAsync(long petId, Option<string> name = default, Option<string> status = default, System.Threading.CancellationToken cancellationToken = default)
         {
             var task = UpdatePetWithFormWithHttpInfoAsync(petId, name, status, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
@@ -1763,7 +1763,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <param name="file">file to upload (optional)</param>
         /// <returns>ApiResponse</returns>
-        public ApiResponse UploadFile(long petId, string additionalMetadata = default, System.IO.Stream file = default)
+        public ApiResponse UploadFile(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default)
         {
             Org.OpenAPITools.Client.ApiResponse<ApiResponse> localVarResponse = UploadFileWithHttpInfo(petId, additionalMetadata, file);
             return localVarResponse.Data;
@@ -1845,7 +1845,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="file">file to upload (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, string additionalMetadata = default, System.IO.Stream file = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ApiResponse> UploadFileAsync(long petId, Option<string> additionalMetadata = default, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default)
         {
             var task = UploadFileWithHttpInfoAsync(petId, additionalMetadata, file, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
@@ -1941,7 +1941,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="requiredFile">file to upload</param>
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <returns>ApiResponse</returns>
-        public ApiResponse UploadFileWithRequiredFile(long petId, System.IO.Stream requiredFile, string additionalMetadata = default)
+        public ApiResponse UploadFileWithRequiredFile(long petId, System.IO.Stream requiredFile, Option<string> additionalMetadata = default)
         {
             Org.OpenAPITools.Client.ApiResponse<ApiResponse> localVarResponse = UploadFileWithRequiredFileWithHttpInfo(petId, requiredFile, additionalMetadata);
             return localVarResponse.Data;
@@ -2021,7 +2021,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="additionalMetadata">Additional data to pass to server (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse> UploadFileWithRequiredFileAsync(long petId, System.IO.Stream requiredFile, string additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ApiResponse> UploadFileWithRequiredFileAsync(long petId, System.IO.Stream requiredFile, Option<string> additionalMetadata = default, System.Threading.CancellationToken cancellationToken = default)
         {
             var task = UploadFileWithRequiredFileWithHttpInfoAsync(petId, requiredFile, additionalMetadata, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
