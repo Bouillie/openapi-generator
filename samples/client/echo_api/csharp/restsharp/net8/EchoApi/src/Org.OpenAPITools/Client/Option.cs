@@ -101,12 +101,12 @@ namespace Org.OpenAPITools.Client
             return object.Equals(Value, other.Value);
         }
 
-        public static bool ==(Option<TType> left, Option<TType> right)
+        public static bool operator ==(Option<TType> left, Option<TType> right)
         {
             return left.Equals(right);
         }
 
-        public static bool !=(Option<TType> left, Option<TType> right)
+        public static bool operator !=(Option<TType> left, Option<TType> right)
         {
             return !left.Equals(right);
         }
