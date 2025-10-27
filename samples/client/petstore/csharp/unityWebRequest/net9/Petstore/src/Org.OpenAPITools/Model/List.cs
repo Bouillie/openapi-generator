@@ -96,7 +96,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Var123List == input.Var123List ||
                     
                     this.Var123List.Equals(input.Var123List)
                 );

@@ -141,21 +141,17 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Size == input.Size ||
                     
                     this.Size.Equals(input.Size)
                 ) && 
                 (
-                    this.Color == input.Color ||
                     
                     this.Color.Equals(input.Color)
                 ) && 
                 (
-                    this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Name == input.Name ||
                     
                     this.Name.Equals(input.Name)
                 );

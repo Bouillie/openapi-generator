@@ -124,7 +124,6 @@ namespace Org.OpenAPITools.Model
             }
             return base.Equals(input) && 
                 (
-                    this.Name == input.Name ||
                     
                     this.Name.Equals(input.Name)
                 ) && base.Equals(input) && 

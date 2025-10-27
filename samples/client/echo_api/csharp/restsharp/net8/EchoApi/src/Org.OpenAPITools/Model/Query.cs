@@ -133,11 +133,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Outcomes == input.Outcomes ||
+                    
                     this.Outcomes.IsSet && this.Outcomes.Value != null &&
                     input.Outcomes.IsSet && input.Outcomes.Value != null &&
                     this.Outcomes.Value.SequenceEqual(input.Outcomes.Value)

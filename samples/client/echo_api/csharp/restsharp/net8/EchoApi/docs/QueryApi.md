@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost:3000*
 
 <a id="testenumrefstring"></a>
 # **TestEnumRefString**
-> string TestEnumRefString (string? enumNonrefStringQuery = null, StringEnumRef? enumRefStringQuery = null)
+> string TestEnumRefString (string enumNonrefStringQuery = null, StringEnumRef enumRefStringQuery = null)
 
 Test query parameter(s)
 
@@ -41,8 +41,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var enumNonrefStringQuery = "success";  // string? |  (optional) 
-            var enumRefStringQuery = new StringEnumRef?(); // StringEnumRef? |  (optional) 
+            var enumNonrefStringQuery = "success";  // string |  (optional) 
+            var enumRefStringQuery = (StringEnumRef) "success";  // StringEnumRef |  (optional) 
 
             try
             {
@@ -85,8 +85,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **enumNonrefStringQuery** | **string?** |  | [optional]  |
-| **enumRefStringQuery** | [**StringEnumRef?**](StringEnumRef?.md) |  | [optional]  |
+| **enumNonrefStringQuery** | **string** |  | [optional]  |
+| **enumRefStringQuery** | **StringEnumRef** |  | [optional]  |
 
 ### Return type
 
@@ -111,7 +111,7 @@ No authorization required
 
 <a id="testquerydatetimedatestring"></a>
 # **TestQueryDatetimeDateString**
-> string TestQueryDatetimeDateString (DateTime? datetimeQuery = null, DateOnly? dateQuery = null, string? stringQuery = null)
+> string TestQueryDatetimeDateString (DateTime datetimeQuery = null, DateOnly dateQuery = null, string stringQuery = null)
 
 Test query parameter(s)
 
@@ -134,9 +134,9 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var datetimeQuery = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var dateQuery = DateOnly.Parse("2013-10-20");  // DateOnly? |  (optional) 
-            var stringQuery = "stringQuery_example";  // string? |  (optional) 
+            var datetimeQuery = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime |  (optional) 
+            var dateQuery = DateOnly.Parse("2013-10-20");  // DateOnly |  (optional) 
+            var stringQuery = "stringQuery_example";  // string |  (optional) 
 
             try
             {
@@ -179,9 +179,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **datetimeQuery** | **DateTime?** |  | [optional]  |
-| **dateQuery** | **DateOnly?** |  | [optional]  |
-| **stringQuery** | **string?** |  | [optional]  |
+| **datetimeQuery** | **DateTime** |  | [optional]  |
+| **dateQuery** | **DateOnly** |  | [optional]  |
+| **stringQuery** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -206,7 +206,7 @@ No authorization required
 
 <a id="testqueryintegerbooleanstring"></a>
 # **TestQueryIntegerBooleanString**
-> string TestQueryIntegerBooleanString (int? integerQuery = null, bool? booleanQuery = null, string? stringQuery = null)
+> string TestQueryIntegerBooleanString (int integerQuery = null, bool booleanQuery = null, string stringQuery = null)
 
 Test query parameter(s)
 
@@ -229,9 +229,9 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var integerQuery = 56;  // int? |  (optional) 
-            var booleanQuery = true;  // bool? |  (optional) 
-            var stringQuery = "stringQuery_example";  // string? |  (optional) 
+            var integerQuery = 56;  // int |  (optional) 
+            var booleanQuery = true;  // bool |  (optional) 
+            var stringQuery = "stringQuery_example";  // string |  (optional) 
 
             try
             {
@@ -274,9 +274,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **integerQuery** | **int?** |  | [optional]  |
-| **booleanQuery** | **bool?** |  | [optional]  |
-| **stringQuery** | **string?** |  | [optional]  |
+| **integerQuery** | **int** |  | [optional]  |
+| **booleanQuery** | **bool** |  | [optional]  |
+| **stringQuery** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -301,7 +301,7 @@ No authorization required
 
 <a id="testquerystyledeepobjectexplodetrueobject"></a>
 # **TestQueryStyleDeepObjectExplodeTrueObject**
-> string TestQueryStyleDeepObjectExplodeTrueObject (Pet? queryObject = null)
+> string TestQueryStyleDeepObjectExplodeTrueObject (Pet queryObject = null)
 
 Test query parameter(s)
 
@@ -324,7 +324,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new Pet?(); // Pet? |  (optional) 
+            var queryObject = new Pet(); // Pet |  (optional) 
 
             try
             {
@@ -367,7 +367,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**Pet?**](Pet?.md) |  | [optional]  |
+| **queryObject** | [**Pet**](Pet.md) |  | [optional]  |
 
 ### Return type
 
@@ -392,7 +392,7 @@ No authorization required
 
 <a id="testquerystyledeepobjectexplodetrueobjectallof"></a>
 # **TestQueryStyleDeepObjectExplodeTrueObjectAllOf**
-> string TestQueryStyleDeepObjectExplodeTrueObjectAllOf (TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter? queryObject = null)
+> string TestQueryStyleDeepObjectExplodeTrueObjectAllOf (TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter queryObject = null)
 
 Test query parameter(s)
 
@@ -415,7 +415,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter?(); // TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter? |  (optional) 
+            var queryObject = new TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter(); // TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter |  (optional) 
 
             try
             {
@@ -458,7 +458,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter?**](TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter?.md) |  | [optional]  |
+| **queryObject** | [**TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter**](TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter.md) |  | [optional]  |
 
 ### Return type
 
@@ -483,7 +483,7 @@ No authorization required
 
 <a id="testquerystyleformexplodefalsearrayinteger"></a>
 # **TestQueryStyleFormExplodeFalseArrayInteger**
-> string TestQueryStyleFormExplodeFalseArrayInteger (List<int>? queryObject = null)
+> string TestQueryStyleFormExplodeFalseArrayInteger (List<int> queryObject = null)
 
 Test query parameter(s)
 
@@ -506,7 +506,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new List<int>?(); // List<int>? |  (optional) 
+            var queryObject = new List<int>(); // List<int> |  (optional) 
 
             try
             {
@@ -549,7 +549,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**List&lt;int&gt;?**](int.md) |  | [optional]  |
+| **queryObject** | [**List&lt;int&gt;**](int.md) |  | [optional]  |
 
 ### Return type
 
@@ -574,7 +574,7 @@ No authorization required
 
 <a id="testquerystyleformexplodefalsearraystring"></a>
 # **TestQueryStyleFormExplodeFalseArrayString**
-> string TestQueryStyleFormExplodeFalseArrayString (List<string>? queryObject = null)
+> string TestQueryStyleFormExplodeFalseArrayString (List<string> queryObject = null)
 
 Test query parameter(s)
 
@@ -597,7 +597,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new List<string>?(); // List<string>? |  (optional) 
+            var queryObject = new List<string>(); // List<string> |  (optional) 
 
             try
             {
@@ -640,7 +640,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**List&lt;string&gt;?**](string.md) |  | [optional]  |
+| **queryObject** | [**List&lt;string&gt;**](string.md) |  | [optional]  |
 
 ### Return type
 
@@ -665,7 +665,7 @@ No authorization required
 
 <a id="testquerystyleformexplodetruearraystring"></a>
 # **TestQueryStyleFormExplodeTrueArrayString**
-> string TestQueryStyleFormExplodeTrueArrayString (TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter? queryObject = null)
+> string TestQueryStyleFormExplodeTrueArrayString (TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter queryObject = null)
 
 Test query parameter(s)
 
@@ -688,7 +688,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter?(); // TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter? |  (optional) 
+            var queryObject = new TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter(); // TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter |  (optional) 
 
             try
             {
@@ -731,7 +731,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter?**](TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter?.md) |  | [optional]  |
+| **queryObject** | [**TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter**](TestQueryStyleFormExplodeTrueArrayStringQueryObjectParameter.md) |  | [optional]  |
 
 ### Return type
 
@@ -756,7 +756,7 @@ No authorization required
 
 <a id="testquerystyleformexplodetrueobject"></a>
 # **TestQueryStyleFormExplodeTrueObject**
-> string TestQueryStyleFormExplodeTrueObject (Pet? queryObject = null)
+> string TestQueryStyleFormExplodeTrueObject (Pet queryObject = null)
 
 Test query parameter(s)
 
@@ -779,7 +779,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new Pet?(); // Pet? |  (optional) 
+            var queryObject = new Pet(); // Pet |  (optional) 
 
             try
             {
@@ -822,7 +822,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**Pet?**](Pet?.md) |  | [optional]  |
+| **queryObject** | [**Pet**](Pet.md) |  | [optional]  |
 
 ### Return type
 
@@ -847,7 +847,7 @@ No authorization required
 
 <a id="testquerystyleformexplodetrueobjectallof"></a>
 # **TestQueryStyleFormExplodeTrueObjectAllOf**
-> string TestQueryStyleFormExplodeTrueObjectAllOf (DataQuery? queryObject = null)
+> string TestQueryStyleFormExplodeTrueObjectAllOf (DataQuery queryObject = null)
 
 Test query parameter(s)
 
@@ -870,7 +870,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var queryObject = new DataQuery?(); // DataQuery? |  (optional) 
+            var queryObject = new DataQuery(); // DataQuery |  (optional) 
 
             try
             {
@@ -913,7 +913,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **queryObject** | [**DataQuery?**](DataQuery?.md) |  | [optional]  |
+| **queryObject** | [**DataQuery**](DataQuery.md) |  | [optional]  |
 
 ### Return type
 
@@ -938,7 +938,7 @@ No authorization required
 
 <a id="testquerystylejsonserializationobject"></a>
 # **TestQueryStyleJsonSerializationObject**
-> string TestQueryStyleJsonSerializationObject (Pet? jsonSerializedObjectRefStringQuery = null, List<Pet>? jsonSerializedObjectArrayRefStringQuery = null)
+> string TestQueryStyleJsonSerializationObject (Pet jsonSerializedObjectRefStringQuery = null, List<Pet> jsonSerializedObjectArrayRefStringQuery = null)
 
 Test query parameter(s)
 
@@ -961,8 +961,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3000";
             var apiInstance = new QueryApi(config);
-            var jsonSerializedObjectRefStringQuery = new Pet?(); // Pet? |  (optional) 
-            var jsonSerializedObjectArrayRefStringQuery = new List<Pet>?(); // List<Pet>? |  (optional) 
+            var jsonSerializedObjectRefStringQuery = new Pet(); // Pet |  (optional) 
+            var jsonSerializedObjectArrayRefStringQuery = new List<Pet>(); // List<Pet> |  (optional) 
 
             try
             {
@@ -1005,8 +1005,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **jsonSerializedObjectRefStringQuery** | [**Pet?**](Pet?.md) |  | [optional]  |
-| **jsonSerializedObjectArrayRefStringQuery** | [**List&lt;Pet&gt;?**](Pet.md) |  | [optional]  |
+| **jsonSerializedObjectRefStringQuery** | [**Pet**](Pet.md) |  | [optional]  |
+| **jsonSerializedObjectArrayRefStringQuery** | [**List&lt;Pet&gt;**](Pet.md) |  | [optional]  |
 
 ### Return type
 

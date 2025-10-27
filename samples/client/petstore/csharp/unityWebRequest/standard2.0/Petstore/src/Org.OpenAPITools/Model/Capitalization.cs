@@ -167,32 +167,26 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.SmallCamel == input.SmallCamel ||
                     
                     this.SmallCamel.Equals(input.SmallCamel)
                 ) && 
                 (
-                    this.CapitalCamel == input.CapitalCamel ||
                     
                     this.CapitalCamel.Equals(input.CapitalCamel)
                 ) && 
                 (
-                    this.SmallSnake == input.SmallSnake ||
                     
                     this.SmallSnake.Equals(input.SmallSnake)
                 ) && 
                 (
-                    this.CapitalSnake == input.CapitalSnake ||
                     
                     this.CapitalSnake.Equals(input.CapitalSnake)
                 ) && 
                 (
-                    this.SCAETHFlowPoints == input.SCAETHFlowPoints ||
                     
                     this.SCAETHFlowPoints.Equals(input.SCAETHFlowPoints)
                 ) && 
                 (
-                    this.ATT_NAME == input.ATT_NAME ||
                     
                     this.ATT_NAME.Equals(input.ATT_NAME)
                 );

@@ -110,12 +110,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.EscapedLiteralString == input.EscapedLiteralString ||
                     
                     this.EscapedLiteralString.Equals(input.EscapedLiteralString)
                 ) && 
                 (
-                    this.UnescapedLiteralString == input.UnescapedLiteralString ||
                     
                     this.UnescapedLiteralString.Equals(input.UnescapedLiteralString)
                 );

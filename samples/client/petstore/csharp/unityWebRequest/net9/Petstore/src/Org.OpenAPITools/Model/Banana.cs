@@ -91,7 +91,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.LengthCm == input.LengthCm ||
                     this.LengthCm.Equals(input.LengthCm)
                 );
         }

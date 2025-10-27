@@ -144,16 +144,13 @@ namespace Org.OpenAPITools.Model
                     this.VarName.Equals(input.VarName)
                 ) && 
                 (
-                    this.SnakeCase == input.SnakeCase ||
                     this.SnakeCase.Equals(input.SnakeCase)
                 ) && 
                 (
-                    this.Property == input.Property ||
                     
                     this.Property.Equals(input.Property)
                 ) && 
                 (
-                    this.Var123Number == input.Var123Number ||
                     this.Var123Number.Equals(input.Var123Number)
                 );
         }

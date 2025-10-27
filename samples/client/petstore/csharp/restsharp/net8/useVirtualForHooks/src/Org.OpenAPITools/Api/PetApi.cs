@@ -225,9 +225,7 @@ namespace Org.OpenAPITools.Api
         {
             // verify the required parameter 'pet' is set
             if (pet == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'pet' when calling PetApi->AddPet");
-            }
+                throw new Org.OpenAPITools.Client.ApiException(400, "Null non nullable parameter 'pet' when calling PetApi->AddPet");
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -317,9 +315,7 @@ namespace Org.OpenAPITools.Api
         {
             // verify the required parameter 'pet' is set
             if (pet == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'pet' when calling PetApi->AddPet");
-            }
+                throw new Org.OpenAPITools.Client.ApiException(400, "Null non nullable parameter 'pet' when calling PetApi->AddPet");
 
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();

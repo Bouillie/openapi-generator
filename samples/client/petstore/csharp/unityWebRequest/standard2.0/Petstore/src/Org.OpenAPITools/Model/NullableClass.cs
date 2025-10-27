@@ -209,67 +209,61 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.IntegerProp == input.IntegerProp ||
                     
                     this.IntegerProp.Equals(input.IntegerProp)
                 ) && 
                 (
-                    this.NumberProp == input.NumberProp ||
                     
                     this.NumberProp.Equals(input.NumberProp)
                 ) && 
                 (
-                    this.BooleanProp == input.BooleanProp ||
                     
                     this.BooleanProp.Equals(input.BooleanProp)
                 ) && 
                 (
-                    this.StringProp == input.StringProp ||
                     
                     this.StringProp.Equals(input.StringProp)
                 ) && 
                 (
-                    this.DateProp == input.DateProp ||
                     
                     this.DateProp.Equals(input.DateProp)
                 ) && 
                 (
-                    this.DatetimeProp == input.DatetimeProp ||
                     
                     this.DatetimeProp.Equals(input.DatetimeProp)
                 ) && 
                 (
-                    this.ArrayNullableProp == input.ArrayNullableProp ||
+                    
                     this.ArrayNullableProp.IsSet && this.ArrayNullableProp.Value != null &&
                     input.ArrayNullableProp.IsSet && input.ArrayNullableProp.Value != null &&
                     this.ArrayNullableProp.Value.SequenceEqual(input.ArrayNullableProp.Value)
                 ) && 
                 (
-                    this.ArrayAndItemsNullableProp == input.ArrayAndItemsNullableProp ||
+                    
                     this.ArrayAndItemsNullableProp.IsSet && this.ArrayAndItemsNullableProp.Value != null &&
                     input.ArrayAndItemsNullableProp.IsSet && input.ArrayAndItemsNullableProp.Value != null &&
                     this.ArrayAndItemsNullableProp.Value.SequenceEqual(input.ArrayAndItemsNullableProp.Value)
                 ) && 
                 (
-                    this.ArrayItemsNullable == input.ArrayItemsNullable ||
+                    
                     this.ArrayItemsNullable.IsSet && this.ArrayItemsNullable.Value != null &&
                     input.ArrayItemsNullable.IsSet && input.ArrayItemsNullable.Value != null &&
                     this.ArrayItemsNullable.Value.SequenceEqual(input.ArrayItemsNullable.Value)
                 ) && 
                 (
-                    this.ObjectNullableProp == input.ObjectNullableProp ||
+                    
                     this.ObjectNullableProp.IsSet && this.ObjectNullableProp.Value != null &&
                     input.ObjectNullableProp.IsSet && input.ObjectNullableProp.Value != null &&
                     this.ObjectNullableProp.Value.SequenceEqual(input.ObjectNullableProp.Value)
                 ) && 
                 (
-                    this.ObjectAndItemsNullableProp == input.ObjectAndItemsNullableProp ||
+                    
                     this.ObjectAndItemsNullableProp.IsSet && this.ObjectAndItemsNullableProp.Value != null &&
                     input.ObjectAndItemsNullableProp.IsSet && input.ObjectAndItemsNullableProp.Value != null &&
                     this.ObjectAndItemsNullableProp.Value.SequenceEqual(input.ObjectAndItemsNullableProp.Value)
                 ) && 
                 (
-                    this.ObjectItemsNullable == input.ObjectItemsNullable ||
+                    
                     this.ObjectItemsNullable.IsSet && this.ObjectItemsNullable.Value != null &&
                     input.ObjectItemsNullable.IsSet && input.ObjectItemsNullable.Value != null &&
                     this.ObjectItemsNullable.Value.SequenceEqual(input.ObjectItemsNullable.Value)

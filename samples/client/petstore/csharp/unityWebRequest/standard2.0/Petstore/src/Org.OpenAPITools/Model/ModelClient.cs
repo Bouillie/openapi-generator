@@ -96,7 +96,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.VarClient == input.VarClient ||
                     
                     this.VarClient.Equals(input.VarClient)
                 );

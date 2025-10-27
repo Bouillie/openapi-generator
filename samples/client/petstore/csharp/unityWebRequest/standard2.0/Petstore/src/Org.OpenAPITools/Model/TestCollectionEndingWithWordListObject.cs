@@ -96,7 +96,7 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.TestCollectionEndingWithWordList == input.TestCollectionEndingWithWordList ||
+                    
                     this.TestCollectionEndingWithWordList.IsSet && this.TestCollectionEndingWithWordList.Value != null &&
                     input.TestCollectionEndingWithWordList.IsSet && input.TestCollectionEndingWithWordList.Value != null &&
                     this.TestCollectionEndingWithWordList.Value.SequenceEqual(input.TestCollectionEndingWithWordList.Value)

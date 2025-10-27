@@ -97,7 +97,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.SourceURI == input.SourceURI ||
                     
                     this.SourceURI.Equals(input.SourceURI)
                 );

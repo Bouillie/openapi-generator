@@ -115,7 +115,6 @@ namespace Org.OpenAPITools.Model
                     this.Cultivar.Equals(input.Cultivar))
                 ) && 
                 (
-                    this.Mealy == input.Mealy ||
                     this.Mealy.Equals(input.Mealy)
                 );
         }

@@ -94,7 +94,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.JustNumber == input.JustNumber ||
                     this.JustNumber.Equals(input.JustNumber)
                 );
         }

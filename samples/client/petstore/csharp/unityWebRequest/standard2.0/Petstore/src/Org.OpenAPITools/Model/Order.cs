@@ -166,28 +166,22 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.PetId == input.PetId ||
                     this.PetId.Equals(input.PetId)
                 ) && 
                 (
-                    this.Quantity == input.Quantity ||
                     this.Quantity.Equals(input.Quantity)
                 ) && 
                 (
-                    this.ShipDate == input.ShipDate ||
                     
                     this.ShipDate.Equals(input.ShipDate)
                 ) && 
                 (
-                    this.Status == input.Status ||
                     this.Status.Equals(input.Status)
                 ) && 
                 (
-                    this.Complete == input.Complete ||
                     this.Complete.Equals(input.Complete)
                 );
         }

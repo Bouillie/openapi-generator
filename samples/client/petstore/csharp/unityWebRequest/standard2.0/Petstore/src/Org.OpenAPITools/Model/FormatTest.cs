@@ -397,43 +397,33 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Integer == input.Integer ||
                     this.Integer.Equals(input.Integer)
                 ) && 
                 (
-                    this.Int32 == input.Int32 ||
                     this.Int32.Equals(input.Int32)
                 ) && 
                 (
-                    this.Int32Range == input.Int32Range ||
                     this.Int32Range.Equals(input.Int32Range)
                 ) && 
                 (
-                    this.Int64Positive == input.Int64Positive ||
                     this.Int64Positive.Equals(input.Int64Positive)
                 ) && 
                 (
-                    this.Int64Negative == input.Int64Negative ||
                     this.Int64Negative.Equals(input.Int64Negative)
                 ) && 
                 (
-                    this.Int64PositiveExclusive == input.Int64PositiveExclusive ||
                     this.Int64PositiveExclusive.Equals(input.Int64PositiveExclusive)
                 ) && 
                 (
-                    this.Int64NegativeExclusive == input.Int64NegativeExclusive ||
                     this.Int64NegativeExclusive.Equals(input.Int64NegativeExclusive)
                 ) && 
                 (
-                    this.UnsignedInteger == input.UnsignedInteger ||
                     this.UnsignedInteger.Equals(input.UnsignedInteger)
                 ) && 
                 (
-                    this.Int64 == input.Int64 ||
                     this.Int64.Equals(input.Int64)
                 ) && 
                 (
-                    this.UnsignedLong == input.UnsignedLong ||
                     this.UnsignedLong.Equals(input.UnsignedLong)
                 ) && 
                 (
@@ -441,19 +431,15 @@ namespace Org.OpenAPITools.Model
                     this.Number.Equals(input.Number)
                 ) && 
                 (
-                    this.Float == input.Float ||
                     this.Float.Equals(input.Float)
                 ) && 
                 (
-                    this.Double == input.Double ||
                     this.Double.Equals(input.Double)
                 ) && 
                 (
-                    this.Decimal == input.Decimal ||
                     this.Decimal.Equals(input.Decimal)
                 ) && 
                 (
-                    this.String == input.String ||
                     
                     this.String.Equals(input.String)
                 ) && 
@@ -463,7 +449,6 @@ namespace Org.OpenAPITools.Model
                     this.Byte.Equals(input.Byte))
                 ) && 
                 (
-                    this.Binary == input.Binary ||
                     
                     this.Binary.Equals(input.Binary)
                 ) && 
@@ -473,12 +458,10 @@ namespace Org.OpenAPITools.Model
                     this.Date.Equals(input.Date))
                 ) && 
                 (
-                    this.DateTime == input.DateTime ||
                     
                     this.DateTime.Equals(input.DateTime)
                 ) && 
                 (
-                    this.Uuid == input.Uuid ||
                     
                     this.Uuid.Equals(input.Uuid)
                 ) && 
@@ -488,22 +471,18 @@ namespace Org.OpenAPITools.Model
                     this.Password.Equals(input.Password))
                 ) && 
                 (
-                    this.PatternWithDigits == input.PatternWithDigits ||
                     
                     this.PatternWithDigits.Equals(input.PatternWithDigits)
                 ) && 
                 (
-                    this.PatternWithDigitsAndDelimiter == input.PatternWithDigitsAndDelimiter ||
                     
                     this.PatternWithDigitsAndDelimiter.Equals(input.PatternWithDigitsAndDelimiter)
                 ) && 
                 (
-                    this.PatternWithBackslash == input.PatternWithBackslash ||
                     
                     this.PatternWithBackslash.Equals(input.PatternWithBackslash)
                 ) && 
                 (
-                    this.StringFormattedAsDecimal == input.StringFormattedAsDecimal ||
                     this.StringFormattedAsDecimal.Equals(input.StringFormattedAsDecimal)
                 ) && 
                 (
@@ -511,12 +490,10 @@ namespace Org.OpenAPITools.Model
                     this.StringFormattedAsDecimalRequired.Equals(input.StringFormattedAsDecimalRequired)
                 ) && 
                 (
-                    this.DuplicatePropertyName2 == input.DuplicatePropertyName2 ||
                     
                     this.DuplicatePropertyName2.Equals(input.DuplicatePropertyName2)
                 ) && 
                 (
-                    this.DuplicatePropertyName == input.DuplicatePropertyName ||
                     
                     this.DuplicatePropertyName.Equals(input.DuplicatePropertyName)
                 );

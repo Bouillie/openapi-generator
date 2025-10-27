@@ -104,7 +104,6 @@ namespace Org.OpenAPITools.Model
             }
             return base.Equals(input) && 
                 (
-                    this.Breed == input.Breed ||
                     
                     this.Breed.Equals(input.Breed)
                 );

@@ -91,7 +91,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.NullableMessage == input.NullableMessage ||
                     
                     this.NullableMessage.Equals(input.NullableMessage)
                 );

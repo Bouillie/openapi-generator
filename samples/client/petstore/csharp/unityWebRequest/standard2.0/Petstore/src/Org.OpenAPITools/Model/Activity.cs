@@ -96,7 +96,7 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.ActivityOutputs == input.ActivityOutputs ||
+                    
                     this.ActivityOutputs.IsSet && this.ActivityOutputs.Value != null &&
                     input.ActivityOutputs.IsSet && input.ActivityOutputs.Value != null &&
                     this.ActivityOutputs.Value.SequenceEqual(input.ActivityOutputs.Value)

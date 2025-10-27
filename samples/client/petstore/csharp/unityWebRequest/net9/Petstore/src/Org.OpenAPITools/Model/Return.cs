@@ -133,7 +133,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.VarReturn == input.VarReturn ||
                     this.VarReturn.Equals(input.VarReturn)
                 ) && 
                 (
@@ -147,7 +146,6 @@ namespace Org.OpenAPITools.Model
                     this.Abstract.Equals(input.Abstract))
                 ) && 
                 (
-                    this.Unsafe == input.Unsafe ||
                     
                     this.Unsafe.Equals(input.Unsafe)
                 );

@@ -190,45 +190,41 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.MapProperty == input.MapProperty ||
+                    
                     this.MapProperty.IsSet && this.MapProperty.Value != null &&
                     input.MapProperty.IsSet && input.MapProperty.Value != null &&
                     this.MapProperty.Value.SequenceEqual(input.MapProperty.Value)
                 ) && 
                 (
-                    this.MapOfMapProperty == input.MapOfMapProperty ||
+                    
                     this.MapOfMapProperty.IsSet && this.MapOfMapProperty.Value != null &&
                     input.MapOfMapProperty.IsSet && input.MapOfMapProperty.Value != null &&
                     this.MapOfMapProperty.Value.SequenceEqual(input.MapOfMapProperty.Value)
                 ) && 
                 (
-                    this.Anytype1 == input.Anytype1 ||
                     
                     this.Anytype1.Equals(input.Anytype1)
                 ) && 
                 (
-                    this.MapWithUndeclaredPropertiesAnytype1 == input.MapWithUndeclaredPropertiesAnytype1 ||
                     
                     this.MapWithUndeclaredPropertiesAnytype1.Equals(input.MapWithUndeclaredPropertiesAnytype1)
                 ) && 
                 (
-                    this.MapWithUndeclaredPropertiesAnytype2 == input.MapWithUndeclaredPropertiesAnytype2 ||
                     
                     this.MapWithUndeclaredPropertiesAnytype2.Equals(input.MapWithUndeclaredPropertiesAnytype2)
                 ) && 
                 (
-                    this.MapWithUndeclaredPropertiesAnytype3 == input.MapWithUndeclaredPropertiesAnytype3 ||
+                    
                     this.MapWithUndeclaredPropertiesAnytype3.IsSet && this.MapWithUndeclaredPropertiesAnytype3.Value != null &&
                     input.MapWithUndeclaredPropertiesAnytype3.IsSet && input.MapWithUndeclaredPropertiesAnytype3.Value != null &&
                     this.MapWithUndeclaredPropertiesAnytype3.Value.SequenceEqual(input.MapWithUndeclaredPropertiesAnytype3.Value)
                 ) && 
                 (
-                    this.EmptyMap == input.EmptyMap ||
                     
                     this.EmptyMap.Equals(input.EmptyMap)
                 ) && 
                 (
-                    this.MapWithUndeclaredPropertiesString == input.MapWithUndeclaredPropertiesString ||
+                    
                     this.MapWithUndeclaredPropertiesString.IsSet && this.MapWithUndeclaredPropertiesString.Value != null &&
                     input.MapWithUndeclaredPropertiesString.IsSet && input.MapWithUndeclaredPropertiesString.Value != null &&
                     this.MapWithUndeclaredPropertiesString.Value.SequenceEqual(input.MapWithUndeclaredPropertiesString.Value)

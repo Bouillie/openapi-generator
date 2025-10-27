@@ -114,16 +114,13 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.MyNumber == input.MyNumber ||
                     this.MyNumber.Equals(input.MyNumber)
                 ) && 
                 (
-                    this.MyString == input.MyString ||
                     
                     this.MyString.Equals(input.MyString)
                 ) && 
                 (
-                    this.MyBoolean == input.MyBoolean ||
                     this.MyBoolean.Equals(input.MyBoolean)
                 );
         }

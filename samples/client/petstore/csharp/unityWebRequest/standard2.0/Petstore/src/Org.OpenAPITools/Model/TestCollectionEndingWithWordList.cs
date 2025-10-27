@@ -96,7 +96,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Value == input.Value ||
                     
                     this.Value.Equals(input.Value)
                 );

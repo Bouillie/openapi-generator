@@ -105,12 +105,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.RoleUuid == input.RoleUuid ||
                     
                     this.RoleUuid.Equals(input.RoleUuid)
                 ) && 
                 (
-                    this.Role == input.Role ||
                     
                     this.Role.Equals(input.Role)
                 );

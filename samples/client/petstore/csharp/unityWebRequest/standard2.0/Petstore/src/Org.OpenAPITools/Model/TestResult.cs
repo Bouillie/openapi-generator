@@ -121,16 +121,14 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Code == input.Code ||
                     this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Uuid == input.Uuid ||
                     
                     this.Uuid.Equals(input.Uuid)
                 ) && 
                 (
-                    this.Data == input.Data ||
+                    
                     this.Data.IsSet && this.Data.Value != null &&
                     input.Data.IsSet && input.Data.Value != null &&
                     this.Data.Value.SequenceEqual(input.Data.Value)

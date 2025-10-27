@@ -89,13 +89,23 @@ namespace Org.OpenAPITools.Client
 
         public bool Equals(Option<TType> other)
         {
-        if (IsSet != other.IsSet) {
-            return false;
-        }
-        if (!IsSet) {
-            return true;
-        }
+            if (IsSet != other.IsSet) {
+                return false;
+            }
+            if (!IsSet) {
+                return true;
+            }
             return object.Equals(Value, other.Value);
+        }
+
+        public static bool ==(Option<TType> left, Option<TType> right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool !=(Option<TType> left, Option<TType> right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>

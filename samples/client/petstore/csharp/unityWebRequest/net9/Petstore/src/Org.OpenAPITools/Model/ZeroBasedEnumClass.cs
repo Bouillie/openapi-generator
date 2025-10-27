@@ -110,7 +110,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.ZeroBasedEnum == input.ZeroBasedEnum ||
                     this.ZeroBasedEnum.Equals(input.ZeroBasedEnum)
                 );
         }

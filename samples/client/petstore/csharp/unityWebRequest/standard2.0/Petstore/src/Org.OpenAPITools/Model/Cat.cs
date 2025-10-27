@@ -99,7 +99,6 @@ namespace Org.OpenAPITools.Model
             }
             return base.Equals(input) && 
                 (
-                    this.Declawed == input.Declawed ||
                     this.Declawed.Equals(input.Declawed)
                 );
         }

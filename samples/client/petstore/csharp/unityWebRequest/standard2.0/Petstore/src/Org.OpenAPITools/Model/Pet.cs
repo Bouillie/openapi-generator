@@ -191,11 +191,9 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Category == input.Category ||
                     
                     this.Category.Equals(input.Category)
                 ) && 
@@ -205,19 +203,18 @@ namespace Org.OpenAPITools.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.PhotoUrls == input.PhotoUrls ||
+                    this.PhotoUrls == input.PhotoUrls || 
                     this.PhotoUrls != null &&
                     input.PhotoUrls != null &&
                     this.PhotoUrls.SequenceEqual(input.PhotoUrls)
                 ) && 
                 (
-                    this.Tags == input.Tags ||
+                    
                     this.Tags.IsSet && this.Tags.Value != null &&
                     input.Tags.IsSet && input.Tags.Value != null &&
                     this.Tags.Value.SequenceEqual(input.Tags.Value)
                 ) && 
                 (
-                    this.Status == input.Status ||
                     this.Status.Equals(input.Status)
                 );
         }

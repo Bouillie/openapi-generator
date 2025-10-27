@@ -119,11 +119,9 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.HasBaleen == input.HasBaleen ||
                     this.HasBaleen.Equals(input.HasBaleen)
                 ) && 
                 (
-                    this.HasTeeth == input.HasTeeth ||
                     this.HasTeeth.Equals(input.HasTeeth)
                 ) && 
                 (

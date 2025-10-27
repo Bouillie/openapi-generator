@@ -97,7 +97,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Dummy == input.Dummy ||
                     
                     this.Dummy.Equals(input.Dummy)
                 );

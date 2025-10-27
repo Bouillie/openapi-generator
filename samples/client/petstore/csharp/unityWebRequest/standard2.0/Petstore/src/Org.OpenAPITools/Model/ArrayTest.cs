@@ -124,19 +124,19 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.ArrayOfString == input.ArrayOfString ||
+                    
                     this.ArrayOfString.IsSet && this.ArrayOfString.Value != null &&
                     input.ArrayOfString.IsSet && input.ArrayOfString.Value != null &&
                     this.ArrayOfString.Value.SequenceEqual(input.ArrayOfString.Value)
                 ) && 
                 (
-                    this.ArrayArrayOfInteger == input.ArrayArrayOfInteger ||
+                    
                     this.ArrayArrayOfInteger.IsSet && this.ArrayArrayOfInteger.Value != null &&
                     input.ArrayArrayOfInteger.IsSet && input.ArrayArrayOfInteger.Value != null &&
                     this.ArrayArrayOfInteger.Value.SequenceEqual(input.ArrayArrayOfInteger.Value)
                 ) && 
                 (
-                    this.ArrayArrayOfModel == input.ArrayArrayOfModel ||
+                    
                     this.ArrayArrayOfModel.IsSet && this.ArrayArrayOfModel.Value != null &&
                     input.ArrayArrayOfModel.IsSet && input.ArrayArrayOfModel.Value != null &&
                     this.ArrayArrayOfModel.Value.SequenceEqual(input.ArrayArrayOfModel.Value)

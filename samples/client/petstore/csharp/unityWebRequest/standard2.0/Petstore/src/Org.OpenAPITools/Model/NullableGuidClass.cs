@@ -94,7 +94,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Uuid == input.Uuid ||
                     
                     this.Uuid.Equals(input.Uuid)
                 );

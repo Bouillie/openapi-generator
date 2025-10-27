@@ -124,17 +124,14 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Cultivar == input.Cultivar ||
                     
                     this.Cultivar.Equals(input.Cultivar)
                 ) && 
                 (
-                    this.Origin == input.Origin ||
                     
                     this.Origin.Equals(input.Origin)
                 ) && 
                 (
-                    this.ColorCode == input.ColorCode ||
                     
                     this.ColorCode.Equals(input.ColorCode)
                 );

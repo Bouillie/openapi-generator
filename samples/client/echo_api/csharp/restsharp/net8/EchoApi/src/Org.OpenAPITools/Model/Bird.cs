@@ -112,12 +112,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Size == input.Size ||
                     
                     this.Size.Equals(input.Size)
                 ) && 
                 (
-                    this.Color == input.Color ||
                     
                     this.Color.Equals(input.Color)
                 );

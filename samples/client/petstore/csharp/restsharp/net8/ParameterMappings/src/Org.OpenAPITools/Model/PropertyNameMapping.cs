@@ -139,22 +139,18 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.HttpDebugOperation == input.HttpDebugOperation ||
                     
                     this.HttpDebugOperation.Equals(input.HttpDebugOperation)
                 ) && 
                 (
-                    this.UnderscoreType == input.UnderscoreType ||
                     
                     this.UnderscoreType.Equals(input.UnderscoreType)
                 ) && 
                 (
-                    this.Type == input.Type ||
                     
                     this.Type.Equals(input.Type)
                 ) && 
                 (
-                    this.TypeWithUnderscore == input.TypeWithUnderscore ||
                     
                     this.TypeWithUnderscore.Equals(input.TypeWithUnderscore)
                 );

@@ -95,7 +95,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.DateOnlyProperty == input.DateOnlyProperty ||
                     
                     this.DateOnlyProperty.Equals(input.DateOnlyProperty)
                 );

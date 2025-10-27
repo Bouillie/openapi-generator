@@ -143,11 +143,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.JustSymbol == input.JustSymbol ||
                     this.JustSymbol.Equals(input.JustSymbol)
                 ) && 
                 (
-                    this.ArrayEnum == input.ArrayEnum ||
+                    
                     this.ArrayEnum.IsSet && this.ArrayEnum.Value != null &&
                     input.ArrayEnum.IsSet && input.ArrayEnum.Value != null &&
                     this.ArrayEnum.Value.SequenceEqual(input.ArrayEnum.Value)

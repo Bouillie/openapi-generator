@@ -110,12 +110,11 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.File == input.File ||
                     
                     this.File.Equals(input.File)
                 ) && 
                 (
-                    this.Files == input.Files ||
+                    
                     this.Files.IsSet && this.Files.Value != null &&
                     input.Files.IsSet && input.Files.Value != null &&
                     this.Files.Value.SequenceEqual(input.Files.Value)

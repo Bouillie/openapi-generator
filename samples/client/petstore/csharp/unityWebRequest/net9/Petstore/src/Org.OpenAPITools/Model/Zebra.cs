@@ -146,7 +146,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Type == input.Type ||
                     this.Type.Equals(input.Type)
                 ) && 
                 (

@@ -110,12 +110,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Prop1 == input.Prop1 ||
                     
                     this.Prop1.Equals(input.Prop1)
                 ) && 
                 (
-                    this.Prop2 == input.Prop2 ||
                     
                     this.Prop2.Equals(input.Prop2)
                 );

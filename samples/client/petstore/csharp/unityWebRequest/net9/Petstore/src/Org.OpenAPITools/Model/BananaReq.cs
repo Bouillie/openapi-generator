@@ -109,7 +109,6 @@ namespace Org.OpenAPITools.Model
                     this.LengthCm.Equals(input.LengthCm)
                 ) && 
                 (
-                    this.Sweet == input.Sweet ||
                     this.Sweet.Equals(input.Sweet)
                 );
         }

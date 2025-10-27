@@ -120,7 +120,6 @@ namespace Org.OpenAPITools.Model
                     this.ClassName.Equals(input.ClassName))
                 ) && 
                 (
-                    this.Color == input.Color ||
                     
                     this.Color.Equals(input.Color)
                 );

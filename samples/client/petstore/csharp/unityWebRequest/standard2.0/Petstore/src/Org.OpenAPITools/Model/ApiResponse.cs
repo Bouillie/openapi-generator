@@ -119,16 +119,13 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Code == input.Code ||
                     this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Type == input.Type ||
                     
                     this.Type.Equals(input.Type)
                 ) && 
                 (
-                    this.Message == input.Message ||
                     
                     this.Message.Equals(input.Message)
                 );

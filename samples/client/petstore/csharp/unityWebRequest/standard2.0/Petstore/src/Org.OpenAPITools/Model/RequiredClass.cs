@@ -878,12 +878,10 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableintegerProp.Equals(input.RequiredNotnullableintegerProp)
                 ) && 
                 (
-                    this.NotRequiredNullableIntegerProp == input.NotRequiredNullableIntegerProp ||
                     
                     this.NotRequiredNullableIntegerProp.Equals(input.NotRequiredNullableIntegerProp)
                 ) && 
                 (
-                    this.NotRequiredNotnullableintegerProp == input.NotRequiredNotnullableintegerProp ||
                     this.NotRequiredNotnullableintegerProp.Equals(input.NotRequiredNotnullableintegerProp)
                 ) && 
                 (
@@ -897,12 +895,10 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableStringProp.Equals(input.RequiredNotnullableStringProp))
                 ) && 
                 (
-                    this.NotrequiredNullableStringProp == input.NotrequiredNullableStringProp ||
                     
                     this.NotrequiredNullableStringProp.Equals(input.NotrequiredNullableStringProp)
                 ) && 
                 (
-                    this.NotrequiredNotnullableStringProp == input.NotrequiredNotnullableStringProp ||
                     
                     this.NotrequiredNotnullableStringProp.Equals(input.NotrequiredNotnullableStringProp)
                 ) && 
@@ -916,12 +912,10 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableBooleanProp.Equals(input.RequiredNotnullableBooleanProp)
                 ) && 
                 (
-                    this.NotrequiredNullableBooleanProp == input.NotrequiredNullableBooleanProp ||
                     
                     this.NotrequiredNullableBooleanProp.Equals(input.NotrequiredNullableBooleanProp)
                 ) && 
                 (
-                    this.NotrequiredNotnullableBooleanProp == input.NotrequiredNotnullableBooleanProp ||
                     this.NotrequiredNotnullableBooleanProp.Equals(input.NotrequiredNotnullableBooleanProp)
                 ) && 
                 (
@@ -935,12 +929,10 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotNullableDateProp.Equals(input.RequiredNotNullableDateProp))
                 ) && 
                 (
-                    this.NotRequiredNullableDateProp == input.NotRequiredNullableDateProp ||
                     
                     this.NotRequiredNullableDateProp.Equals(input.NotRequiredNullableDateProp)
                 ) && 
                 (
-                    this.NotRequiredNotnullableDateProp == input.NotRequiredNotnullableDateProp ||
                     
                     this.NotRequiredNotnullableDateProp.Equals(input.NotRequiredNotnullableDateProp)
                 ) && 
@@ -955,12 +947,10 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNullableDatetimeProp.Equals(input.RequiredNullableDatetimeProp))
                 ) && 
                 (
-                    this.NotrequiredNullableDatetimeProp == input.NotrequiredNullableDatetimeProp ||
                     
                     this.NotrequiredNullableDatetimeProp.Equals(input.NotrequiredNullableDatetimeProp)
                 ) && 
                 (
-                    this.NotrequiredNotnullableDatetimeProp == input.NotrequiredNotnullableDatetimeProp ||
                     
                     this.NotrequiredNotnullableDatetimeProp.Equals(input.NotrequiredNotnullableDatetimeProp)
                 ) && 
@@ -973,11 +963,9 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableEnumInteger.Equals(input.RequiredNotnullableEnumInteger)
                 ) && 
                 (
-                    this.NotrequiredNullableEnumInteger == input.NotrequiredNullableEnumInteger ||
                     this.NotrequiredNullableEnumInteger.Equals(input.NotrequiredNullableEnumInteger)
                 ) && 
                 (
-                    this.NotrequiredNotnullableEnumInteger == input.NotrequiredNotnullableEnumInteger ||
                     this.NotrequiredNotnullableEnumInteger.Equals(input.NotrequiredNotnullableEnumInteger)
                 ) && 
                 (
@@ -989,11 +977,9 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableEnumIntegerOnly.Equals(input.RequiredNotnullableEnumIntegerOnly)
                 ) && 
                 (
-                    this.NotrequiredNullableEnumIntegerOnly == input.NotrequiredNullableEnumIntegerOnly ||
                     this.NotrequiredNullableEnumIntegerOnly.Equals(input.NotrequiredNullableEnumIntegerOnly)
                 ) && 
                 (
-                    this.NotrequiredNotnullableEnumIntegerOnly == input.NotrequiredNotnullableEnumIntegerOnly ||
                     this.NotrequiredNotnullableEnumIntegerOnly.Equals(input.NotrequiredNotnullableEnumIntegerOnly)
                 ) && 
                 (
@@ -1005,11 +991,9 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNullableEnumString.Equals(input.RequiredNullableEnumString)
                 ) && 
                 (
-                    this.NotrequiredNullableEnumString == input.NotrequiredNullableEnumString ||
                     this.NotrequiredNullableEnumString.Equals(input.NotrequiredNullableEnumString)
                 ) && 
                 (
-                    this.NotrequiredNotnullableEnumString == input.NotrequiredNotnullableEnumString ||
                     this.NotrequiredNotnullableEnumString.Equals(input.NotrequiredNotnullableEnumString)
                 ) && 
                 (
@@ -1021,11 +1005,9 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableOuterEnumDefaultValue.Equals(input.RequiredNotnullableOuterEnumDefaultValue)
                 ) && 
                 (
-                    this.NotrequiredNullableOuterEnumDefaultValue == input.NotrequiredNullableOuterEnumDefaultValue ||
                     this.NotrequiredNullableOuterEnumDefaultValue.Equals(input.NotrequiredNullableOuterEnumDefaultValue)
                 ) && 
                 (
-                    this.NotrequiredNotnullableOuterEnumDefaultValue == input.NotrequiredNotnullableOuterEnumDefaultValue ||
                     this.NotrequiredNotnullableOuterEnumDefaultValue.Equals(input.NotrequiredNotnullableOuterEnumDefaultValue)
                 ) && 
                 (
@@ -1039,35 +1021,33 @@ namespace Org.OpenAPITools.Model
                     this.RequiredNotnullableUuid.Equals(input.RequiredNotnullableUuid))
                 ) && 
                 (
-                    this.NotrequiredNullableUuid == input.NotrequiredNullableUuid ||
                     
                     this.NotrequiredNullableUuid.Equals(input.NotrequiredNullableUuid)
                 ) && 
                 (
-                    this.NotrequiredNotnullableUuid == input.NotrequiredNotnullableUuid ||
                     
                     this.NotrequiredNotnullableUuid.Equals(input.NotrequiredNotnullableUuid)
                 ) && 
                 (
-                    this.RequiredNullableArrayOfString == input.RequiredNullableArrayOfString ||
+                    this.RequiredNullableArrayOfString == input.RequiredNullableArrayOfString || 
                     this.RequiredNullableArrayOfString != null &&
                     input.RequiredNullableArrayOfString != null &&
                     this.RequiredNullableArrayOfString.SequenceEqual(input.RequiredNullableArrayOfString)
                 ) && 
                 (
-                    this.RequiredNotnullableArrayOfString == input.RequiredNotnullableArrayOfString ||
+                    this.RequiredNotnullableArrayOfString == input.RequiredNotnullableArrayOfString || 
                     this.RequiredNotnullableArrayOfString != null &&
                     input.RequiredNotnullableArrayOfString != null &&
                     this.RequiredNotnullableArrayOfString.SequenceEqual(input.RequiredNotnullableArrayOfString)
                 ) && 
                 (
-                    this.NotrequiredNullableArrayOfString == input.NotrequiredNullableArrayOfString ||
+                    
                     this.NotrequiredNullableArrayOfString.IsSet && this.NotrequiredNullableArrayOfString.Value != null &&
                     input.NotrequiredNullableArrayOfString.IsSet && input.NotrequiredNullableArrayOfString.Value != null &&
                     this.NotrequiredNullableArrayOfString.Value.SequenceEqual(input.NotrequiredNullableArrayOfString.Value)
                 ) && 
                 (
-                    this.NotrequiredNotnullableArrayOfString == input.NotrequiredNotnullableArrayOfString ||
+                    
                     this.NotrequiredNotnullableArrayOfString.IsSet && this.NotrequiredNotnullableArrayOfString.Value != null &&
                     input.NotrequiredNotnullableArrayOfString.IsSet && input.NotrequiredNotnullableArrayOfString.Value != null &&
                     this.NotrequiredNotnullableArrayOfString.Value.SequenceEqual(input.NotrequiredNotnullableArrayOfString.Value)

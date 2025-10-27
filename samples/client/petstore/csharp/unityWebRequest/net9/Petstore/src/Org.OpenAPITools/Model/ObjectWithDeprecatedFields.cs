@@ -136,21 +136,18 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Uuid == input.Uuid ||
                     
                     this.Uuid.Equals(input.Uuid)
                 ) && 
                 (
-                    this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.DeprecatedRef == input.DeprecatedRef ||
                     
                     this.DeprecatedRef.Equals(input.DeprecatedRef)
                 ) && 
                 (
-                    this.Bars == input.Bars ||
+                    
                     this.Bars.IsSet && this.Bars.Value != null &&
                     input.Bars.IsSet && input.Bars.Value != null &&
                     this.Bars.Value.SequenceEqual(input.Bars.Value)

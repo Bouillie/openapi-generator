@@ -329,7 +329,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.EnumString == input.EnumString ||
                     this.EnumString.Equals(input.EnumString)
                 ) && 
                 (
@@ -337,31 +336,24 @@ namespace Org.OpenAPITools.Model
                     this.EnumStringRequired.Equals(input.EnumStringRequired)
                 ) && 
                 (
-                    this.EnumInteger == input.EnumInteger ||
                     this.EnumInteger.Equals(input.EnumInteger)
                 ) && 
                 (
-                    this.EnumIntegerOnly == input.EnumIntegerOnly ||
                     this.EnumIntegerOnly.Equals(input.EnumIntegerOnly)
                 ) && 
                 (
-                    this.EnumNumber == input.EnumNumber ||
                     this.EnumNumber.Equals(input.EnumNumber)
                 ) && 
                 (
-                    this.OuterEnum == input.OuterEnum ||
                     this.OuterEnum.Equals(input.OuterEnum)
                 ) && 
                 (
-                    this.OuterEnumInteger == input.OuterEnumInteger ||
                     this.OuterEnumInteger.Equals(input.OuterEnumInteger)
                 ) && 
                 (
-                    this.OuterEnumDefaultValue == input.OuterEnumDefaultValue ||
                     this.OuterEnumDefaultValue.Equals(input.OuterEnumDefaultValue)
                 ) && 
                 (
-                    this.OuterEnumIntegerDefaultValue == input.OuterEnumIntegerDefaultValue ||
                     this.OuterEnumIntegerDefaultValue.Equals(input.OuterEnumIntegerDefaultValue)
                 );
         }

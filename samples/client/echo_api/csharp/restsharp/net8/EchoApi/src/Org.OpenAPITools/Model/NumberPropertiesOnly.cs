@@ -111,15 +111,12 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Number == input.Number ||
                     this.Number.Equals(input.Number)
                 ) && 
                 (
-                    this.Float == input.Float ||
                     this.Float.Equals(input.Float)
                 ) && 
                 (
-                    this.Double == input.Double ||
                     this.Double.Equals(input.Double)
                 );
         }

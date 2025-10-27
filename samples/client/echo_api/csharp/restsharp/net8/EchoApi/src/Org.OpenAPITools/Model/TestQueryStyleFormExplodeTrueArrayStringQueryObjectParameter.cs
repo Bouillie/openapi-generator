@@ -98,7 +98,7 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Values == input.Values ||
+                    
                     this.Values.IsSet && this.Values.Value != null &&
                     input.Values.IsSet && input.Values.Value != null &&
                     this.Values.Value.SequenceEqual(input.Values.Value)

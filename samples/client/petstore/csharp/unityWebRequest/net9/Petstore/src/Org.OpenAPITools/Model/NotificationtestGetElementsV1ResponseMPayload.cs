@@ -114,7 +114,7 @@ namespace Org.OpenAPITools.Model
                     this.PkiNotificationtestID.Equals(input.PkiNotificationtestID)
                 ) && 
                 (
-                    this.AObjVariableobject == input.AObjVariableobject ||
+                    this.AObjVariableobject == input.AObjVariableobject || 
                     this.AObjVariableobject != null &&
                     input.AObjVariableobject != null &&
                     this.AObjVariableobject.SequenceEqual(input.AObjVariableobject)

@@ -230,60 +230,48 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Username == input.Username ||
                     
                     this.Username.Equals(input.Username)
                 ) && 
                 (
-                    this.FirstName == input.FirstName ||
                     
                     this.FirstName.Equals(input.FirstName)
                 ) && 
                 (
-                    this.LastName == input.LastName ||
                     
                     this.LastName.Equals(input.LastName)
                 ) && 
                 (
-                    this.Email == input.Email ||
                     
                     this.Email.Equals(input.Email)
                 ) && 
                 (
-                    this.Password == input.Password ||
                     
                     this.Password.Equals(input.Password)
                 ) && 
                 (
-                    this.Phone == input.Phone ||
                     
                     this.Phone.Equals(input.Phone)
                 ) && 
                 (
-                    this.UserStatus == input.UserStatus ||
                     this.UserStatus.Equals(input.UserStatus)
                 ) && 
                 (
-                    this.ObjectWithNoDeclaredProps == input.ObjectWithNoDeclaredProps ||
                     
                     this.ObjectWithNoDeclaredProps.Equals(input.ObjectWithNoDeclaredProps)
                 ) && 
                 (
-                    this.ObjectWithNoDeclaredPropsNullable == input.ObjectWithNoDeclaredPropsNullable ||
                     
                     this.ObjectWithNoDeclaredPropsNullable.Equals(input.ObjectWithNoDeclaredPropsNullable)
                 ) && 
                 (
-                    this.AnyTypeProp == input.AnyTypeProp ||
                     
                     this.AnyTypeProp.Equals(input.AnyTypeProp)
                 ) && 
                 (
-                    this.AnyTypePropNullable == input.AnyTypePropNullable ||
                     
                     this.AnyTypePropNullable.Equals(input.AnyTypePropNullable)
                 );

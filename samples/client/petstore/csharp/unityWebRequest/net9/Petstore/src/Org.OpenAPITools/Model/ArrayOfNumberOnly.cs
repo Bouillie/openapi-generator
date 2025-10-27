@@ -96,7 +96,7 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.ArrayNumber == input.ArrayNumber ||
+                    
                     this.ArrayNumber.IsSet && this.ArrayNumber.Value != null &&
                     input.ArrayNumber.IsSet && input.ArrayNumber.Value != null &&
                     this.ArrayNumber.Value.SequenceEqual(input.ArrayNumber.Value)

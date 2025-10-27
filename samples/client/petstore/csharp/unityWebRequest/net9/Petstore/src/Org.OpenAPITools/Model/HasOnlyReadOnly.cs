@@ -113,12 +113,10 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.Bar == input.Bar ||
                     
                     this.Bar.Equals(input.Bar)
                 ) && 
                 (
-                    this.Foo == input.Foo ||
                     
                     this.Foo.Equals(input.Foo)
                 );

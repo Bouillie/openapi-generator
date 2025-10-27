@@ -105,11 +105,9 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.SpecialPropertyName == input.SpecialPropertyName ||
                     this.SpecialPropertyName.Equals(input.SpecialPropertyName)
                 ) && 
                 (
-                    this.VarSpecialModelName == input.VarSpecialModelName ||
                     
                     this.VarSpecialModelName.Equals(input.VarSpecialModelName)
                 );

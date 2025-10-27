@@ -130,17 +130,14 @@ namespace Org.OpenAPITools.Model
             }
             return base.Equals(input) && 
                 (
-                    this.Suffix == input.Suffix ||
                     
                     this.Suffix.Equals(input.Suffix)
                 ) && base.Equals(input) && 
                 (
-                    this.Text == input.Text ||
                     
                     this.Text.Equals(input.Text)
                 ) && base.Equals(input) && 
                 (
-                    this.Date == input.Date ||
                     
                     this.Date.Equals(input.Date)
                 );

@@ -96,7 +96,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.String == input.String ||
                     
                     this.String.Equals(input.String)
                 );

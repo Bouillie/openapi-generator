@@ -157,25 +157,25 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.MapMapOfString == input.MapMapOfString ||
+                    
                     this.MapMapOfString.IsSet && this.MapMapOfString.Value != null &&
                     input.MapMapOfString.IsSet && input.MapMapOfString.Value != null &&
                     this.MapMapOfString.Value.SequenceEqual(input.MapMapOfString.Value)
                 ) && 
                 (
-                    this.MapOfEnumString == input.MapOfEnumString ||
+                    
                     this.MapOfEnumString.IsSet && this.MapOfEnumString.Value != null &&
                     input.MapOfEnumString.IsSet && input.MapOfEnumString.Value != null &&
                     this.MapOfEnumString.Value.SequenceEqual(input.MapOfEnumString.Value)
                 ) && 
                 (
-                    this.DirectMap == input.DirectMap ||
+                    
                     this.DirectMap.IsSet && this.DirectMap.Value != null &&
                     input.DirectMap.IsSet && input.DirectMap.Value != null &&
                     this.DirectMap.Value.SequenceEqual(input.DirectMap.Value)
                 ) && 
                 (
-                    this.IndirectMap == input.IndirectMap ||
+                    
                     this.IndirectMap.IsSet && this.IndirectMap.Value != null &&
                     input.IndirectMap.IsSet && input.IndirectMap.Value != null &&
                     this.IndirectMap.Value.SequenceEqual(input.IndirectMap.Value)

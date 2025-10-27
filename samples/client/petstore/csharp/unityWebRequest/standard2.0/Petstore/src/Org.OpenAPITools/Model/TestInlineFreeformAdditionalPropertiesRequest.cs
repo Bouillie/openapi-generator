@@ -104,7 +104,6 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.SomeProperty == input.SomeProperty ||
                     
                     this.SomeProperty.Equals(input.SomeProperty)
                 )

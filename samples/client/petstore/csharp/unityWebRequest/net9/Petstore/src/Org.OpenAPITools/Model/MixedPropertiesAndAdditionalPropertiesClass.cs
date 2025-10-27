@@ -123,22 +123,19 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.UuidWithPattern == input.UuidWithPattern ||
                     
                     this.UuidWithPattern.Equals(input.UuidWithPattern)
                 ) && 
                 (
-                    this.Uuid == input.Uuid ||
                     
                     this.Uuid.Equals(input.Uuid)
                 ) && 
                 (
-                    this.DateTime == input.DateTime ||
                     
                     this.DateTime.Equals(input.DateTime)
                 ) && 
                 (
-                    this.Map == input.Map ||
+                    
                     this.Map.IsSet && this.Map.Value != null &&
                     input.Map.IsSet && input.Map.Value != null &&
                     this.Map.Value.SequenceEqual(input.Map.Value)

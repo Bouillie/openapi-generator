@@ -136,22 +136,19 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    this.MainShape == input.MainShape ||
                     
                     this.MainShape.Equals(input.MainShape)
                 ) && 
                 (
-                    this.ShapeOrNull == input.ShapeOrNull ||
                     
                     this.ShapeOrNull.Equals(input.ShapeOrNull)
                 ) && 
                 (
-                    this.NullableShape == input.NullableShape ||
                     
                     this.NullableShape.Equals(input.NullableShape)
                 ) && 
                 (
-                    this.Shapes == input.Shapes ||
+                    
                     this.Shapes.IsSet && this.Shapes.Value != null &&
                     input.Shapes.IsSet && input.Shapes.Value != null &&
                     this.Shapes.Value.SequenceEqual(input.Shapes.Value)
