@@ -40,9 +40,9 @@ public class CSharpOperationTest {
         CSharpClientCodegen codegen = new CSharpClientCodegen();
         codegen.setLibrary("restsharp");
         assertEquals(getOperationOptionalParameterDataType(codegen, 2, false), "System.IO.Stream");
-        assertEquals(getOperationOptionalParameterDataType(codegen, 2, true), "System.IO.Stream?");
+        assertEquals(getOperationOptionalParameterDataType(codegen, 2, true), "System.IO.Stream");
         assertEquals(getOperationOptionalParameterDataType(codegen, 3, false), "System.IO.Stream");
-        assertEquals(getOperationOptionalParameterDataType(codegen, 3, true), "System.IO.Stream?");
+        assertEquals(getOperationOptionalParameterDataType(codegen, 3, true), "System.IO.Stream");
     }
 
     public String getOperationOptionalParameterDataType(final AbstractCSharpCodegen codegen, final int openApiVersion, final Boolean nullableReferenceTypes) {
