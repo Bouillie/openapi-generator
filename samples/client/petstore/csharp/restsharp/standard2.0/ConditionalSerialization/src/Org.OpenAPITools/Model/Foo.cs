@@ -44,7 +44,7 @@ namespace Org.OpenAPITools.Model
             {
                 throw new ArgumentNullException("bar isn't a nullable property for Foo and cannot be null");
             }
-            this._Bar = bar.IsSet ? bar.Value : new Option(@"bar");
+            this._Bar = bar.IsSet ? bar : new Option<string>(@"bar");
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

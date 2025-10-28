@@ -50,8 +50,8 @@ namespace Org.OpenAPITools.Model
             {
                 throw new ArgumentNullException("unescapedLiteralString isn't a nullable property for LiteralStringClass and cannot be null");
             }
-            this._EscapedLiteralString = escapedLiteralString.IsSet ? escapedLiteralString.Value : new Option(@"C:\\Users\\username");
-            this._UnescapedLiteralString = unescapedLiteralString.IsSet ? unescapedLiteralString.Value : new Option(@"C:\Users\username");
+            this._EscapedLiteralString = escapedLiteralString.IsSet ? escapedLiteralString : new Option<string>(@"C:\\Users\\username");
+            this._UnescapedLiteralString = unescapedLiteralString.IsSet ? unescapedLiteralString : new Option<string>(@"C:\Users\username");
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

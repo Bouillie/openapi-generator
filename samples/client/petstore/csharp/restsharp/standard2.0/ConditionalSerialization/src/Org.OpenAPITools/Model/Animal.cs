@@ -67,7 +67,7 @@ namespace Org.OpenAPITools.Model
             {
                 this._flagClassName = true;
             }
-            this._Color = color.IsSet ? color.Value : new Option(@"red");
+            this._Color = color.IsSet ? color : new Option<string>(@"red");
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

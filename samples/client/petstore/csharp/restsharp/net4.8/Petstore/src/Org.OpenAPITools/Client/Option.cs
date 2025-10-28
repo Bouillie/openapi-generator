@@ -47,7 +47,7 @@ namespace Org.OpenAPITools.Client
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            Type innerType = value?.GetType().GetGenericArguments()[0] ?? typeof(object);
+            Type innerType = value.GetType().GetGenericArguments()[0] ?? typeof(object);
             var converterType = typeof(OptionConverter<>).MakeGenericType(innerType);
             var converter = (JsonConverter)Activator.CreateInstance(converterType);
             converter.WriteJson(writer, value, serializer);

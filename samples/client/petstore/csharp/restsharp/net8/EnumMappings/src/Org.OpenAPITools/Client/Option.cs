@@ -47,7 +47,7 @@ namespace Org.OpenAPITools.Client
         public override bool CanConvert(Type objectType)
             => objectType.IsGenericType && objectType.GetGenericTypeDefinition() == typeof(Option<>);
 
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             Type innerType = value?.GetType().GetGenericArguments()[0] ?? typeof(object);
             var converterType = typeof(OptionConverter<>).MakeGenericType(innerType);
@@ -55,7 +55,7 @@ namespace Org.OpenAPITools.Client
             converter.WriteJson(writer, value, serializer);
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             Type innerType = objectType.GetGenericArguments()[0];
             var converterType = typeof(OptionConverter<>).MakeGenericType(innerType);

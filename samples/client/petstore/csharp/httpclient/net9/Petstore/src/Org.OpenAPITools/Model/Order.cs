@@ -83,7 +83,7 @@ namespace Org.OpenAPITools.Model
             this.Quantity = quantity;
             this.ShipDate = shipDate;
             this.Status = status;
-            this.Complete = complete.IsSet ? complete.Value : new Option(false);
+            this.Complete = complete.IsSet ? complete : new Option<bool>(false);
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

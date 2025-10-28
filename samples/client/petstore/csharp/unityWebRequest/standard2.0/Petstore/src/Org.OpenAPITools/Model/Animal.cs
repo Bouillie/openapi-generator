@@ -54,7 +54,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("color isn't a nullable property for Animal and cannot be null");
             }
             this.ClassName = className;
-            this.Color = color.IsSet ? color.Value : new Option(@"red");
+            this.Color = color.IsSet ? color : new Option<string>(@"red");
         }
 
         /// <summary>

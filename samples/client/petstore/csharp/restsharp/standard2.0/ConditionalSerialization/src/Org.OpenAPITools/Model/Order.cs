@@ -122,7 +122,7 @@ namespace Org.OpenAPITools.Model
             {
                 this._flagStatus = true;
             }
-            this._Complete = complete.IsSet ? complete.Value : new Option(false);
+            this._Complete = complete.IsSet ? complete : new Option<bool>(false);
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
