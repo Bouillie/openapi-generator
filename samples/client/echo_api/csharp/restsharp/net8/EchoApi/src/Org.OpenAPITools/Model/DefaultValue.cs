@@ -69,7 +69,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="arrayStringNullable">arrayStringNullable.</param>
         /// <param name="arrayStringExtensionNullable">arrayStringExtensionNullable.</param>
         /// <param name="stringNullable">stringNullable.</param>
-        public DefaultValue(Option<List<StringEnumRef>> arrayStringEnumRefDefault = default, Option<List<ArrayStringEnumDefaultEnum>> arrayStringEnumDefault = default, Option<List<string>> arrayStringDefault = default, Option<List<int>> arrayIntegerDefault = default, Option<List<string>> arrayString = default, Option<List<string>> arrayStringNullable = default, Option<List<string>> arrayStringExtensionNullable = default, Option<string> stringNullable = default)
+        public DefaultValue(Option<List<StringEnumRef>> arrayStringEnumRefDefault = default, Option<List<ArrayStringEnumDefaultEnum>> arrayStringEnumDefault = default, Option<List<string>> arrayStringDefault = default, Option<List<int>> arrayIntegerDefault = default, Option<List<string>> arrayString = default, Option<List<string>> arrayStringNullable = default, Option<List<string>> arrayStringExtensionNullable = default, Option<string?> stringNullable = default)
         {
             // to ensure "arrayStringEnumRefDefault" (not nullable) is not null
             if (arrayStringEnumRefDefault.IsSet && arrayStringEnumRefDefault.Value == null)
@@ -140,13 +140,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayStringNullable
         /// </summary>
         [DataMember(Name = "array_string_nullable", EmitDefaultValue = true)]
-        public Option<List<string>?> ArrayStringNullable { get; set; }
+        public Option<List<string>> ArrayStringNullable { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayStringExtensionNullable
         /// </summary>
         [DataMember(Name = "array_string_extension_nullable", EmitDefaultValue = true)]
-        public Option<List<string>?> ArrayStringExtensionNullable { get; set; }
+        public Option<List<string>> ArrayStringExtensionNullable { get; set; }
 
         /// <summary>
         /// Gets or Sets StringNullable

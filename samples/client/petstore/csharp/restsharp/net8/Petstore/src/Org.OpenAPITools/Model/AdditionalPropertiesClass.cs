@@ -107,7 +107,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Anytype1
         /// </summary>
         [DataMember(Name = "anytype_1", EmitDefaultValue = true)]
-        public Option<Object?> Anytype1 { get; set; }
+        public Option<Object> Anytype1 { get; set; }
 
         /// <summary>
         /// Gets or Sets MapWithUndeclaredPropertiesAnytype1

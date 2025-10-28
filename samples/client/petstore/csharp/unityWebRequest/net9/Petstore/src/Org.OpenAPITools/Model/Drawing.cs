@@ -67,13 +67,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ShapeOrNull
         /// </summary>
         [DataMember(Name = "shapeOrNull", EmitDefaultValue = true)]
-        public Option<ShapeOrNull?> ShapeOrNull { get; set; }
+        public Option<ShapeOrNull> ShapeOrNull { get; set; }
 
         /// <summary>
         /// Gets or Sets NullableShape
         /// </summary>
         [DataMember(Name = "nullableShape", EmitDefaultValue = true)]
-        public Option<NullableShape?> NullableShape { get; set; }
+        public Option<NullableShape> NullableShape { get; set; }
 
         /// <summary>
         /// Gets or Sets Shapes

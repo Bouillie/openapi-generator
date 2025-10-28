@@ -330,7 +330,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "outerEnum", EmitDefaultValue = true)]
-        public Option<OuterEnum?> OuterEnum
+        public Option<OuterEnum> OuterEnum
         {
             get{ return _OuterEnum;}
             set
@@ -339,7 +339,7 @@ namespace Org.OpenAPITools.Model
                 _flagOuterEnum = true;
             }
         }
-        private Option<OuterEnum?> _OuterEnum;
+        private Option<OuterEnum> _OuterEnum;
         private bool _flagOuterEnum;
 
         /// <summary>

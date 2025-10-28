@@ -701,7 +701,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "required_nullable_outerEnumDefaultValue", IsRequired = true, EmitDefaultValue = true)]
-        public OuterEnumDefaultValue? RequiredNullableOuterEnumDefaultValue
+        public OuterEnumDefaultValue RequiredNullableOuterEnumDefaultValue
         {
             get{ return _RequiredNullableOuterEnumDefaultValue;}
             set
@@ -710,7 +710,7 @@ namespace Org.OpenAPITools.Model
                 _flagRequiredNullableOuterEnumDefaultValue = true;
             }
         }
-        private OuterEnumDefaultValue? _RequiredNullableOuterEnumDefaultValue;
+        private OuterEnumDefaultValue _RequiredNullableOuterEnumDefaultValue;
         private bool _flagRequiredNullableOuterEnumDefaultValue;
 
         /// <summary>
@@ -753,7 +753,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "notrequired_nullable_outerEnumDefaultValue", EmitDefaultValue = true)]
-        public Option<OuterEnumDefaultValue?> NotrequiredNullableOuterEnumDefaultValue
+        public Option<OuterEnumDefaultValue> NotrequiredNullableOuterEnumDefaultValue
         {
             get{ return _NotrequiredNullableOuterEnumDefaultValue;}
             set
@@ -762,7 +762,7 @@ namespace Org.OpenAPITools.Model
                 _flagNotrequiredNullableOuterEnumDefaultValue = true;
             }
         }
-        private Option<OuterEnumDefaultValue?> _NotrequiredNullableOuterEnumDefaultValue;
+        private Option<OuterEnumDefaultValue> _NotrequiredNullableOuterEnumDefaultValue;
         private bool _flagNotrequiredNullableOuterEnumDefaultValue;
 
         /// <summary>

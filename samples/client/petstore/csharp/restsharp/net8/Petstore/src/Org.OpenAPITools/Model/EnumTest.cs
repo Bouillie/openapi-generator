@@ -229,7 +229,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets OuterEnum
         /// </summary>
         [DataMember(Name = "outerEnum", EmitDefaultValue = true)]
-        public Option<OuterEnum?> OuterEnum { get; set; }
+        public Option<OuterEnum> OuterEnum { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumInteger

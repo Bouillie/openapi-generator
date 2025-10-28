@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **RequiredNotnullableintegerProp** | **int** |  | 
 **NotRequiredNullableIntegerProp** | **int?** |  | [optional] 
 **NotRequiredNotnullableintegerProp** | **int** |  | [optional] 
-**RequiredNullableStringProp** | **string** |  | 
+**RequiredNullableStringProp** | **string?** |  | 
 **RequiredNotnullableStringProp** | **string** |  | 
-**NotrequiredNullableStringProp** | **string** |  | [optional] 
+**NotrequiredNullableStringProp** | **string?** |  | [optional] 
 **NotrequiredNotnullableStringProp** | **string** |  | [optional] 
 **RequiredNullableBooleanProp** | **bool?** |  | 
 **RequiredNotnullableBooleanProp** | **bool** |  | 
@@ -33,8 +33,8 @@ Name | Type | Description | Notes
 **NotrequiredNullableEnumIntegerOnly** | **int?** |  | [optional] 
 **NotrequiredNotnullableEnumIntegerOnly** | **int** |  | [optional] 
 **RequiredNotnullableEnumString** | **string** |  | 
-**RequiredNullableEnumString** | **string** |  | 
-**NotrequiredNullableEnumString** | **string** |  | [optional] 
+**RequiredNullableEnumString** | **string?** |  | 
+**NotrequiredNullableEnumString** | **string?** |  | [optional] 
 **NotrequiredNotnullableEnumString** | **string** |  | [optional] 
 **RequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | 
 **RequiredNotnullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | 

@@ -460,7 +460,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RequiredNullableOuterEnumDefaultValue
         /// </summary>
         [DataMember(Name = "required_nullable_outerEnumDefaultValue", IsRequired = true, EmitDefaultValue = true)]
-        public OuterEnumDefaultValue? RequiredNullableOuterEnumDefaultValue { get; set; }
+        public OuterEnumDefaultValue RequiredNullableOuterEnumDefaultValue { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredNotnullableOuterEnumDefaultValue
@@ -472,7 +472,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NotrequiredNullableOuterEnumDefaultValue
         /// </summary>
         [DataMember(Name = "notrequired_nullable_outerEnumDefaultValue", EmitDefaultValue = true)]
-        public Option<OuterEnumDefaultValue?> NotrequiredNullableOuterEnumDefaultValue { get; set; }
+        public Option<OuterEnumDefaultValue> NotrequiredNullableOuterEnumDefaultValue { get; set; }
 
         /// <summary>
         /// Gets or Sets NotrequiredNotnullableOuterEnumDefaultValue
@@ -531,7 +531,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="requiredNotnullableArrayOfString">requiredNotnullableArrayOfString (required).</param>
         /// <param name="notrequiredNullableArrayOfString">notrequiredNullableArrayOfString.</param>
         /// <param name="notrequiredNotnullableArrayOfString">notrequiredNotnullableArrayOfString.</param>
-        public RequiredClass(int? requiredNullableIntegerProp = default, int requiredNotnullableintegerProp = default, Option<int?> notRequiredNullableIntegerProp = default, Option<int> notRequiredNotnullableintegerProp = default, string requiredNullableStringProp = default, string requiredNotnullableStringProp = default, Option<string> notrequiredNullableStringProp = default, Option<string> notrequiredNotnullableStringProp = default, bool? requiredNullableBooleanProp = default, bool requiredNotnullableBooleanProp = default, Option<bool?> notrequiredNullableBooleanProp = default, Option<bool> notrequiredNotnullableBooleanProp = default, DateOnly? requiredNullableDateProp = default, DateOnly requiredNotNullableDateProp = default, Option<DateOnly?> notRequiredNullableDateProp = default, Option<DateOnly> notRequiredNotnullableDateProp = default, DateTime requiredNotnullableDatetimeProp = default, DateTime? requiredNullableDatetimeProp = default, Option<DateTime?> notrequiredNullableDatetimeProp = default, Option<DateTime> notrequiredNotnullableDatetimeProp = default, RequiredNullableEnumIntegerEnum requiredNullableEnumInteger = default, RequiredNotnullableEnumIntegerEnum requiredNotnullableEnumInteger = default, Option<NotrequiredNullableEnumIntegerEnum> notrequiredNullableEnumInteger = default, Option<NotrequiredNotnullableEnumIntegerEnum> notrequiredNotnullableEnumInteger = default, RequiredNullableEnumIntegerOnlyEnum requiredNullableEnumIntegerOnly = default, RequiredNotnullableEnumIntegerOnlyEnum requiredNotnullableEnumIntegerOnly = default, Option<NotrequiredNullableEnumIntegerOnlyEnum> notrequiredNullableEnumIntegerOnly = default, Option<NotrequiredNotnullableEnumIntegerOnlyEnum> notrequiredNotnullableEnumIntegerOnly = default, RequiredNotnullableEnumStringEnum requiredNotnullableEnumString = default, RequiredNullableEnumStringEnum requiredNullableEnumString = default, Option<NotrequiredNullableEnumStringEnum> notrequiredNullableEnumString = default, Option<NotrequiredNotnullableEnumStringEnum> notrequiredNotnullableEnumString = default, OuterEnumDefaultValue requiredNullableOuterEnumDefaultValue = default, OuterEnumDefaultValue requiredNotnullableOuterEnumDefaultValue = default, Option<OuterEnumDefaultValue> notrequiredNullableOuterEnumDefaultValue = default, Option<OuterEnumDefaultValue> notrequiredNotnullableOuterEnumDefaultValue = default, Guid? requiredNullableUuid = default, Guid requiredNotnullableUuid = default, Option<Guid?> notrequiredNullableUuid = default, Option<Guid> notrequiredNotnullableUuid = default, List<string> requiredNullableArrayOfString = default, List<string> requiredNotnullableArrayOfString = default, Option<List<string>> notrequiredNullableArrayOfString = default, Option<List<string>> notrequiredNotnullableArrayOfString = default)
+        public RequiredClass(int? requiredNullableIntegerProp = default, int requiredNotnullableintegerProp = default, Option<int?> notRequiredNullableIntegerProp = default, Option<int> notRequiredNotnullableintegerProp = default, string? requiredNullableStringProp = default, string requiredNotnullableStringProp = default, Option<string?> notrequiredNullableStringProp = default, Option<string> notrequiredNotnullableStringProp = default, bool? requiredNullableBooleanProp = default, bool requiredNotnullableBooleanProp = default, Option<bool?> notrequiredNullableBooleanProp = default, Option<bool> notrequiredNotnullableBooleanProp = default, DateOnly? requiredNullableDateProp = default, DateOnly requiredNotNullableDateProp = default, Option<DateOnly?> notRequiredNullableDateProp = default, Option<DateOnly> notRequiredNotnullableDateProp = default, DateTime requiredNotnullableDatetimeProp = default, DateTime? requiredNullableDatetimeProp = default, Option<DateTime?> notrequiredNullableDatetimeProp = default, Option<DateTime> notrequiredNotnullableDatetimeProp = default, RequiredNullableEnumIntegerEnum requiredNullableEnumInteger = default, RequiredNotnullableEnumIntegerEnum requiredNotnullableEnumInteger = default, Option<NotrequiredNullableEnumIntegerEnum> notrequiredNullableEnumInteger = default, Option<NotrequiredNotnullableEnumIntegerEnum> notrequiredNotnullableEnumInteger = default, RequiredNullableEnumIntegerOnlyEnum requiredNullableEnumIntegerOnly = default, RequiredNotnullableEnumIntegerOnlyEnum requiredNotnullableEnumIntegerOnly = default, Option<NotrequiredNullableEnumIntegerOnlyEnum> notrequiredNullableEnumIntegerOnly = default, Option<NotrequiredNotnullableEnumIntegerOnlyEnum> notrequiredNotnullableEnumIntegerOnly = default, RequiredNotnullableEnumStringEnum requiredNotnullableEnumString = default, RequiredNullableEnumStringEnum requiredNullableEnumString = default, Option<NotrequiredNullableEnumStringEnum> notrequiredNullableEnumString = default, Option<NotrequiredNotnullableEnumStringEnum> notrequiredNotnullableEnumString = default, OuterEnumDefaultValue requiredNullableOuterEnumDefaultValue = default, OuterEnumDefaultValue requiredNotnullableOuterEnumDefaultValue = default, Option<OuterEnumDefaultValue> notrequiredNullableOuterEnumDefaultValue = default, Option<OuterEnumDefaultValue> notrequiredNotnullableOuterEnumDefaultValue = default, Guid? requiredNullableUuid = default, Guid requiredNotnullableUuid = default, Option<Guid?> notrequiredNullableUuid = default, Option<Guid> notrequiredNotnullableUuid = default, List<string> requiredNullableArrayOfString = default, List<string> requiredNotnullableArrayOfString = default, Option<List<string>> notrequiredNullableArrayOfString = default, Option<List<string>> notrequiredNotnullableArrayOfString = default)
         {
             // to ensure "requiredNotnullableStringProp" (not nullable) is not null
             if (requiredNotnullableStringProp == null)
@@ -603,7 +603,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RequiredNullableIntegerProp
         /// </summary>
         [DataMember(Name = "required_nullable_integer_prop", IsRequired = true, EmitDefaultValue = true)]
-        public int?? RequiredNullableIntegerProp { get; set; }
+        public int? RequiredNullableIntegerProp { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredNotnullableintegerProp
@@ -615,7 +615,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NotRequiredNullableIntegerProp
         /// </summary>
         [DataMember(Name = "not_required_nullable_integer_prop", EmitDefaultValue = true)]
-        public Option<int??> NotRequiredNullableIntegerProp { get; set; }
+        public Option<int?> NotRequiredNullableIntegerProp { get; set; }
 
         /// <summary>
         /// Gets or Sets NotRequiredNotnullableintegerProp
@@ -651,7 +651,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RequiredNullableBooleanProp
         /// </summary>
         [DataMember(Name = "required_nullable_boolean_prop", IsRequired = true, EmitDefaultValue = true)]
-        public bool?? RequiredNullableBooleanProp { get; set; }
+        public bool? RequiredNullableBooleanProp { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredNotnullableBooleanProp
@@ -663,7 +663,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NotrequiredNullableBooleanProp
         /// </summary>
         [DataMember(Name = "notrequired_nullable_boolean_prop", EmitDefaultValue = true)]
-        public Option<bool??> NotrequiredNullableBooleanProp { get; set; }
+        public Option<bool?> NotrequiredNullableBooleanProp { get; set; }
 
         /// <summary>
         /// Gets or Sets NotrequiredNotnullableBooleanProp
@@ -675,7 +675,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RequiredNullableDateProp
         /// </summary>
         [DataMember(Name = "required_nullable_date_prop", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly?? RequiredNullableDateProp { get; set; }
+        public DateOnly? RequiredNullableDateProp { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredNotNullableDateProp
@@ -687,7 +687,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NotRequiredNullableDateProp
         /// </summary>
         [DataMember(Name = "not_required_nullable_date_prop", EmitDefaultValue = true)]
-        public Option<DateOnly??> NotRequiredNullableDateProp { get; set; }
+        public Option<DateOnly?> NotRequiredNullableDateProp { get; set; }
 
         /// <summary>
         /// Gets or Sets NotRequiredNotnullableDateProp
@@ -705,13 +705,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RequiredNullableDatetimeProp
         /// </summary>
         [DataMember(Name = "required_nullable_datetime_prop", IsRequired = true, EmitDefaultValue = true)]
-        public DateTime?? RequiredNullableDatetimeProp { get; set; }
+        public DateTime? RequiredNullableDatetimeProp { get; set; }
 
         /// <summary>
         /// Gets or Sets NotrequiredNullableDatetimeProp
         /// </summary>
         [DataMember(Name = "notrequired_nullable_datetime_prop", EmitDefaultValue = true)]
-        public Option<DateTime??> NotrequiredNullableDatetimeProp { get; set; }
+        public Option<DateTime?> NotrequiredNullableDatetimeProp { get; set; }
 
         /// <summary>
         /// Gets or Sets NotrequiredNotnullableDatetimeProp
@@ -726,7 +726,7 @@ namespace Org.OpenAPITools.Model
         <example>72f98069-206d-4f12-9f12-3d1e525a8e84</example>
         */
         [DataMember(Name = "required_nullable_uuid", IsRequired = true, EmitDefaultValue = true)]
-        public Guid?? RequiredNullableUuid { get; set; }
+        public Guid? RequiredNullableUuid { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredNotnullableUuid
@@ -744,7 +744,7 @@ namespace Org.OpenAPITools.Model
         <example>72f98069-206d-4f12-9f12-3d1e525a8e84</example>
         */
         [DataMember(Name = "notrequired_nullable_uuid", EmitDefaultValue = true)]
-        public Option<Guid??> NotrequiredNullableUuid { get; set; }
+        public Option<Guid?> NotrequiredNullableUuid { get; set; }
 
         /// <summary>
         /// Gets or Sets NotrequiredNotnullableUuid
@@ -759,7 +759,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RequiredNullableArrayOfString
         /// </summary>
         [DataMember(Name = "required_nullable_array_of_string", IsRequired = true, EmitDefaultValue = true)]
-        public List<string>? RequiredNullableArrayOfString { get; set; }
+        public List<string> RequiredNullableArrayOfString { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredNotnullableArrayOfString
@@ -771,7 +771,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NotrequiredNullableArrayOfString
         /// </summary>
         [DataMember(Name = "notrequired_nullable_array_of_string", EmitDefaultValue = true)]
-        public Option<List<string>?> NotrequiredNullableArrayOfString { get; set; }
+        public Option<List<string>> NotrequiredNullableArrayOfString { get; set; }
 
         /// <summary>
         /// Gets or Sets NotrequiredNotnullableArrayOfString

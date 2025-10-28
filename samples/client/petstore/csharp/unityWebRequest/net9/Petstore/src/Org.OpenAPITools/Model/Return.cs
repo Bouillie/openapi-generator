@@ -43,7 +43,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="varLock">varLock (required).</param>
         /// <param name="varAbstract">varAbstract (required).</param>
         /// <param name="varUnsafe">varUnsafe.</param>
-        public Return(Option<int> varReturn = default, string varLock = default, string varAbstract = default, Option<string> varUnsafe = default)
+        public Return(Option<int> varReturn = default, string varLock = default, string? varAbstract = default, Option<string> varUnsafe = default)
         {
             // to ensure "varLock" (not nullable) is not null
             if (varLock == null)
