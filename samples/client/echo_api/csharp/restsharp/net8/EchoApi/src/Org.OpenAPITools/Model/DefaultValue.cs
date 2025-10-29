@@ -69,7 +69,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="arrayStringNullable">arrayStringNullable.</param>
         /// <param name="arrayStringExtensionNullable">arrayStringExtensionNullable.</param>
         /// <param name="stringNullable">stringNullable.</param>
-        public DefaultValue(Option<List<StringEnumRef>> arrayStringEnumRefDefault = default, Option<List<ArrayStringEnumDefaultEnum>> arrayStringEnumDefault = default, Option<List<string>> arrayStringDefault = default, Option<List<int>> arrayIntegerDefault = default, Option<List<string>> arrayString = default, Option<List<string>?> arrayStringNullable = default, Option<List<string>?> arrayStringExtensionNullable = default, Option<string?> stringNullable = default)
+        public DefaultValue(Option<List<StringEnumRef>> arrayStringEnumRefDefault = default, Option<List<DefaultValue.ArrayStringEnumDefaultEnum>> arrayStringEnumDefault = default, Option<List<string>> arrayStringDefault = default, Option<List<int>> arrayIntegerDefault = default, Option<List<string>> arrayString = default, Option<List<string>?> arrayStringNullable = default, Option<List<string>?> arrayStringExtensionNullable = default, Option<string?> stringNullable = default)
         {
             // to ensure "arrayStringEnumRefDefault" (not nullable) is not null
             if (arrayStringEnumRefDefault.IsSet && arrayStringEnumRefDefault.Value == null)

@@ -57,7 +57,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="mapOfEnumString">mapOfEnumString.</param>
         /// <param name="directMap">directMap.</param>
         /// <param name="indirectMap">indirectMap.</param>
-        public MapTest(Option<Dictionary<string, Dictionary<string, string>>> mapMapOfString = default, Option<Dictionary<string, InnerEnum>> mapOfEnumString = default, Option<Dictionary<string, bool>> directMap = default, Option<Dictionary<string, bool>> indirectMap = default)
+        public MapTest(Option<Dictionary<string, Dictionary<string, string>>> mapMapOfString = default, Option<Dictionary<string, MapTest.InnerEnum>> mapOfEnumString = default, Option<Dictionary<string, bool>> directMap = default, Option<Dictionary<string, bool>> indirectMap = default)
         {
             // to ensure "mapMapOfString" (not nullable) is not null
             if (mapMapOfString.IsSet && mapMapOfString.Value == null)

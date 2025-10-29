@@ -41,7 +41,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="date">A date.</param>
         /// <param name="id">Query.</param>
         /// <param name="outcomes">outcomes.</param>
-        public DataQuery(Option<string> suffix = default, Option<string> text = default, Option<DateTime> date = default, Option<long> id = default, Option<List<OutcomesEnum>> outcomes = default) : base(id, outcomes)
+        public DataQuery(Option<string> suffix = default, Option<string> text = default, Option<DateTime> date = default, Option<long> id = default, Option<List<DataQuery.OutcomesEnum>> outcomes = default) : base(id, outcomes)
         {
             // to ensure "suffix" (not nullable) is not null
             if (suffix.IsSet && suffix.Value == null)

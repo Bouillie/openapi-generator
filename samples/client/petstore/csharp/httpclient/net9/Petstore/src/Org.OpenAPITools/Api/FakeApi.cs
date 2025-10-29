@@ -3178,11 +3178,11 @@ namespace Org.OpenAPITools.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "enum_query_double", enumQueryDouble.Value));
             }
-            if (enumHeaderStringArrayIsSet)
+            if (enumHeaderStringArray.IsSet)
             {
                 localVarRequestOptions.HeaderParameters.Add("enum_header_string_array", Org.OpenAPITools.Client.ClientUtils.ParameterToString(enumHeaderStringArray.Value)); // header parameter
             }
-            if (enumHeaderStringIsSet)
+            if (enumHeaderString.IsSet)
             {
                 localVarRequestOptions.HeaderParameters.Add("enum_header_string", Org.OpenAPITools.Client.ClientUtils.ParameterToString(enumHeaderString.Value)); // header parameter
             }
@@ -3395,7 +3395,7 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "int64_group", int64Group.Value));
             }
             localVarRequestOptions.HeaderParameters.Add("required_boolean_group", Org.OpenAPITools.Client.ClientUtils.ParameterToString(requiredBooleanGroup)); // header parameter
-            if (booleanGroupIsSet)
+            if (booleanGroup.IsSet)
             {
                 localVarRequestOptions.HeaderParameters.Add("boolean_group", Org.OpenAPITools.Client.ClientUtils.ParameterToString(booleanGroup.Value)); // header parameter
             }

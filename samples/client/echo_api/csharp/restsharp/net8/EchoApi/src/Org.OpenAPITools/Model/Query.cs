@@ -63,7 +63,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="id">Query.</param>
         /// <param name="outcomes">outcomes.</param>
-        public Query(Option<long> id = default, Option<List<OutcomesEnum>> outcomes = default)
+        public Query(Option<long> id = default, Option<List<Query.OutcomesEnum>> outcomes = default)
         {
             // to ensure "outcomes" (not nullable) is not null
             if (outcomes.IsSet && outcomes.Value == null)

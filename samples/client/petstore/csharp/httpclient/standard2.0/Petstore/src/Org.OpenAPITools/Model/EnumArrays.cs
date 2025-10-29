@@ -83,7 +83,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="justSymbol">justSymbol.</param>
         /// <param name="arrayEnum">arrayEnum.</param>
-        public EnumArrays(Option<JustSymbolEnum> justSymbol = default, Option<List<ArrayEnumEnum>> arrayEnum = default)
+        public EnumArrays(Option<JustSymbolEnum> justSymbol = default, Option<List<EnumArrays.ArrayEnumEnum>> arrayEnum = default)
         {
             // to ensure "arrayEnum" (not nullable) is not null
             if (arrayEnum.IsSet && arrayEnum.Value == null)
