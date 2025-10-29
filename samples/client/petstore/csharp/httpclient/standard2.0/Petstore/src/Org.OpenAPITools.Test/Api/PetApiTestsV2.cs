@@ -75,12 +75,12 @@ namespace Org.OpenAPITools.Test.Api
 			Assert.Equal(expected.Name, response.Name);
 			Assert.Equal(expected.Status, response.Status);
 			Assert.IsType<List<Tag>>(response.Tags.Value);
-			Assert.Equal(expected.Tags.Value[0].Id, response.Tags.Value[0].Id.Value);
-			Assert.Equal(expected.Tags.Value[0].Name, response.Tags.Value[0].Name.Value);
+			Assert.Equal(expected.Tags.Value[0].Id.Value, response.Tags.Value[0].Id.Value);
+			Assert.Equal(expected.Tags.Value[0].Name.Value, response.Tags.Value[0].Name.Value);
 			Assert.IsType<List<string>>(response.PhotoUrls);
 			Assert.Equal(expected.PhotoUrls[0], response.PhotoUrls[0]);
 			Assert.IsType<Category>(response.Category);
-			Assert.Equal(expected.Category.Value.Id, response.Category.Value.Id.Value);
+			Assert.Equal(expected.Category.Value.Id.Value, response.Category.Value.Id.Value);
 			Assert.Equal(expected.Category.Value.Name, response.Category.Value.Name);
 		}
 
@@ -120,12 +120,12 @@ namespace Org.OpenAPITools.Test.Api
 			Assert.Equal(expected.Name, result.Name);
 			Assert.Equal(expected.Status, result.Status);
 			Assert.IsType<List<Tag>>(result.Tags.Value);
-			Assert.Equal(expected.Tags.Value[0].Id, result.Tags.Value[0].Id);
-			Assert.Equal(expected.Tags.Value[0].Name, result.Tags.Value[0].Name);
+			Assert.Equal(expected.Tags.Value[0].Id.Value, result.Tags.Value[0].Id.Value);
+			Assert.Equal(expected.Tags.Value[0].Name.Value, result.Tags.Value[0].Name.Value);
 			Assert.IsType<List<string>>(result.PhotoUrls);
 			Assert.Equal(expected.PhotoUrls[0], result.PhotoUrls[0]);
 			Assert.IsType<Category>(result.Category);
-			Assert.Equal(expected.Category.Value.Id, result.Category.Value.Id);
+			Assert.Equal(expected.Category.Value.Id.Value, result.Category.Value.Id.Value);
 			Assert.Equal(expected.Category.Value.Name, result.Category.Value.Name);
 		}
 
@@ -184,12 +184,12 @@ namespace Org.OpenAPITools.Test.Api
 			Assert.Equal(expected.Name, response.Name);
 			Assert.Equal(expected.Status, response.Status);
 			Assert.IsType<List<Tag>>(response.Tags.Value);
-			Assert.Equal(expected.Tags.Value[0].Id, response.Tags.Value[0].Id.Value);
-			Assert.Equal(expected.Tags.Value[0].Name, response.Tags.Value[0].Name.Value);
+			Assert.Equal(expected.Tags.Value[0].Id.Value, response.Tags.Value[0].Id.Value);
+			Assert.Equal(expected.Tags.Value[0].Name.Value, response.Tags.Value[0].Name.Value);
 			Assert.IsType<List<string>>(response.PhotoUrls);
 			Assert.Equal(expected.PhotoUrls[0], response.PhotoUrls[0]);
-			Assert.IsType<Category>(response.Category);
-			Assert.Equal(expected.Category.Value.Id, response.Category.Value.Id.Value);
+			Assert.IsType<Category>(response.Category.Value);
+			Assert.Equal(expected.Category.Value.Id.Value, response.Category.Value.Id.Value);
 			Assert.Equal(expected.Category.Value.Name, response.Category.Value.Name);
 		}
 
@@ -226,12 +226,12 @@ namespace Org.OpenAPITools.Test.Api
 			Assert.Equal(expected.Name, result.Name);
 			Assert.Equal(expected.Status, result.Status);
 			Assert.IsType<List<Tag>>(result.Tags.Value);
-			Assert.Equal(expected.Tags.Value[0].Id, result.Tags.Value[0].Id);
+			Assert.Equal(expected.Tags.Value[0].Id.Value, result.Tags.Value[0].Id.Value);
 			Assert.Equal(expected.Tags.Value[0].Name, result.Tags.Value[0].Name);
 			Assert.IsType<List<string>>(result.PhotoUrls);
 			Assert.Equal(expected.PhotoUrls[0], result.PhotoUrls[0]);
-			Assert.IsType<Category>(result.Category);
-			Assert.Equal(expected.Category.Value.Id, result.Category.Value.Id);
+			Assert.IsType<Category>(result.Category.Value);
+			Assert.Equal(expected.Category.Value.Id.Value, result.Category.Value.Id.Value);
 			Assert.Equal(expected.Category.Value.Name, result.Category.Value.Name);
 		}
 
@@ -364,12 +364,12 @@ namespace Org.OpenAPITools.Test.Api
 			Assert.Equal(expected.Name, response.Name);
 			Assert.Equal(expected.Status, response.Status);
 			Assert.IsType<List<Tag>>(response.Tags.Value);
-			Assert.Equal(expected.Tags.Value[0].Id, response.Tags.Value[0].Id.Value);
-			Assert.Equal(expected.Tags.Value[0].Name, response.Tags.Value[0].Name.Value);
+			Assert.Equal(expected.Tags.Value[0].Id.Value, response.Tags.Value[0].Id.Value);
+			Assert.Equal(expected.Tags.Value[0].Name.Value, response.Tags.Value[0].Name.Value);
 			Assert.IsType<List<string>>(response.PhotoUrls);
 			Assert.Equal(expected.PhotoUrls[0], response.PhotoUrls[0]);
-			Assert.IsType<Category>(response.Category);
-			Assert.Equal(expected.Category.Value.Id, response.Category.Value.Id.Value);
+			Assert.IsType<Category>(response.Category.Value);
+			Assert.Equal(expected.Category.Value.Id.Value, response.Category.Value.Id.Value);
 			Assert.Equal(expected.Category.Value.Name, response.Category.Value.Name);
 
 			_petApi.UpdatePetWithForm(PetId, "name updated twice");
@@ -447,12 +447,12 @@ namespace Org.OpenAPITools.Test.Api
 			Assert.Equal(expected.Name, response.Name);
 			Assert.Equal(expected.Status, response.Status);
 			Assert.IsType<List<Tag>>(response.Tags.Value);
-			Assert.Equal(expected.Tags.Value[0].Id, response.Tags.Value[0].Id.Value);
-			Assert.Equal(expected.Tags.Value[0].Name, response.Tags.Value[0].Name.Value);
+			Assert.Equal(expected.Tags.Value[0].Id.Value, response.Tags.Value[0].Id.Value);
+			Assert.Equal(expected.Tags.Value[0].Name.Value, response.Tags.Value[0].Name.Value);
 			Assert.IsType<List<string>>(response.PhotoUrls);
 			Assert.Equal(expected.PhotoUrls[0], response.PhotoUrls[0]);
-			Assert.IsType<Category>(response.Category);
-			Assert.Equal(expected.Category.Value.Id, response.Category.Value.Id.Value);
+			Assert.IsType<Category>(response.Category.Value);
+			Assert.Equal(expected.Category.Value.Id.Value, response.Category.Value.Id.Value);
 			Assert.Equal(expected.Category.Value.Name, response.Category.Value.Name);
 
 			await _petApi.UpdatePetWithFormAsync(PetId, "name updated twice");
