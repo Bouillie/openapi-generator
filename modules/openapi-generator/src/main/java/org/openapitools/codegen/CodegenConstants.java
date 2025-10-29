@@ -464,7 +464,6 @@ public class CodegenConstants {
     public static final String X_BASE_NAME = "x-base-name";
     public static final String X_IS_VALUE_TYPE = "x-is-value-type";
     public static final String X_IS_REFERENCE_TYPE = "x-is-reference-type";
-    public static final String X_IS_NULLABLE_TYPE = "x-is-nullable-type";
     public static final String X_IS_BASE_OR_NEW_DISCRIMINATOR = "x-is-base-or-new-discriminator";
     public static final String X_ENUM_BYTE = "x-enum-byte";
     public static final String X_HTTP_STATUS = "x-http-status";

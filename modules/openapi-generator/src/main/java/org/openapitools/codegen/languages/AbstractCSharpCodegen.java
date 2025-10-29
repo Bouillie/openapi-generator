@@ -47,6 +47,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import static org.openapitools.codegen.CodegenConstants.*;
+import static org.openapitools.codegen.languages.CSharpClientCodegen.GENERICHOST;
 import static org.openapitools.codegen.utils.CamelizeOption.LOWERCASE_FIRST_LETTER;
 import static org.openapitools.codegen.utils.ModelUtils.getSchemaItems;
 import static org.openapitools.codegen.utils.StringUtils.camelize;
@@ -792,7 +793,7 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen {
         boolean isValueType = isValueType(property);
         property.vendorExtensions.put(X_IS_VALUE_TYPE, isValueType);
         property.vendorExtensions.put(X_IS_REFERENCE_TYPE, !isValueType);
-        property.vendorExtensions.put(X_IS_NULLABLE_TYPE, this.getNullableReferencesTypes() || isValueType);
+        property.vendorExtensions.put(X_NULLABLE_TYPE, this.getNullableReferencesTypes() || isValueType);
         property.vendorExtensions.put(X_IS_BASE_OR_NEW_DISCRIMINATOR, (property.isDiscriminator && !property.isInherited) || (property.isDiscriminator && property.isNew));
     }
 
@@ -807,19 +808,23 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen {
 
         String[] nestedTypes = {"List", "Collection", "ICollection", "Dictionary"};
         
-        if (property.datatypeWithEnum != null) {
+        if (property.datatypeWithEnum != null && property.items != null) {
             String originalType = property.datatypeWithEnum;
+            String itemsDataType = property.items.datatypeWithEnum;
+            if (!GENERICHOST.equals(getLibrary())) {
+                if (property.items.isNullable && (this.nullReferenceTypesFlag || property.items.isEnum || getValueTypes().contains(itemsDataType)) && !itemsDataType.endsWith("?")) {
+                    itemsDataType = property.items.datatypeWithEnum + "?";
+                }
+            }
             
             for (String nestedType : nestedTypes) {
                 // fix incorrect data types for maps of maps
-                if (property.items != null) {
-                    if (property.datatypeWithEnum.contains(", " + nestedType + ">")) {
-                        property.datatypeWithEnum = property.datatypeWithEnum.replace(", " + nestedType + ">", ", " + property.items.datatypeWithEnum + ">");
-                    }
+                if (property.datatypeWithEnum.contains(", " + nestedType + ">")) {
+                    property.datatypeWithEnum = property.datatypeWithEnum.replace(", " + nestedType + ">", ", " + itemsDataType + ">");
+                }
 
-                    if (property.datatypeWithEnum.contains("<" + nestedType + ">")) {
-                        property.datatypeWithEnum = property.datatypeWithEnum.replace("<" + nestedType + ">", "<" + property.items.datatypeWithEnum + ">");
-                    }
+                if (property.datatypeWithEnum.contains("<" + nestedType + ">")) {
+                    property.datatypeWithEnum = property.datatypeWithEnum.replace("<" + nestedType + ">", "<" + itemsDataType + ">");
                 }
             }
 
@@ -1343,23 +1348,31 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen {
     }
 
     protected void processOperation(CodegenOperation operation) {
+        if (operation.returnProperty == null || operation.returnProperty.items == null) {
+            return;
+        }
+
         String[] nestedTypes = {"List", "Collection", "ICollection", "Dictionary"};
+        String dataType = operation.returnProperty.items.dataType;
+        if (!GENERICHOST.equals(getLibrary())) {
+            if (operation.returnProperty.items.isNullable && (this.nullReferenceTypesFlag || operation.returnProperty.items.isEnum || getValueTypes().contains(dataType)) && !dataType.endsWith("?")) {
+                dataType += "?";
+            }
+        }
 
-        Arrays.stream(nestedTypes).forEach(nestedType -> {
-            if (operation.returnProperty != null && operation.returnType.contains("<" + nestedType + ">") && operation.returnProperty.items != null) {
-                String nestedReturnType = operation.returnProperty.items.dataType;
-                operation.returnType = operation.returnType.replace("<" + nestedType + ">", "<" + nestedReturnType + ">");
+        for (String nestedType : nestedTypes) {
+            if (operation.returnType.contains("<" + nestedType + ">")) {
+                operation.returnType = operation.returnType.replace("<" + nestedType + ">", "<" + dataType + ">");
                 operation.returnProperty.dataType = operation.returnType;
                 operation.returnProperty.datatypeWithEnum = operation.returnType;
             }
 
-            if (operation.returnProperty != null && operation.returnType.contains(", " + nestedType + ">") && operation.returnProperty.items != null) {
-                String nestedReturnType = operation.returnProperty.items.dataType;
-                operation.returnType = operation.returnType.replace(", " + nestedType + ">", ", " + nestedReturnType + ">");
+            if (operation.returnType.contains(", " + nestedType + ">")) {
+                operation.returnType = operation.returnType.replace(", " + nestedType + ">", ", " + dataType + ">");
                 operation.returnProperty.dataType = operation.returnType;
                 operation.returnProperty.datatypeWithEnum = operation.returnType;
             }
-        });
+        }
     }
 
     protected void updateCodegenParameterEnumLegacy(CodegenParameter parameter, CodegenModel model) {
@@ -1630,11 +1643,23 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen {
         Schema<?> target = ModelUtils.isGenerateAliasAsModel() ? p : schema;
         if (ModelUtils.isArraySchema(target)) {
             Schema<?> items = getSchemaItems(schema);
-            return typeMapping.get("array") + "<" + getTypeDeclarationForArray(items) + ">";
+            String typeDeclaration = getTypeDeclarationForArray(items);
+            if (!GENERICHOST.equals(getLibrary())) {
+                if (ModelUtils.isNullable(items) && (this.nullReferenceTypesFlag || ModelUtils.isEnumSchema(items) || getValueTypes().contains(typeDeclaration)) && !typeDeclaration.endsWith("?")) {
+                    typeDeclaration += "?";
+                }
+            }
+            return typeMapping.get("array") + "<" + typeDeclaration + ">";
         } else if (ModelUtils.isMapSchema(p)) {
             // Should we also support maps of maps?
             Schema<?> inner = ModelUtils.getAdditionalProperties(p);
-            return getSchemaType(p) + "<string, " + getTypeDeclaration(inner) + ">";
+            String typeDeclaration = getTypeDeclaration(inner);
+            if (!GENERICHOST.equals(getLibrary())) {
+                if (ModelUtils.isNullable(inner) && (this.nullReferenceTypesFlag || ModelUtils.isEnumSchema(inner) || getValueTypes().contains(typeDeclaration)) && !typeDeclaration.endsWith("?")) {
+                    typeDeclaration += "?";
+                }
+            }
+            return getSchemaType(p) + "<string, " + typeDeclaration + ">";
         }
         return super.getTypeDeclaration(p);
     }
