@@ -48,7 +48,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectNullableProp">objectNullableProp.</param>
         /// <param name="objectAndItemsNullableProp">objectAndItemsNullableProp.</param>
         /// <param name="objectItemsNullable">objectItemsNullable.</param>
-        public NullableClass(Option<int?> integerProp = default, Option<decimal?> numberProp = default, Option<bool?> booleanProp = default, Option<string> stringProp = default, Option<DateTime?> dateProp = default, Option<DateTime?> datetimeProp = default, Option<List<Object>> arrayNullableProp = default, Option<List<Object>> arrayAndItemsNullableProp = default, Option<List<Object>> arrayItemsNullable = default, Option<Dictionary<string, Object>> objectNullableProp = default, Option<Dictionary<string, Object>> objectAndItemsNullableProp = default, Option<Dictionary<string, Object>> objectItemsNullable = default)
+        public NullableClass(Option<int?> integerProp = default, Option<decimal?> numberProp = default, Option<bool?> booleanProp = default, Option<string> stringProp = default, Option<DateTime> dateProp = default, Option<DateTime> datetimeProp = default, Option<List<Object>> arrayNullableProp = default, Option<List<Object>> arrayAndItemsNullableProp = default, Option<List<Object>> arrayItemsNullable = default, Option<Dictionary<string, Object>> objectNullableProp = default, Option<Dictionary<string, Object>> objectAndItemsNullableProp = default, Option<Dictionary<string, Object>> objectItemsNullable = default)
         {
             // to ensure "arrayItemsNullable" (not nullable) is not null
             if (arrayItemsNullable.IsSet && arrayItemsNullable.Value == null)
@@ -224,7 +224,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [JsonConverter(typeof(OpenAPIDateConverter))]
         [DataMember(Name = "date_prop", EmitDefaultValue = true)]
-        public Option<DateTime?> DateProp
+        public Option<DateTime> DateProp
         {
             get{ return _DateProp;}
             set
@@ -233,7 +233,7 @@ namespace Org.OpenAPITools.Model
                 _flagDateProp = true;
             }
         }
-        private Option<DateTime?> _DateProp;
+        private Option<DateTime> _DateProp;
         private bool _flagDateProp;
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DatetimeProp
         /// </summary>
         [DataMember(Name = "datetime_prop", EmitDefaultValue = true)]
-        public Option<DateTime?> DatetimeProp
+        public Option<DateTime> DatetimeProp
         {
             get{ return _DatetimeProp;}
             set
@@ -257,7 +257,7 @@ namespace Org.OpenAPITools.Model
                 _flagDatetimeProp = true;
             }
         }
-        private Option<DateTime?> _DatetimeProp;
+        private Option<DateTime> _DatetimeProp;
         private bool _flagDatetimeProp;
 
         /// <summary>
@@ -481,17 +481,17 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.IntegerProp.IsSet && this.IntegerProp.Value != null)
+                if (this.IntegerProp.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.IntegerProp.Value.GetHashCode();
+                hashCode = (hashCode * 59) + this.IntegerProp.Value.GetHashCode();
                 }
-                if (this.NumberProp.IsSet && this.NumberProp.Value != null)
+                if (this.NumberProp.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.NumberProp.Value.GetHashCode();
+                hashCode = (hashCode * 59) + this.NumberProp.Value.GetHashCode();
                 }
-                if (this.BooleanProp.IsSet && this.BooleanProp.Value != null)
+                if (this.BooleanProp.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.BooleanProp.Value.GetHashCode();
+                hashCode = (hashCode * 59) + this.BooleanProp.Value.GetHashCode();
                 }
                 if (this.StringProp.IsSet && this.StringProp.Value != null)
                 {

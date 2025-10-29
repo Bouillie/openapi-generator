@@ -45,7 +45,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="mapWithUndeclaredPropertiesAnytype3">mapWithUndeclaredPropertiesAnytype3.</param>
         /// <param name="emptyMap">an object with no declared properties and no undeclared properties, hence it&#39;s an empty map..</param>
         /// <param name="mapWithUndeclaredPropertiesString">mapWithUndeclaredPropertiesString.</param>
-        public AdditionalPropertiesClass(Option<Dictionary<string, string>> mapProperty = default, Option<Dictionary<string, Dictionary<string, string>>> mapOfMapProperty = default, Option<Object> anytype1 = default, Option<Object> mapWithUndeclaredPropertiesAnytype1 = default, Option<Object> mapWithUndeclaredPropertiesAnytype2 = default, Option<Dictionary<string, Object>> mapWithUndeclaredPropertiesAnytype3 = default, Option<Object> emptyMap = default, Option<Dictionary<string, string>> mapWithUndeclaredPropertiesString = default)
+        public AdditionalPropertiesClass(Option<Dictionary<string, string>> mapProperty = default, Option<Dictionary<string, Dictionary<string, string>>> mapOfMapProperty = default, Option<Object?> anytype1 = default, Option<Object> mapWithUndeclaredPropertiesAnytype1 = default, Option<Object> mapWithUndeclaredPropertiesAnytype2 = default, Option<Dictionary<string, Object>> mapWithUndeclaredPropertiesAnytype3 = default, Option<Object> emptyMap = default, Option<Dictionary<string, string>> mapWithUndeclaredPropertiesString = default)
         {
             // to ensure "mapProperty" (not nullable) is not null
             if (mapProperty.IsSet && mapProperty.Value == null)
@@ -109,7 +109,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Anytype1
         /// </summary>
         [DataMember(Name = "anytype_1", EmitDefaultValue = true)]
-        public Option<Object> Anytype1 { get; set; }
+        public Option<Object?> Anytype1 { get; set; }
 
         /// <summary>
         /// Gets or Sets MapWithUndeclaredPropertiesAnytype1

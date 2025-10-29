@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="shapeOrNull">shapeOrNull.</param>
         /// <param name="nullableShape">nullableShape.</param>
         /// <param name="shapes">shapes.</param>
-        public Drawing(Option<Shape> mainShape = default, Option<ShapeOrNull> shapeOrNull = default, Option<NullableShape> nullableShape = default, Option<List<Shape>> shapes = default)
+        public Drawing(Option<Shape> mainShape = default, Option<ShapeOrNull?> shapeOrNull = default, Option<NullableShape?> nullableShape = default, Option<List<Shape>> shapes = default)
         {
             // to ensure "mainShape" (not nullable) is not null
             if (mainShape.IsSet && mainShape.Value == null)
@@ -67,13 +67,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ShapeOrNull
         /// </summary>
         [DataMember(Name = "shapeOrNull", EmitDefaultValue = true)]
-        public Option<ShapeOrNull> ShapeOrNull { get; set; }
+        public Option<ShapeOrNull?> ShapeOrNull { get; set; }
 
         /// <summary>
         /// Gets or Sets NullableShape
         /// </summary>
         [DataMember(Name = "nullableShape", EmitDefaultValue = true)]
-        public Option<NullableShape> NullableShape { get; set; }
+        public Option<NullableShape?> NullableShape { get; set; }
 
         /// <summary>
         /// Gets or Sets Shapes

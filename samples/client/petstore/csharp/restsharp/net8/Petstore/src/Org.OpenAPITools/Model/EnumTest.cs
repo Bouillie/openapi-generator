@@ -265,7 +265,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="outerEnumInteger">outerEnumInteger.</param>
         /// <param name="outerEnumDefaultValue">outerEnumDefaultValue.</param>
         /// <param name="outerEnumIntegerDefaultValue">outerEnumIntegerDefaultValue.</param>
-        public EnumTest(Option<EnumStringEnum> enumString = default, EnumStringRequiredEnum enumStringRequired = default, Option<EnumIntegerEnum> enumInteger = default, Option<EnumIntegerOnlyEnum> enumIntegerOnly = default, Option<EnumNumberEnum> enumNumber = default, Option<OuterEnum> outerEnum = default, Option<OuterEnumInteger> outerEnumInteger = default, Option<OuterEnumDefaultValue> outerEnumDefaultValue = default, Option<OuterEnumIntegerDefaultValue> outerEnumIntegerDefaultValue = default)
+        public EnumTest(Option<EnumStringEnum> enumString = default, EnumStringRequiredEnum enumStringRequired = default, Option<EnumIntegerEnum> enumInteger = default, Option<EnumIntegerOnlyEnum> enumIntegerOnly = default, Option<EnumNumberEnum> enumNumber = default, Option<OuterEnum?> outerEnum = default, Option<OuterEnumInteger> outerEnumInteger = default, Option<OuterEnumDefaultValue> outerEnumDefaultValue = default, Option<OuterEnumIntegerDefaultValue> outerEnumIntegerDefaultValue = default)
         {
             this.EnumString = enumString;
             this.EnumStringRequired = enumStringRequired;

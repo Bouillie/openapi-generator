@@ -46,7 +46,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectNullableProp">objectNullableProp.</param>
         /// <param name="objectAndItemsNullableProp">objectAndItemsNullableProp.</param>
         /// <param name="objectItemsNullable">objectItemsNullable.</param>
-        public NullableClass(Option<int?> integerProp = default, Option<decimal?> numberProp = default, Option<bool?> booleanProp = default, Option<string?> stringProp = default, Option<DateOnly?> dateProp = default, Option<DateTime?> datetimeProp = default, Option<List<Object>> arrayNullableProp = default, Option<List<Object?>> arrayAndItemsNullableProp = default, Option<List<Object?>> arrayItemsNullable = default, Option<Dictionary?<string, Object>> objectNullableProp = default, Option<Dictionary?<string, Object?>> objectAndItemsNullableProp = default, Option<Dictionary<string, Object?>> objectItemsNullable = default)
+        public NullableClass(Option<int?> integerProp = default, Option<decimal?> numberProp = default, Option<bool?> booleanProp = default, Option<string?> stringProp = default, Option<DateOnly?> dateProp = default, Option<DateTime?> datetimeProp = default, Option<List<Object>?> arrayNullableProp = default, Option<List<Object?>?> arrayAndItemsNullableProp = default, Option<List<Object?>> arrayItemsNullable = default, Option<Dictionary<string, Object>?> objectNullableProp = default, Option<Dictionary<string, Object?>?> objectAndItemsNullableProp = default, Option<Dictionary<string, Object?>> objectItemsNullable = default)
         {
             // to ensure "arrayItemsNullable" (not nullable) is not null
             if (arrayItemsNullable.IsSet && arrayItemsNullable.Value == null)
@@ -113,13 +113,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayNullableProp
         /// </summary>
         [DataMember(Name = "array_nullable_prop", EmitDefaultValue = true)]
-        public Option<List<Object>> ArrayNullableProp { get; set; }
+        public Option<List<Object>?> ArrayNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayAndItemsNullableProp
         /// </summary>
         [DataMember(Name = "array_and_items_nullable_prop", EmitDefaultValue = true)]
-        public Option<List<Object?>> ArrayAndItemsNullableProp { get; set; }
+        public Option<List<Object?>?> ArrayAndItemsNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ArrayItemsNullable
@@ -131,13 +131,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ObjectNullableProp
         /// </summary>
         [DataMember(Name = "object_nullable_prop", EmitDefaultValue = true)]
-        public Option<Dictionary?<string, Object>> ObjectNullableProp { get; set; }
+        public Option<Dictionary<string, Object>?> ObjectNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ObjectAndItemsNullableProp
         /// </summary>
         [DataMember(Name = "object_and_items_nullable_prop", EmitDefaultValue = true)]
-        public Option<Dictionary?<string, Object?>> ObjectAndItemsNullableProp { get; set; }
+        public Option<Dictionary<string, Object?>?> ObjectAndItemsNullableProp { get; set; }
 
         /// <summary>
         /// Gets or Sets ObjectItemsNullable
@@ -208,15 +208,12 @@ namespace Org.OpenAPITools.Model
             }
             return 
                 (
-                    
                     this.IntegerProp.Equals(input.IntegerProp)
                 ) && 
                 (
-                    
                     this.NumberProp.Equals(input.NumberProp)
                 ) && 
                 (
-                    
                     this.BooleanProp.Equals(input.BooleanProp)
                 ) && 
                 (
@@ -279,17 +276,17 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.IntegerProp.IsSet && this.IntegerProp.Value != null)
+                if (this.IntegerProp.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.IntegerProp.Value.GetHashCode();
+                hashCode = (hashCode * 59) + this.IntegerProp.Value.GetHashCode();
                 }
-                if (this.NumberProp.IsSet && this.NumberProp.Value != null)
+                if (this.NumberProp.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.NumberProp.Value.GetHashCode();
+                hashCode = (hashCode * 59) + this.NumberProp.Value.GetHashCode();
                 }
-                if (this.BooleanProp.IsSet && this.BooleanProp.Value != null)
+                if (this.BooleanProp.IsSet)
                 {
-                    hashCode = (hashCode * 59) + this.BooleanProp.Value.GetHashCode();
+                hashCode = (hashCode * 59) + this.BooleanProp.Value.GetHashCode();
                 }
                 if (this.StringProp.IsSet && this.StringProp.Value != null)
                 {

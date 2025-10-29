@@ -36,17 +36,17 @@ Name | Type | Description | Notes
 **RequiredNullableEnumString** | **string?** |  | 
 **NotrequiredNullableEnumString** | **string?** |  | [optional] 
 **NotrequiredNotnullableEnumString** | **string** |  | [optional] 
-**RequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | 
+**RequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue?** |  | 
 **RequiredNotnullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | 
-**NotrequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | [optional] 
+**NotrequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue?** |  | [optional] 
 **NotrequiredNotnullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | [optional] 
 **RequiredNullableUuid** | **Guid?** |  | 
 **RequiredNotnullableUuid** | **Guid** |  | 
 **NotrequiredNullableUuid** | **Guid?** |  | [optional] 
 **NotrequiredNotnullableUuid** | **Guid** |  | [optional] 
-**RequiredNullableArrayOfString** | **List&lt;string&gt;** |  | 
+**RequiredNullableArrayOfString** | **List&lt;string&gt;?** |  | 
 **RequiredNotnullableArrayOfString** | **List&lt;string&gt;** |  | 
-**NotrequiredNullableArrayOfString** | **List&lt;string&gt;** |  | [optional] 
+**NotrequiredNullableArrayOfString** | **List&lt;string&gt;?** |  | [optional] 
 **NotrequiredNotnullableArrayOfString** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

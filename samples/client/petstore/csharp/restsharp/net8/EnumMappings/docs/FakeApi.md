@@ -1673,9 +1673,9 @@ namespace Example
             var url = new List<string>(); // List<string> | 
             var context = new List<string>(); // List<string> | 
             var requiredNotNullable = "requiredNotNullable_example";  // string | 
-            var requiredNullable = "requiredNullable_example";  // string? | 
+            var requiredNullable = "requiredNullable_example";  // string | 
             var notRequiredNotNullable = "notRequiredNotNullable_example";  // string |  (optional) 
-            var notRequiredNullable = "notRequiredNullable_example";  // string? |  (optional) 
+            var notRequiredNullable = "notRequiredNullable_example";  // string |  (optional) 
 
             try
             {
@@ -1718,9 +1718,9 @@ catch (ApiException e)
 | **url** | [**List&lt;string&gt;**](string.md) |  |  |
 | **context** | [**List&lt;string&gt;**](string.md) |  |  |
 | **requiredNotNullable** | **string** |  |  |
-| **requiredNullable** | **string?** |  |  |
+| **requiredNullable** | **string** |  |  |
 | **notRequiredNotNullable** | **string** |  | [optional]  |
-| **notRequiredNullable** | **string?** |  | [optional]  |
+| **notRequiredNullable** | **string** |  | [optional]  |
 
 ### Return type
 

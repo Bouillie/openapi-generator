@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **RequiredNotnullableBooleanProp** | **bool** |  | 
 **NotrequiredNullableBooleanProp** | **bool?** |  | [optional] 
 **NotrequiredNotnullableBooleanProp** | **bool** |  | [optional] 
-**RequiredNullableDateProp** | **DateTime?** |  | 
+**RequiredNullableDateProp** | **DateTime** |  | 
 **RequiredNotNullableDateProp** | **DateTime** |  | 
-**NotRequiredNullableDateProp** | **DateTime?** |  | [optional] 
+**NotRequiredNullableDateProp** | **DateTime** |  | [optional] 
 **NotRequiredNotnullableDateProp** | **DateTime** |  | [optional] 
 **RequiredNotnullableDatetimeProp** | **DateTime** |  | 
-**RequiredNullableDatetimeProp** | **DateTime?** |  | 
-**NotrequiredNullableDatetimeProp** | **DateTime?** |  | [optional] 
+**RequiredNullableDatetimeProp** | **DateTime** |  | 
+**NotrequiredNullableDatetimeProp** | **DateTime** |  | [optional] 
 **NotrequiredNotnullableDatetimeProp** | **DateTime** |  | [optional] 
 **RequiredNullableEnumInteger** | **int?** |  | 
 **RequiredNotnullableEnumInteger** | **int** |  | 
@@ -33,16 +33,16 @@ Name | Type | Description | Notes
 **NotrequiredNullableEnumIntegerOnly** | **int?** |  | [optional] 
 **NotrequiredNotnullableEnumIntegerOnly** | **int** |  | [optional] 
 **RequiredNotnullableEnumString** | **string** |  | 
-**RequiredNullableEnumString** | **string** |  | 
-**NotrequiredNullableEnumString** | **string** |  | [optional] 
+**RequiredNullableEnumString** | **string?** |  | 
+**NotrequiredNullableEnumString** | **string?** |  | [optional] 
 **NotrequiredNotnullableEnumString** | **string** |  | [optional] 
-**RequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | 
+**RequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue?** |  | 
 **RequiredNotnullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | 
-**NotrequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | [optional] 
+**NotrequiredNullableOuterEnumDefaultValue** | **OuterEnumDefaultValue?** |  | [optional] 
 **NotrequiredNotnullableOuterEnumDefaultValue** | **OuterEnumDefaultValue** |  | [optional] 
-**RequiredNullableUuid** | **Guid?** |  | 
+**RequiredNullableUuid** | **Guid** |  | 
 **RequiredNotnullableUuid** | **Guid** |  | 
-**NotrequiredNullableUuid** | **Guid?** |  | [optional] 
+**NotrequiredNullableUuid** | **Guid** |  | [optional] 
 **NotrequiredNotnullableUuid** | **Guid** |  | [optional] 
 **RequiredNullableArrayOfString** | **List&lt;string&gt;** |  | 
 **RequiredNotnullableArrayOfString** | **List&lt;string&gt;** |  | 

@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="NullableGuidClass" /> class.
         /// </summary>
         /// <param name="uuid">uuid.</param>
-        public NullableGuidClass(Option<Guid?> uuid = default)
+        public NullableGuidClass(Option<Guid> uuid = default)
         {
             this._Uuid = uuid;
             if (this.Uuid.IsSet)
@@ -54,7 +54,7 @@ namespace Org.OpenAPITools.Model
         <example>72f98069-206d-4f12-9f12-3d1e525a8e84</example>
         */
         [DataMember(Name = "uuid", EmitDefaultValue = true)]
-        public Option<Guid?> Uuid
+        public Option<Guid> Uuid
         {
             get{ return _Uuid;}
             set
@@ -63,7 +63,7 @@ namespace Org.OpenAPITools.Model
                 _flagUuid = true;
             }
         }
-        private Option<Guid?> _Uuid;
+        private Option<Guid> _Uuid;
         private bool _flagUuid;
 
         /// <summary>
