@@ -110,10 +110,7 @@ namespace Org.OpenAPITools.Model
                 this._flagType = true;
             }
             this._ClassName = className;
-            if (this.ClassName.IsSet)
-            {
-                this._flagClassName = true;
-            }
+            this._flagClassName = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

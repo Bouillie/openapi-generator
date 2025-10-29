@@ -54,10 +54,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("property isn't a nullable property for Name and cannot be null");
             }
             this._VarName = varName;
-            if (this.VarName.IsSet)
-            {
-                this._flagVarName = true;
-            }
+            this._flagVarName = true;
             this._Property = property;
             if (this.Property.IsSet)
             {

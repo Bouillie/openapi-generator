@@ -170,10 +170,7 @@ namespace Org.OpenAPITools.Model
                 this._flagUnsignedLong = true;
             }
             this._Number = number;
-            if (this.Number.IsSet)
-            {
-                this._flagNumber = true;
-            }
+            this._flagNumber = true;
             this._Float = varFloat;
             if (this.Float.IsSet)
             {
@@ -195,20 +192,14 @@ namespace Org.OpenAPITools.Model
                 this._flagString = true;
             }
             this._Byte = varByte;
-            if (this.Byte.IsSet)
-            {
-                this._flagByte = true;
-            }
+            this._flagByte = true;
             this._Binary = binary;
             if (this.Binary.IsSet)
             {
                 this._flagBinary = true;
             }
             this._Date = date;
-            if (this.Date.IsSet)
-            {
-                this._flagDate = true;
-            }
+            this._flagDate = true;
             this._DateTime = dateTime;
             if (this.DateTime.IsSet)
             {
@@ -220,10 +211,7 @@ namespace Org.OpenAPITools.Model
                 this._flagUuid = true;
             }
             this._Password = password;
-            if (this.Password.IsSet)
-            {
-                this._flagPassword = true;
-            }
+            this._flagPassword = true;
             this._PatternWithDigits = patternWithDigits;
             if (this.PatternWithDigits.IsSet)
             {
@@ -245,10 +233,7 @@ namespace Org.OpenAPITools.Model
                 this._flagStringFormattedAsDecimal = true;
             }
             this._StringFormattedAsDecimalRequired = stringFormattedAsDecimalRequired;
-            if (this.StringFormattedAsDecimalRequired.IsSet)
-            {
-                this._flagStringFormattedAsDecimalRequired = true;
-            }
+            this._flagStringFormattedAsDecimalRequired = true;
             this._DuplicatePropertyName2 = duplicatePropertyName2;
             if (this.DuplicatePropertyName2.IsSet)
             {

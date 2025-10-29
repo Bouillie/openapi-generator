@@ -59,15 +59,9 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("triangleType isn't a nullable property for ScaleneTriangle and cannot be null");
             }
             this._ShapeType = shapeType;
-            if (this.ShapeType.IsSet)
-            {
-                this._flagShapeType = true;
-            }
+            this._flagShapeType = true;
             this._TriangleType = triangleType;
-            if (this.TriangleType.IsSet)
-            {
-                this._flagTriangleType = true;
-            }
+            this._flagTriangleType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

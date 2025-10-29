@@ -57,10 +57,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("petType isn't a nullable property for GrandparentAnimal and cannot be null");
             }
             this._PetType = petType;
-            if (this.PetType.IsSet)
-            {
-                this._flagPetType = true;
-            }
+            this._flagPetType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

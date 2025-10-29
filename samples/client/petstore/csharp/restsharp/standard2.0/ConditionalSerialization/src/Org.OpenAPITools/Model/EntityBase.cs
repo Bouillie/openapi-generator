@@ -56,10 +56,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("schema isn't a nullable property for EntityBase and cannot be null");
             }
             this._Schema = schema;
-            if (this.Schema.IsSet)
-            {
-                this._flagSchema = true;
-            }
+            this._flagSchema = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

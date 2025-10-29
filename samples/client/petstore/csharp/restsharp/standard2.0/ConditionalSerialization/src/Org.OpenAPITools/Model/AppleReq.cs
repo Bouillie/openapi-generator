@@ -51,10 +51,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("cultivar isn't a nullable property for AppleReq and cannot be null");
             }
             this._Cultivar = cultivar;
-            if (this.Cultivar.IsSet)
-            {
-                this._flagCultivar = true;
-            }
+            this._flagCultivar = true;
             this._Mealy = mealy;
             if (this.Mealy.IsSet)
             {

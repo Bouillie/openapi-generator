@@ -136,15 +136,9 @@ namespace Org.OpenAPITools.Model
                 this._flagCategory = true;
             }
             this._Name = name;
-            if (this.Name.IsSet)
-            {
-                this._flagName = true;
-            }
+            this._flagName = true;
             this._PhotoUrls = photoUrls;
-            if (this.PhotoUrls.IsSet)
-            {
-                this._flagPhotoUrls = true;
-            }
+            this._flagPhotoUrls = true;
             this._Tags = tags;
             if (this.Tags.IsSet)
             {

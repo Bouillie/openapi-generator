@@ -53,10 +53,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("triangleType isn't a nullable property for TriangleInterface and cannot be null");
             }
             this._TriangleType = triangleType;
-            if (this.TriangleType.IsSet)
-            {
-                this._flagTriangleType = true;
-            }
+            this._flagTriangleType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

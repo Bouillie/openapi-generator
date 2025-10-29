@@ -66,15 +66,9 @@ namespace Org.OpenAPITools.Model
                 this._flagVarReturn = true;
             }
             this._Lock = varLock;
-            if (this.Lock.IsSet)
-            {
-                this._flagLock = true;
-            }
+            this._flagLock = true;
             this._Abstract = varAbstract;
-            if (this.Abstract.IsSet)
-            {
-                this._flagAbstract = true;
-            }
+            this._flagAbstract = true;
             this._Unsafe = varUnsafe;
             if (this.Unsafe.IsSet)
             {

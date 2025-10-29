@@ -56,10 +56,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("descendantName isn't a nullable property for Descendant1 and cannot be null");
             }
             this._DescendantName = descendantName;
-            if (this.DescendantName.IsSet)
-            {
-                this._flagDescendantName = true;
-            }
+            this._flagDescendantName = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

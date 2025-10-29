@@ -54,15 +54,9 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("aObjVariableobject isn't a nullable property for NotificationtestGetElementsV1ResponseMPayload and cannot be null");
             }
             this._PkiNotificationtestID = pkiNotificationtestID;
-            if (this.PkiNotificationtestID.IsSet)
-            {
-                this._flagPkiNotificationtestID = true;
-            }
+            this._flagPkiNotificationtestID = true;
             this._AObjVariableobject = aObjVariableobject;
-            if (this.AObjVariableobject.IsSet)
-            {
-                this._flagAObjVariableobject = true;
-            }
+            this._flagAObjVariableobject = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

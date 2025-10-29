@@ -699,7 +699,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "required_nullable_outerEnumDefaultValue", IsRequired = true, EmitDefaultValue = true)]
-        public OuterEnumDefaultValue RequiredNullableOuterEnumDefaultValue
+        public OuterEnumDefaultValue? RequiredNullableOuterEnumDefaultValue
         {
             get{ return _RequiredNullableOuterEnumDefaultValue;}
             set
@@ -708,7 +708,7 @@ namespace Org.OpenAPITools.Model
                 _flagRequiredNullableOuterEnumDefaultValue = true;
             }
         }
-        private OuterEnumDefaultValue _RequiredNullableOuterEnumDefaultValue;
+        private OuterEnumDefaultValue? _RequiredNullableOuterEnumDefaultValue;
         private bool _flagRequiredNullableOuterEnumDefaultValue;
 
         /// <summary>
@@ -751,7 +751,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "notrequired_nullable_outerEnumDefaultValue", EmitDefaultValue = true)]
-        public Option<OuterEnumDefaultValue> NotrequiredNullableOuterEnumDefaultValue
+        public Option<OuterEnumDefaultValue?> NotrequiredNullableOuterEnumDefaultValue
         {
             get{ return _NotrequiredNullableOuterEnumDefaultValue;}
             set
@@ -760,7 +760,7 @@ namespace Org.OpenAPITools.Model
                 _flagNotrequiredNullableOuterEnumDefaultValue = true;
             }
         }
-        private Option<OuterEnumDefaultValue> _NotrequiredNullableOuterEnumDefaultValue;
+        private Option<OuterEnumDefaultValue?> _NotrequiredNullableOuterEnumDefaultValue;
         private bool _flagNotrequiredNullableOuterEnumDefaultValue;
 
         /// <summary>
@@ -875,15 +875,9 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("notrequiredNotnullableArrayOfString isn't a nullable property for RequiredClass and cannot be null");
             }
             this._RequiredNullableIntegerProp = requiredNullableIntegerProp;
-            if (this.RequiredNullableIntegerProp.IsSet)
-            {
-                this._flagRequiredNullableIntegerProp = true;
-            }
+            this._flagRequiredNullableIntegerProp = true;
             this._RequiredNotnullableintegerProp = requiredNotnullableintegerProp;
-            if (this.RequiredNotnullableintegerProp.IsSet)
-            {
-                this._flagRequiredNotnullableintegerProp = true;
-            }
+            this._flagRequiredNotnullableintegerProp = true;
             this._NotRequiredNullableIntegerProp = notRequiredNullableIntegerProp;
             if (this.NotRequiredNullableIntegerProp.IsSet)
             {
@@ -895,15 +889,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotRequiredNotnullableintegerProp = true;
             }
             this._RequiredNullableStringProp = requiredNullableStringProp;
-            if (this.RequiredNullableStringProp.IsSet)
-            {
-                this._flagRequiredNullableStringProp = true;
-            }
+            this._flagRequiredNullableStringProp = true;
             this._RequiredNotnullableStringProp = requiredNotnullableStringProp;
-            if (this.RequiredNotnullableStringProp.IsSet)
-            {
-                this._flagRequiredNotnullableStringProp = true;
-            }
+            this._flagRequiredNotnullableStringProp = true;
             this._NotrequiredNullableStringProp = notrequiredNullableStringProp;
             if (this.NotrequiredNullableStringProp.IsSet)
             {
@@ -915,15 +903,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableStringProp = true;
             }
             this._RequiredNullableBooleanProp = requiredNullableBooleanProp;
-            if (this.RequiredNullableBooleanProp.IsSet)
-            {
-                this._flagRequiredNullableBooleanProp = true;
-            }
+            this._flagRequiredNullableBooleanProp = true;
             this._RequiredNotnullableBooleanProp = requiredNotnullableBooleanProp;
-            if (this.RequiredNotnullableBooleanProp.IsSet)
-            {
-                this._flagRequiredNotnullableBooleanProp = true;
-            }
+            this._flagRequiredNotnullableBooleanProp = true;
             this._NotrequiredNullableBooleanProp = notrequiredNullableBooleanProp;
             if (this.NotrequiredNullableBooleanProp.IsSet)
             {
@@ -935,15 +917,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableBooleanProp = true;
             }
             this._RequiredNullableDateProp = requiredNullableDateProp;
-            if (this.RequiredNullableDateProp.IsSet)
-            {
-                this._flagRequiredNullableDateProp = true;
-            }
+            this._flagRequiredNullableDateProp = true;
             this._RequiredNotNullableDateProp = requiredNotNullableDateProp;
-            if (this.RequiredNotNullableDateProp.IsSet)
-            {
-                this._flagRequiredNotNullableDateProp = true;
-            }
+            this._flagRequiredNotNullableDateProp = true;
             this._NotRequiredNullableDateProp = notRequiredNullableDateProp;
             if (this.NotRequiredNullableDateProp.IsSet)
             {
@@ -955,15 +931,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotRequiredNotnullableDateProp = true;
             }
             this._RequiredNotnullableDatetimeProp = requiredNotnullableDatetimeProp;
-            if (this.RequiredNotnullableDatetimeProp.IsSet)
-            {
-                this._flagRequiredNotnullableDatetimeProp = true;
-            }
+            this._flagRequiredNotnullableDatetimeProp = true;
             this._RequiredNullableDatetimeProp = requiredNullableDatetimeProp;
-            if (this.RequiredNullableDatetimeProp.IsSet)
-            {
-                this._flagRequiredNullableDatetimeProp = true;
-            }
+            this._flagRequiredNullableDatetimeProp = true;
             this._NotrequiredNullableDatetimeProp = notrequiredNullableDatetimeProp;
             if (this.NotrequiredNullableDatetimeProp.IsSet)
             {
@@ -975,15 +945,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableDatetimeProp = true;
             }
             this._RequiredNullableEnumInteger = requiredNullableEnumInteger;
-            if (this.RequiredNullableEnumInteger.IsSet)
-            {
-                this._flagRequiredNullableEnumInteger = true;
-            }
+            this._flagRequiredNullableEnumInteger = true;
             this._RequiredNotnullableEnumInteger = requiredNotnullableEnumInteger;
-            if (this.RequiredNotnullableEnumInteger.IsSet)
-            {
-                this._flagRequiredNotnullableEnumInteger = true;
-            }
+            this._flagRequiredNotnullableEnumInteger = true;
             this._NotrequiredNullableEnumInteger = notrequiredNullableEnumInteger;
             if (this.NotrequiredNullableEnumInteger.IsSet)
             {
@@ -995,15 +959,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableEnumInteger = true;
             }
             this._RequiredNullableEnumIntegerOnly = requiredNullableEnumIntegerOnly;
-            if (this.RequiredNullableEnumIntegerOnly.IsSet)
-            {
-                this._flagRequiredNullableEnumIntegerOnly = true;
-            }
+            this._flagRequiredNullableEnumIntegerOnly = true;
             this._RequiredNotnullableEnumIntegerOnly = requiredNotnullableEnumIntegerOnly;
-            if (this.RequiredNotnullableEnumIntegerOnly.IsSet)
-            {
-                this._flagRequiredNotnullableEnumIntegerOnly = true;
-            }
+            this._flagRequiredNotnullableEnumIntegerOnly = true;
             this._NotrequiredNullableEnumIntegerOnly = notrequiredNullableEnumIntegerOnly;
             if (this.NotrequiredNullableEnumIntegerOnly.IsSet)
             {
@@ -1015,15 +973,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableEnumIntegerOnly = true;
             }
             this._RequiredNotnullableEnumString = requiredNotnullableEnumString;
-            if (this.RequiredNotnullableEnumString.IsSet)
-            {
-                this._flagRequiredNotnullableEnumString = true;
-            }
+            this._flagRequiredNotnullableEnumString = true;
             this._RequiredNullableEnumString = requiredNullableEnumString;
-            if (this.RequiredNullableEnumString.IsSet)
-            {
-                this._flagRequiredNullableEnumString = true;
-            }
+            this._flagRequiredNullableEnumString = true;
             this._NotrequiredNullableEnumString = notrequiredNullableEnumString;
             if (this.NotrequiredNullableEnumString.IsSet)
             {
@@ -1035,15 +987,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableEnumString = true;
             }
             this._RequiredNullableOuterEnumDefaultValue = requiredNullableOuterEnumDefaultValue;
-            if (this.RequiredNullableOuterEnumDefaultValue.IsSet)
-            {
-                this._flagRequiredNullableOuterEnumDefaultValue = true;
-            }
+            this._flagRequiredNullableOuterEnumDefaultValue = true;
             this._RequiredNotnullableOuterEnumDefaultValue = requiredNotnullableOuterEnumDefaultValue;
-            if (this.RequiredNotnullableOuterEnumDefaultValue.IsSet)
-            {
-                this._flagRequiredNotnullableOuterEnumDefaultValue = true;
-            }
+            this._flagRequiredNotnullableOuterEnumDefaultValue = true;
             this._NotrequiredNullableOuterEnumDefaultValue = notrequiredNullableOuterEnumDefaultValue;
             if (this.NotrequiredNullableOuterEnumDefaultValue.IsSet)
             {
@@ -1055,15 +1001,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableOuterEnumDefaultValue = true;
             }
             this._RequiredNullableUuid = requiredNullableUuid;
-            if (this.RequiredNullableUuid.IsSet)
-            {
-                this._flagRequiredNullableUuid = true;
-            }
+            this._flagRequiredNullableUuid = true;
             this._RequiredNotnullableUuid = requiredNotnullableUuid;
-            if (this.RequiredNotnullableUuid.IsSet)
-            {
-                this._flagRequiredNotnullableUuid = true;
-            }
+            this._flagRequiredNotnullableUuid = true;
             this._NotrequiredNullableUuid = notrequiredNullableUuid;
             if (this.NotrequiredNullableUuid.IsSet)
             {
@@ -1075,15 +1015,9 @@ namespace Org.OpenAPITools.Model
                 this._flagNotrequiredNotnullableUuid = true;
             }
             this._RequiredNullableArrayOfString = requiredNullableArrayOfString;
-            if (this.RequiredNullableArrayOfString.IsSet)
-            {
-                this._flagRequiredNullableArrayOfString = true;
-            }
+            this._flagRequiredNullableArrayOfString = true;
             this._RequiredNotnullableArrayOfString = requiredNotnullableArrayOfString;
-            if (this.RequiredNotnullableArrayOfString.IsSet)
-            {
-                this._flagRequiredNotnullableArrayOfString = true;
-            }
+            this._flagRequiredNotnullableArrayOfString = true;
             this._NotrequiredNullableArrayOfString = notrequiredNullableArrayOfString;
             if (this.NotrequiredNullableArrayOfString.IsSet)
             {

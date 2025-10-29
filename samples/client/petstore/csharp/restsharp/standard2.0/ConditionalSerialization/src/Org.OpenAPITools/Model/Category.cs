@@ -59,10 +59,7 @@ namespace Org.OpenAPITools.Model
                 this._flagId = true;
             }
             this._Name = name;
-            if (this.Name.IsSet)
-            {
-                this._flagName = true;
-            }
+            this._flagName = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

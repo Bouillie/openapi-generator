@@ -94,15 +94,9 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("copyActivitytt isn't a nullable property for CopyActivity and cannot be null");
             }
             this._Schema = schema;
-            if (this.Schema.IsSet)
-            {
-                this._flagSchema = true;
-            }
+            this._flagSchema = true;
             this._CopyActivitytt = copyActivitytt;
-            if (this.CopyActivitytt.IsSet)
-            {
-                this._flagCopyActivitytt = true;
-            }
+            this._flagCopyActivitytt = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

@@ -56,10 +56,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("confidentiality isn't a nullable property for Descendant2 and cannot be null");
             }
             this._Confidentiality = confidentiality;
-            if (this.Confidentiality.IsSet)
-            {
-                this._flagConfidentiality = true;
-            }
+            this._flagConfidentiality = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

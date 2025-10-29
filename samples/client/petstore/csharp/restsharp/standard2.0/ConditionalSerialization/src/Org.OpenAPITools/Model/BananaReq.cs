@@ -46,10 +46,7 @@ namespace Org.OpenAPITools.Model
         public BananaReq(decimal lengthCm = default, Option<bool> sweet = default)
         {
             this._LengthCm = lengthCm;
-            if (this.LengthCm.IsSet)
-            {
-                this._flagLengthCm = true;
-            }
+            this._flagLengthCm = true;
             this._Sweet = sweet;
             if (this.Sweet.IsSet)
             {

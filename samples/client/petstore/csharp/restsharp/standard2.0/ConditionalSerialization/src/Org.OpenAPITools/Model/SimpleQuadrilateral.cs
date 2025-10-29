@@ -59,15 +59,9 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("quadrilateralType isn't a nullable property for SimpleQuadrilateral and cannot be null");
             }
             this._ShapeType = shapeType;
-            if (this.ShapeType.IsSet)
-            {
-                this._flagShapeType = true;
-            }
+            this._flagShapeType = true;
             this._QuadrilateralType = quadrilateralType;
-            if (this.QuadrilateralType.IsSet)
-            {
-                this._flagQuadrilateralType = true;
-            }
+            this._flagQuadrilateralType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

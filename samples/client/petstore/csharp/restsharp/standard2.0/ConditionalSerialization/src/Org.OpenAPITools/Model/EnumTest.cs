@@ -330,7 +330,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
 
         [DataMember(Name = "outerEnum", EmitDefaultValue = true)]
-        public Option<OuterEnum> OuterEnum
+        public Option<OuterEnum?> OuterEnum
         {
             get{ return _OuterEnum;}
             set
@@ -339,7 +339,7 @@ namespace Org.OpenAPITools.Model
                 _flagOuterEnum = true;
             }
         }
-        private Option<OuterEnum> _OuterEnum;
+        private Option<OuterEnum?> _OuterEnum;
         private bool _flagOuterEnum;
 
         /// <summary>
@@ -456,10 +456,7 @@ namespace Org.OpenAPITools.Model
                 this._flagEnumString = true;
             }
             this._EnumStringRequired = enumStringRequired;
-            if (this.EnumStringRequired.IsSet)
-            {
-                this._flagEnumStringRequired = true;
-            }
+            this._flagEnumStringRequired = true;
             this._EnumInteger = enumInteger;
             if (this.EnumInteger.IsSet)
             {

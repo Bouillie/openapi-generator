@@ -53,10 +53,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("shapeType isn't a nullable property for ShapeInterface and cannot be null");
             }
             this._ShapeType = shapeType;
-            if (this.ShapeType.IsSet)
-            {
-                this._flagShapeType = true;
-            }
+            this._flagShapeType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

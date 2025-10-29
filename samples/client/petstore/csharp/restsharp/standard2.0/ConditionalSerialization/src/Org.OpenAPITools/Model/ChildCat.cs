@@ -99,10 +99,7 @@ namespace Org.OpenAPITools.Model
                 this._flagName = true;
             }
             this._PetType = petType;
-            if (this.PetType.IsSet)
-            {
-                this._flagPetType = true;
-            }
+            this._flagPetType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

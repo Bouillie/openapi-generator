@@ -103,15 +103,9 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("alternativeName isn't a nullable property for TestDescendants and cannot be null");
             }
             this._AlternativeName = alternativeName;
-            if (this.AlternativeName.IsSet)
-            {
-                this._flagAlternativeName = true;
-            }
+            this._flagAlternativeName = true;
             this._ObjectType = objectType;
-            if (this.ObjectType.IsSet)
-            {
-                this._flagObjectType = true;
-            }
+            this._flagObjectType = true;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 

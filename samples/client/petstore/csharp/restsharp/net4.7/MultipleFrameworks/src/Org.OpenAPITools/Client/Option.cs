@@ -57,7 +57,7 @@ namespace Org.OpenAPITools.Client
         {
             Type innerType = objectType.GetGenericArguments()[0];
             var converterType = typeof(OptionConverter<>).MakeGenericType(innerType);
-            var converter = (JsonConverter)Activator.CreateInstance(converterType)!;
+            var converter = (JsonConverter)Activator.CreateInstance(converterType);
             return converter.ReadJson(reader, objectType, existingValue, serializer);
         }
     }
