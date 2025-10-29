@@ -284,7 +284,7 @@ namespace Org.OpenAPITools.Test.Api
 			foreach (Pet pet in pets)
 			{
 				Assert.IsType<Pet>(pet);
-				Assert.Equal(Pet.StatusEnum.Available, pet.Status);
+				Assert.Equal(Pet.StatusEnum.Available, pet.Status.Value);
 			}
 		}
 
@@ -387,7 +387,7 @@ namespace Org.OpenAPITools.Test.Api
 		{
 			var assembly = Assembly.GetExecutingAssembly();
 			using Stream imageStream = assembly.GetManifestResourceStream("Org.OpenAPITools.Test.linux-logo.png");
-			_petApi.UploadFile(PetId, "metadata sample", imageStream);
+			_petApi.UploadFile(PetId, "metadata sample", (FileParameter) imageStream);
 		}
 
 		/// <summary>
@@ -398,7 +398,7 @@ namespace Org.OpenAPITools.Test.Api
 		{
 			var assembly = Assembly.GetExecutingAssembly();
 			using Stream imageStream = assembly.GetManifestResourceStream("Org.OpenAPITools.Test.linux-logo.png");
-			_petApi.UploadFile(petId: PetId, file: imageStream);
+			_petApi.UploadFile(petId: PetId, file: (FileParameter) imageStream);
 		}
 
 		#endregion
@@ -470,7 +470,7 @@ namespace Org.OpenAPITools.Test.Api
 		{
 			var assembly = Assembly.GetExecutingAssembly();
 			await using Stream imageStream = assembly.GetManifestResourceStream("Org.OpenAPITools.Test.linux-logo.png");
-			await _petApi.UploadFileAsync(PetId, "metadata sample", imageStream);
+			await _petApi.UploadFileAsync(PetId, "metadata sample", (FileParameter) imageStream);
 		}
 
 		/// <summary>
@@ -481,7 +481,7 @@ namespace Org.OpenAPITools.Test.Api
 		{
 			var assembly = Assembly.GetExecutingAssembly();
 			await using Stream imageStream = assembly.GetManifestResourceStream("Org.OpenAPITools.Test.linux-logo.png");
-			await _petApi.UploadFileAsync(petId: PetId, file: imageStream);
+			await _petApi.UploadFileAsync(petId: PetId, file: (FileParameter) imageStream);
 		}
 
 		#endregion

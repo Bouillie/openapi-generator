@@ -314,7 +314,7 @@ namespace Org.OpenAPITools.Test
             Assert.IsType<List<Tag>>(response.Tags.Value);
 
             Assert.Equal("new form name", response.Name);
-            Assert.Equal(Pet.StatusEnum.Pending, response.Status);
+            Assert.Equal(Pet.StatusEnum.Pending, response.Status.Value);
 
             Assert.Equal(petId, response.Tags.Value[0].Id.Value);
             Assert.Equal(56, response.Category.Value.Id.Value);
@@ -335,11 +335,11 @@ namespace Org.OpenAPITools.Test
             Stream _imageStream = _assembly.GetManifestResourceStream("Org.OpenAPITools.Test.linux-logo.png");
             PetApi petApi = new PetApi();
             // test file upload with form parameters
-            petApi.UploadFile(petId, "new form name", _imageStream);
+            petApi.UploadFile(petId, "new form name", (FileParameter) _imageStream);
 
             // test file upload without any form parameters
             // using optional parameter syntax introduced at .net 4.0
-            petApi.UploadFile(petId: petId, file: _imageStream);
+            petApi.UploadFile(petId: petId, file: (FileParameter) _imageStream);
         }
         
         /// <summary>
