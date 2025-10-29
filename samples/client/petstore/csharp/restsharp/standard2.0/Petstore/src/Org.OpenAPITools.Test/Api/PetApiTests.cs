@@ -173,7 +173,7 @@ namespace Org.OpenAPITools.Test
 
             Assert.IsType<Category>(response.Category.Value);
             Assert.Equal(56, response.Category.Value.Id.Value);
-            Assert.Equal("sample category name2", response.Category.Value.Name.Value);
+            Assert.Equal("sample category name2", response.Category.Value.Name);
         }
 
         /// <summary>
